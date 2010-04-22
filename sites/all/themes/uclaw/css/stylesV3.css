@@ -1,0 +1,511 @@
+@charset "UTF-8";
+
+/* GLOBAL STYLES */
+
+body {
+  background: #D2C7A0 url(http://law.uc.edu/assets/images/production/global/bg.jpg) top center;
+  font-family:'Trebuchet MS',Arial,Tahoma,Verdana;
+  font-size: 12px;
+  color: #555;
+}
+
+.clear {
+  height: 1px;
+  clear: both;
+}
+  
+/* STRUCTURE STYLES */    
+
+#container {
+  background: url(http://law.uc.edu/assets/images/production/global/bgContainer.jpg) repeat-x top center;
+  width: 100%;
+}
+
+#wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* HEADER STYLES */  
+
+#subnav ul {
+  font-size: 10px;
+  color: #857240;
+  text-align: right;
+  height: 15px;
+  padding: 4px 20px 0 20px;
+}	
+
+#subnav ul li {
+  margin: 0 3px;
+  display: inline;
+}
+
+#subnav ul li a {
+  color: #423F32;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#subnav ul li a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  background: url(http://law.uc.edu/assets/images/production/global/bgHeader.jpg) no-repeat top center;
+  height: 165px;
+  padding: 0 20px;
+}
+
+#header h1 a {
+  display: block;
+  float: left;
+  height:135px;
+  width: 160px;
+  text-indent: -9000px;
+}	
+
+#header #search {
+  float: right;
+  width: 300px;
+  height: 30px;
+  margin-top: 103px;
+}
+
+#header #search .searchInput {
+  background: #CBCBCB;
+  padding: 6px;
+  border: 1px solid #B8B8B8;
+  color: #777;
+  width: 150px;
+  float: right;
+  font-size: 11px;
+}
+
+#header #search .searchBtn {
+  float: right;
+  margin: 0 2px;
+}
+
+#header ul {
+  height: 28px;
+  font-size: 14px;
+  color: #FFF;
+  clear: both;
+  font-family: 'Trebuchet MS',Arial,Tahoma,Verdana;
+}	
+
+#header ul li {
+  float: left;
+  height: 20px;
+  padding-top: 8px;
+  display: inline;
+  color: #FFF;
+}
+
+#header ul li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#header ul li a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+#header ul .focusAlt {
+  background: url(http://law.uc.edu/assets/images/production/global/bgFocus.jpg) repeat-x top center;
+  width: 172px;
+  margin-right: 2px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#header ul .nav {
+  margin: 0 13px;
+}
+
+#header .searchBox {
+  float: right;
+  display: inline;
+  margin: 4px 90px 0 0;
+  border: 1px solid #DEDEDE;
+  padding: 4px;
+  width: 150px;
+}
+
+/* BANNER STYLES */ 
+
+#bannerHome {
+  background: url(http://law.uc.edu/assets/imags/production/home/bgBanner.jpg) no-repeat top center; 
+  height: 325px;
+  padding: 0 20px;
+}
+
+#bannerInside {
+  background: url(http://law.uc.edu/assets/imags/production/home/bgBanner.jpg) no-repeat top center; 
+  height: 200px;
+  padding: 0 20px;
+}
+
+/* CONTENT STYLES */   
+
+#content {
+  padding: 10px 35px;
+  background: url(http://law.uc.edu/assets/images/production/global/bgContent.jpg) repeat-y top center; 
+  font-size: 13px;
+}
+
+#content p {
+  padding: 7px 0;	
+  line-height: 20px;
+}
+
+#content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0 4px 0;
+  border-bottom: 1px dashed #CCC;
+  color: #E80022;
+}
+
+#content h3 {
+  font-size: 13px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+#content h4 {
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+#content h5 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 18px;
+  color:#E80022;
+  line-height: 14px;
+}
+
+#content h6 {
+  font-size: 12px;
+  font-weight: bold;
+  color:#E80022;
+}
+
+/* COLUMNS STYLES */
+
+#column {
+  float: right;
+  width: 725px; 
+}
+
+#columnAlt {
+  float: right;
+  width: 475px;
+  margin-right: 20px;
+}
+
+#columnThin {
+  float: left;
+  width: 200px; 
+}
+
+#columnA {
+  float:left;
+  width: 310px;
+}
+
+#columnB {
+  float:right;
+  width: 310px;
+  margin-top:25px;
+}
+
+.subColumnA {
+  float: left;
+  display: inline;
+  width: 225px;
+  margin-right: 7px;
+}
+
+.subColumnB {
+  float: left;
+  display: inline;
+  width: 260px;
+} 
+
+.subColumnC {
+  float: left;
+  display: inline;
+  width: 255px;
+} 
+
+.subColumnD {
+  float: left;
+  display: inline;
+  width: 300px;
+} 
+
+/* WRAPPER STYLES */
+
+.wrapperColumnHome {
+  padding: 0 15px;
+  min-height: 180px;
+}
+
+.wrapperColumnHome p {
+  font-size: 11px;
+}
+
+.wrapperColumnHome p a {
+  color: #000;
+}
+
+.wrapperColumnHome p a:hover {
+  color: red;
+}
+
+/* FEATURE STYLES */  
+
+.photoThumb {
+  background: url(http://law.uc.edu/assets/images/production/global/bgPhotoThumb.jpg) no-repeat top center;
+  width: 225px;
+  height: 120px;
+}
+
+.photoThumb img {
+  margin: 13px 0 0 13px;
+  border: 1px solid #777;
+}
+
+/* FONT STYLES */  
+
+.highlight {
+  font-size: 12px;
+}
+
+.right {
+  text-align: right;
+}
+
+/* FLOAT STYLES */  
+
+.floatLeft {
+  float: left;
+  margin: 10px 10px 0 0;
+}
+
+.floatRight {
+  float: right;
+  margin: 10px 10px 0 0;
+  border: none;
+}
+
+.right {
+  text-align: right;
+}
+
+/* FOOTER STYLES */  
+
+#footer {
+  background: url(http://law.uc.edu/assets/images/production/global/bgContentFooter.jpg) no-repeat top center; 
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 11px;
+  color: #897458;
+}
+
+#footer a {
+  color: #897458;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+#footer ul {
+  float: left;
+  width: 200px;
+  margin: 0 0 0 40px;
+}
+
+#footer ul li {
+  margin: 4px 0;
+}
+
+/* LIST STYLES */  
+
+.listSquare {
+  margin: 20px;  
+}
+
+.listSquare li {
+  margin: 5px 0;
+  list-style: square;
+}
+
+.listInline {
+  margin: 20px;  
+}
+
+.listInline li {
+  margin: 0 5px;
+  display: inline;
+  list-style: none;
+}
+
+/* RIGHT COLUMN STYLES */  
+
+#columnThinRight {
+	float: right;
+	width: 210px;
+	padding-top:20px;
+	padding-right:15px;	
+	padding-bottom: 20px;	
+	font-size: 80%;
+	line-height:165%;
+	}
+		
+.resources {
+	width:190px;
+	margin:0 0 10px 0;
+	background:#F7F3E9 url(/assets/images/production/secondary/bgResources.png) no-repeat;
+	border:1px solid #EFE7D5;
+	padding:10px;	
+	font-size:80%;
+	}	
+
+.resources p { 
+	font-size: 12px;
+	font-style: italic;
+	padding-bottom: 7px; 
+	}	
+
+/* INSTITUTES STYLES */ 
+
+#sidebar {
+  float: right;
+  width: 205px;
+  margin-right: 16px;
+}
+
+#columnInstitutes {
+  float: right;
+  width: 500px;
+  margin-right: 15px; 
+}
+
+#columnInstitutesWide {
+  float: right;
+  width: 705px;
+  margin-right: 15px; 
+}
+
+#columnSubNav {
+  float: left;
+  width: 205px; 
+  background: url(/assets/images/production/inside/institutesNew/bgMorgan.jpg) no-repeat top center;
+  min-height: 625px;
+}
+
+#columnRight {
+  float: right;
+  width: 755px;
+}
+
+#contentInstitute {
+  padding: 0 19px 10px 21px;
+  background: url(http://law.uc.edu/assets/images/production/global/bgContent.jpg) repeat-y top center; 
+  font-size: 13px;
+}
+
+#contentInstitute p {
+  padding: 7px 0;	
+  line-height: 20px;
+}
+
+#contentInstitute h2 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0 4px 0;
+  border-bottom: 1px dashed #CCC;
+  color: #E80022;
+}
+
+#contentInstitute h3 {
+  font-size: 13px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+#contentInstitute h4 {
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+#contentInstitute h5 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 18px;
+  color:#E80022;
+  line-height: 14px;
+}
+
+#contentInstitute h6 {
+  font-size: 12px;
+  font-weight: bold;
+  color:#E80022;
+}
+
+.subNavInstitutes {
+  margin: 0 20px 0 7px;
+  font-size: 11px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #555;
+}
+
+.subNavInstitutes li {
+  line-height: 12px;
+  margin-bottom: 7px;
+}
+
+.subNavInstitutes li a {
+  color: #222;
+  text-decoration: none;
+}
+
+.subNavInstitutes li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.paddingSubNav {
+  padding: 5px 0 5px 0; 
+}
+
+#instituteSubNav {
+  padding: 0 10px 0 20px;
+}
+
+#instituteSubNav h3 a {
+  color: #222;
+  text-decoration: none;
+}
+
+#instituteSubNav h3 a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+#instituteBanner {
+  width: 755px;
+  height: 300px;
+  padding-bottom: 15px;
+}
