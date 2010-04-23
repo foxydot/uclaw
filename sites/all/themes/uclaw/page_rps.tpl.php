@@ -54,6 +54,9 @@
 			</ul>
 		</div>
 		<div id="bannerHome"><script type="text/javascript" src="http://law.uc.edu/assets/js/randHome.js"></script> </div>
+
+<!-- -start here  -->
+
 		<div id="content">
 			<div class="subColumnA">
 				<a href="/alumni/#tabview=tab3"><img src="http://law.uc.edu/assets/images/production/home/headers/headerSupport.jpg" alt="Support Your School"/></a>
@@ -108,7 +111,10 @@
 			<div class="clear"></div>	
 		</div>
 	</div>	
-</div>
+</div> 
+<!-- end here -->
+
+
 <div id="footer">
 	<ul>
 		<li class="highlight">&copy; University of Cincinnati 2010.</li>

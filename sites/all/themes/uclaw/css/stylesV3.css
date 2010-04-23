@@ -37,14 +37,24 @@ body {
 }	
 
 #subnav ul li {
-  margin: 0 3px;
+  margin: 0;
+  padding: 0;
   display: inline;
+}
+
+#subnav ul li:after {
+	content: "  |  ";
+}
+
+#subnav ul li.last:after {
+	content: "";
 }
 
 #subnav ul li a {
   color: #423F32;
   font-weight: bold;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 #subnav ul li a:hover {
@@ -55,6 +65,11 @@ body {
   background: url(http://law.uc.edu/assets/images/production/global/bgHeader.jpg) no-repeat top center;
   height: 165px;
   padding: 0 20px;
+}
+
+#header #logo img {
+	height: 135px;
+	width: 190px;
 }
 
 #header h1 a {

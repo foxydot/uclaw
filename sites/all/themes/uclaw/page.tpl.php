@@ -13,44 +13,31 @@
 
   <body class="<?php print $body_classes; ?>">
     
-    <div id="skip"><a href="#content">Skip to Content</a> <a href="#navigation">Skip to Navigation</a></div>  
     <div id="page">
+		<div id="container">
+			<div id="wrapper">
+		<!-- SUBNAV -->
+		<?php if (!empty($secondary_links)): ?>
+          <div id="subnav" class="menu with-sub-menu">
+            <?php print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); ?>
+          </div> <!-- /navigation -->
+        <?php endif; ?>
+		<!-- SUBNAV -->
 
     <!-- ______________________ HEADER _______________________ -->
 
     <div id="header">
-
-      <div id="logo-title">
-	
-        <?php if (!empty($logo)): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
-          </a>
-        <?php endif; ?>
-
-        <div id="name-and-slogan">
-          <?php if (!empty($site_name)): ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-          <?php if (!empty($site_slogan)): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /name-and-slogan -->
-
-      </div> <!-- /logo-title -->
-
-      <?php if ($header): ?>
-        <div id="header-region">
-          <?php print $header; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php print $search_box; ?>
-
+<!-- HEADER -->
+			<h1><a href="http://www.uc.edu" target="_blank">Law School</a></h1>
+            <?php print $search_box; ?>		
+            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
     </div> <!-- /header -->
-
+    
+    <!-- +++++++++++++++++++++ BANNER ++++++++++++++++++++++ -->
+    
+    <div id="bannerHome"><script type="text/javascript" src="http://law.uc.edu/assets/js/randHome.js"></script> </div>
+    
+<!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
 
     <div id="main" class="clearfix">
@@ -103,13 +90,6 @@
           </div>
         </div> <!-- /content-inner /content -->
 
-        <?php if (!empty($primary_links) or !empty($secondary_links)): ?>
-          <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "with-main-menu"; } if (!empty($secondary_links)) { print " with-sub-menu"; } ?>">
-            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-            <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
-          </div> <!-- /navigation -->
-        <?php endif; ?>
-
         <?php if ($left): ?>
           <div id="sidebar-first" class="column sidebar first">
             <div id="sidebar-first-inner" class="inner">
@@ -127,15 +107,32 @@
         <?php endif; ?> <!-- /sidebar-second -->
 
       </div> <!-- /main -->
-
+      
+      </div> <!-- /wrapper -->
+</div> <!-- /container -->
+<!-- end here -->
       <!-- ______________________ FOOTER _______________________ -->
 
-      <?php if(!empty($footer_message) || !empty($footer_block)): ?>
         <div id="footer">
+	      <?php if(!empty($footer_message) || !empty($footer_block)): ?>
           <?php print $footer_message; ?>
           <?php print $footer_block; ?>
+ 	     <?php endif; ?>
+ 	     	<ul>
+		<li class="highlight">&copy; University of Cincinnati <?php print date("Y"); ?>.</li>
+		<li>All Rights Reserved.</li>
+	</ul>
+	<ul>
+		<li>PO Box 210040</li>
+		<li>Clifton Avenue & Calhoun Street</li>
+		<li>Cincinnati, OH 45221-0040</li>
+	</ul>
+	<ul>
+		<li>513-556-6805 (p) / 513-556-2391 (f)</li>
+		<li><a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a></li>
+	</ul>
+	<div class="clear"></div>
         </div> <!-- /footer -->
-      <?php endif; ?>
 
     </div> <!-- /page -->
     <?php print $closure; ?>
