@@ -1,4 +1,4 @@
-<div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
+<div class="<?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
   <div class="node-inner">
 
     <?php if (!$page): ?>
@@ -19,6 +19,10 @@
       <div class="taxonomy"><?php print $terms; ?></div>
     <?php endif;?>
 
+    <?php if ($attachments): ?> 
+      <div class="links"> <?php print $attachments; ?></div>
+    <?php endif; ?>
+    
     <?php if ($links): ?> 
       <div class="links"> <?php print $links; ?></div>
     <?php endif; ?>

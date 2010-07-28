@@ -35,28 +35,37 @@
     
     <!-- +++++++++++++++++++++ BANNER ++++++++++++++++++++++ -->
     
-    <div id="bannerHome"><script type="text/javascript" src="http://law.uc.edu/assets/js/randHome.js"></script> </div>
-    
+    <?php if ($banner): ?>
+		<?php print $banner; ?>
+	<?php else: ?>
+	    <div id="bannerHome"><script type="text/javascript" src="<?php print $base_path . path_to_theme() ?>/assets/js/randHome.js"></script> </div>
+    <?php endif; ?>
+        
 <!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
 
     <div id="main" class="clearfix">
-    
       <div id="content">
-        <div id="content-inner" class="inner column center">
+        <?php if ($left): ?>
+          <div id="sidebar-first" class="column sidebar first">
+            <div id="sidebar-first-inner" class="inner">
+              <?php print $left; ?>
+            </div>
+          </div>
+        <?php endif; ?> <!-- /sidebar-left -->
+        <div id="content-inner" class="inner column<?php print $left?' center':'';?>">
 
           <?php if ($content_top): ?>
             <div id="content-top">
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
           <?php endif; ?>
-
           <?php if ($breadcrumb || $title || $mission || $messages || $help || $tabs): ?>
             <div id="content-header">
 
-              <?php print $breadcrumb; ?>
+              <?php // print $breadcrumb; ?>
 
-              <?php if ($title): ?>
+              <?php if ($title&&!$is_front): ?>
                 <h1 class="title"><?php print $title; ?></h1>
               <?php endif; ?>
 
@@ -88,16 +97,9 @@
           <?php endif; ?>
 
           </div>
+          <div class='clearfix'></div>
         </div> <!-- /content-inner /content -->
-
-        <?php if ($left): ?>
-          <div id="sidebar-first" class="column sidebar first">
-            <div id="sidebar-first-inner" class="inner">
-              <?php print $left; ?>
-            </div>
-          </div>
-        <?php endif; ?> <!-- /sidebar-left -->
-
+		
         <?php if ($right): ?>
           <div id="sidebar-second" class="column sidebar second">
             <div id="sidebar-second-inner" class="inner">

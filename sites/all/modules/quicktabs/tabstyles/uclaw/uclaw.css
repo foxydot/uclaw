@@ -1,0 +1,95 @@
+/* $Id: uclaw.css,v 1.1.4.3 2008/12/07 18:09:24 pasqualle Exp $ */
+
+/* Quicktabs - uclaw theme style
+ * http://drupal.org/project/uclaw
+ */
+
+.quicktabs_main.quicktabs-style-uclaw {
+  border: 1px solid #eee;
+  clear: both;
+  padding: 10px;
+  position: relative;
+  top: -0.1em;
+  background: #fff;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li {
+  float: left;
+  font-weight: normal;
+  list-style: none;
+  margin: 0 0.3em 0 0.3em;
+  height: 2.65em;
+  min-height: 2.65em;
+  padding: 0;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li.active {
+  margin: 0;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li a,
+ul.quicktabs_tabs.quicktabs-style-uclaw li a:visited {
+  float: left;
+  display: block;
+  height: 3em;
+  min-height: 3em;
+  line-height: 2.65em;
+  padding: 0 8px;
+  text-decoration: none;
+  border: 1px solid #A3A3A3;
+  border-bottom: 0px;
+  font-size: .95em;
+  background: #D8D8D8;
+  color: #000;
+  position: relative;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li a:hover,
+ul.quicktabs_tabs.quicktabs-style-uclaw li.active a:hover {
+  text-decoration: none;
+  border-color: #B3B3B3;
+  background: #E0001F;
+  color: #fff;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li.active a,
+ul.quicktabs_tabs.quicktabs-style-uclaw li.active a:visited {
+  font-weight: normal;
+  border: 1px solid #eee;
+  background: #E0001F;
+  border-color: #555;
+  color: #fff;
+  font-size: .95em;
+  font-weight: normal;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li:first-child a {
+  border-left: solid 1px #eee;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li.active a {
+  border: 1px solid #A3A3A3;
+  border-bottom: 0px;
+}
+
+ul.quicktabs_tabs.quicktabs-style-uclaw li a:focus,
+ul.quicktabs_tabs.quicktabs-style-uclaw li a:active {
+  outline: none;
+  
+}
+
+/* Opera */
+@media all and (min-width: 0px) {
+  body .quicktabs_main.quicktabs-style-uclaw {
+  	background: #F7F7F7;
+  	border: 1px solid #CCCCCC;
+  	border-top: 5px solid #E0001F;
+    top: -0.2em;
+  }
+}

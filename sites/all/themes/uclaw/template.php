@@ -20,7 +20,81 @@ if (theme_get_setting('uclaw_zen_tabs')) {
  */
 
 function uclaw_preprocess_page(&$vars, $hook) {
+	if(in_array('page-node-edit',$vars['template_files'])){
+		$edit = true;
+	} else {
+		$edit = false;
+	}
+  $node = $vars['node'];
+  //create variable for node type faculty
+  if ($node->type == "faculty") {
+  	$vars['edit'] = $edit;
+	if($node->field_staff_title[0]['value']){ $vars['staff_title'] = $node->field_staff_title[0]['value']; }
+	if($node->field_phone_fax[0]['value'] || $node->field_email[0]['value']){ 
+  		$vars['contact_info'] = '<h4>Contact Information</h4>';
+  		$vars['contact_info'] .= '<ul class="listSquare">';
+		if($node->field_phone_fax[0]['value']){ 
+			foreach($node->field_phone_fax AS $item){
+				$vars['contact_info'] .= '<li><address>'.$item['value'].'</address></li>'; 
+			}
+		}
+	  	if($node->field_email[0]['value']){ 
+			foreach($node->field_email AS $item){
+				$vars['contact_info'] .= '<li><a href="mailto:'.$item['value'].'">'.$item['value'].'</a></li>'; 
+			}
+		}
+  		$vars['contact_info'] .= '</ul>';
+	}
+  	if($node->field_education[0]['value']){ 
+  		$vars['education'] = '<h4>Education</h4>';
+  		$vars['education'] .= '<ul class="listSquare">';
+		foreach($node->field_education AS $item){
+			$vars['education'] .= '<li>'.$item['value'].'</li>'; 
+		}
+  		$vars['education'] .= '</ul>';
+	}  	
+	if($node->field_links[0]['value']){ 
+  		$vars['links'] = '<h4>Links</h4>';
+  		$vars['links'] .= '<ul class="listSquare">';
+		foreach($node->field_links AS $item){
+			$linky = explode("|",$item['value']);
+			$vars['links'] .= '<li><a href="'.$linky[0].'">'.$linky[1].'</a></li>'; 
+		}
+  		$vars['links'] .= '</ul>';
+	}
+	$vars['image'] = preg_replace('/(class=")(image\s)/','$1grayBorder $2',$node->content['image_attach']['#value']);
+	
+	//tabs
+	$vars['qt_tabs'] = '<li class="qtab-0 active first"><a href="javascript:void(0);" id="quicktabs-tab-0" class="qt_tab active" onclick="qtClick(0);">Overview</a></li>';
+	$vars['qt_pages'] = '<div id="quicktabs_tabpage_100_0" class="quicktabs_tabpage">'.$node->content['body']['#value'].'</div>';
+	$fields_to_test = array('field_scholarship','field_teaching','field_awards','field_news');
+	$my_i = 0;
+	if($node->field_scholarship[0]['value']){
+		$my_i++;
+		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">Scholarship</a></li>';
+		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_scholarship[0]['value'].'</div>';			
+	}
+	if($node->field_teaching[0]['value']){
+		$my_i++;
+		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">Teaching</a></li>';
+		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_teaching[0]['value'].'</div>';			
+	}
+	if($node->field_awards[0]['value']){
+		$my_i++;
+		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">Awards</a></li>';
+		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_awards[0]['value'].'</div>';			
+	}
+	if($node->field_news[0]['value']){
+		$my_i++;
+		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">News</a></li>';
+		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_news[0]['value'].'</div>';			
+	}
 
+	
+    } else {
+    	$vars['attachments'] = $node->content['files']['#value'];
+    	$vars['content'] = preg_replace("/".preg_quote($vars['attachments'],'/')."/",'',$vars['content']);
+    }
   // Don't display empty help from node_help().
   if ($vars['help'] == "<div class=\"help\"><p></p>\n</div>") {
     $vars['help'] = '';
@@ -143,7 +217,7 @@ function uclaw_preprocess_node(&$vars, $hook) {
   if ($vars['teaser']) {
     $classes[] = 'node-teaser'; // Node is displayed as teaser.
   }
-  $classes[] = 'clearfix';
+  //$classes[] = 'clearfix';
   
   // Class for node type: "node-type-page", "node-type-story", "node-type-my-custom-type", etc.
   $classes[] = uclaw_id_safe('node-type-' . $vars['type']);
@@ -164,6 +238,14 @@ function uclaw_preprocess_node(&$vars, $hook) {
 
 function uclaw_preprocess_block(&$vars, $hook) {
     $block = $vars['block'];
+    
+    //adjust for quicktabs
+   // print "<pre>";
+   // print_r($block);
+    if ($block->module == 'quicktabs'){
+   // $vars['block'] = $node->content['files']['#value'];
+   // $vars['content'] = preg_replace("/".preg_quote($vars['attachments'],'/')."/",'',$vars['content']);
+    }
 
     // special block classes
     $classes = array('block');
@@ -178,9 +260,10 @@ function uclaw_preprocess_block(&$vars, $hook) {
     }
     
     $vars['block_classes'] = implode(' ', $classes); // Concatenate with spaces
-
-    if (theme_get_setting('uclaw_block_editing') && user_access('administer blocks')) {
-        // Display 'edit block' for custom blocks.
+        
+    //if (theme_get_setting('uclaw_block_editing') && user_access('administer blocks')) {
+    if (user_access('administer blocks')) {
+    	// Display 'edit block' for custom blocks.
         if ($block->module == 'block') {
           $edit_links[] = l('<span>' . t('edit block') . '</span>', 'admin/build/block/configure/' . $block->module . '/' . $block->delta,
             array(
@@ -384,4 +467,62 @@ function uclaw_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
     return '<div class="breadcrumb">'. implode(' » ', $breadcrumb) .'</div>';
   }
+}
+
+/**
+* Override or insert PHPTemplate variables into the search_theme_form template.
+*
+* @param $vars
+*   A sequential array of variables to pass to the theme template.
+* @param $hook
+*   The name of the theme function being called (not used in this case.)
+*/
+function uclaw_preprocess_search_theme_form(&$vars, $hook) {
+  // Note that in order to theme a search block you should rename this function
+  // to yourthemename_preprocess_search_block_form and use
+  // 'search_block_form' instead of 'search_theme_form' in the customizations
+  // bellow.
+
+  // Modify elements of the search form
+  $vars['form']['search_theme_form']['#title'] = t('');
+ 
+  // Set a default value for the search box
+  $vars['form']['search_theme_form']['#value'] = t('Search UC College of Law');
+ 
+  // Add a custom class and placeholder text to the search box
+  //$vars['form']['search_theme_form']['#attributes'] = array('class' => 'NormalTextBox txtSearch',
+  //                                                            'onfocus' => "if (this.value == 'Search this Site') {this.value = '';}",
+  //                                                            'onblur' => "if (this.value == '') {this.value = 'Search this Site';}");
+ 
+  // Change the text on the submit button
+  //$vars['form']['submit']['#value'] = t('Go');
+
+  // Rebuild the rendered version (search form only, rest remains unchanged)
+  unset($vars['form']['search_theme_form']['#printed']);
+  $vars['search']['search_theme_form'] = drupal_render($vars['form']['search_theme_form']);
+
+  $vars['form']['submit']['#type'] = 'image_button';
+  $vars['form']['submit']['#src'] = path_to_theme() . '/assets/images/production/global/icons/go.jpg';
+   
+  // Rebuild the rendered version (submit button, rest remains unchanged)
+  unset($vars['form']['submit']['#printed']);
+  $vars['search']['submit'] = drupal_render($vars['form']['submit']);
+
+  // Collect all form elements to make it easier to print the whole form.
+  $vars['search_form'] = implode($vars['search']);
+}
+
+function escape_string_for_regex($str)
+{
+        //All regex special chars (according to arkani at iol dot pt below):
+        // \ ^ . $ | ( ) [ ]
+        // * + ? { } ,
+       
+        $patterns = array('/\//', '/\^/', '/\./', '/\$/', '/\|/',
+ '/\(/', '/\)/', '/\[/', '/\]/', '/\*/', '/\+/',
+'/\?/', '/\{/', '/\}/', '/\,/');
+        $replace = array('\/', '\^', '\.', '\$', '\|', '\(', '\)',
+'\[', '\]', '\*', '\+', '\?', '\{', '\}', '\,');
+       
+        return preg_replace($patterns,$replace, $str);
 }
