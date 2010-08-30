@@ -31,26 +31,19 @@
  Global CSS for ALL menu types
 ******************************/
 
-ul.nice-menu {
+ul.nice-menu,
+ul.nice-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-ul.nice-menu ul {
-	list-style: square outside none;
-	margin: 0 0 0 -36px;
-	display: none;
-}
-li.menuparent:hover ul {
-	display: block;
-}
-
 ul.nice-menu li {
-	cursor:pointer;
-	font-size:12px;
-	margin-bottom:0;
-	margin-top:10px;
+  float: left;
+  /* Additional overrides to deal with Garland theme. */
+  margin: 0;
+  padding-left: 0;
+  background-image: none;
 }
 
 /* Overrides for Garland header. */
@@ -59,23 +52,19 @@ ul.nice-menu li {
   /* Padding rules are needed to deal with Garland's header line-height. */
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  background: #eee;
 }
 
 ul.nice-menu a {
-	background:url("/sites/all/themes/uclaw/assets/images/production/secondary/bgAccordion.png") no-repeat left top #F7F7F7;
-	border:1px solid #DEDEDE;
-	padding:5px 5px 5px 28px;
-  text-decoration: none;
-  color: #333;
+  padding: 0.3em 5px 0.3em 5px;
 }
 
 ul.nice-menu ul,
 /* Repeat for Garland header. */
 #header-region ul.nice-menu ul {
-  top: 2.2em;
+  top: 1.8em;
   left: -1px;
-  font-size:80%;
+  border: 0;
+  margin-right: 0;
 }
 
 /* Override for Garland header. */
@@ -84,18 +73,11 @@ ul.nice-menu ul,
 }
 
 ul.nice-menu ul li {
-	width: 12.5em;
-	background: none;
-	border: none;
-	margin: 0;
-	padding: 0 0 0 28px;
+  width: 12.5em;
 }
 
-ul.nice-menu ul li a {
-	background: none;
-	border: none;
-	text-decoration: underline;
-	color:#E0001F;
+li.menuparent:hover ul {
+	display: block;
 }
 
 /******************************
@@ -109,27 +91,73 @@ ul.nice-menu-right li, ul.nice-menu-left li {
 }
 
 /* VERTICAL menus where submenus pop RIGHT (default). */
+ul.nice-menu-right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #FFF;
+  position: relative;
+  width: 180px;
+  top: -1px;
+}
+
 ul.nice-menu-right ul {
-  position: relative;
-  width: 180px;
-  top: -1px;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	border: none;
+	list-style: square outside none;
+	display: none;
+	visibility: visible;
+	position: relative;
 }
 
-ul.nice-menu-right ul ul {
-  position: relative;
-  width: 180px;
-  top: -1px;
+ul.nice-menu-right li.menuparent:hover ul {
+	display: none;
 }
 
-ul.nice-menu-right li.menuparent,
-ul.nice-menu-right li li.menuparent {
+ul.nice-menu-right li {
+	cursor:pointer;
+	font-size:12px;
+	margin-bottom:0;
+	margin-top:10px;
+	float: left;
+	border: none;
+	background: none;
+	visibility: visible;
+}
+
+ul.nice-menu-right a {
+	background:url("/sites/all/themes/uclaw/assets/images/production/secondary/bgAccordion.png") no-repeat left top #F7F7F7;
+	border:1px solid #DEDEDE;
+	padding:5px 5px 5px 28px;
+  text-decoration: none;
+  color: #333;
+	visibility: visible;
+}
+
+ul.nice-menu-right ul li {
+	width: 12.5em;
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	visibility: visible;
+}
+
+ul.nice-menu-right ul li a {
+	background: none;
+	border: none;
+	text-decoration: underline;
+	color:#E0001F;
+	visibility: visible;
 }
 
 ul.nice-menu-right li.menuparent:hover,
 ul.nice-menu-right li.over,
 ul.nice-menu-right li li.menuparent:hover,
 ul.nice-menu-right li li.over {
- /* background: #ccc url(arrow-right.png) right center no-repeat; */
 }
 
 /* VERTICAL menus where submenus pop LEFT. */
@@ -164,6 +192,13 @@ ul.nice-menu-left a, ul.nice-menu-left ul a {
 /******************************
  HORIZONTAL (down) menus
 ******************************/
+#content-top .block-nice_menus {
+	background:url("../assets/images/production/global/bgSubNav.png") repeat-x scroll 0 0 #999999;
+	border:1px solid #999999;
+	margin:0;
+	width:960px;
+	z-index: 50;
+	}
 
 ul.nice-menu-down {
   float: left;
@@ -171,15 +206,22 @@ ul.nice-menu-down {
 }
 
 ul.nice-menu-down li {
-  border-top: 1px solid #ccc;
+  border: none;
+  font-size: 11px;
+  margin: 0;
+  padding: 4px 10px;
 }
 
 ul.nice-menu-down li li {
-  border-top: 0;
+  border: none;
 }
 
 ul.nice-menu-down ul {
+  top:29px;
+  background: #FFF;
+  border: #ccc 1px solid;
   left: 0;
+  display: none;
 }
 
 ul.nice-menu-down ul li {
@@ -193,34 +235,37 @@ ul.nice-menu-down li ul li ul,
   top: -1px;
 }
 
-ul.nice-menu-down .menuparent a {
-  padding-right: 15px;
+ul.nice-menu-down a {
+  color:#333333;
+  text-decoration:none;
 }
 
-ul.nice-menu-down li.menuparent,
+ul.nice-menu-down>li:hover,
 /* Repeat for Garland header. */
-#header-region ul.nice-menu-down li.menuparent {
-  background: #eee url(arrow-down.png) right center no-repeat;
-}
+#header-region ul.nice-menu-down>li:hover {
+	background: #E80022;
+	}
+	
+ul.nice-menu-down li:hover a,
+/* Repeat for Garland header. */
+#header-region ul.nice-menu-down li:hover a {
+	color: #fff;
+	}
 
-ul.nice-menu-down li.menuparent:hover,
-ul.nice-menu-down li.over,
+ul.nice-menu-down li:hover li a,
 /* Repeat for Garland header. */
-#header-region ul.nice-menu-down li.menuparent:hover,
-#header-region ul.nice-menu-down li.over {
-  background: #ccc url(arrow-down.png) right center no-repeat;
-}
+#header-region ul.nice-menu-down li:hover li a {
+	color: #333;
+	}
+	
+ul.nice-menu-down ul li.hover a,
+/* Repeat for Garland header. */
+#header-region ul.nice-menu-down ul li.hover a {
+	color: #E80022;
+	}
 
-ul.nice-menu-down li li.menuparent,
+ul.nice-menu-down li li.hover,
 /* Repeat for Garland header. */
-#header-region ul.nice-menu-down li li.menuparent {
-  background: #eee url(arrow-right.png) right center no-repeat;
-}
-
-ul.nice-menu-down li li.menuparent:hover,
-ul.nice-menu-down li li.over,
-/* Repeat for Garland header. */
-#header-region ul.nice-menu-down li li.menuparent:hover,
-#header-region ul.nice-menu-down li li.over {
-  background: #ccc url(arrow-right.png) right center no-repeat;
+#header-region ul.nice-menu-down li li.hover {
+  background: none;
 }

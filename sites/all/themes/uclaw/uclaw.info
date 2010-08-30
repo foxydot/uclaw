@@ -1,6 +1,6 @@
 name = uclaw
 description = UC Law theme for Drupal 6
-screenshot = css/images/screenshot.gif
+screenshot = css/images/screenshot.png
 core = 6.x
 project = uclaw
 engine = phptemplate

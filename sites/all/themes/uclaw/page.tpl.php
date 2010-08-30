@@ -9,6 +9,14 @@
     <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css";</style><![endif]-->
     <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css";</style><![endif]-->
     <?php print $scripts; ?>
+    <script type="text/javascript">
+    jQuery(document).ready(function(){
+		$('ul.nice-menu-right>li.menuparent>a').click(function() {
+			$(this).next().toggle('slow');
+			return false;
+		}).next().hide();
+	});
+    </script>
   </head>
 
   <body class="<?php print $body_classes; ?>">
@@ -36,14 +44,21 @@
     <!-- +++++++++++++++++++++ BANNER ++++++++++++++++++++++ -->
     
     <?php if ($banner): ?>
-		<?php print $banner; ?>
+			<?php print $banner; ?>
 	<?php else: ?>
-	    <div id="bannerHome"><script type="text/javascript" src="<?php print $base_path . path_to_theme() ?>/assets/js/randHome.js"></script> </div>
+	    <div id="bannerHome">BACKUP</div>
     <?php endif; ?>
         
 <!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
-
+    
+    
+          <?php if ($content_top): ?>
+            <div id="content-top">
+              <?php print $content_top; ?>
+            </div> <!-- /#content-top -->
+          <?php endif; ?>
+          
     <div id="main" class="clearfix">
       <div id="content">
         <?php if ($left): ?>
@@ -55,11 +70,6 @@
         <?php endif; ?> <!-- /sidebar-left -->
         <div id="content-inner" class="inner column<?php print $left?' center':'';?>">
 
-          <?php if ($content_top): ?>
-            <div id="content-top">
-              <?php print $content_top; ?>
-            </div> <!-- /#content-top -->
-          <?php endif; ?>
           <?php if ($breadcrumb || $title || $mission || $messages || $help || $tabs): ?>
             <div id="content-header">
 

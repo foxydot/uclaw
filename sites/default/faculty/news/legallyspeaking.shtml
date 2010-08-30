@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/faculty.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+	<!-- InstanceBeginEditable name="Title" -->
+    <title>University of Cincinnati &raquo; College of Law &raquo; Faculty &amp; Staff</title>
+    <!-- InstanceEndEditable -->
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />	
+        
+    <meta name="description" content="University of Cincinnati College of Law website. Established in 1833, Cincinnati 
+    Law is the fourth oldest continually operating law school in the country. The College's diverse enrollment of 
+    less than 400 students makes it one of the smallest public law schools in the nation."/>
+    
+	<meta name="keywords" content="Cincinnati Law, College of Law, University of Cincinnati, 
+    UC Law, Cincinnati, Ohio, midwest, J.D., J.D./M.B.A., J.D./M.A., JD, JD/MBA, JD/MA, 
+    Juris Doctor, admissions, application for admission, law school, law student, legal education, 
+    law library, Marx Law Library, William J. Butler Papers, Judge Nathaniel R. Jones Papers, Urban 
+    Morgan Institute for Human Rights, Center for Corporate Law, Glen M. Weaver Institute of Law and 
+    Psychiatry, Center for Practice in Negotiation and Problem Solving, Justice Institute for the 
+    Legal Profession, University of Cincinnati Law Review, Securities Lawyers Deskbook"/>
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/global_1.5.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/yui/build/menu/assets/menu.css">    
+    
+	<!--#include virtual="/ssi/global/head.ssi" -->
+    
+</head>
+
+<body class=" yui-skin-sam">
+    
+<!--#include virtual="/ssi/global/header.ssi" -->
+
+	<!-- InstanceBeginEditable name="Header" -->
+	<div id="sd_header"><img src="/assets/images/production/secondary/headerFaculty.jpg" alt="Faculty" /></div>
+	<!-- InstanceEndEditable -->
+    
+    <div id="sd_nav">
+	      
+<!--#include virtual="/ssi/faculty/subnav.ssi" --> 
+
+	</div>   
+				
+	<!-- InstanceBeginEditable name="Content" -->
+    <div id="sd_content_wrapper">
+        
+      <div id="sd_content"> 
+			
+			<h2><em>Legally Speaking</em></h2>
+            
+		<p>Professor Bettman  writes a monthly newspaper column, <em>Legally   Speaking</em>, which appears in the <em>American Israelite</em> and the <em>Cincinnati Herald</em>. Read articles below:</p>
+		  <ul class="listSquare">
+		    <li><a href="../profiles/docs/Legally Speaking State v  Smith  final version.pdf">Searching A Cell Phone</a></li>
+		    <li><a href="../docs/Legally Speaking Arizona v  Gant draft 2.pdf">The Fourth Amendment, Resuscitated</a><a href="../docs/Legall Speaking Students and Strip Searches final version.pdf"></a></li>
+		    <li><a href="../docs/Legally Speaking Judicial Empathy.pdf">Judicial Empathy</a></li>
+		    <li><a href="../docs/Legall Speaking Students and Strip Searches final version.pdf">Students and Strip Searches</a></li>
+		    <li><a href="../docs/legally speaking notes residency requirement.pdf">Residencey Requirement</a></li>
+		    <li><a href="../docs/Legally Speaking Pasqualone2.pdf">The Right to Confront Witnesses</a></li>
+		    <li><a href="../profiles/docs/Legally Speaking Hageman.pdf">The Confidentiality of Medical Records</a><a href="../profiles/docs/Legally Speaking State v  Smith  final version.pdf"></a></li>
+          </ul>
+        </div>
+      </div>
+        
+		<!--#include virtual="/ssi/global/marketingFooter.ssi" -->
+				
+	</div>
+    <!-- InstanceEndEditable -->
+					
+<!--#include virtual="/ssi/global/disclaimer.ssi" -->
+    
+</body>
+
+<!-- InstanceEnd --></html>

@@ -29,3 +29,4 @@
 
   </div> <!-- /node-inner -->
 </div> <!-- /node-->
+<div class="clearfix"></div>

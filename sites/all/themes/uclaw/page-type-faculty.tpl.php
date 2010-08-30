@@ -53,16 +53,17 @@
 <!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
 
-    <div id="main" class="clearfix">
-    
-      <div id="content">
-        <div id="content-inner" class="inner column<?php print $left?' center':'';?>">
-
           <?php if ($content_top): ?>
             <div id="content-top">
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
           <?php endif; ?>
+          
+    <div id="main" class="clearfix">
+    
+      <div id="content">
+        <div id="content-inner" class="inner column<?php print $left?' center':'';?>">
+
 
           <?php if ($breadcrumb || $title || $mission || $messages || $help || $tabs): ?>
             <div id="content-header">
@@ -89,7 +90,7 @@
           	<div id="sd_content_left">
           		<div class="resources">
           		<?php print_r($image); ?>
-          		<?php print $contact_info.$education.$links; ?>
+          		<?php print $contact_info.$education.$links.$subjects; ?>
           		</div>
           	</div>
           	<div id="sd_content_right">
@@ -120,6 +121,7 @@
               
               
               
+          	
             <?php //print $content; ?>
           	</div>
           	<div class="clearfix"></div>

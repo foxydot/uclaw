@@ -104,7 +104,19 @@ DirectoryIndex index.php
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
-  # RewriteBase /
+  RewriteBase /
+  
+  # Rule Added by CMOS to capture archive moves (temporary)
+#  RewriteRule ^archives/(.*) /sites/default/files/archives/$1 [R,NC,L]
+#  RewriteRule ^CCL/(.*) /sites/default/files/CCL/$1 [R,NC,L]
+#  RewriteRule ^faculty/(.*) /sites/default/files/faculty/$1 [R,NC,L]
+#  RewriteRule ^facnews/(.*) /sites/default/files/facnews/$1 [R,NC,L]
+#  RewriteRule ^ssi/(.*) /sites/default/files/ssi/$1 [R,NC,L]
+RewriteRule ^current-student/practical-experiences/publications/docs/(.*) /sites/default/files/archive_docs/publications/docs/$1 [R,NC,L]
+RewriteRule ^(.+?)/current-students/(.*) /current-students/$2 [R,NC,L]
+RewriteRule ^(.+?)/prospective-students/(.*) /prospective-students/$2 [R,NC,L]
+RewriteRule ^(.+?)/institutes-centers/(.*) /institutes-centers/$2 [R,NC,L]
+RewriteRule ^(.+?)/alumni/(.*) /alumni/$2 [R,NC,L]
 
   # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
   RewriteCond %{REQUEST_FILENAME} !-f

@@ -21,3 +21,35 @@ ul.secondary li a:hover{
 	color:#555;
 	text-decoration:none;
 }
+
+/* Global */
+#subnav ul li a {
+	border-right: 1px solid #000;
+	padding: 0 4px;
+}
+
+#subnav ul li.last a {
+	border-right: none;
+}
+
+/* HOME */
+
+.panel-8col .panel-col-last {
+	width: 24%;
+}
+
+/* quicktabs */
+
+.quicktabs_tabpage .clearfix {
+float: none;
+clear: both;
+}
+
+/* faculty */
+#content {
+	height: 100% !important;
+}
+#content-top {
+	display: block;
+	overflow:hidden;
+}

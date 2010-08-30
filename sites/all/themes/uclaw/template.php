@@ -26,9 +26,10 @@ function uclaw_preprocess_page(&$vars, $hook) {
 		$edit = false;
 	}
   $node = $vars['node'];
+  $vars['url'] = explode('/',$node->path);
+  	$vars['edit'] = $edit;
   //create variable for node type faculty
   if ($node->type == "faculty") {
-  	$vars['edit'] = $edit;
 	if($node->field_staff_title[0]['value']){ $vars['staff_title'] = $node->field_staff_title[0]['value']; }
 	if($node->field_phone_fax[0]['value'] || $node->field_email[0]['value']){ 
   		$vars['contact_info'] = '<h4>Contact Information</h4>';
@@ -61,6 +62,14 @@ function uclaw_preprocess_page(&$vars, $hook) {
 			$vars['links'] .= '<li><a href="'.$linky[0].'">'.$linky[1].'</a></li>'; 
 		}
   		$vars['links'] .= '</ul>';
+	}  	
+	if($node->field_subjects[0]['value']){ 
+  		$vars['subjects'] = '<h4>Areas of Interest</h4>';
+  		$vars['subjects'] .= '<ul class="listSquare">';
+		foreach($node->field_subjects AS $item){
+			$vars['subjects'] .= '<li>'.$item['value'].'</li>'; 
+		}
+  		$vars['subjects'] .= '</ul>';
 	}
 	$vars['image'] = preg_replace('/(class=")(image\s)/','$1grayBorder $2',$node->content['image_attach']['#value']);
 	
@@ -90,7 +99,11 @@ function uclaw_preprocess_page(&$vars, $hook) {
 		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_news[0]['value'].'</div>';			
 	}
 
-	
+  } elseif($node->type == 'institute') {
+  		//institute specific stuff
+  		$vars['sidebar_image'] = $node->field_sb_img[0];
+  		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
+  		
     } else {
     	$vars['attachments'] = $node->content['files']['#value'];
     	$vars['content'] = preg_replace("/".preg_quote($vars['attachments'],'/')."/",'',$vars['content']);
@@ -490,9 +503,9 @@ function uclaw_preprocess_search_theme_form(&$vars, $hook) {
   $vars['form']['search_theme_form']['#value'] = t('Search UC College of Law');
  
   // Add a custom class and placeholder text to the search box
-  //$vars['form']['search_theme_form']['#attributes'] = array('class' => 'NormalTextBox txtSearch',
-  //                                                            'onfocus' => "if (this.value == 'Search this Site') {this.value = '';}",
-  //                                                            'onblur' => "if (this.value == '') {this.value = 'Search this Site';}");
+  $vars['form']['search_theme_form']['#attributes'] = array('class' => '',
+                                                              'onfocus' => "if (this.value == 'Search UC College of Law') {this.value = '';}",
+                                                              'onblur' => "if (this.value == '') {this.value = 'Search UC College of Law';}");
  
   // Change the text on the submit button
   //$vars['form']['submit']['#value'] = t('Go');
