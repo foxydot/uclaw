@@ -15,6 +15,10 @@
 			$(this).next().toggle('slow');
 			return false;
 		}).next().hide();
+		$('ul.nice-menu-right>li.menuparent>span.nolink').click(function() {
+			$(this).next().toggle('slow');
+			return false;
+		}).next().hide();
 	});
     </script>
   </head>
@@ -24,29 +28,14 @@
     <div id="page">
 		<div id="container">
 			<div id="wrapper">
-		<!-- SUBNAV -->
-		<?php if (!empty($secondary_links)): ?>
-          <div id="subnav" class="menu with-sub-menu">
-            <?php print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); ?>
-          </div> <!-- /navigation -->
-        <?php endif; ?>
-		<!-- SUBNAV -->
-
-    <!-- ______________________ HEADER _______________________ -->
-
-    <div id="header">
-<!-- HEADER -->
-			<h1><a href="http://www.uc.edu" target="_blank">Law School</a></h1>
-            <?php print $search_box; ?>		
-            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-    </div> <!-- /header -->
+<?php include_once('header.php');?>
     
     <!-- +++++++++++++++++++++ BANNER ++++++++++++++++++++++ -->
     
     <?php if ($banner): ?>
 			<?php print $banner; ?>
 	<?php else: ?>
-	    <div id="bannerHome">BACKUP</div>
+	    <div id="bannerHome"><script type="text/javascript" src="<?php print $base_path . path_to_theme() ?>/assets/js/randHome.js"></script> </div>
     <?php endif; ?>
         
 <!-- start here -->
@@ -59,7 +48,7 @@
             </div> <!-- /#content-top -->
           <?php endif; ?>
           
-    <div id="main" class="clearfix">
+    <div id="main" class="clearfix"></div>
       <div id="content">
         <?php if ($left): ?>
           <div id="sidebar-first" class="column sidebar first">
@@ -95,7 +84,22 @@
           <?php endif; ?>
 
           <div id="content-area">
-            <?php print $content; ?>
+            
+           <?php if(!empty($sidebar_image['filepath']) || $sidebar_text){?>           
+                <div class="right-sidebar resources">
+                <?php if(!empty($sidebar_image['filepath'])){ ?>
+                	<img src="/<?php print $sidebar_image['filepath']; ?>" alt="<?php print $sidebar_image['data']['alt']; ?>" title="<?php print $sidebar_image['data']['title']; ?>" />
+                <?php } ?>
+          		<?php print $sidebar_text; ?>
+          		</div>
+          		<div class="content-col-narrow">
+          		 <?php print $content; ?>
+          		</div>
+          	<?php } else {?>
+          	 <?php print $content; ?>
+          	<?php } ?>
+          
+           
           </div> <!-- /#content-area -->
 
           <?php print $feed_icons; ?>

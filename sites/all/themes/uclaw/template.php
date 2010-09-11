@@ -105,6 +105,8 @@ function uclaw_preprocess_page(&$vars, $hook) {
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
   		
     } else {
+  		$vars['sidebar_image'] = $node->field_sb_img[0];
+  		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
     	$vars['attachments'] = $node->content['files']['#value'];
     	$vars['content'] = preg_replace("/".preg_quote($vars['attachments'],'/')."/",'',$vars['content']);
     }

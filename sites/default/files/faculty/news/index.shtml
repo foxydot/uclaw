@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/faculty.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+	<!-- InstanceBeginEditable name="Title" -->
+    <title>University of Cincinnati &raquo; College of Law &raquo; Faculty &amp; Staff</title>
+    <!-- InstanceEndEditable -->
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />	
+        
+    <meta name="description" content="University of Cincinnati College of Law website. Established in 1833, Cincinnati 
+    Law is the fourth oldest continually operating law school in the country. The College's diverse enrollment of 
+    less than 400 students makes it one of the smallest public law schools in the nation."/>
+    
+	<meta name="keywords" content="Cincinnati Law, College of Law, University of Cincinnati, 
+    UC Law, Cincinnati, Ohio, midwest, J.D., J.D./M.B.A., J.D./M.A., JD, JD/MBA, JD/MA, 
+    Juris Doctor, admissions, application for admission, law school, law student, legal education, 
+    law library, Marx Law Library, William J. Butler Papers, Judge Nathaniel R. Jones Papers, Urban 
+    Morgan Institute for Human Rights, Center for Corporate Law, Glen M. Weaver Institute of Law and 
+    Psychiatry, Center for Practice in Negotiation and Problem Solving, Justice Institute for the 
+    Legal Profession, University of Cincinnati Law Review, Securities Lawyers Deskbook"/>
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/global_1.5.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/yui/build/menu/assets/menu.css">    
+    
+	<!--#include virtual="/ssi/global/head.ssi" -->
+    
+</head>
+
+<body class=" yui-skin-sam">
+    
+<!--#include virtual="/ssi/global/header.ssi" -->
+
+	<!-- InstanceBeginEditable name="Header" -->
+	<div id="sd_header"><img src="/assets/images/production/secondary/headerFaculty.jpg" alt="Faculty" /></div>
+	<!-- InstanceEndEditable -->
+    
+    <div id="sd_nav">
+	      
+<!--#include virtual="/ssi/faculty/subnav.ssi" --> 
+
+	</div>   
+				
+	<!-- InstanceBeginEditable name="Content" -->
+    <div id="sd_content_wrapper">
+        
+        <div id="sd_content"> 
+			
+			<h2>Faculty News</h2>
+            
+			<p>Faculty News is a publication highlighting the activities and accomplishments of the University of Cincinnati College of Law faculty.</p>
+
+			<p>Faculty News is edited by Paul Caron, Associate Dean of Faculty and Charles Hartsock Professor of Law. Faculty News is published monthly (except during the summer).</p>
+
+			<p>Comments and suggestions are welcome. Please contact Professor Caron by email at <a href="mailto:paul.caron@uc.edu">paul.caron@uc.edu</a>. To contact individual faculty members, please visit the <a href="/faculty">Faculty Directory</a>.            </p>
+
+		  <p class="feature"><strong>2010</strong></p>
+            <ul class="listSquare">
+            <li><a href="june2010.shtml">June 2010</a></li>
+            <li><a href="may2010.shtml">May 2010</a></li>
+            <li><a href="april2010.shtml">April 2010</a></li>
+            <li><a href="march2010.shtml">March 2010</a></li>
+            <li><a href="february2010.shtml">February 2010</a></li>
+            <li><a href="january2010.shtml">January 2010</a></li>
+            </ul>
+
+<p class="feature"><strong>2009</strong></p>
+            <ul class="listSquare">
+              <li><a href="december2009.shtml">December 2009</a></li>
+              <li><a href="november2009.shtml">November 2009</a></li>
+              <li><a href="october2009.shtml">October 2009</a></li>
+              <li><a href="summer2009.shtml">Summer 2009</a></li>
+              <li><a href="june2009.shtml">June 2009</a></li>
+              <li><a href="may2009.shtml">May 2009</a></li>
+              <li><a href="april2009.shtml">April 2009</a></li>
+              <li><a href="march2009.shtml">March 2009</a></li>
+              <li><a href="feb2009.shtml">February 2009</a></li>
+              	<li><a href="jan2009.shtml">January 2009</a></li>
+          	</ul>
+            
+
+<p class="feature"><strong>2008</strong></p>
+            <ul class="listSquare">
+            	<li><a href="dec2008.shtml">December 2008</a></li>
+            	<li><a href="nov2008.shtml">November 2008</a></li>
+            	<li><a href="oct2008.shtml">October 2008</a></li>
+                <li><a href="summer2008.shtml">Summer 2008</a></li>
+                <li><a href="june2008.shtml">June 2008</a></li>
+                <li><a href="may2008.shtml">May 2008</a></li>
+              	<li><a href="april2008.shtml">April 2008</a></li>
+            	<li><a href="march2008.shtml">March 2008</a></li>
+              	<li><a href="feb2008.shtml">February 2008</a></li>
+              	<li><a href="jan2008.shtml">January 2008</a>   	  	  </li>
+            </ul>
+          <p class="feature"><a href="http://www.law.uc.edu/facnews/index.html">Faculty News Archives</a></p>
+
+        </div>
+        
+		<!--#include virtual="/ssi/global/marketingFooter.ssi" -->
+				
+	</div>
+    <!-- InstanceEndEditable -->
+					
+<!--#include virtual="/ssi/global/disclaimer.ssi" -->
+    
+</body>
+
+<!-- InstanceEnd --></html>

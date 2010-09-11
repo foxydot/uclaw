@@ -1,0 +1,84 @@
+<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="/css/global_1.5.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/yui/build/menu/assets/menu.css">  
+
+<!--[if lt IE 8]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+<![endif]-->
+
+<script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
+<script type="text/javascript" src="/yui/build/event/event.js"></script>
+<script type="text/javascript" src="/yui/build/dom/dom.js"></script>
+
+<script type="text/javascript" src="/yui/build/element/element-beta.js"></script>
+<script type="text/javascript" src="/yui/build/history/history.js"></script>
+
+<script type="text/javascript" src="/yui/build/container/container_core.js"></script>
+<script type="text/javascript" src="/yui/build/menu/menu.js"></script>
+
+<script type="text/javascript">
+
+    YAHOO.example.onMenuBarReady = function() {
+
+    // Instantiate and render the menu bar
+
+        var oMenuBar = new YAHOO.widget.MenuBar("productsandservices", { autosubmenudisplay:true, hidedelay:750, lazyload:true });
+
+            oMenuBar.render();
+
+        };
+
+
+    // Initialize and render the menu bar when it is available in the DOM
+
+        YAHOO.util.Event.onContentReady("productsandservices", YAHOO.example.onMenuBarReady);
+
+</script> 
+
+<link rel="stylesheet" type="text/css" href="/yui/build/tabview/assets/skins/sam/tabview.css" />
+<script type="text/javascript" src="/yui/build/element/element-beta.js"></script>
+<script type="text/javascript" src="/yui/build/tabview/tabview.js"></script>   
+
+<script type="text/javascript" src="/175/js/mootools.js"></script>
+
+<script type="text/javascript">
+
+    window.addEvent('domready', function(){
+        var accordion = new Accordion('h3.atStart', 'div.atStart', {
+            opacity: false,
+            onActive: function(toggler, element){
+                toggler.setStyle('color', '#000');
+            },
+            
+            onBackground: function(toggler, element){
+                toggler.setStyle('color', '#444');
+            }
+        }, $('accordion'));
+        
+        var newTog = new Element('h3', {'class': 'toggler'}).setHTML('');
+        
+        var newEl = new Element('div', {'class': 'element'}).setHTML('');
+        
+        accordion.addSection(newTog, newEl, 15);
+    });
+     
+</script>
+
+<script type="text/javascript" src="/assets/flash/swfobject.js"></script>
+
+<style>
+	#yui-history-iframe {
+	  position:absolute;
+	  top:0; left:0;
+	  width:1px; height:1px; /* avoid scrollbars */
+	  visibility:hidden;
+		}
+	
+	.yui-skin-sam .yui-navset .yui-nav a:hover, .yui-skin-sam .yui-navset .yui-nav a:focus {
+	  background: #E80022;
+		}
+</style>
+
+<script type="text/javascript" src="/yui/build/element/element-beta.js"></script>
+<script type="text/javascript" src="/yui/build/history/history.js"></script>

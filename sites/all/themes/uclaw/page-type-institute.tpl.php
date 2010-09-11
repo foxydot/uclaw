@@ -24,23 +24,8 @@
     <div id="page">
 		<div id="container">
 			<div id="wrapper">
-		<!-- SUBNAV -->
-		<?php if (!empty($secondary_links)): ?>
-          <div id="subnav" class="menu with-sub-menu">
-            <?php print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); ?>
-          </div> <!-- /navigation -->
-        <?php endif; ?>
-		<!-- SUBNAV -->
 
-    <!-- ______________________ HEADER _______________________ -->
-
-    <div id="header">
-<!-- HEADER -->
-			<h1><a href="http://www.uc.edu" target="_blank">Law School</a></h1>
-            <?php print $search_box; ?>		
-            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-    </div> <!-- /header -->
-        
+<?php include_once('header.php');?>
 <!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
 

@@ -54,7 +54,9 @@ ul.nice-menu li {
   padding-bottom: 0.1em;
 }
 
-ul.nice-menu a {
+ul.nice-menu a,
+ul.nice-menu span.nolink {
+	display: block;
   padding: 0.3em 5px 0.3em 5px;
 }
 
@@ -128,7 +130,8 @@ ul.nice-menu-right li {
 	visibility: visible;
 }
 
-ul.nice-menu-right a {
+ul.nice-menu-right a,
+ul.nice-menu-right span.nolink {
 	background:url("/sites/all/themes/uclaw/assets/images/production/secondary/bgAccordion.png") no-repeat left top #F7F7F7;
 	border:1px solid #DEDEDE;
 	padding:5px 5px 5px 28px;
@@ -268,4 +271,96 @@ ul.nice-menu-down li li.hover,
 /* Repeat for Garland header. */
 #header-region ul.nice-menu-down li li.hover {
   background: none;
+}
+
+/* Special Types for Sections */
+/* Institutes section */
+
+.node-type-institute ul.nice-menu-right {
+background:none repeat scroll 0 0 transparent;
+border:medium none;
+list-style:none outside none;
+margin:10px 8px 0 30px;
+padding:0;
+position:relative;
+top:-1px;
+width:160px;
+}
+
+.node-type-institute ul.nice-menu-right li {
+margin: 2px 0;
+width:160px;
+background:none repeat scroll 0 0 transparent;
+border:medium none;
+cursor:pointer;
+float:left;
+font-size:11px;
+}
+
+.node-type-institute ul.nice-menu-right a {
+background:none repeat scroll 0 0 transparent;
+border:none;
+color:#333333;
+text-decoration:none;
+padding: 0;
+}
+
+.node-type-institute ul.nice-menu-right li.menuparent {
+	font-size:13px;
+	font-weight:bold;
+	margin:5px 0;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #000;
+}
+
+.node-type-institute ul.nice-menu-right ul,
+.node-type-institute ul.nice-menu-right li.menuparent:hover ul {
+	margin-left: 10px;
+	font-weight: normal;
+	display: block;
+	}
+
+.node-type-institute ul.nice-menu-right ul li {
+display: block;
+}
+
+.node-type-institute ul.nice-menu-right ul li:hover a {
+text-decoration: underline;
+}
+
+/* Intitutes main */
+
+#block-nice_menus-13 {
+	background: #000;
+}
+
+#nice-menu-13 {
+	margin: 0;
+	padding: 0;
+}
+
+#nice-menu-13 li,#nice-menu-13 li a {
+	height: 61px;
+	width: 205px;
+	margin: 0;
+	padding: 0;
+}
+#nice-menu-13 li a {
+	text-indent: -200em;
+}
+
+#nice-menu-13 li#menu-1557 {
+	background: url("../assets/images/production/inside/institutesNew/intcorpLaw.png") no-repeat;
+}
+#nice-menu-13 li#menu-1635 {
+	background: url("../assets/images/production/inside/institutesNew/intpractive.png") no-repeat;
+}
+#nice-menu-13 li#menu-1645 {
+	background: url("../assets/images/production/inside/institutesNew/instweaver.png") no-repeat;
+}
+#nice-menu-13 li#menu-1734 {
+	background: url("../assets/images/production/inside/institutesNew/intoip.png") no-repeat;
+}
+#nice-menu-13 li#menu-1762 {
+	background: url("../assets/images/production/inside/institutesNew/inturban.png") no-repeat;
 }
