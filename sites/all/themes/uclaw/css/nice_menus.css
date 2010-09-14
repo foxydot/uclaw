@@ -349,6 +349,10 @@ text-decoration: underline;
 	text-indent: -200em;
 }
 
+#nice-menu-13 ul {
+	display: none;
+}
+
 #nice-menu-13 li#menu-1557 {
 	background: url("../assets/images/production/inside/institutesNew/intcorpLaw.png") no-repeat;
 }
@@ -363,4 +367,8 @@ text-decoration: underline;
 }
 #nice-menu-13 li#menu-1762 {
 	background: url("../assets/images/production/inside/institutesNew/inturban.png") no-repeat;
+}
+#nice-menu-13 li#menu-2693 {
+	background: url("../assets/images/production/inside/institutesNew/rgsj.png") no-repeat 7px 0;
+	padding: 0 0 12px 0;
 }

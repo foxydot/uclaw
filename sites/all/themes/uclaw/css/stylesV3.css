@@ -225,7 +225,6 @@ width:1000px;
   font-size: 18px;
   font-weight: bold;
   padding: 10px 0 4px 0;
-  border-bottom: 1px dashed #CCC;
   color: #E80022;
 }
 
@@ -256,7 +255,7 @@ padding-bottom:3px;
 	font-size:110%;
 	font-weight:bold;
 	color:#222;
-	margin:0 0 10px 0;
+	margin:10px 0 5px 0;
 }
 
 /* COLUMNS STYLES */
@@ -579,6 +578,11 @@ width:300px;
 	margin: 15px 20px;
 }
 
+.node-type-institute .institute-container .resources {
+	background:none;
+	border:0px solid #EFE7D5;
+}
+
 #sidebar {
   float: right;
   width: 205px;
@@ -624,7 +628,6 @@ width:300px;
   font-size: 18px;
   font-weight: bold;
   padding: 10px 0 4px 0;
-  border-bottom: 1px dashed #CCC;
   color: #E80022;
 }
 
@@ -736,7 +739,7 @@ list-style:square outside none;
 background:none repeat scroll 0 0 transparent;
 border:none;
 color:#E80022;
-text-decoration: underline;
+text-decoration: none;
 padding: 0;
 }
 .section-about-us ul.nice-menu-right li:hover a {
