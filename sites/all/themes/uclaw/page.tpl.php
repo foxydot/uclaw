@@ -19,6 +19,7 @@
 			$(this).next().toggle('slow');
 			return false;
 		}).next().hide();
+		$('ul.nice-menu-right a.active').parent().parent().show();
 	});
     </script>
   </head>

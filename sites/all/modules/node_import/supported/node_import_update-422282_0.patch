@@ -1,0 +1,51 @@
+--- supported/node.inc	Thu Jan 15 01:14:12 1970
++++ supported/node.inc	Thu Jan 15 01:14:12 1970
+@@ -56,14 +56,21 @@
+       'values' => $values,
+     );
+ 
+-    $node = (object)array(
+-      'type' => $node_type,
+-      'name' => isset($values['name']) ? $values['name'] : '',
+-    );
++	if (isset($values['nid'])) {
++	  $node = node_load($values['nid']);
++	} else {
++      $node = (object)array(
++        'type' => $node_type,
++        'name' => isset($values['name']) ? $values['name'] : '',
++      );
++	}
+     node_import_drupal_execute($form_id, $form_state, $node);
+ 
+     if ($preview) {
+-      $output = isset($form_state['node_preview']) ? $form_state['node_preview'] : '';
++	  if ($values['nid']) {
++	    $output = "Existing node found: ".$values['nid'];
++	  }
++      $output .= isset($form_state['node_preview']) ? $form_state['node_preview'] : '';
+     }
+     else {
+       $output = $values['nid'] = $form_state['nid'];
+@@ -275,6 +282,20 @@
+     if (isset($values['created']) && drupal_strlen($values['created']) > 0) {
+       $values['date'] = format_date($values['created'], 'custom', 'Y-m-d H:i:s O');
+     }
++	
++	if (isset($options['key'])) {
++	  $key = $options['key'];
++	  $key_cckfield = $fields[$key]['cck:fieldname'];
++	  $key_value = $values[$key];
++	  if (isset($key_value)) {
++	    $field = content_fields($key_cckfield);
++	    $key_dbinfo = content_database_info($field);
++	    $row = db_fetch_array(db_query('SELECT nid, vid FROM {%s} WHERE %s = "%s" LIMIT 1', $key_dbinfo['table'], $key_dbinfo['columns']['value']['column'], $key_value));
++        if (!empty($row)) {
++	      $values['nid'] = $row['nid'];
++          $values['vid'] = $row['vid'];
++	    }
++	  }
++	}
+   }
+ }
+-

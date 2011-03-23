@@ -35,7 +35,7 @@
             </div> <!-- /#content-top -->
           <?php endif; ?>
           
-    <div id="main" class="clearfix">
+    <div id="main" class="clearfix"></div>
       <div id="content">
         <?php if ($left): ?>
           <div id="sidebar-first" class="column sidebar first">

@@ -145,6 +145,11 @@ var quicktabsClick = function() {
   $(this).parents('li').siblings().removeClass('active');
   $(this).parents('li').addClass('active');
 
+  //add cookie for active qtab -- small hack to retain last clicked.           
+  var active_tab_id = this.id.split('-')[3];      //active tab Id number
+  var qtid = this.id.split('-')[2];                      //quicktab Id number
+  document.cookie = "quicktabs" + qtid + "=" + active_tab_id + "; path=/"; //create cookie for quicktab
+  
   // Hide all tabpages.
   tab.container.children().addClass('quicktabs-hide');
 

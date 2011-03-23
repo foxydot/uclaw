@@ -45,7 +45,7 @@
             </div> <!-- /#content-top -->
           <?php endif; ?>
           
-    <div id="main" class="clearfix">
+    <div id="main" class="clearfix"></div>
     
       <div id="content">
         <div id="content-inner" class="inner column<?php print $left?' center':'';?>">
@@ -72,7 +72,7 @@
           <?php endif; ?>
 
           <div id="content-area">
-             <?php if($edit){ print $content; } ?>
+             <?php if($edit){ print $content; } else { ?>
           	<div id="sd_content_left">
           		<div class="resources">
           		<?php print_r($image); ?>
@@ -110,6 +110,7 @@
           	
             <?php //print $content; ?>
           	</div>
+          	<?php } ?>
           	<div class="clearfix"></div>
           </div> <!-- /#content-area -->
 

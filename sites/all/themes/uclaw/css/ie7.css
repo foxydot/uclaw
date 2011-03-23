@@ -32,6 +32,11 @@ ul.secondary li a:hover{
 	border-right: none;
 }
 
+/* banner issues */
+.image-attach-body{
+	margin: 0 !important;
+}
+
 /* HOME */
 
 .panel-8col .panel-col-last {
@@ -52,4 +57,10 @@ clear: both;
 #content-top {
 	display: block;
 	overflow:hidden;
+}
+
+#main.clearfix {
+float: none;
+clear: both;
+display: none;
 }

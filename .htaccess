@@ -217,6 +217,7 @@ RewriteCond %{REMOTE_ADDR} !^10\.139\.
 RewriteCond %{REMOTE_ADDR} !^10\.24\.
 RewriteCond %{REMOTE_ADDR} !^172\.30\.
 RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1
+RewriteCond %{REMOTE_ADDR} !^192\.168\.123\.
 RewriteCond %{REQUEST_URI} ^/directory/class(.*)$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/directory/email-lists$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/user$ [NC,OR]

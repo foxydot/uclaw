@@ -122,6 +122,7 @@ ul.nice-menu-right li.menuparent:hover ul {
 ul.nice-menu-right li {
 	cursor:pointer;
 	font-size:12px;
+	font-weight: bold;
 	margin-bottom:0;
 	margin-top:10px;
 	float: left;
@@ -132,29 +133,35 @@ ul.nice-menu-right li {
 
 ul.nice-menu-right a,
 ul.nice-menu-right span.nolink {
-	background:url("/sites/all/themes/uclaw/assets/images/production/secondary/bgAccordion.png") no-repeat left top #F7F7F7;
-	border:1px solid #DEDEDE;
-	padding:5px 5px 5px 28px;
+	padding:2px;
   text-decoration: none;
-  color: #333;
+  color: #222;
 	visibility: visible;
 }
 
 ul.nice-menu-right ul li {
+	
+	font-size:11px;
+	font-weight: normal;
 	width: 12.5em;
 	background: none;
 	border: none;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 15px;
 	visibility: visible;
 }
 
 ul.nice-menu-right ul li a {
 	background: none;
 	border: none;
-	text-decoration: underline;
-	color:#E0001F;
+	text-decoration: none;
 	visibility: visible;
+}
+
+ul.nice-menu-right a:hover,
+ul.nice-menu-right span.nolink:hover{	
+ text-decoration: underline;
+ color: #000;
 }
 
 ul.nice-menu-right li.menuparent:hover,
@@ -273,7 +280,15 @@ ul.nice-menu-down li li.hover,
   background: none;
 }
 
+ul.nice-menu-down li:hover ul {
+	display: none;
+}
+
 /* Special Types for Sections */
+/* Admin Helper Menu */
+ul#nice-menu-1 li:hover ul {
+	display: block;
+}
 /* Institutes section */
 
 .node-type-institute ul.nice-menu-right {
@@ -297,7 +312,8 @@ float:left;
 font-size:11px;
 }
 
-.node-type-institute ul.nice-menu-right a {
+.node-type-institute ul.nice-menu-right a,
+.node-type-institute ul.nice-menu-right span.nolink {
 background:none repeat scroll 0 0 transparent;
 border:none;
 color:#333333;

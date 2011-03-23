@@ -20,7 +20,10 @@ if (theme_get_setting('uclaw_zen_tabs')) {
  */
 
 function uclaw_preprocess_page(&$vars, $hook) {
-	if(in_array('page-node-edit',$vars['template_files'])){
+	if(in_array('page-node-edit',$vars['template_files'])||
+	in_array('page-node-clone',$vars['template_files'])||
+	in_array('page-node-node_export',$vars['template_files'])||
+	in_array('page-node-devel',$vars['template_files'])){
 		$edit = true;
 	} else {
 		$edit = false;
@@ -541,3 +544,13 @@ function escape_string_for_regex($str)
        
         return preg_replace($patterns,$replace, $str);
 }
+
+	/*
+	 * A useful troubleshooting function.
+	 */
+	function ts_data($data){
+		$ret = '<textarea cols="100" rows="20" class="troubleshoot">';
+		$ret .= print_r($data,true);
+		$ret .= '</textarea>';
+		print $ret;
+	}

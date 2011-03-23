@@ -1,0 +1,29 @@
+--- node_import.inc	Thu Jan 15 01:14:12 1970
++++ node_import.inc	Thu Jan 15 01:14:12 1970
+@@ -354,6 +354,26 @@
+   $date_short_choices['custom'] = t('Custom format');
+   $timezones = date_timezone_names(TRUE);
+ 
++  /* Add unique key field. Not tested for non-node objects so we limit it */
++  if (node_import_type_is_node($type)) {
++    $key_options = array(''=>'');
++  
++    foreach ((array)$map as $field => $mapping) {
++      // TODO: Limit to appropriate field types only, right now it only limits to fields that have a mapping in $map
++      if ($mapping) {
++        $key_options[$field] = $fields[$field]['title'];
++	  }
++    }
++  
++    $form['key'] = array(
++      '#title' => t('Update key'),
++	  '#description' => t('The selected field will be used to find existing objects to update.'),
++      '#type' => 'select',
++	  '#options' => $key_options,
++    ); 
++  }
++  
++  
+   foreach ((array)$fields as $fieldname => $fieldinfo) {
+     // Set #node_import-group if not set.
+     if (isset($form[$fieldname]) && !isset($form[$fieldname]['#node_import-group'])) {

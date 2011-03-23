@@ -16,6 +16,12 @@ body {
 
 a:link, a:visited {
   color: #E0001F;
+  text-decoration: none;
+}
+
+a:hover {
+    color: #444;
+  text-decoration: underline;
 }
   
 /* STRUCTURE STYLES */    
@@ -78,6 +84,7 @@ span.submitted {
   background: url(../assets/images/production/global/bgHeader.jpg) no-repeat top center;
   height: 165px;
   padding: 0 20px;
+  overflow:hidden;
 }
 
 #header #logo img {
@@ -229,12 +236,10 @@ width:1000px;
 }
 
 #content h3 {
-  border-bottom:1px dashed #CCCCCC;
 color:#222222;
 font-size:130%;
 font-weight:bold;
 margin-bottom:5px;
-padding-bottom:3px;
 }
 
 #content h4 {
@@ -561,7 +566,7 @@ width:300px;
 #menu-header-image.weaver-institute {
 	width: 205px;
 	height: 214px;
-	background: url("../assets/images/production/inside/institutesNew/psychiatry.JPG") no-repeat;
+	background: url("../assets/images/production/inside/institutesNew/psychiatry.jpg") no-repeat;
 	}
 #menu-header-image.urban-morgan-institute {
 	width: 205px;
@@ -712,7 +717,7 @@ width:300px;
 }
 
 /* ABOUT US EXCEPTIONS */
-.section-about-us ul.nice-menu-right {
+/*.section-about-us ul.nice-menu-right {
 background:none repeat scroll 0 0 transparent;
 border:medium none;
 list-style:none outside none;
@@ -746,7 +751,7 @@ padding: 0;
 	color: #000;
 	text-decoration:none;
 }
-
+*/
 /* END ABOUT US EXCEPTIONS */
 
 
@@ -1053,7 +1058,7 @@ tfoot th em {
 	
 #sd_content_right .columns, #sd_content .columns, #content .columns {
 	float:left;
-	width:49%;
+	width:47%;
 	margin:10px 0;
 	}
 	
@@ -1203,4 +1208,21 @@ dl.header_response_tbl dd {
 .quicktabs_tabpage table.sticky-header {
 	display: none;
 }
+
+.print-link {
+  float: right;
+  width: 20px;
+}
+	
+.flickr-photo-img {
+	padding:4px 5px;
+	}
+	
+.smallCaps { 
+	font-variant: small-caps;
+	}	
+	
+.italic { 
+	font-style: italic;
+	}
 	
