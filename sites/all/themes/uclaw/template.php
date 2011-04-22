@@ -199,6 +199,16 @@ function uclaw_preprocess_page(&$vars, $hook) {
   if ($vars['node']->nid != "") {
       $vars['template_files'][] = "page-node-" . $vars['node']->nid;
     }
+  if (module_exists('path')) {
+    $alias = drupal_get_path_alias(str_replace('/edit','',$_GET['q']));
+    if ($alias != $_GET['q']) {
+      $template_filename = 'page-path';
+      foreach (explode('/', $alias) as $path_part) {
+        $template_filename = $template_filename . '-' . $path_part;
+        $vars['template_files'][] = $template_filename;
+      }
+    }
+  }
   $vars['body_classes'] = implode(' ', $body_classes); // Concatenate with spaces
 }
 
@@ -529,6 +539,8 @@ function uclaw_preprocess_search_theme_form(&$vars, $hook) {
   // Collect all form elements to make it easier to print the whole form.
   $vars['search_form'] = implode($vars['search']);
 }
+
+include_once('includes/ddb.php');
 
 function escape_string_for_regex($str)
 {

@@ -20,30 +20,12 @@
 		<div id="container">
 			<div id="wrapper">
 <?php include_once('header.php');?>
-    
-    <!-- +++++++++++++++++++++ BANNER ++++++++++++++++++++++ -->
-    
-    <?php // ddblock call to special section type goes here ?>
-    <?php //if ($banner): ?>
-			<?php //print $banner; ?>
-	<?php //else: ?>
-    <?php //endif; ?>
-        
 <!-- start here -->
     <!-- ______________________ MAIN _______________________ -->
-
-          
     <div id="main" class="clearfix"></div>
-      <div id="content">
+ 	<div id="content">
         <div id="content-area">
-
-
-
-
-
-
-
-		
+<?php print $banner; ?>
 		<?php $featuredimage = '<img src="" />'?>
 		<div id="homeFeatured">
 			<?php print $featuredimage;?>
@@ -52,6 +34,8 @@
 				<a href="#">&gt; Read more</a>
 			</div>
 		</div>	
+		
+		<?php ?>
 		
 		<div class="headlines other">			
 			<ul>
@@ -87,7 +71,13 @@
 		<div id="storiesWrap">
 			<div id="stories">
 				<h5>Highlighted Stories</h5>
+				
+				<?php 
+				print views_embed_view('news','block_5');
+				?>
+				
 				<ul class="items">
+				
 					<?php 
 					$recent_posts = array();
 					for($i=0;$i<10;$i++){

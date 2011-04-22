@@ -1218,7 +1218,7 @@ dl.header_response_tbl dd {
 	padding:4px 5px;
 	}
 	
-.smallCaps { 
+.smallCaps, .truecaps { 
 	font-variant: small-caps;
 	}	
 	
