@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/library_inside.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>University of Cincinnati &raquo; College of Law</title>
+<!-- InstanceEndEditable -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />	
+        
+    <meta name="description" content="University of Cincinnati College of Law website. Established in 1833, Cincinnati 
+    Law is the fourth oldest continually operating law school in the country. The College's diverse enrollment of 
+    less than 400 students makes it one of the smallest public law schools in the nation."/>
+    
+	<meta name="keywords" content="Cincinnati Law, College of Law, University of Cincinnati, 
+    UC Law, Cincinnati, Ohio, midwest, J.D., J.D./M.B.A., J.D./M.A., JD, JD/MBA, JD/MA, 
+    Juris Doctor, admissions, application for admission, law school, law student, legal education, 
+    law library, Marx Law Library, William J. Butler Papers, Judge Nathaniel R. Jones Papers, Urban 
+    Morgan Institute for Human Rights, Center for Corporate Law, Glen M. Weaver Institute of Law and 
+    Psychiatry, Center for Practice in Negotiation and Problem Solving, Justice Institute for the 
+    Legal Profession, University of Cincinnati Law Review, Securities Lawyers Deskbook"/>
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/global.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/yui/build/menu/assets/menu.css">    
+    
+	<script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
+    <script type="text/javascript" src="/yui/build/event/event.js"></script>
+    <script type="text/javascript" src="/yui/build/dom/dom.js"></script>
+    <script type="text/javascript" src="/yui/build/container/container_core.js"></script>
+    <script type="text/javascript" src="/yui/build/menu/menu.js"></script> 
+    
+    <script type="text/javascript">
+    
+        YAHOO.example.onMenuBarReady = function() {
+    
+        // Instantiate and render the menu bar
+    
+            var oMenuBar = new YAHOO.widget.MenuBar("productsandservices", { autosubmenudisplay:true, hidedelay:750, lazyload:true });
+    
+                oMenuBar.render();
+    
+            };
+    
+    
+        // Initialize and render the menu bar when it is available in the DOM
+    
+            YAHOO.util.Event.onContentReady("productsandservices", YAHOO.example.onMenuBarReady);
+    
+    </script>    
+    
+    <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+
+</head>
+
+<body>
+    
+<!--#include virtual="/ssi/global/header.ssi" -->	
+
+	<div id="sd_nav">
+	
+		<div id="sd_nav_page">
+		
+			LIBRARY
+		
+		</div>
+        
+<!--#include virtual="/ssi/library/subnav.ssi" -->
+
+	
+	<div id="sd_content_wrapper">
+    
+	 	<div id="sd_content_left">
+		
+			<!-- InstanceBeginEditable name="Left Column Title" -->
+	 	  	<div id="sd_information_header"> Quick Links </div>
+	 		<!-- InstanceEndEditable -->
+			
+			<!-- InstanceBeginEditable name="Left Column" -->
+        	<div id="sd_widget">
+        
+<!--#include virtual="/ssi/library/links.ssi" -->
+
+        	</div>
+            <!-- InstanceEndEditable -->
+  	
+    	</div>
+    
+    	<!-- InstanceBeginEditable name="Main Content" -->
+        <div id="sd_content_right"> 
+        
+        <h2 class="hp_red_large">Collection Policies for Rare Books, <br />
+		Archives and Manuscripts Collections</h2>
+            
+            <div class="sd_highlight_box">
+        	
+				<div class="content_box_center">   
+				
+					<span class="subhead_bold">Purpose of Archives</span>
+					
+					<p align="left"> The Archives serves as a repository for items
+					related to the history of the University of Cincinnati College
+					of Law and Law Library. The Archives shall collect materials
+					suitable for use by those researching the histories of these
+					institutions. The Archives shall also be a repository for the
+					papers of prominent alumni and other selected members of the
+					Cincinnati legal community. </p>
+					
+					<p align="left"> The Rare Books Collection contains rare and scholarly
+					works on law and other materials which, because of their rarity,
+					age, condition, format, or uniqueness, do not circulate. </p>
+					
+					<p align="left"> The Archives shall make reasonable efforts to
+					ensure that the original documents are preserved and protected.
+					If preservation of the original is impossible or impractical,
+					other methods (such as photocopying or microfilming) shall be
+					used to preserve the original information. </p>
+					
+					<p align="left"> The Director of the Library in consultation with
+					the Head of Preservation and Archives shall be responsible for
+					determining the content of the collection. </p>
+					
+					<span class="subhead_bold">Criteria for Acquisitions</span>
+					
+					<p><span class="subhead_oblique">Suitability</span>: Priority shall be given to items 
+					relating to the histories of the College of Law and/or the Law Library
+					as well as manuscript collections of prominent alumni and
+					other selected members of the Cincinnati legal community.
+					Rare or fragile items which fail to meet the criteria of
+					suitability may, at the discretion of the Director, be temporarily
+					housed with the archival materials pending the final disposition
+					of such items. </p>
+					
+					
+					<p align="left"> <span class="subhead_oblique">Physical Condition</span>: Acceptance of 
+					badly deteriorated items which are otherwise suitable shall be contingent on
+					the availability of funds for restoration. Donors shall be
+					actively encouraged to provide financial assistance for the
+					restoration and preservation of these items. </p>
+					
+					<p align="left"> <span class="subhead_oblique">Duplication</span>: Items which duplicate 
+					materials already accessible to researchers in this or other collections
+					shall be acquired and preserved only at the discretion of
+					the Director. </p>
+					
+					<p align="left"> <span class="subhead_oblique">Items on Permanent Loan</span>: 
+					The Archives will not accept items on permanent loan because of the administrative
+					complications involved in caring for collections whose title
+					is held elsewhere. </p>
+					
+					<span class="subhead_bold">Collection Areas/Formats</span>
+					
+					<p>Printed materials, including:
+					
+					<ul class="checklist">
+					
+						<li>books, booklets, brochures, newsletters, newspapers, reports, meeting minutes </li>
+						<li>Photographs, including originals, negatives, slides, </li>
+						
+						<li> Magnetic media, including audio and videotapes, and electronic media </li>
+						<li> Manuscript collections which may include papers, correspondence, publications, </li>
+						<li>books, photographs, audio and
+						videotape </li>
+						
+					</ul>
+					
+					</p>
+				
+				</div>
+				
+				<div class="clearfix"></div>
+					
+			</div>
+		
+        </div>
+        <!-- InstanceEndEditable -->
+      	
+        <div id="clearfix"></div>
+        
+    </div>
+
+<!--#include virtual="/ssi/global/disclaimer.ssi" -->
+    
+</body>
+
+<!-- InstanceEnd --></html>

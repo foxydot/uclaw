@@ -48,26 +48,6 @@
 	font-size: 16px;
 	}
 
-.headlines li {
-	margin: 0 auto;
-	padding: 11px 20px 13px;
-	line-height: 16px;
-	font-size: 12px;
-	border-top: 1px solid #d9d9d9
-	}
-	
-.headlines li p {
-	margin-bottom: 3px;
-	}
-	
-.headlines li a.more {float: right; font-size: 10px; font-weight: bold; font-style: italic; color: #666}
-	
-.headlines li:first-child {border-top: none; }
-		
-.headlines h3 {color: #000; font-style: italic; margin-bottom: 3px}
-
-.headlines a { text-decoration: none;}
-.headlines a:hover {text-decoration: underline;}
 
 /* Connect With Us */	
 
@@ -131,7 +111,7 @@
 	
 #stories {
 	width: 900px;
-	height: 184px;
+	height: 220px;
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
@@ -226,7 +206,7 @@
 	}
 	
 .third h4 a {
-	color: #E26D20;
+	color: #FFF;
 	}	
 	
 .third ul, .third p {

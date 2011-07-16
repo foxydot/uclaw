@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<presentation width="720" height="540" start="play" buildNum="7.0.5.7588">
+	<presentationTitle>Introduction and Review of Legal Research2</presentationTitle>
+	<speakers>
+		<speaker>
+			<name>Susan Boland</name>
+			<speakerTitle>Associate Director of Public and Research Services</speakerTitle>
+			<image>spk11436.JPG</image>
+			<email>suan.boland@uc.edu</email>
+			<bio>I joined the law library as the Associate Director of Public and Research Services last year.  I teach legal research and offer reference and research support services to all law library users. Prior to joining the law library faculty, I was the Head of Information Services at Indiana University School of Law -- Indianapolis, Research &amp; Instructional Services librarian at Northern Illinois University College of Law, and a judicial clerk for the State of Iowa.
+</bio>
+		</speaker>
+	</speakers>
+	<backgrounds>
+		<background url="Master80000126.swf"/>
+		<background url="Master800000c0.swf"/>
+		<background url="Master8000012a.swf"/>
+	</backgrounds>
+	<search url="srchdata.xml"/>
+	<slides>
+		<slide id="256" frameRate="30" totalFrames="525" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide1.swf"/>
+			<slideBackground index="0" frameToPlay="1" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Introduction to Sources of Law and Legal Authority</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="1"/>
+			<slideSpeaker index="0"/>
+			<audios id="1" duration=" 17500">
+				<media url="a24x1x1.mp3" startMsecs="0" duration="17500" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="285" frameRate="30" totalFrames="987" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide2.swf"/>
+			<slideBackground index="1" frameToPlay="1" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>What is the Law?</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="2"/>
+			<audios id="4" duration=" 32900">
+				<media url="a24x4x1.mp3" startMsecs="0" duration="32900" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="271" frameRate="30" totalFrames="6279" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide3.swf"/>
+			<slideBackground index="1" frameToPlay="3" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<clickAnimations>
+				<clickAnimation start="250" end="312"/>
+				<clickAnimation start="657" end="705"/>
+				<clickAnimation start="1311" end="1373"/>
+				<clickAnimation start="1557" end="1619"/>
+				<clickAnimation start="1896" end="1958"/>
+			</clickAnimations>
+			<slideTitle>Sources of Primary Legal Authority</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="3"/>
+			<slideSpeaker index="0"/>
+			<audios id="5" duration=" 209300">
+				<media url="a24x5x1.mp3" startMsecs="0" duration="209300" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="272" frameRate="30" totalFrames="3195" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide4.swf"/>
+			<slideBackground index="1" frameToPlay="5" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Hierarchy of Primary Legal Authority</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="4"/>
+			<slideSpeaker index="0"/>
+			<audios id="6" duration=" 106500">
+				<media url="a24x6x1.mp3" startMsecs="0" duration="106500" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="286" frameRate="30" totalFrames="2478" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide5.swf"/>
+			<slideBackground index="1" frameToPlay="7" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Federal vs. State Law</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="5"/>
+			<audios id="7" duration=" 82600">
+				<media url="a24x7x1.mp3" startMsecs="0" duration="82600" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="275" frameRate="30" totalFrames="4959" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide6.swf"/>
+			<slideBackground index="1" frameToPlay="9" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Hierarchy of Legal Authority</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="6"/>
+			<slideSpeaker index="0"/>
+			<audios id="8" duration=" 165300">
+				<media url="a24x8x1.mp3" startMsecs="0" duration="165300" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="282" frameRate="30" totalFrames="1956" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide7.swf"/>
+			<slideBackground index="2" frameToPlay="1" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<clickAnimations>
+				<clickAnimation start="697" end="759"/>
+				<clickAnimation start="1209" end="1266"/>
+			</clickAnimations>
+			<slideTitle>Slide 7</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="7"/>
+			<audios id="9" duration=" 65200">
+				<media url="a24x9x1.mp3" startMsecs="0" duration="65200" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="287" frameRate="30" totalFrames="3515.1" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide8.swf"/>
+			<slideBackground index="2" frameToPlay="3" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Slide 8</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="8"/>
+			<audios id="13" duration=" 117170">
+				<media url="a24x13x1.mp3" startMsecs="0" duration="81670" startAtMSecs="0"/>
+				<media url="a24x13x2.mp3" startMsecs="81670" duration="35500" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="283" frameRate="30" totalFrames="2604" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide9.swf"/>
+			<slideBackground index="1" frameToPlay="11" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<clickAnimations>
+				<clickAnimation start="478" end="540"/>
+				<clickAnimation start="648" end="708"/>
+			</clickAnimations>
+			<slideTitle>Hierarchy of Legal Authority</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="9"/>
+			<audios id="10" duration=" 86800">
+				<media url="a24x10x1.mp3" startMsecs="0" duration="86800" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="280" frameRate="30" totalFrames="1299" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide10.swf"/>
+			<slideBackground index="2" frameToPlay="5" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Slide 10</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="10"/>
+			<slideSpeaker index="0"/>
+			<audios id="11" duration=" 43300">
+				<media url="a24x11x1.mp3" startMsecs="0" duration="43300" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="284" frameRate="30" totalFrames="1029" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide11.swf"/>
+			<slideBackground index="2" frameToPlay="7" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Slide 11</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="11"/>
+			<audios id="12" duration=" 34300">
+				<media url="a24x12x1.mp3" startMsecs="0" duration="34300" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+		<slide id="288" frameRate="30" totalFrames="438" advance="auto" blockMovement="false" type="normal">
+			<content url="Slide12.swf"/>
+			<slideBackground index="1" frameToPlay="13" duration="2" showAfterFrame="0"/>
+			<flvContents></flvContents>
+			<slideTitle>Questions?</slideTitle>
+			<notes isHTML="true"></notes>
+			<slideThumbnail url="thumb.swf" frame="12"/>
+			<audios id="14" duration=" 14600">
+				<media url="a24x14x1.mp3" startMsecs="0" duration="14600" startAtMSecs="0"/>
+			</audios>
+			<playbackActions></playbackActions>
+		</slide>
+	</slides>
+	<quizzes>
+		<reportingOptions isTracked="false"></reportingOptions>
+		<quizSettings showQuestionList="true" showScores="true" showPassScore="false" showCurrentScore="false" showQuestionMarks="false" showAttempts="true" showQuizAttempts="false" showQuestionAttempts="false" showQuestionCorrectFeedback="true" showQuestionIncorrectFeedback="true" showQuizNavigationWarning="true"></quizSettings>
+		<quiz quizID="10004" title="Quiz" numQuizAttemptsAllowed="1" minScore="0" passingScore="0" percent="false" passingGradeAction="nextSlide" passingGradeActionArg1="" passingGradeActionArg2="0" failingGradeAction="nextSlide" failingGradeActionArg1="" failingGradeActionArg2="0" questionAdvance="optional" quizAdvance="mustTake" showProgress="minimal" allowBackwardMovementInQuiz="true" allowReviewMode="true" passedScoreFeedback="" failedScoreFeedback="" shuffleQuestions="0">
+			<questiongroups></questiongroups>
+		</quiz>
+		<quiz quizID="10060" title="Quiz" numQuizAttemptsAllowed="1" minScore="0" passingScore="0" percent="false" passingGradeAction="nextSlide" passingGradeActionArg1="" passingGradeActionArg2="" failingGradeAction="nextSlide" failingGradeActionArg1="" failingGradeActionArg2="" questionAdvance="optional" quizAdvance="mustTake" showProgress="minimal" allowBackwardMovementInQuiz="true" allowReviewMode="true" passedScoreFeedback="Passed" failedScoreFeedback="Failed" shuffleQuestions="0">
+			<questiongroups></questiongroups>
+		</quiz>
+	</quizzes>
+	<attachments></attachments>
+</presentation>

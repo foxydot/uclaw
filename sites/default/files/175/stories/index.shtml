@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->	  
+
+<script src="../js/tooltip.js" type="text/javascript"></script>  
+
+<script type="text/javascript" charset="utf-8">
+
+window.addEvent('domready', function(){ 
+  
+  var tips = new Tips($$('.tool'), { 
+	maxTitleChars: 80,
+	onShow: function(tip){ tip.setStyle('opacity', '0.95'); },
+	onHide: function(tip){ tip.setStyle('visibility', 'hidden'); },
+	offsets: {'x': -10, 'y': 15},
+	timeOut: 0
+   });
+ 
+  new Carousel("slides", "slide-navigation");
+});
+
+</script>  
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Your Memories</h2>
+    
+	<div class="content">
+        
+      	<p>“The richness of our history lies not only in the lineage of deans or the visits of important judges, lawyers and academics, but also in your stories. What was law school like during your era? What was your favorite class and who was your favorite teacher? Would you do it all over again?</p>
+
+		<p>About 50 alumni were interviewed by current law school students in preparation for the anniversary celebration. And, several other alums were interviewed by writer/researcher/historian Jeff Cruikshank, charged with writing the story of our very unique history.  These participants spoke of the College, the faculty, their classmates, and being a lawyer. Take a moment to read their memories, reminisce, and reflect on the law school experience. To make it easier for you to find a colleague, we’ve provided two ways to search: either by class or by last name.  </p>
+
+		<p>Finally, we encourage you to share your memories with us. Your colleagues would enjoy hearing about your life and how the College of Law made a positive impact on you.   To find out how to add your story, just <a href="mailto:COUNSELOR@UC.EDU">email</a> us.</p>
+        
+      <h4>Featured Memories</h4>
+        
+        <div class="featuredWrapper">
+        
+            <div class="feature tool" title="William S. Richardson::Nicknamed “CJ” (for Chief Justice), this graduate served as the Chief Justice of the Hawaii State Supreme Court for 17 years. He also helped found the law school in Hawaii, which is named The William S. Richardson School of Law.  Find out more. ">
+                <a href="william_richardson.shtml"><img src="../images/alumni/small/WilliamRichardson.jpg" alt="William S. Richardson" border="0" /></a>
+              <div class="name"><a href="william_richardson.shtml">William S. Richardson</a></div>
+              <div class="year">Class of 1943</div>
+            </div>
+            
+            <div class="feature tool" title="Lawrence Herman::After finishing first in his class, this UC Law graduate went on to work as an Army JAG Corps attorney. Ultimately, he became a law professor, working at several Midwest schools.  Read more. ">
+                <a href="herman_lawrence.shtml"><img src="../images/alumni/small/sample.jpg" alt="NAME HERE" border="0" /></a>
+                <div class="name"><a href="herman_lawrence.shtml">Lawrence Herman</a></div>
+              <div class="year">Class of 1953</div>
+            </div>
+            
+            <div class="feature tool" title="Melany S. Newby::The daughter of a doctor and a nurse, this graduate became an Assistant City Solicitor for Cincinnati, OH, before taking on positions as general counsel for the University of Cincinnati and Vice Chancellor at the University of Wisconsin. Find out more. ">
+                <a href="melany_newby.shtml"><img src="../images/alumni/small/newby.jpg" alt="NAME HERE" border="0" /></a>
+              <div class="name"><a href="melany_newby.shtml">Melany S. Newby</a></div>
+              <div class="year">Class of 1974</div>
+            </div>
+
+            <div class="feature tool" title="Gail King::Named one of the Top 50 Women Ohio Super Lawyers in Ohio and one of the Top 25 Women Ohio Super Lawyers in Cincinnati, this graduate is a partner at Keating Muething &lt; Klekamp PLL. Read more about her memories of the law school. ">
+                <a href="gail_king.shtml"><img src="../images/alumni/small/GailKing.jpg" alt="Gail King" border="0" /></a>
+              <div class="name"><a href="gail_king.shtml">Gail King</a></div>
+              <div class="year">Class of 1990</div>
+          </div>
+            
+
+                                                
+          <div class="clearfix"></div> 
+        
+        </div>
+                
+	</div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

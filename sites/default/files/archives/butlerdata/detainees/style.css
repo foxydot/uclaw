@@ -1,0 +1,99 @@
+html {
+	scrollbar-highlight-color:#cccccc;
+	scrollbar-shadow-color:#000000;
+	scrollbar-track-color:#999999;
+	scrollbar-face-color:#fc1921;
+	scrollbar-arrow-color:#ffffff;
+	scrollbar-darkshadow-color:#000000;
+	scrollbar-3dlight-color:#ffffff;
+}
+
+body, p, html, table, td {
+	backgrouond-color: white;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-color: black;
+	line-height: 18px;
+}
+
+p.indent {
+text-indent: 20px;
+}
+
+/* start of anchors */
+
+A { color: black;
+	text-decoration: none; 
+}
+A:hover {
+	text-decoration: underline;
+}
+
+.byline A { text-decoration: none;
+}
+.byline A:hover { text-decoration: underline;
+}
+
+.titletxt A { text-decoration: none; 
+}
+.titletxt A:hover { text-decoration: underline;
+}
+
+.titletxt { 
+	color: #fc1921; 
+	font-weight: bold; 
+	font-size: 25px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	text-align: left; 
+	letter-spacing: 6px; 
+}
+
+.subtitletxt { 
+	color: #fc1921; 
+	font-size: 20px;
+	line-height: normal; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	letter-spacing: 3px; 
+	text-align: center; 
+}
+.smalltxt { 
+	color: black; 
+	font-size: 10px;
+	line-height: normal; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	}
+	
+.header1 { 
+	color: #fc1921; 
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	letter-spacing: 2px; 
+	text-align: center; 
+}
+.header2 { font-weight: bold;
+}
+
+
+.footer {
+	color: black; 
+	font-size: 10px;
+	line-height: 15px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	border-top: 2px dashed #fc1921;
+	padding: 6px;
+}
+	.titleblacksmcaps {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-decoration: blink;
+
+
+}

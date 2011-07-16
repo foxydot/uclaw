@@ -1,0 +1,18 @@
+.ui-datepicker {
+  z-index: 1100;
+}
+
+.rrule-sum, .repeat-clone {
+  display: none;
+}
+#repeat-byday .form-checkboxes, #repeat-bymonth .form-radios{
+  float: left;
+}
+
+#repeat-byday .form-checkboxes div.form-item,
+#repeat-bymonth .form-radios div.form-item,
+#repeat-int div.form-item{
+  display: inline;
+  float: none;
+  width: auto;
+}

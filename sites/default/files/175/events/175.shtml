@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->
+
+<script src="../js/prototype.js" type="text/javascript"></script>
+<script src="../js/scriptaculous.js" type="text/javascript"></script>
+
+<link href="../lightbox.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../js/lightbox.js"></script>
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Anniversary Gala (1.25.08)</h2>
+    
+	<div class="content">
+        
+        <p>The law school, alumni and friends celebrated 175 years of greatness at the Anniversary Gala. Author John Grisham came to town, met with students, and presented the keynote address at this very special event. Here are scenes from three very special events: Mr. Grisham’s visit on campus with students, the two receptions, and the gala. If you missed the event (or missed some of the activities), now’s your chance to see what happened! </p>
+		<div class="galleryWrapper">
+        
+          	<div id="item" class="gallery">
+    
+              	<div class="imageStart"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: -735, y: 0, mode: 'relative'});">
+<img src="../images/events/start.png" /></a></div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/1.jpg" rel="lightbox"><img src="../images/events/175/1.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/2.jpg" rel="lightbox"><img src="../images/events/175/2.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/3.jpg" rel="lightbox"><img src="../images/events/175/3.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/4.jpg" rel="lightbox"><img src="../images/events/175/4.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/5.jpg" rel="lightbox"><img src="../images/events/175/5.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/6.jpg" rel="lightbox"><img src="../images/events/175/6.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/7.jpg" rel="lightbox"><img src="../images/events/175/7.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>                
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/8.jpg" rel="lightbox"><img src="../images/events/175/8.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/9.jpg" rel="lightbox"><img src="../images/events/175/9.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/10.jpg" rel="lightbox"><img src="../images/events/175/10.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/11.jpg" rel="lightbox"><img src="../images/events/175/11.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/12.jpg" rel="lightbox"><img src="../images/events/175/12.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div> 
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/13.jpg" rel="lightbox"><img src="../images/events/175/13.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>                                
+
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/14.jpg" rel="lightbox"><img src="../images/events/175/14.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/15.jpg" rel="lightbox"><img src="../images/events/175/15.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/16.jpg" rel="lightbox"><img src="../images/events/175/16.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/17.jpg" rel="lightbox"><img src="../images/events/175/17.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/18.jpg" rel="lightbox"><img src="../images/events/175/18.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/19.jpg" rel="lightbox"><img src="../images/events/175/19.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/20.jpg" rel="lightbox"><img src="../images/events/175/20.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>                
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/21.jpg" rel="lightbox"><img src="../images/events/175/21.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/22.jpg" rel="lightbox"><img src="../images/events/175/22.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/23.jpg" rel="lightbox"><img src="../images/events/175/23.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/24.jpg" rel="lightbox"><img src="../images/events/175/24.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/25.jpg" rel="lightbox"><img src="../images/events/175/25.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div> 
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/26.jpg" rel="lightbox"><img src="../images/events/175/26.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div> 
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/27.jpg" rel="lightbox"><img src="../images/events/175/27.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/28.jpg" rel="lightbox"><img src="../images/events/175/28.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/29.jpg" rel="lightbox"><img src="../images/events/175/29.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/30.jpg" rel="lightbox"><img src="../images/events/175/30.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>                
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/31.jpg" rel="lightbox"><img src="../images/events/175/31.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/32.jpg" rel="lightbox"><img src="../images/events/175/32.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/33.jpg" rel="lightbox"><img src="../images/events/175/33.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/175/34.jpg" rel="lightbox"><img src="../images/events/175/34.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+              	<div class="image"><img src="../images/events/end.png" /></div>                
+                                
+   	  	  	</div>             
+            
+            <div class="clearfix"></div>
+            
+            <div class="buttons">
+         
+                <p class="backward_time"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: 735, y: 0, mode: 'relative'});"> <img src="../images/events/btn_left.jpg" /></a></p>
+                
+                <p class="forward_time"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: -735, y: 0, mode: 'relative'});" 
+                > <img src="../images/events/btn_right.jpg" /></a></p>
+            
+     		</div>  
+                     
+            <div class="clearfix"></div>         
+                            
+        </div>        
+        
+  	</div>        
+                
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

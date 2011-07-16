@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>UC College of Law Newsletter</title>
+
+<style type="text/css">
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* GLOBAL STYLES */
+
+body {
+	margin: 0px;
+	background: #FFF;
+	font-family: 'Trebuchet MS', Arial, Tahoma, Verdana;
+	font-size: 12px;
+	color: #444;
+	}
+	
+.clearfix {
+	clear:both;
+	height:1px;
+	}	
+	
+strong {
+	font-weight:bold;
+	}	
+	
+.em {
+	font-style:italic;
+	}		
+	
+a {
+	color:#E80022;
+	text-decoration:underline;
+	font-weight:normal;
+	}
+	
+a:hover {
+	color:#000;
+	text-decoration:none;
+	font-weight:normal;
+	}		
+	
+.red {
+	color:#E80022;
+	}
+	
+#intro {
+	background:#ffffff;
+	padding: 10px;
+	}
+	
+.highlight {
+	background:#DDDDFF;
+	}		
+	
+.grayBorder {
+	border:2px solid #DEDEDE;
+	}		
+	
+.floatRight {
+	float:right;
+	margin:5px 5px 5px 5px;
+	border:2px solid #DEDEDE;
+	}	
+	
+.floatLeft {
+	float:left;
+	margin:5px 5px 5px 5px;
+	border:2px solid #DEDEDE;
+	}	
+
+	
+.allignRight {
+	text-align:right;
+	}		
+	
+/* CONTENT STYLES */	
+
+#container {
+	width:580px;
+	margin:20px auto;
+	border:3px solid #CCC;
+	}
+	
+#container p {
+	padding:10px 0;
+	line-height:21px;
+	}		
+	
+#nav {
+	background:#000;
+	color:#FFF;
+	font-size:11px;
+	height:25px;
+	} 	
+	
+.volume {
+	width:350px;
+	float:left;
+	padding:8px 10px;
+	}	
+	
+.date {
+	float:right;
+	width:150px;
+	padding:8px 10px;
+	text-align:right;
+	}
+	
+#column {
+	float:left;
+	width:350px;
+	padding:10px;
+	}	
+	
+#columnThin {
+	float:right;
+	width:190px;
+	height: 870px;
+	padding:10px;
+	background:#E0E09C;
+	}	
+	
+#feature {
+	padding:10px;
+	font-size:13px;
+	}	
+	
+h2 	{
+	color: #E80022;
+	font-size:16px;
+	font-weight:bold;
+	}	
+	
+h2 img {
+	margin-right:5px;
+	}	
+	
+h3 	{
+	color: #E80022;
+	font-size:14px;
+	font-weight:bold;
+	}	
+	
+h3 img {
+	margin-right:5px;
+	}	
+	
+.listSquare {
+	margin:15px 0 15px 25px;
+	}	
+	
+.listSquare li {
+	list-style:square;
+	line-height:18px;
+	}		
+	
+#disclaimer {
+	color: #666;
+	font-size:11px;
+	background-color:#000;
+	border-top:3px solid #333;
+	line-height:20px;
+	}
+	
+#disclaimer ul {
+	margin:10px;
+	}	
+	
+#disclaimer ul li {
+	margin:0;
+	padding:0;
+	}		
+	
+#disclaimerLeft {
+	float:left;
+	width:300px;
+	}
+	
+#disclaimerRight {
+	float:right;
+	width:400px;
+	text-align:right;
+	}	
+	
+	#disclaimerCenter {
+	float:center;
+	width:580px;
+	text-align:center;
+	}		
+			
+#disclaimer a:link, #disclaimer a:active, #disclaimer a:visited {
+	color:#999;
+	text-decoration:none;
+	font-weight:normal;
+	}	
+	
+#disclaimer a:hover {
+	color:#DEDEDE;
+	text-decoration:underline;
+	}				
+
+p {
+	font-family: 'Trebuchet MS', Arial, Tahoma, Verdana;
+		font-size: 12px;
+		line-height: 16px;
+	}
+.style12 {color: #FFFFFF}
+.style15 {font-size: x-small}
+.style19 {font-size: x-small; font-weight: bold; }
+.style3 {color: #FF0000}
+.red1 {color: #e80022;
+	   font-weight: bold;}
+	
+
+-->
+</style>
+</head>
+
+<body>
+
+<table width="580" border="0" cellpadding="0" cellspacing="0"  bordercolor="#666666">
+  <tr>
+    <td><th height="123" colspan="2" scope="col"><img src="http://www.law.uc.edu/news/Updates/images/admissions_news_banner.jpg" alt="UC College of Law" width="580" border="0" usemap="#Map" />
+	<map name="Map" id="Map"><area shape="rect" coords="470,60,575,116" href="http://www.uc.edu/" />
+	<area shape="rect" coords="325,19,510,60" href="http://law.uc.edu/" /></map></th></td>
+  </tr>
+</table>
+
+<table width="580"  height="20" valign="middle" border="0" cellpadding="5" cellspacing="0"  bordercolor="#666666" style="color:#FFF;">
+  <tr >
+    <td bgcolor="#000000" ><span class="style12">Volume 2, Issue 6</span></td>
+    <td bgcolor="#000000" ><div align="right">March 2010</div></td>
+  </tr>
+</table>
+  
+<table width="580" border="0" cellpadding="10" cellspacing="5"  bordercolor="#FFFFFF">
+  <tr>
+    <td colspan="2" bgcolor="#DDDDFF"><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" />Cincinnati Law Receives Record Number of Applications</h2>
+    <p style="margin: 8px 8px 20px 8px; "> Cincinnati Law has received more applications for Fall 2010 admission than any  other in its 177 year history. The unprecedented number of 1,802 applications  as of March 16 translates into a 39% increase in applications over the previous  year. Despite the increase in applications, the College remains committed to a  small entering class size of roughly 135 students and an enviable 10 to 1  student to faculty ratio (which remains among the 15 best in the nation).</p></td>
+  </tr>
+  <tr>
+    <td><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" />3L Peter Link's Appeal Accepted by the Supreme Court of Ohio</h2>
+    <p style="margin: 8px 8px 20px 8px; "><img src="http://www.law.uc.edu/news/news/images/link100.jpg" alt="Peter Link" width="100" height="118" hspace="5" vspace="5" align="left" class="floatLeft" />Peter Link '10, a participant in&nbsp;the law school's Indigent Defense Clinic in   partnership with the Ohio Justice and Policy Center, has accomplished a task   that few lawyers, let alone law students, ever achieve. His appeal in <em>State v. Kenneth Hodge </em>was accepted by  the Supreme Court of Ohio, giving him the opportunity to argue an important constitutional  issue before the Court. (<span class="style19"><a href="http://www.law.uc.edu/news/news/link.shtml" target="blank" class="red1">Read more</a></span>)</p></td>
+    <td width="152" rowspan="6" bgcolor="#E0E09C"><h3 style="margin: 8px 8px 10px 8px;">Cincinnati Law Links </h3>
+      <ul class="listSquare">
+        <li><a href="http://www.law.uc.edu/prospective/">Apply to UC Law</a></li>
+        <li><a href="http://www.law.uc.edu/current/#tabview=tab3">Career Placement</a></li>
+        <li><a href="http://www.law.uc.edu/institutes/index.shtml">Institutes/Centers</a></li>
+        <li><a href="http://www.law.uc.edu/prospective/programs/joint-degree/ma.shtml">Joint Degree Programs</a></li>
+        <li><a href="http://www.law.uc.edu/current/#tabview=tab4">Student Organizations</a></li>
+        <li><a href="http://www.law.uc.edu/prospective/admissions/visit/">Visit UC Law</a></li>
+        <li><a href="http://www.law.uc.edu/prospective/admissions/discover/enews.shtml">eNews Archives</a></li>
+      </ul>
+      <br />
+      <br />
+      <h3 style="margin: 8px 8px 10px 8px;">Law School Resources </h3>
+      <ul class="listSquare">
+        <li><a href="http://www.abanet.org/legaled/baradmissions/basicoverview.html">Bar Admissions Overview</a></li>
+        <li><a href="http://www.nalp.org/legalcareertransitionvideo">Career Issues</a></li>
+        <li><a href="http://cincybar.org/">Cincinnati Bar Association</a></li>
+        <li><a href="http://www.law.uc.edu/prospective/financial-aid/scholarship-overview.shtml">Scholarship Opportunities</a></li>
+        <li><a href="http://www.equaljusticeworks.org/resources/student-debt-relief/public-service-loan-forgiveness">Student Loan Forgiveness</a></li>
+      </ul>
+      <h3 style="margin: 8px 8px 10px 8px;">Contact Us </h3>
+      <ul class="listSquare">
+        <li><a href="mailto:admissions@law.uc.edu">Comments and Questions</a></li>
+      </ul>              <h3 style="margin: 8px 8px 10px 8px;">&nbsp;</h3></td>
+  </tr>
+  <tr>
+    <td width="373"  bgcolor="#DDDDFF"><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" /><strong>Forbes: UC Named Among the World's Most Beautiful College Campuses</strong></h2>
+       <p style="margin: 8px 8px 20px 8px; "><img src="http://www.law.uc.edu/news/Updates/images/campus.jpg" alt="UC Campus" width="100" height="88" hspace="5" vspace="5" align="left" class="floatLeft" />Forbes just named UC among the world's most beautiful college campuses. Others   making that short list were Oxford University in England as well as Princeton,   Stanford, Yale and the University of Virginia.  (<a href="http://www.uc.edu/News/NR.aspx?id=11524" class="red1" 
+        target="_blank">Read more</a>)</p></td>
+  </tr>
+  <tr>
+    <td colspan="1"><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" /><strong> Meet Business Mogul and UC Law Student G.&nbsp;Austin Allison '11</strong></h2>
+    <p style="margin: 8px 8px 20px 8px; "><img src="http://www.law.uc.edu/news/news/images/allison1.JPG" alt="Austin Allison" width="101" height="101" hspace="5" vspace="5" align="left" class="floatLeft" /> At the age of eight Austin Allison started his first  business &mdash; successfully selling bird houses &mdash; in addition to doing the usual kid  activities. Sixteen years later at the age of 24, Allison is the co-founder and  CEO of The DotLoop Company, a multi-million-dollar software design firm, while working through his  second year in law school.  (<a href="http://www.law.uc.edu/news/news/allison.shtml" class="red1" target="_blank"><strong>Read more</strong></a>)</p></td>
+  </tr>
+  <tr>
+    <td colspan="1" bgcolor="#DDDDFF"><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" /><strong>2010 Judge in Residence: The Honorable Rosemary Barkett</strong></h2>
+    <p style="margin: 8px 8px 20px 8px; "><img src="http://www.law.uc.edu/news/events/images/barkett100.jpg" alt="Hon. Rosemary Barkett" width="100" height="95" class="floatLeft" />Judge Rosemary Barkett sits on the Eleventh Circuit Court of Appeals.  Prior to   her appointment to the Eleventh Circuit in 1994, she was the first woman Justice   on the Florida Supreme Court, sitting as an Associate Justice from 1985 until   1992, when she was chosen by her colleagues to become the state's first woman   Chief Justice.    (<a href="http://www.law.uc.edu/news/events/barkett.shtml" class="red1" target="_blank"><strong>Read more</strong></a>)</p></td>
+  </tr>
+  <tr>
+    <td colspan="1"><h2 style="color: #E80022; font-size:16px; font-weight:bold;"><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" border="0" style="margin-right:5px;" /><strong>Innocence Reform Bill Crafted at UC College of Law On Verge of Becoming Ohio Law</strong></h2>
+    <p style="margin: 8px 8px 20px 8px; ">What one legislator termed &quot;one of the most important pieces of criminal justice   legislation in this state in a century&quot; was passed by the Ohio House on Tuesday   with broad bipartisan support, putting the bill that began as a winter-break   research effort by UC law students on the cusp of becoming state law.    (<span class="red1"><a href="http://www.uc.edu/News/NR.aspx?id=11573" class="red1" target="blank">Read more</a></span>)</p></td>
+  </tr>
+</table>
+<table width="582" border="0" cellpadding="0" cellspacing="1" bordercolor="#666666">
+          <tr>
+            <th width="580" bgcolor="#000000" scope="col"><p align="center" class="style12 style15">&copy; Copyright 2008 | University of Cincinnati College of Law, 
+              PO Box 210040<br />
+              Clifton Avenue &amp; Calhoun Street, 
+              Cincinnati, OH  45221-0040<br />
+              P: 513.556.6805 | F: 513.556.2391</span><br>
+        <a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a> | <a href="http://www.law.uc.edu">website: www.law.uc.edu</a>            </th>
+  </tr>
+</table>
+ 
+
+
+</body>
+
+</html>

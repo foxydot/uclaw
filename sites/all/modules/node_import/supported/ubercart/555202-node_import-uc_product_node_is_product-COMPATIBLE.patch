@@ -1,6 +1,0 @@
-99a100,104
-> if ( !function_exists('uc_product_node_is_product') ) {
->   function uc_product_node_is_product($node) {
->     return uc_product_is_product($node) ;
->   }
-> }

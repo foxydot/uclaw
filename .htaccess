@@ -24,7 +24,7 @@ ErrorDocument 404 /index.php
 
 # Set the default handler.
 DirectoryIndex index.php
-
+#Deny from *.theplanet.com
 # Override PHP settings. More in sites/default/settings.php
 # but the following cannot be changed at runtime.
 
@@ -64,8 +64,9 @@ DirectoryIndex index.php
   ExpiresActive On
 
   # Cache all files for 2 weeks after access (A).
-  ExpiresDefault A1209600
-
+  # ExpiresDefault A1209600 #turn this back on after cache busting is done
+  ExpiresDefault A0
+	
   <FilesMatch \.php$>
     # Do not allow PHP scripts to be cached unless they explicitly send cache
     # headers themselves. Otherwise all scripts would have to overwrite the
@@ -162,6 +163,8 @@ RewriteRule ^faculty/profiles/hogan.php$ /faculty-staff/staff/michael-hogan-0 [R
 RewriteRule ^faculty/profiles/schoenfeld.php$ /faculty-staff/staff/jim-j-schoenfeld [R=301,NC,L]
 RewriteRule ^faculty/profiles/sieber.php$ /faculty-staff/staff/karen-sieber [R=301,NC,L]
 RewriteRule ^prospective/contact/watson.shtml$ /prospective-students/contact-us/al-watson [R=301,NC,L]
+RewriteRule ^archives(/?)(.*)$ /library?quicktabs_2=5 [R=301,NC,L]
+
 
 	# 301 Maps from even older site
 RewriteRule ^faculty/aaron.shtml$ /faculty-staff/faculty/marjorie-corman-aaron [R=301,NC,L]
@@ -213,11 +216,13 @@ RewriteRule ^faculty/schoenfeld.shtml$ /faculty-staff/staff/jim-j-schoenfeld [R=
 RewriteRule ^faculty/sieber.shtml$ /faculty-staff/staff/karen-sieber [R=301,NC,L]
 
 #rules to restrict access to some pages based on ip
+RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
 RewriteCond %{REMOTE_ADDR} !^10\.139\.
 RewriteCond %{REMOTE_ADDR} !^10\.24\.
 RewriteCond %{REMOTE_ADDR} !^172\.30\.
-RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1
-RewriteCond %{REMOTE_ADDR} !^192\.168\.123\.
+#RewriteCond %{REMOTE_ADDR} !^10\.139\.0\.[0-9]|1[0-6]$
+#RewriteCond %{REMOTE_ADDR} !^10\.24\.0\.[0-9]|1[0-6]$
+#RewriteCond %{REMOTE_ADDR} !^172\.30\.0\.[0-9]|1[0-6]$ 
 RewriteCond %{REQUEST_URI} ^/directory/class(.*)$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/directory/email-lists$ [NC,OR]
 RewriteCond %{REQUEST_URI} ^/user$ [NC,OR]
@@ -256,7 +261,11 @@ RewriteRule ^prospective/(.*)$ /prospective-students/$1 [R=301,NC,L]
 RewriteRule ^current/(.*)$ /current-students/$1 [R=301,NC,L]
 RewriteRule ^faculty/(.*)$ /faculty-staff/$1 [R=301,NC,L]
 RewriteRule ^blogs/(.*)$ /faculty-staff/blogs/$1 [R=301,NC,L]
+RewriteRule ^institutes/(.*)$ /institutes-centers/$1 [R=301,NC,L]
 RewriteRule ^about/(.*)$ /about-us/$1 [R=301,NC,L]
+RewriteRule ^clinics/(.*)$ /institutes-centers/clinics/$1 [R=301,NC,L]
+
+RewriteRule ^golf$ /news/2011-charity-golf-tournament [R=301,NC,L]
 
   # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -266,6 +275,3 @@ RewriteRule ^about/(.*)$ /about-us/$1 [R=301,NC,L]
 </IfModule>
 
 # $Id: .htaccess,v 1.90.2.5 2010/02/02 07:25:22 dries Exp $
-
-
-

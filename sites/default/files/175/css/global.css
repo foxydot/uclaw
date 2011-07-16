@@ -1,0 +1,585 @@
+/* 175 GLOBAL */
+
+body {
+	font-family: Arial, Helvetica, Verdana, san-serif;
+	font-size: 12px;
+	color: #444;
+	background-color:#FFF;
+	line-height:19px;
+	background-color:#000;
+	}
+	
+html {
+	scrollbar-highlight-color: #CCC;
+	scrollbar-shadow-color: #999;
+	scrollbar-track-color: #FFF;
+	scrollbar-face-color: #e00122;
+	scrollbar-arrow-color: #FFF;
+	scrollbar-darkshadow-color: #333;
+	scrollbar-3dlight-color: #666;
+	}
+	
+.clearfix {
+	clear:both;
+	height:1px;
+	}	
+	
+strong {
+	font-weight:bold;
+	}	
+	
+em {
+	font-style:italic;
+	}		
+	
+a:link, a:active, a:visited {
+	color:#E80022;
+	text-decoration:none;
+	font-weight:normal;
+	}
+	
+a:hover {
+	color:#DEDEDE;
+	text-decoration:underline;
+	font-weight:normal;
+	}		
+	
+.red {
+	color:#E80022;
+	}	
+	
+#header {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 10px;
+	width:780px;
+	height:100px;
+	background: #000 url(../images/production/bg_ribbon.jpg) repeat-x;
+	}	
+	
+#headerHome {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 10px;
+	width:780px;
+	height:100px;
+	background: #000 url(../images/production/bg_ribbon_home.jpg) repeat-x;
+	}		
+	
+#header h1 a, #headerHome h1 a {
+	display:block;
+	font-size:12px;
+	height:75px;
+	width:250px;
+	text-indent:-9000px;
+	float:left;
+	}	
+	
+.logo {
+	float:right;
+	width:141px;
+	height:75px;
+	}
+	
+.nav {
+	padding-top:0px;
+	z-index:1;
+	float:right;
+	width:480px;
+	text-align:right;
+	}	
+	
+.navHome {
+	padding-top:75px;
+	z-index:1;
+	float:right;
+	width:480px;
+	text-align:right;
+	}		
+	
+#wrapper {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 10px;
+	width:780px;
+	border: 1px solid #444;
+	z-index:0;
+	}
+	
+#wrapperGala {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 10px;
+	width:780px;
+	border: 1px solid #444;
+	background: #000 url(../images/production/bg_gala.jpg) repeat-x;
+	}
+	
+#wrapperSponsor {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 10px;
+	width:780px;
+	border: 1px solid #444;
+	background: #000 url(../images/production/bg_sponsor.jpg) repeat-x;	
+	}		
+	
+.content {
+	margin:20px;
+	color:#DEDEDE;
+	line-height:28px;
+	font-size:12px;
+	}
+	
+.contentNoScroll {
+	margin:20px;
+	padding-right:20px;
+	height:400px;
+	color:#DEDEDE;
+	line-height:24px;
+	font-size:12px;
+	}	
+	
+.content p, .contentNoScroll p {
+	margin-top:10px;
+	margin-bottom:10px;
+	}		
+	
+h2 {
+	margin-left:20px;
+	padding-top:20px;
+	font-size:18px;
+	width:75%;
+	border-bottom:3px solid #E80022;
+	padding-bottom:10px;
+	color:#FFF;
+	}
+	
+h3 {
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:14px;
+	}
+	
+h4 {
+	padding-top:20px;
+	font-size:16px;
+	width:40%;
+	border-bottom:3px solid #111;
+	padding-bottom:3px;
+	color:#E80022;
+	margin-left:10px;
+	}
+	
+h5 {
+	padding-top:20px;
+	font-size:14px;
+	width:66%;
+	border-bottom:3px solid #111;
+	padding-bottom:5px;
+	margin-bottom:40px;
+	margin-left:20px;
+	color:#999;
+	}	
+	
+.facts {
+	margin:20px;
+	}		
+	
+.facts li {
+	list-style:square;
+	margin-left:20px;
+	}	
+	
+.sponsors {
+	margin:20px 20px 20px 50px;
+	line-height:18px;
+	}	
+	
+.sponsors dt {
+	float: left;
+	width: 300px;
+	text-align: left;
+	color:#7E26B1;
+	font-weight:bold;
+	}
+
+.sponsors dd {
+  	margin-left: 310px;
+	margin-top:5px;	
+	margin-bottom: 30px;	
+	}	
+	
+/* FEATURED STYLES */			
+	
+.featuredWrapper {
+	margin-top:25px;
+	}
+
+.feature {
+	padding:0px 20px 20px 20px;
+	display:inline;
+	height:260px;
+	width:133px;
+	overflow:hidden;
+	float:left;
+	}
+
+.feature img {
+	width: 150px;
+	height: 210px;
+	overflow:hidden;
+	margin-bottom:10px;
+	}	
+	
+.name {
+	font-weight: bold;
+	font-size: 13px;
+	color: #CCC;
+	display: block;
+	text-align:center;
+	overflow:hidden;	
+	}	
+	
+.year {
+	font-size: 12px;
+	color: #999;
+	display: block; 
+	padding-top: 5px;
+	text-align:center;
+	overflow:hidden;
+	}
+	
+.left {
+	float:left;
+	width:150px;
+	}	
+	
+.left img {
+	border:1px solid #444;
+	}		
+	
+.right {
+	float:right;
+	width:550px;
+	}	
+	
+.right dl {
+  	margin-top:10px;
+	padding: 20px;
+	border:1px solid #333;
+	background-color:#111;	
+	}
+	
+.right dt {
+  	float: left;
+  	width: 150px;
+  	text-align: left;
+	color:#E80022;
+	font-weight:bold;
+	}
+
+.right dd {
+  	margin-left: 160px;
+	margin-bottom: 5px;
+	}	
+	
+h6 {
+	font-size:13px;
+	font-weight:bold;
+	border:2px solid #333;
+	padding:8px;
+	background: #111 url(../images/production/bg_accordian.png);
+	color:#FFF;
+	}		
+	
+.internviewI {
+	font-size:13px;
+	background-color:#111;
+	border:1px solid #222;
+	padding:3px;
+	}
+	
+/* TOOL TIPS */		
+	
+.tool-tip {
+	font-size: 11px;
+	text-align: center;
+	background: #222;
+	width: 200px;
+	overflow: hidden;
+	line-height:19px;
+	border:1px solid #333;
+	}
+
+.tool-tip .tool-title {
+	color: #fff;
+	font-weight: bold;
+	padding: 10px 10px 0 0;
+	}
+
+.tool-tip .tool-text {
+	color: #fff;
+	padding: 5px 10px 10px;
+	}								
+	
+/* DISCLAIMER CONTENT */			
+	
+#disclaimer {
+	width:780px;
+	height:58px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	color: #FFF;
+	font-size:11px;
+	text-align:center;
+	background-color:#111;
+	border:1px solid #222;
+	line-height:20px;
+	}
+			
+#disclaimer p {
+	padding-top:8px;
+	}	
+	
+#disclaimer a:link, #disclaimer a:active, #disclaimer a:visited {
+	color:#FFF;
+	text-decoration:underline;
+	font-weight:normal;
+	}	
+	
+#disclaimer a:hover {
+	color:#FFF;
+	text-decoration:none;
+	}
+	
+/* LOGO FOOTER CONTENT */			
+	
+#logos {
+	width:780px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	color: #FFF;
+	font-size:11px;
+	text-align:center;
+	line-height:20px;
+	}
+			
+#logos p {
+	padding-top:8px;
+	}	
+	
+#logos a:link, #logos a:active, #logos a:visited {
+	color:#FFF;
+	text-decoration:underline;
+	font-weight:normal;
+	}	
+	
+#logos a:hover {
+	color:#FFF;
+	text-decoration:none;
+	}						
+
+/* ACCORDIAN CONTENT */
+	
+#accordion {
+	margin:10px 0 10px 0;
+	}	
+	
+#accordion h3 {
+	margin-top:10px;
+	margin-bottom:0px;
+	font-size:12px;
+	border:1px solid #333;
+	padding:5px;
+	background: #111 url(../images/production/bg_accordian.png);
+	cursor:pointer;	
+	}	
+	
+/* TIMELINE CONTENT */	
+	
+.timeline {
+	width:20000px;
+	position:relative; 
+	background: url(../images/production/bg_ribbon_timeline.jpg) repeat-x;
+	}	
+	
+.timelineWrapper {
+	margin-top:25px;
+	width:740px;
+	overflow:hidden;
+	position:relative;
+	}	
+	
+.featureTimeline {
+	padding:0px 23.33px 20px 23.33px;
+	display:inline;
+	width:200px;
+	float:left;
+	}
+
+.featureTimeline img {
+	width: 196px;
+	overflow:hidden;
+	margin-bottom:10px;
+	border:3px solid #CCC;
+	}	
+	
+.timelineYear {
+	font-weight: bold;
+	font-size: 16px;
+	color: #E80022;
+	display: block;
+	text-align:center;
+	height:35px;
+	}	
+	
+.timelineText {
+	background-color:#111;
+	border:1px solid #222;
+	padding:7px;
+	font-size: 12px;
+	text-align:left;
+	line-height:19px;
+	color: #FFF;
+	}	
+	
+.timelineQuote{
+	background-color:#E80022;
+	border:1px solid #222;
+	padding:7px;
+	font-size: 12px;
+	text-align:left;
+	line-height:19px;
+	color: #FFF;
+	font-style:italic;
+	}
+	
+.author
+	{
+	font-weight:bold;
+	}
+
+.buttons{
+	width:700px;
+	float:left;
+	margin-left:20px;
+	}
+
+.forward_time{
+	float:right;
+	}
+	
+.backward_time{
+	float:left;
+	}
+	
+/* HISTORY STYLES */			
+	
+.featureHistory {
+	padding:0px 20px 20px 20px;
+	display:inline;
+	height:390px;
+	width:133px;
+	overflow:hidden;
+	float:left;
+	}
+
+.feature img {
+	width: 150px;
+	height: 210px;
+	overflow:hidden;
+	margin-bottom:10px;
+	}	
+	
+.nameHistory  {
+	font-weight: bold;
+	font-size: 11px;
+	color: #CCC;
+	display: block;
+	text-align:center;
+	overflow:hidden;	
+	}	
+	
+.year {
+	font-size: 12px;
+	color: #999;
+	display: block; 
+	padding-top: 5px;
+	text-align:center;
+	overflow:hidden;
+	}	
+	
+/* GALLERY PAGE STYLES */		
+
+.galleryWrapper {
+	margin-top:25px;
+	margin-left:auto;
+	margin-right:auto;
+	width:735px;
+	overflow:hidden;
+	position:relative;
+	}	
+
+.gallery {
+	width:20000px;
+	position:relative;
+	margin-left:-735px;
+	}		
+	
+.gallery .wrapper {
+	display:inline;
+	float:left;
+	width:225px;
+	margin:10px;
+	}	
+	
+.gallery .imageGallery {
+	width: 225px;
+	border:2px solid #CCC;
+	}	
+	
+.gallery .imageGallery img {
+	width: 225px;
+	height:161px;
+	}
+	
+.gallery .text {
+	font-weight:bold;
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+	}	
+	
+.gallery  .image {
+	width: 225px;
+	display:inline;
+	margin:6px;
+	float:left;
+	}
+	
+.gallery  .imageStart {
+	width: 715px;
+	display:inline;
+	margin:8px;
+	border:2px solid #CCC;
+	float:left;
+	}		
+	
+.buttons {
+	width:695px;
+	margin:0 20px 15px 20px;
+	}
+
+.forward_time {
+	float:right;
+	}
+	
+.backward_time {
+	float:left;
+	}
+		

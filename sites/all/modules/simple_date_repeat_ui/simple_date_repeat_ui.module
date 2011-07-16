@@ -1,0 +1,253 @@
+<?php
+/**
+ * @file Core hooks and manditory functions for simple_date_repeat_ui module
+ */
+
+/**
+ * Implementation of hook_elements().
+ */
+function simple_date_repeat_ui_elements() {
+  $type['simple_date_repeat_ui_rrule'] = array(
+    '#input' => TRUE,
+    '#process' => array('simple_date_repeat_ui_rrule_process'),
+    '#element_validate' => array('simple_date_repeat_ui_rrule_validate'),
+  );
+  return $type;
+}
+
+/**
+ * Implements hook_menu()
+ */
+function simple_date_repeat_ui_menu() {
+  $items['date_repeat_rrule_desc'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => '_date_repeat_rrule_desc_json',
+    'access arguments' => array('access content'),
+  ); 
+  
+  return $items;
+}
+
+/**
+ * Generate the repeat rule setting form.
+ */
+function simple_date_repeat_ui_rrule_process($element, $edit, $form_state, $form) {
+  require_once('./'. drupal_get_path('module', 'simple_date_repeat_ui') .'/simple_date_repeat_ui_form.inc');
+  return _simple_date_repeat_ui_rrule_process($element, $edit, $form_state, $form);
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function simple_date_repeat_ui_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'node-form') {
+    foreach(element_children($form) as $field) {
+      if (simple_date_repeat_ui_is_field($field)) {
+        $cck_field = content_fields($field);
+        $form[$field]['rrule']['#type'] = 'simple_date_repeat_ui_rrule';
+        $form[$field]['rrule']['#field_name'] = $field;
+        $form[$field]['rrule']['#checkbox_label'] = $cck_field['widget']['simple_date_repeat_ui_label'];
+        $form[$field]['rrule']['#form_id'] = $form['#id'];
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_widget_settings_alter().
+ */
+function simple_date_repeat_ui_widget_settings_alter(&$settings, $op, $widget) {
+  if ((!empty($widget['type']) && date_is_repeat_field(array('widget' => $widget))) || 
+     (!empty($widget['widget_type']) && date_is_repeat_field(array('widget' => array('type' => $widget['widget_type']))))) {
+    switch ($op) {
+      case 'form':
+        drupal_add_js(drupal_get_path('module', 'simple_date_repeat_ui') . '/js/admin.js');
+        $settings['simple_date_repeat_ui'] = array(
+          '#type' => 'checkbox',
+          '#title' => t('Use Google style repeat widget'),
+          '#default_value' => !empty($widget['simple_date_repeat_ui']),
+        );
+        $settings['simple_date_repeat_ui_label'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Repeat Checkbox Label'),
+          '#size' => 60,
+          '#default_value' => empty($widget['simple_date_repeat_ui_label']) ? 'Repeat' : $widget['simple_date_repeat_ui_label'],
+        );
+        break;
+      case 'save':
+        $settings[] = 'simple_date_repeat_ui';
+        $settings[] = 'simple_date_repeat_ui_label';
+        break;
+    }
+  }
+}
+
+/**
+ * Check if 'cc_repeat' is enabled on a field.
+ */
+function simple_date_repeat_ui_is_field($field_name) {
+  $field = content_fields($field_name);
+  return !empty($field['widget']['simple_date_repeat_ui']);  
+}
+
+/**
+ * Outputs a RRule description to json
+ */
+function _date_repeat_rrule_desc_json() {
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_ical.inc');
+  $item = array_shift($_POST);
+  $until = $item['rrule']['UNTIL'];
+  $date = date_make_date(strtotime($until['datetime']['date']), $until['tz'], DATE_UNIX);
+  date_time_set($date, 23, 59, 59);
+  date_timezone_set($date, timezone_open('UTC'));
+  $item['rrule']['UNTIL']['datetime'] = date_format($date, DATE_FORMAT_DATETIME);
+  $start_date = date_make_date(strtotime($item['value']['date']), $until['tz'], DATE_UNIX);
+  if ($item['rrule']['FREQ'] != 'WEEKLY') {
+    unset($item['rrule']['BYDAY']);
+  }
+  if ($item['rrule']['FREQ'] == 'MONTHLY') {
+      //We need to build the the BYMONTHDAY or BYDAY options
+      switch ($item['rrule']['bymonth']) {
+        case 'BYMONTHDAY':
+          $item['rrule']['BYMONTHDAY'] = array(date_format_date($start_date, 'custom', 'j'));
+          break;
+        case 'BYDAY':
+          $day_date = $start_date;
+          $dow = date_format_date($day_date, 'custom', 'w');
+          $dom = date_format_date($day_date, 'custom', 'j');
+          $byday = array(
+            'SU',
+            'MO',
+            'TU',
+            'WE',
+            'TH',
+            'FR',
+            'SA',
+          );
+          $num = array('8','15','22','28','32');
+          $day = $byday[$dow];
+          foreach ($num as $nth => $week) {
+            if ($dom < $week) {
+              $day = '+' . ($nth + 1) . $day;
+              break;
+            }
+          }
+          $item['rrule']['BYDAY'] = array($day);          
+          break;
+      }
+    }
+  $rrule = date_api_ical_build_rrule($item['rrule']);
+  $desc =  simple_date_repeat_rrule_description($rrule);
+  drupal_json(array('rrule' => $desc, 'item' => $item, 'date' => $date, 'until' => $until));
+  exit;
+}
+
+/**
+ * Build a description of an iCal rule.
+ *
+ * Constructs a human-readable description of the rule.
+ */
+function simple_date_repeat_rrule_description($rrule, $format = 'D M d Y') {
+  // Empty or invalid value.
+  if (empty($rrule) || !strstr($rrule, 'RRULE')) {
+    return;
+  }
+  
+  require_once('./'. drupal_get_path('module', 'date_api') .'/date_api_ical.inc');
+  require_once('./'. drupal_get_path('module', 'date_repeat') .'/date_repeat_calc.inc');
+  
+  // Make sure there will be an empty description for any unused parts.
+  $description = array(
+    '!interval' => '', 
+    '!byday' => '', 
+    '!bymonth' => '', 
+    '!count' => '',
+    '!until' => '', 
+    '!except' => '',
+    '!additional' => '',
+    '!week_starts_on' => '',
+    );
+  $parts = date_repeat_split_rrule($rrule);
+  $additions = $parts[2];
+  $exceptions = $parts[1];
+  $rrule = $parts[0];
+  $interval = INTERVAL_options();
+  switch ($rrule['FREQ']) {
+    case 'WEEKLY':
+      $description['!interval'] = format_plural($rrule['INTERVAL'], 'Weekly', 'Every @count weeks') .' ';
+      break;
+    case 'MONTHLY':
+      $description['!interval'] = format_plural($rrule['INTERVAL'], 'Monthly', 'Every @count months') .' ';
+      break;
+    case 'YEARLY':
+      $description['!interval'] = format_plural($rrule['INTERVAL'], 'Yearly', 'Every @count years') .' ';
+      break;
+    default:
+      $description['!interval'] = format_plural($rrule['INTERVAL'], 'Daily', 'Every @count days') .' ';
+      break;
+  }
+  
+  if (!empty($rrule['BYDAY'])) {
+    $days = date_repeat_dow_day_options();
+    $counts = date_repeat_dow_count_options();
+    $results = array();
+    foreach ($rrule['BYDAY'] as $byday) {
+      $day = substr($byday, -2);
+      $count = intval(str_replace(' '. $day, '', $byday));
+      if ($count = intval(str_replace(' ' . $day, '', $byday))) {
+        $results[] = trim(t('!repeats_every_interval on the !date_order !day_of_week', array('!repeats_every_interval ' => '', '!date_order' => strtolower($counts[substr($byday, 0, 2)]), '!day_of_week' => $days[$day])));
+      }
+      else {
+        $results[] = trim(t('!repeats_every_interval every !day_of_week', array('!repeats_every_interval ' => '', '!day_of_week' => $days[$day])));
+      }
+    }
+    $description['!byday'] = implode(' '. t('and') .' ', $results) . ',';
+  }
+  if (!empty($rrule['BYMONTHDAY'])) {
+        $description['!bymonth'] = trim(t('!repeats_every_interval on day !month_days,', array('!repeats_every_interval ' => '', '!month_days' => implode(', ', $rrule['BYMONTHDAY']))));
+  }
+  if (!empty($rrule['BYMONTH'])) {
+    if (sizeof($rrule['BYMONTH']) < 12) {
+      $results = array();
+      $months = date_month_names();
+      foreach ($rrule['BYMONTH'] as $month) {
+        $results[] = $months[$month];
+      }
+      if (!empty($rrule['BYMONTHDAY'])) {
+        $description['!bymonth'] = trim(t('!repeats_every_interval on day !month_days of !month_names,', array('!repeats_every_interval ' => '', '!month_days' => implode(', ', $rrule['BYMONTHDAY']), '!month_names' => implode(', ', $results))));
+      }
+      else {
+        $description['!bymonth'] = trim(t('!repeats_every_interval on !month_names,', array('!repeats_every_interval ' => '', '!month_names' => implode(', ', $results))));
+      }
+    }
+  }
+  if ($rrule['INTERVAL'] < 1) {
+    $rrule['INTERVAL'] = 1;
+  }
+  if (!empty($rrule['COUNT'])) {
+    $description['!count'] = trim(t('!repeats_every_interval !count times', array('!repeats_every_interval ' => '', '!count' => $rrule['COUNT'])));
+  }
+  if (!empty($rrule['UNTIL'])) {
+    $until = date_ical_date($rrule['UNTIL']);
+    $description['!until'] = trim(t('!repeats_every_interval until !until_date', array('!repeats_every_interval ' => '', '!until_date' => date_format_date($until, 'custom', $format))));
+  }
+  if ($exceptions) {
+    $values = array();
+    foreach ($exceptions as $exception) {
+      $values[] = date_format_date(date_ical_date($exception), 'custom', $format);
+    }
+    $description['!except'] = trim(t(' !repeats_every_interval except !except_dates', array('!repeats_every_interval ' => '', '!except_dates' => implode(', ', $values))));
+  }
+  if ($additions) {
+    $values = array();
+    foreach ($additions as $addition) {
+      $values[] = date_format_date(date_ical_date($addition), 'custom', $format);
+    }
+    $description['!additional'] = trim(t('Also includes !additional_dates.', array('!additional_dates' => implode(', ', $values))));
+  }
+  if (!empty($rrule['WKST'])) {
+    $day_names = date_repeat_dow_day_options();
+    $description['!week_starts_on'] = trim(t('!repeats_every_interval where the week start on !day_of_week', array('!repeats_every_interval ' => '', '!day_of_week' => $day_names[trim($rrule['WKST'])])));
+  }
+  return t('!interval !bymonth !byday !count !until!except. !additional', $description);
+}

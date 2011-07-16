@@ -36,7 +36,7 @@ drupal_add_css($directory .'/custom/modules/ddblock/'.$custom_template. '/ddbloc
 <div id="ddblock-<?php print $delta ?>" class="ddblock-cycle-<?php print $custom_template ?> clear-block">
  <div class="container clear-block border">
   <div class="container-inner clear-block border">
-   <?php if ($pager_position == "top") : ?>
+   <?php if ($pager_position == "left") : ?>
     <!-- custom pager text --> 
     <?php print $pager_content ?>
    <?php endif; ?>
@@ -55,11 +55,6 @@ drupal_add_css($directory .'/custom/modules/ddblock/'.$custom_template. '/ddbloc
              <h2><?php print $slider_item['slide_title'] ?></h2>
             </div> <!-- slide-title-inner-->
            </div>  <!-- slide-title-->
-            <div class="slide-body-<?php print $slide_direction ?> clear-block border">
-             <div class="slide-body-inner clear-block border">
-              <p><?php print $slider_item['slide_text'] ?></p>
-             </div> <!-- slide-body-inner-->
-            </div>  <!-- slide-body-->
             <div class="slide-read-more slide-read-more-<?php print $slide_direction ?> clear-block border">
 				     <p><?php print $slider_item['slide_read_more'] ?></p>
 				    </div><!-- slide-read-more-->
@@ -71,7 +66,7 @@ drupal_add_css($directory .'/custom/modules/ddblock/'.$custom_template. '/ddbloc
       <?php endif; ?>
      </div> <!-- slider-inner-->
     </div>  <!-- slider-->
-   <?php if ($pager_position == "bottom") : ?>
+   <?php if ($pager_position == "right") : ?>
     <!-- custom pager text --> 
     <?php print $pager_content ?>
    <?php endif; ?>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->	  
+
+<script src="../js/tooltip.js" type="text/javascript"></script>  
+
+<script type="text/javascript" charset="utf-8">
+
+window.addEvent('domready', function(){ 
+  
+  var tips = new Tips($$('.tool'), { 
+	maxTitleChars: 80,
+	onShow: function(tip){ tip.setStyle('opacity', '0.95'); },
+	onHide: function(tip){ tip.setStyle('visibility', 'hidden'); },
+	offsets: {'x': -10, 'y': 15},
+	timeOut: 0
+   });
+ 
+  new Carousel("slides", "slide-navigation");
+});
+
+</script>  
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Your Memories</h2>
+    
+<div class="content">
+        
+      	<div class="left">
+        
+        	<img src="../images/alumni/small/newby.jpg" alt="Name" width="150" height="210" />      	</div>
+        
+  <div class="right">
+        
+        	<h6>Melany S. Newby</h6>                        
+            
+      		<dl>
+
+                <dt>Graduation Class</dt>
+                <dd>1974</dd>
+                
+                <dt>Residence</dt>
+            	<dd>Merrimac, Wisconsin</dd>   
+            </dl>
+            
+      		<p><strong>Faculty:</strong>&nbsp; Stanley Ellis Harper, Jr. was absolutely one of my all time favorite professors.&nbsp; I can still see him pacing back and forth in front of classroom  with one foot on the riser and the other not, talking about the merger of law and equity, Bucephalus and cutting the Gordian knot, and also about living with all females -- Ruth, two daughters and a female dog.&nbsp; I know not why I remember all this, the subject was civil procedure – nothing sexy or exciting about that, but somehow his style of teaching reached me.&nbsp; He will be missed.</p>
+                        
+      <p><strong>Legal Education:</strong>&nbsp; I think that what you take away from law school isn’t knowing the criminal code and isn’t knowing how to do a title search for a real estate transaction, it is knowing how to look at a problem, evaluate it, and come up with a solution – or multiple solutions or possibilities or whatever. It’s that critical thinking skill…then when you’re out practicing, you pick up the substantive stuff.</p>
+            <p><strong>UC College of Law:</strong>&nbsp; My overall impression of law school was very favorable…I am still sometimes amazed at the things that I can trace back to just the experience of law school and being made to think and being made…to look at things in ways that I would never have done before.&nbsp; And the law school wasn’t <em>The Paper Chase</em>… once they admitted you, they expected you to graduate.&nbsp; And fortunately, they told you that so you didn’t sit there and quake in fear.</p>
+            <p><strong>Classmates:</strong>&nbsp; The class ahead of us had 8 or 9 women in it, and our class had 15 out of 100. &nbsp;Today, we have lunches twice a year, and I come to Cincinnati for at least one of them. For one reason or another, the class of ’74 has stayed really close, or at least a group of about 20 of us.</p>
+            <p><strong>Social Life:</strong>&nbsp;&nbsp; We played hearts and euchre… we did a lot of card playing and then we would go to a place called the Pickle Barrel and play the pinball machine.&nbsp; </p>
+  </div>    
+        
+      <div class="clearfix"></div>  
+        
+  </div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

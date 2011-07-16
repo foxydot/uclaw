@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>UC College of Law Newsletter</title>
+
+<style type="text/css">
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* GLOBAL STYLES */
+
+body {
+	margin: 0px;
+	background: #FFF;
+	font-family: 'Trebuchet MS', Arial, Tahoma, Verdana;
+	font-size: 12px;
+	color: #444;
+	}
+	
+.clearfix {
+	clear:both;
+	height:1px;
+	}	
+	
+strong {
+	font-weight:bold;
+	}	
+	
+.em {
+	font-style:italic;
+	}		
+	
+a {
+	color:#E80022;
+	text-decoration:underline;
+	font-weight:normal;
+	}
+	
+a:hover {
+	color:#000;
+	text-decoration:none;
+	font-weight:normal;
+	}		
+	
+.red {
+	color:#E80022;
+	}
+	
+#intro {
+	background:#ffffff;
+	padding: 10px;
+	}
+	
+.highlight {
+	background:#DDDDFF;
+	}		
+	
+.grayBorder {
+	border:2px solid #DEDEDE;
+	}		
+	
+.floatRight {
+	float:right;
+	margin:10px 0 10px 10px;
+	border:2px solid #DEDEDE;
+	}	
+	
+.floatLeft {
+	float:left;
+	margin:10px 10px 10px 0;
+	border:2px solid #DEDEDE;
+	}	
+
+	
+.allignRight {
+	text-align:right;
+	}		
+	
+/* CONTENT STYLES */	
+
+#container {
+	width:580px;
+	margin:20px auto;
+	border:3px solid #CCC;
+	}
+	
+#container p {
+	padding:10px 0;
+	line-height:21px;
+	}		
+	
+#nav {
+	background:#000;
+	color:#FFF;
+	font-size:11px;
+	height:25px;
+	} 	
+	
+.volume {
+	width:350px;
+	float:left;
+	padding:8px 10px;
+	}	
+	
+.date {
+	float:right;
+	width:150px;
+	padding:8px 10px;
+	text-align:right;
+	}
+	
+#column {
+	float:left;
+	width:350px;
+	padding:10px;
+	}	
+	
+#columnThin {
+	float:right;
+	width:190px;
+	height: 870px;
+	padding:10px;
+	background:#E0E09C;
+	}	
+	
+#feature {
+	padding:10px;
+	font-size:13px;
+	}	
+	
+h2 	{
+	color: #E80022;
+	font-size:16px;
+	font-weight:bold;
+	}	
+	
+h2 img {
+	margin-right:5px;
+	}	
+	
+h3 	{
+	color: #E80022;
+	font-size:14px;
+	font-weight:bold;
+	}	
+	
+h3 img {
+	margin-right:5px;
+	}	
+	
+.listSquare {
+	margin:15px 0 15px 25px;
+	}	
+	
+.listSquare li {
+	list-style:square;
+	line-height:18px;
+	}		
+	
+#disclaimer {
+	color: #666;
+	font-size:11px;
+	background-color:#000;
+	border-top:3px solid #333;
+	line-height:20px;
+	}
+	
+#disclaimer ul {
+	margin:10px;
+	}	
+	
+#disclaimer ul li {
+	margin:0;
+	padding:0;
+	}		
+	
+#disclaimerLeft {
+	float:left;
+	width:300px;
+	}
+	
+#disclaimerRight {
+	float:right;
+	width:400px;
+	text-align:right;
+	}	
+	
+	#disclaimerCenter {
+	float:center;
+	width:580px;
+	text-align:center;
+	}		
+			
+#disclaimer a:link, #disclaimer a:active, #disclaimer a:visited {
+	color:#999;
+	text-decoration:none;
+	font-weight:normal;
+	}	
+	
+#disclaimer a:hover {
+	color:#DEDEDE;
+	text-decoration:underline;
+	}				
+.style9 {font-family: Arial, Helvetica, sans-serif; }
+.style10 {
+	font-size: 10px;
+	font-weight: bold;
+}
+.style11 {
+	font-size: 10%;
+	font-weight: bold;
+}
+
+p {
+	font-size: 12px;
+	}
+
+-->
+</style>
+</head>
+
+<body>
+
+<div id="container">
+  	<div id="header"><img src="http://www.law.uc.edu/news/Updates/images/topbanner3.jpg" alt="UC College of Law" width="580" border="0" usemap="#Map" />
+	<map name="Map" id="Map"><area shape="rect" coords="470,60,575,116" href="http://www.uc.edu/" />
+	<area shape="rect" coords="325,19,510,60" href="http://law.uc.edu/" /></map>
+	</div>
+
+	<div id="nav">
+        <div class="volume">Volume 1, Issue 1</div>        
+            <div class="date">August 2008</div>
+        </div>
+        <div id="feature" class="intro">  
+            <h2><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Introducing Updates@UCLaw</h2>
+            <p>Enjoy our new monthly email newsletter with the latest UC Law information, upcoming events, and CLE opportunities. Learn more about our faculty and staff or live vicariously through our students as they tell stories about their experiences around the world. We're excited about this new development and hope you are too.</p>
+  </div>
+  
+	<div id="feature" class="highlight" >
+    	<h2><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Welcome Class of 2011</h2>
+        <img src="http://www.law.uc.edu/news/Updates/images/students.jpg" alt="New Students" width="88" height="113" class="floatRight" />
+        <p>It was the most exciting time of year at UC Law;  the first day… at least for the first year students (1Ls).  The corridors of the law school were once again  filled with anxious students, sizing each other up and coming to terms with the  weight of their Constitutional Law books.   (<a href="http://www.law.uc.edu/news/events/classof2011.shtml" class="style10" target="blank"><strong>Read More</strong></a>)</p>
+      <div class="clearfix"></div>
+  	</div>
+    
+<div id="feature" >
+    	<h2><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />UC Law Students Help Innocent Man Regain Freedom</h2>
+        <img src="http://www.law.uc.edu/news/images/oipteam2.jpg" alt="New Students" width="129" height="96" class="floatLeft" />
+    <p>After serving 18 years in prison for a crime he did not commit, Robert McClendon   once again became a free man on Monday — thanks in part to the Ohio Innocence   Project and the power of DNA testing.<br />   (<a href="http://law.uc.edu/news/news/oip_mcclendon.shtml" class="style10"target="blank"><strong>Read More</strong></a>)</p>
+    <div class="clearfix"></div>
+  	</div>
+
+    <br />
+<div id="columnThin">
+    	<h3>Upcoming Events </h3>
+        <ul class="listSquare">
+        	<li><strong>08.21-22</strong> - <a href="http://www.law.uc.edu/institutes/practice/events.shtml" target="_blank">Decision Analysis CLE Program (Center for Practice)</a></li>
+        	<li><strong>08.25</strong> - <a href="http://www.law.uc.edu/institutes/practice/index.shtml" target="_blank">Trial Advocacy Team Competition</a></li>
+       	  <li><strong>09.09</strong> - <a href="http://www.law.uc.edu/news/events/burlingame.shtml" target="_blank">Burlingame Distinguished Lecture</a>
+       	    <ul><li><strong>09.17</strong> - <a href="http://www.law.uc.edu/news/events/conlawday.shtml" target="_blank">Constitution Day</a></li>
+   	          <li><strong>09.19-21</strong> - <a href="http://www.law.uc.edu/alumni/alumni_reunionweekend.shtml" target="_blank"> Reunion Weekend</a></li>
+   	        </ul>
+   	      </li>
+    	</ul>
+
+   	<p align="right" class="style10"><a href="http://law.uc.edu/news/events/index.shtml" target="_blank"><strong> More Events</strong></a></p>
+        
+<br />
+        <br />
+    	<h3>Law Links </h3>
+        <ul class="listSquare">
+          <li><a href="http://www.law.uc.edu/alumni/opportunities/" target="_blank">CLE Opportunities</a></li>
+          <li><a href="http://www.law.uc.edu/alumni/request/index.shtml" target="_blank">Update Your Information/Share News</a></li>
+          <li><a href="http://www.law.uc.edu/students/students_cpdalumni.shtml">Alumni Career Resources</a></li>
+          <li><a href="http://www.law.uc.edu/students/students_cpdabout.shtml" target="_blank">Hire a Student/Alum</a></li>
+          <li><a href="http://www.law.uc.edu/students/jobfair.shtml" target="blank">Job Fairs</a></li>
+          <li><a href="http://www.law.uc.edu/faculty/faculty_faculty.shtml" target="_blank">Contact a Professor</a></li>
+          <li><a href="http://www.law.uc.edu/faculty/faculty_news.shtml" target="_blank">Faculty News</a></li>
+          <li><a href="http://www.law.uc.edu/students/docs/transcript.pdf" target="_blank">Transcript Requests</a></li>
+          <li><a href="http://www.law.uc.edu/alumni/support/" target="_blank">Support UC Law</a></li>
+    	</ul>
+ <br />
+ <br />
+        <h3>Contact Us </h3>
+        <ul class="listSquare">
+              <li><a href="mailto:Updates@law.uc.edu" target="_blank">Comments, Questions and Story Suggestions</a></li>
+    </ul>
+    
+    <p><h2>Mark Your Calendar for Constitution Day<br />
+    September 17, 2008</h2>
+    <div align="center"><br />
+      <a href="http://www.law.uc.edu/news/events/conlawday.shtml"><img src="http://www.law.uc.edu/news/images/darrow1sm.jpg" width="108" height="134" class="floatMiddle" scr="a href=http://www.law.uc.edu/news/events/images/counselorcvr.jpg" /></a></a>
+      </p>
+    </div>
+</div>
+	<div id="column" class="highlight">
+    	<h3><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />New Tax Professor Loves Problem Solving</h3>
+        <img src="http://www.law.uc.edu/faculty/images/mcmahon.jpg" alt="Stephanie McMahon" width="91" height="97" class="floatRight" />
+   	  <p>The latest addition to UC Law’s tax team,  Professor Stephanie McMahon joined the law school this summer.  She will teach business tax during the fall semester.  (<a href="http://law.uc.edu/news/events/mcmahon.shtml" target="_blank" class="style10">Read More</a>)</p>
+	  <div class="clearfix"></div>
+  	</div>
+    <div id="column" >
+    	<h3><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Nancy Oliver '90 Takes Over as Associate Dean</h3>
+        <img src="http://www.law.uc.edu/faculty/images/oliver150.jpg" alt="Nancy Oliver" width="77" height="100" class="floatLeft" />
+      <p>&ldquo;Whenever I walk in the doors of the College of Law, I'm excited,&rdquo;  said new Interim Associate Dean for Academic and Student Affairs, Nancy  Oliver. (<a href="http://www.law.uc.edu/news/events/oliver.shtml" target="_blank" class="style10">Read More</a>)</p>
+	  <div class="clearfix"></div>
+  	</div>
+    
+    <div id="column" class="highlight">
+    	<h3><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Adam Moser (3L) goes to China</h3>
+        <img src="http://www.law.uc.edu/news/Updates/images/adammoser.jpg" alt="Adam Moser" width="81" height="108" class="floatRight" />
+        <p>As the world is riveted by the athletes at the 2008  Summer Olympics, hosted in Beijing, China, UC Law student Adam Moser, Class of  2009, has been getting a “bird’s eye view” of the festivities. (<a href="http://www.law.uc.edu/news/events/moser.shtml" target="_blank" class="style10"><strong>Read More</strong></a>)</p>
+  	  <div class="clearfix"></div>
+  	</div>
+    
+        <div id="column" >
+    	<h3><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Linda Greenhouse on Guantanamo Bay</h3>
+        <img src="http://www.law.uc.edu/alumni/images/greenhouse150.jpg" alt="Linda Greenhouse" width="90" height="113" class="floatLeft" />
+        <p>Detention camp Guantanamo  Bay is one of the most controversial subjects of modern times. Former U.S.  Supreme Court correspondent Linda Greenhouse will share her perspective on this  topic at the 2008 John H. Burlingame Distinguished Lecture, September 9, 2008  at 7:00 p.m.   (<a href="http://www.law.uc.edu/news/events/burlingame.shtml" target="_blank" class="style10"><strong>Read More</strong></a>)</p>
+	  	<div class="clearfix"></div>
+  </div>
+
+    
+  <div id="column"class="highlight" >
+
+   	<h3><img src="http://www.law.uc.edu/news/Updates/images/UCingot20x70px.GIF" alt="Ingot" />Memories Project Now Online!</h3>
+        <img src="http://www.law.uc.edu/alumni/memories/images/coyle_edward.jpg" alt="Edward Coyl" width="93" height="104" class="floatRight" />
+    <p>A representative group of alumni was interviewed by current law school students and by Jeffrey L. Cruikshank, an author of institutional histories.  Take a moment to read their memories, reminisce, and reflect on their law school experience. <a href="http://www.law.uc.edu/alumni/memories/index.shtml" target="_blank" class="style10"><strong>Read More</strong></a>)</p>
+	<div class="clearfix"></div>
+  	</div>
+    <div class="clearfix"></div>
+    <div id="disclaimer">
+    	<div id="disclaimerCenter">    
+        <table width="580" border="0" cellpadding="10">
+          <tr>
+            <th width="277" scope="col">University of Cincinnati College of Law<br />
+            PO Box 210040<br />
+            Clifton Avenue &amp; Calhoun Street<br />
+            Cincinnati, OH  45221-0040<br />
+            &copy; Copyright 2008
+            </th>
+            <th width="257" scope="col"><div align="right">P: 513.556.6805<br />
+              F: 513.556.2391<br>
+              <a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a><br />
+              <a href="http://www.law.uc.edu">website: www.law.uc.ed</a>u
+            </div></th>
+          </tr>
+        </table>
+    </div>    
+    <div class="clearfix"></div> 
+           
+</div>
+    
+</div>
+
+</body>
+
+</html>

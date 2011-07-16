@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->	 
+
+<script type="text/javascript" src="../js/mootools.js"></script>
+
+<script type="text/javascript">
+
+	window.addEvent('domready', function(){
+		var accordion = new Accordion('h3.atStart', 'div.atStart', {
+			opacity: false,
+			onActive: function(toggler, element){
+				toggler.setStyle('color', '#E80022');
+			},
+			
+			onBackground: function(toggler, element){
+				toggler.setStyle('color', '#E80022');
+			}
+		}, $('accordion'));
+		
+		
+		var newTog = new Element('h3', {'class': 'toggler'}).setHTML('');
+		
+		var newEl = new Element('div', {'class': 'element'}).setHTML('');
+		
+		accordion.addSection(newTog, newEl, 8);
+	});
+	 
+</script>
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>College of Law Historical Overview</h2>
+    
+	<div class="content">
+    
+    	<p>For 175 years, the College of Law has educated thousands of men and women who have gone on to serve the world as lawyers in public and private practice, members of the federal and state bench, human rights advocates, top legal scholars, presidents of corporations, heads of Fortune 500 legal divisions, government officials, U.S. Supreme Court Justices, and even as President of the United States. The law school has a long, distinguished history, marked by visits of Chief Justice William Howard Taft (dedication of Alphonso Taft Hall), Chief Justice Earl R. Warren (125th Anniversary), and Justice Sandra Day O’Connor (150th Anniversary). </p>
+
+		<p>On this website, you will have the opportunity to read and reflect on the words of these notable legal figures who have visited the law school. You can also discover more of the law school’s history, why there was a need for the school, and how it came into being. It is a fascinating story which, we hope, you’ll enjoy. </p>
+	
+      <h4>Additional Historical Information</h4>
+        
+        <div class="featuredWrapper">
+        
+            <div class="featureHistory" >
+              <img src="../images/history/1.png" alt="William S. Richardson" border="0" />
+              <div class="nameHistory">125th Anniversary Program and Address by Chief Justice Warren</div>
+              <div class="year"><a href="../docs/125th Anniversary Program.pdf" target="_blank">Download PDF</a></div>
+          </div>
+            
+          <div class="featureHistory">
+            <img src="../images/history/2.png" alt="Historical Notes on the University of Cincinnati College of Law by Roscoe Barrow" border="0" />
+                <div class="nameHistory">Address by Justice Sandra Day O’Conner at 1983 Building Dedication</div>
+              <div class="year"><a href="../docs/Building Dedication Address by Justice Sandra Day O'Connor.pdf" target="_blank">Download PDF</a></div>
+          </div>
+            
+          <div class="featureHistory" >
+            <img src="../images/history/3.png" alt="College of Law Overview: 1833-1983" border="0" />
+              <div class="nameHistory">College of Law Overview: 1833-1983</div>
+              <div class="year"><a href="../docs/Overview 1833-1983 by Rutter &amp; Wilson.pdf" target="_blank">Download PDF</a></div>
+          </div>
+
+          <div class="featureHistory" >
+            <img src="../images/history/4.png" alt="125th Anniversary Program and Address by Chief Justice Warren" border="0" />
+              <div class="nameHistory">Historical Notes on the University of Cincinnati College of Law by Roscoe Barrow</div>
+              <div class="year"><a href="../docs/Historical Note by Roscoe Barrow.pdf" target="_blank">Download PDF</a></div>
+          </div>
+            
+
+                                                
+          <div class="clearfix"></div> 
+        
+        </div>    
+        
+	  <!--<div id="accordion">
+                        
+            <h3 class="toggler atStart">Introduction</h3>
+            <div class="element atStart">
+        
+                <p>The time was 1833. Andrew Jackson, the seventh President of the United States, was sworn in for his second term. The city of Chicago was incorporated as a village of approximately 200 people. Alfred Nobel, the inventor of dynamite and the creator of the Nobel Peace Prize, was born. The abolitionist movement took shape as the American Anti-Slavery Society was formed in Philadelphia. And the University of Cincinnati College of Law was founded as the first law school west of the Allegheny Mountains. </p><p>For the 175 years that have passed, UC Law has educated thousands of women and men who have gone on to serve the world as members of the federal and state Bench and Bar, human rights advocates, top legal scholars, presidents of corporations, heads of Fortune 500 legal divisions, government officials, U.S. Supreme Court Justices, and President of the United States. Its long, distinguished history ranks UC Law as the fourth oldest continuously operating law school in the country; only Harvard, Yale and Virginia are older. </p>
+                                                                                               
+          </div>
+
+            <h3 class="toggler atStart"> Becoming A Lawyer 175 Years Ago</h3>
+            <div class="element atStart">
+        
+                <p>When UC Law was founded, it was customary to learn the law by “reading as an apprentice” in a law office. But Timothy Walker, one of the law school’s founders, believed that the law should be learned through a “hands on” approach. Walker felt strongly that the law could be learned through lectures on current and past cases, discussion of various aspects of the law, and intensive practice in Moot Court – all of which were a very distinct departure from the past. Walker, Edward King and Judge John C. Wright of the Ohio Supreme Court put into place an innovative program, opening the doors of the Cincinnati Law School with only 17 students in a small room above Walker’s law office in downtown Cincinnati. </p>
+                <p>Since those modest beginnings, the College of Law has moved several times, including locations at 4th and Walnut and West Ninth Streets in downtown Cincinnati, before moving to our strategic location at the top of Clifton Avenue in 1925. Over 5,000 alumni have graduated from these various halls. And while buildings have been built and razed, what remains 175 years later an innovative approach to legal education, enhanced with cutting edge clinical offerings, internationally respected institutes and centers, academic concentrations, writing opportunities, and a host of professional experiences that UC law provides for over 350 students annually. </p>
+While the law school’s approach is based on its mission: to engage in superior, nationally-recognized scholarship and teaching while maximizing the unique benefits as a premier, small, urban, public law school. With that as a foundation, UC Law built its program and looks to its future with an emphasis on those four key components. </p>
+                                                                                               
+          </div>
+            
+            <h3 class="toggler atStart">UC Law Stands for Premier</h3>
+            <div class="element atStart">
+            
+                <p>A premier law school is one that is unstinting in its commitment to excellence in teaching, the scholarship of its faculty, its academic and professional life, its formation of strong and ethical leaders, and its engagement in the world. This principle led UC Law to take a leadership role in the field of legal education. Ground-breaking programs such as the “Applied Skills Programs” pioneered by Professor Irvin C. Rutter and the “Facts” course including a clinical component created by Judge Robert S. Marx, are examples of the innovative approach to legal education the College of Law has engaged over the years. Today, UC Law’s 30 full-time professors and host of adjuncts teach a range of courses—from traditional topics such as <em>Constitutional and Criminal Law, </em>to more cutting edge issues in <em>Aids and the Law,</em> <em>Counseling the Public Corporation, Disability Law, </em>and<em> Feminist Jurisprudence</em>. In addition, the law school now boasts five acclaimed institutes including the Urban Morgan Institute for Human Rights Law, the first endowed institute at an American law school devoted to the study of international human rights, the Rosenthal Institute for Justice/Ohio Innocence Project, the Center for Practice in Negotiation and Problem Solving, the Glenn M. Weaver Institute for Law and Psychiatry, and the Center for Corporate Law. </p>
+                <p>To provide “real life experiences” for students and opportunity for greater specialization, strong clinical programs have also been implemented. UC currently boasts five clinical programs including the Domestic Violence/Domestic Relations Clinic, the Criminal Defense Clinic, the Sixth Circuit Court of Appeals Clinic, the Ohio Innocence Project, and the Legal Extern Programs. Each clinical program gives students the opportunity to participate in real cases working with legal intern licenses and working side by side clinical directors, legal scholars and practicing attorneys. </p>
+                <p>The experiences within UC Law are equally as challenging and beneficial. Students participate in Moot Court Programs such as the August A. Rendigs National Product Liability Competition and the Lexis/Nexis Competition, as well as numerous competitions throughout the country. Others can take advantage of journal opportunities for the <em>University of Cincinnati Law Review</em>, currently celebrating 75 years; the <em>Immigration and Nationality Law Review</em>; the <em>Human Rights Quarterly</em>; and, the <em>Freedom Center Journal</em>, publishing its inaugural issue this academic year. </p>
+                <p> UC Law professors are prolific writers and scholars. Since 2000, UC Law faculty has published 25 books and articles in the top 15 publishers and law reviews—more than one per faculty member. In fact, in the past two years each faculty member has published a book or law review article. In addition to their research and classroom duties, faculty serve as featured speakers at law faculty colloquia across the country; make keynote presentations at major legal conferences; and develop innovative symposia, such as the upcoming inaugural Freedom Center Journal Symposium “Reconstructions: Historical Consciousness and Critical Transformations,” exploring the uses of history to understand ongoing subordination and to craft strategies for social change. </p>
+          </div>
+            
+            <h3 class="toggler atStart">UC Law Stands for Small</h3>
+            <div class="element atStart">
+                
+                <p>From its modest one room beginnings, to our current student body of 353, the law school has provided a close-knit, intimate educational environment, while drawing on the resources of a major research university. With a student/faculty ratio of 11.8:1 and individual classes of approximately 125 students, UC Law is able to provide a supportive and collaborative community. It also creates an opportunity to develop strong mentoring relationships between professors and students. This strength of the law school only enhances the ability to continually attract an exceptionally talented student body with academic credentials among the highest among peer schools. </p>
+                
+          </div>
+            
+            <h3 class="toggler atStart">UC Law Stands for Urban</h3>
+            <div class="element atStart">
+                
+                <p>As an urban school, UC Law sits in a unique position—providing the benefits of a small law school with the curriculum and opportunities of a large one. This empowers the law school to connect with the city, the county, and the tri-state. Through the Legal Extern program, Students annually serve in close to fifty public interest, government, and non-profit offices in our region. This connection also enables UC Law to benefit from partnerships and exchanges with legal, corporate, and civic communities such as the Domestic Violence Clinic, a partnership with Legal Aid of Cincinnati. The Rosenthal Institute for Justice has engaged in numerous public policy research projects addressing topics such as the Hamilton County Jury system, Cincinnati Clean Air Project, real estate tax assessment, judicial selection, and victim’s rights reform, The law school is actively committed to engaging the city, state, and region in its mission to reach out to and impact the world. </p>
+                
+          </div>
+            
+            <h3 class="toggler atStart">UC Law Stands for Public</h3>
+            <div class="element atStart">
+                
+                <p>As a public school, UC Law is committed to opportunity, advancement, diversity, and civic responsibility. UC Law began to diversify its student body as early as 1874 when William Hartwell Parham became the first African-American male to graduate; H. Elsie Austin, the first African-American female, graduated 56 years later.  With the perspective that students enter to learn and depart to serve, the law school also encourages all students to take an active role in their community through volunteer efforts, including two independent student organizations: the Tenant Information Project (TIP), and Volunteer Income Tax Assistance (VITA) that provide pro bono services to the community. Many distinguished graduates continue their commitment as public servants—providing legal expertise to the underserved for many years after their graduation, often taking leadership roles in non-profit organizations such as ProKids and Cincinnati Union Bethel.  Other graduates use their legal acumen on boards and other civic organizations to better their community. </p>
+                
+            </div>
+                                    
+            <h3 class="toggler atStart">UC Law Celebrates </h3>
+            <div class="element atStart">
+                
+                <p>This year UC Law celebrates the 175th anniversary of its founding. This celebration gives us a once-in-a-lifetime opportunity to honor our history and the College of Law, as well as showcase what is great about the law school. This highly-anticipated year will be marked with special programs, inaugural symposia, lecture series, and a culminating gala event featuring attorney and renowned author, John Grisham.&nbsp; </p>
+                <p>It is our hope that through our 175th Anniversary celebration we will have an opportunity to say thank you to all of those who have carried us to this point, as well as draw our alumni and friends into a new collaboration with us. More than that, however, this celebration of our past will springboard us into the future. Plan now to join in the celebration—whether a UC Law alum or not.&nbsp; Make this the year you remember,&nbsp; reconnect, and recharge with UC Law.&nbsp; </p>
+          </div>
+                    
+        </div>-->
+        
+	</div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

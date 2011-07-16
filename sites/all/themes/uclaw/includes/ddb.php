@@ -36,7 +36,7 @@ function uclaw_preprocess_ddblock_cycle_block_content(&$vars){
     }
         
       if (isset($result->node_title)) {
-		$slider_items[$key1]['slide_title'] =  $result->node_title;
+		$slider_items[$key1]['slide_title'] =  l($result->node_title,'node/' . $result->nid);
       }
 	// add slide_read_more variable and slide_node variable
           if (isset($result->nid)) {
@@ -54,24 +54,26 @@ function uclaw_preprocess_ddblock_cycle_pager_content(&$vars){
     if ($vars['pager_settings']['view_name'] == 'news') {
       if (!empty($vars['content'])) {
         foreach ($vars['content'] as $key1 => $result) {
-          // add pager_item_image variable
-          if (isset($result->node_data_field_news_feature_img_field_news_feature_img_fid)) {
-            $fid = $result->node_data_field_news_feature_img_field_news_feature_img_fid;
-            $filepath = db_result(db_query("SELECT filepath FROM {files} WHERE fid = %d", $fid));
-            //  use imagecache (imagecache, preset_name, file_path, alt, title, array of attributes)        
-          }
-          // add pager_item _text variable from imagefield alternative text
-          if (isset($result->node_data_field_news_feature_img_field_news_feature_img_data)) {
-		    $data=unserialize($result->node_data_field_news_feature_img_field_news_feature_img_data);
-		  if (isset($data['alt'])) {
-		    $pager_items[$key1]['text'] =  $data['alt'];
-            }          
-		  }
-      if (isset($result->node_title)) {
-		$slider_items[$key1]['slide_title'] =  $result->node_title;
-      }
+	      if (isset($result->node_title)) {
+			$pager_items[$key1]['slide_title'] =  $result->node_title;
+	      }
+	      $pager_items[$key1]['text'] = uclaw_trim_headline($result->node_revisions_teaser, 20);
+	      $pager_items[$key1]['slide_read_more'] =  l('> Read more', 'node/' . $result->nid);
         }
       }
       $vars['pager_items'] = $pager_items;
     }
  }
+
+function uclaw_trim_headline($text, $length = 35) {
+		$text = preg_replace("/<img[^>]+\>/i", "", $text); 
+		$text = preg_replace("/\[img_assist[^\]]+\\]/i", "", $text); 
+		$text = str_replace(']]>', ']]&gt;', $text);
+		$text = strip_tags($text);
+		$words = preg_split("/[\n\r\t ]+/", $text, $length + 1, PREG_SPLIT_NO_EMPTY);
+		if ( count($words) > $length ) {
+			array_pop($words);
+		} 
+		$text = implode(' ', $words);
+	return $text;
+}

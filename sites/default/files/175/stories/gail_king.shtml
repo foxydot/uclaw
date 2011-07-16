@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->	  
+
+<script src="../js/tooltip.js" type="text/javascript"></script>  
+
+<script type="text/javascript" charset="utf-8">
+
+window.addEvent('domready', function(){ 
+  
+  var tips = new Tips($$('.tool'), { 
+	maxTitleChars: 80,
+	onShow: function(tip){ tip.setStyle('opacity', '0.95'); },
+	onHide: function(tip){ tip.setStyle('visibility', 'hidden'); },
+	offsets: {'x': -10, 'y': 15},
+	timeOut: 0
+   });
+ 
+  new Carousel("slides", "slide-navigation");
+});
+
+</script>  
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Your Memories</h2>
+    
+<div class="content">
+        
+      	<div class="left">
+        
+        	<img src="../images/alumni/small/GailKing.jpg" alt="Name" width="150" height="210" />      	</div>
+        
+  <div class="right">
+        
+        	<h6>Gail King</h6>                        
+            
+          	<dl>
+
+                <dt>Graduation Class</dt>
+                <dd>1990</dd>
+                
+                <dt>Residence</dt>
+            	<dd>Cincinnati, OH</dd>   
+            </dl>
+            
+      		<p><strong>Classmates:</strong>&nbsp; It was a very collegial environment. I think there were about 130 students in my entering class. It was a great group of students. We were all in the same position that first year. We were all terrified and bonded well as a class. Certainly, within my section we were very close.</p>
+            
+            
+  	        <p><strong>Faculty:</strong>&nbsp; Probably the most memorable [class] would be Civil Procedure with Professor Aplin. Criminal Procedure with Professor Aplin. Pretty much any class with Prof. Aplin. It was clear that he loved teaching the students.</p>
+  	        <p>Property with [Professor] Biancalana was very interesting. I believe that he is still at the law school and it was clear that he was very intelligent. He was leaps and bounds ahead of the class and he would really get frustrated if students couldn’t follow his line of reasoning as quickly as he wanted them to. He was also a chain smoker so he would bolt from the room right after class to go have a cigarette. Students could come out and talk to him when he was outside smoking. </p>
+  </div>  
+        
+      <div class="clearfix"></div>  
+        
+  </div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

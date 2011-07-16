@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/library_inside.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>University of Cincinnati &raquo; College of Law &raquo; Archives</title>
+<!-- InstanceEndEditable -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />	
+        
+    <meta name="description" content="University of Cincinnati College of Law website. Established in 1833, Cincinnati 
+    Law is the fourth oldest continually operating law school in the country. The College's diverse enrollment of 
+    less than 400 students makes it one of the smallest public law schools in the nation."/>
+    
+	<meta name="keywords" content="Cincinnati Law, College of Law, University of Cincinnati, 
+    UC Law, Cincinnati, Ohio, midwest, J.D., J.D./M.B.A., J.D./M.A., JD, JD/MBA, JD/MA, 
+    Juris Doctor, admissions, application for admission, law school, law student, legal education, 
+    law library, Marx Law Library, William J. Butler Papers, Judge Nathaniel R. Jones Papers, Urban 
+    Morgan Institute for Human Rights, Center for Corporate Law, Glen M. Weaver Institute of Law and 
+    Psychiatry, Center for Practice in Negotiation and Problem Solving, Justice Institute for the 
+    Legal Profession, University of Cincinnati Law Review, Securities Lawyers Deskbook"/>
+
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="/css/global.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/yui/build/menu/assets/menu.css">    
+    
+	<script type="text/javascript" src="/yui/build/yahoo/yahoo.js"></script>
+    <script type="text/javascript" src="/yui/build/event/event.js"></script>
+    <script type="text/javascript" src="/yui/build/dom/dom.js"></script>
+    <script type="text/javascript" src="/yui/build/container/container_core.js"></script>
+    <script type="text/javascript" src="/yui/build/menu/menu.js"></script> 
+    
+    <script type="text/javascript">
+    
+        YAHOO.example.onMenuBarReady = function() {
+    
+        // Instantiate and render the menu bar
+    
+            var oMenuBar = new YAHOO.widget.MenuBar("productsandservices", { autosubmenudisplay:true, hidedelay:750, lazyload:true });
+    
+                oMenuBar.render();
+    
+            };
+    
+    
+        // Initialize and render the menu bar when it is available in the DOM
+    
+            YAHOO.util.Event.onContentReady("productsandservices", YAHOO.example.onMenuBarReady);
+    
+    </script>    
+    
+    <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+
+</head>
+
+<body>
+    
+<!--#include virtual="/ssi/global/header.ssi" -->	
+
+	<div id="sd_nav">
+	
+		<div id="sd_nav_page">
+		
+			LIBRARY
+		
+		</div>
+        
+<!--#include virtual="/ssi/library/subnav.ssi" -->
+
+	
+	<div id="sd_content_wrapper">
+    
+	 	<div id="sd_content_left">
+		
+			<!-- InstanceBeginEditable name="Left Column Title" -->
+	 	  	<div id="sd_information_header"> Quick Links </div>
+	 		<!-- InstanceEndEditable -->
+			
+			<!-- InstanceBeginEditable name="Left Column" -->
+        	<div id="sd_widget">
+        
+<!--#include virtual="/ssi/library/links.ssi" -->
+
+        	</div>
+            <!-- InstanceEndEditable -->
+  	
+    	</div>
+    
+    	<!-- InstanceBeginEditable name="Main Content" -->
+    	<div id="sd_content_right"> 
+        
+        <h2 class="hp_red_large">Archives<br />
+            Robert
+            S. Marx Law Library</h2>
+            
+            <div class="sd_highlight_box">
+        	
+				<div class="content_box_center">  
+				
+					<div class="inside_left">
+					
+						<span class="subhead_bold">General Information</span>
+						
+							<ul type="square">
+								<li><a class="toc" href="contact.shtml">Hours &amp; Contact Information</a></li>
+								<li><a class="toc" href="policyuse.shtml">Use Policy for
+								Rare Books, Archives &amp; Manuscripts Collections</a></li>
+								<li><a class="toc" href="policydev.shtml">Collection Policy
+								for Rare Books, Archives &amp; Manuscripts Collections</a></li>
+							</ul>
+					
+					</div>
+			  
+					<div class="inside_right">
+					
+						<span class="subhead_bold">Archives &amp; Papers </span>
+						
+							<ul type="square">
+								<li><a class="toc" href="butler.html">Papers of William
+								J. Butler</a><a class="toc" href="../aaaamaster/booklist/index.html"></a></li>
+								<li><a class="toc" href="jones.html">Papers of Judge
+								Nathaniel R. Jones</a></li>
+								<li>Judicial Merit Selection Campaign Papers
+								- Coming Soon!</li>
+							</ul>
+					
+					</div> 
+					
+					<div class="clearfix"></div>
+			  
+				</div>
+		
+				<div class="clearfix"></div>
+		
+			</div>
+		
+		</div>
+    	<!-- InstanceEndEditable -->
+      	
+        <div id="clearfix"></div>
+        
+    </div>
+
+<!--#include virtual="/ssi/global/disclaimer.ssi" -->
+    
+</body>
+
+<!-- InstanceEnd --></html>

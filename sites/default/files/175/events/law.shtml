@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->
+
+<script src="../js/prototype.js" type="text/javascript"></script>
+<script src="../js/scriptaculous.js" type="text/javascript"></script>
+
+<link href="../lightbox.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../js/lightbox.js"></script>
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Law &amp; Literature Symposium (2/29)</h2>
+    
+	<div class="content">
+        
+        <p>Lawyer-poet Professor Lawrence Joseph, St. John’s University School of Law, was the key speaker at this event. An internationally acclaimed poet and attorney, he has been named “the most important lawyer-poet of our era.”  Professor Joseph’s work has received wide spread attention and praise. From Lawyerland, currently being adapted into a film, to books on labor, employment, tort and compensation law, Professor Joseph brings a unique perspective to his work. </p>
+        
+		<div class="galleryWrapper">
+        
+          	<div id="item" class="gallery">
+    
+              	<div class="imageStart"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: -735, y: 0, mode: 'relative'});">
+<img src="../images/events/start.png" /></a></div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/1.jpg" rel="lightbox"><img src="../images/events/law/1.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/2.jpg" rel="lightbox"><img src="../images/events/law/2.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/3.jpg" rel="lightbox"><img src="../images/events/law/3.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/4.jpg" rel="lightbox"><img src="../images/events/law/4.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/5.jpg" rel="lightbox"><img src="../images/events/law/5.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/6.jpg" rel="lightbox"><img src="../images/events/law/6.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/7.jpg" rel="lightbox"><img src="../images/events/law/7.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>                
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/8.jpg" rel="lightbox"><img src="../images/events/law/8.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/9.jpg" rel="lightbox"><img src="../images/events/law/9.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+                <div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/10.jpg" rel="lightbox"><img src="../images/events/law/10.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>   
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/11.jpg" rel="lightbox"><img src="../images/events/law/11.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div>
+                
+  				<div class="wrapper">
+                	<div class="imageGallery"><a href="../images/events/law/12.jpg" rel="lightbox"><img src="../images/events/law/12.jpg" alt="Gallery Photo" /></a></div>
+                    <div class="text"><!--Audience--></div>    
+                </div> 
+                
+              	<div class="image"><img src="../images/events/end.png" /></div>                
+                                
+   	  	  	</div>             
+            
+            <div class="clearfix"></div>
+            
+            <div class="buttons">
+         
+                <p class="backward_time"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: 735, y: 0, mode: 'relative'});"> <img src="../images/events/btn_left.jpg" /></a></p>
+                
+                <p class="forward_time"><a href="javascript:void(0)" onclick="new Effect.Move ('item',{ x: -735, y: 0, mode: 'relative'});" 
+                > <img src="../images/events/btn_right.jpg" /></a></p>
+            
+     		</div>  
+                     
+            <div class="clearfix"></div>         
+                            
+        </div>        
+        
+  	</div>        
+                
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

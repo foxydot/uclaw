@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapperGala">
+
+	<h2>175th Anniversary Gala</h2>
+    
+	<div class="content">
+        
+        <p>We are rolling out the red carpet to celebrate our anniversary! Make plans to join us as we <em>remember</em>, <br />
+        <em>reconnect,</em> and <em>recharge</em> during this very special evening. </p>
+        <p><strong>Gala Registration</strong> <br />
+        Online registration is closed.  <br />
+        However, if you would still like to register for the event or have questions,<br />
+          please contact Peggy Ruwe at 513.556.0071.<br />
+        </strong></p>
+      <p class="red"><strong>Friday, January 25, 2008<br />
+    Hyatt Regency Cincinnati</strong><br/>
+    	<a href="https://secure.pledgeconnect.com/payment.aspx?uclaw" target="_blank"></a></p>
+   	  	<p><strong>Business Attire<br /></strong>For questions or additional information, <br />
+    please contact Peggy Ruwe at <a href="mailto:peggy.ruwe@uc.edu"><br />
+    peggy.ruwe@uc.edu</a> or 513.556.0071</p>
+    	<p>-----------------------------------</p>
+        <p><span class="red"><strong>Anniversary </strong><strong class="red">Gala <br />
+		</strong></span>Gala Reception<br />
+		6:30 p.m. – 7:30 p.m. </p>
+		<p>Gala Dinner &amp; Program</strong> With Guest Speaker  <a href="http://www.randomhouse.com/features/grisham/" target="_blank">John Grisham</a><br />
+ 		 8:00 p.m.<br />
+  		$175 per person<br />
+  		<em>Proceeds support the College of Law</em> Program</p>
+		<p>-----------------------------------</p>
+		<p><strong class="red">Ohio Innocence Project Reception with John Grisham</strong><br />
+  		6:00 p.m. -7:30 p.m.<br />
+  		Includes Reception, Gala Dinner, signed copy of The Innocent Man&quot;<br />
+  		$500 per person<br />
+  		<em>Proceeds exclusively support the Ohio Innocence Project</em></p>
+	</div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

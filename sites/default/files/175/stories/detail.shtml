@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="../ssi/head.ssi" -->	  
+
+<script src="../js/tooltip.js" type="text/javascript"></script>  
+
+<script type="text/javascript" charset="utf-8">
+
+window.addEvent('domready', function(){ 
+  
+  var tips = new Tips($$('.tool'), { 
+	maxTitleChars: 80,
+	onShow: function(tip){ tip.setStyle('opacity', '0.95'); },
+	onHide: function(tip){ tip.setStyle('visibility', 'hidden'); },
+	offsets: {'x': -10, 'y': 15},
+	timeOut: 0
+   });
+ 
+  new Carousel("slides", "slide-navigation");
+});
+
+</script>  
+
+</head>
+
+<body>
+
+<!--#include virtual="../ssi/header.ssi" -->
+    
+<div id="wrapper">
+
+	<h2>Your Stories</h2>
+    
+	<div class="content">
+        
+      	<div class="left">
+        
+        	<img src="../images/alumni/large/sample.jpg" alt="Name" width="300" height="300" />        
+            
+      	</div>
+        
+   	  	<div class="right">
+        
+        	<h6>First + Name</h6>                        
+            
+          <dl>
+
+                <dt>Graduation Class</dt>
+                <dd>1953</dd>
+                
+                <dt>Current Position</dt>
+                <dd>Lawyer - Private Practice</dd>
+                
+                <dt>Residence</dt>
+            <dd>New York, NY</dd>   
+                
+                <dt> Interview Transcript</dt>
+                <dd><a href="#">Download Here</a></dd>                                            
+            
+            </dl>
+            
+
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam vitae mi. Duis ullamcorper. Phasellus lacinia, leo eget pretium rhoncus, urna tortor sagittis nibh, non iaculis erat sapien et leo. Quisque tristique urna ut erat. Donec pulvinar placerat metus. Aenean facilisis mi ac nibh. Etiam eget mauris. Vivamus sit amet ante. Phasellus varius. Mauris sit amet neque sit amet massa tempus faucibus.
+            
+            Cras sagittis. In ornare scelerisque urna. Donec diam nunc, tincidunt feugiat, iaculis id, tincidunt et, nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut eu massa eget nulla sodales accumsan. </p>
+            <p>Cras a justo. Sed lacinia elementum ligula. Nunc vel enim. Mauris id enim. Aenean sapien diam, fermentum sit amet, dictum porttitor, laoreet quis, metus. Nulla facilisis eros. Integer eros est, pharetra quis, hendrerit eu, egestas ac, lectus. Maecenas odio. Fusce enim. Sed eu libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sed diam ac tortor euismod vestibulum. Duis tellus diam, interdum sed, ornare vitae, sollicitudin vitae, lectus. Duis commodo pretium velit. Nulla in sapien ut ligula ultrices laoreet.            </p>
+            <p>Mauris non nulla. Nullam vel sapien sed nibh venenatis convallis. Fusce viverra nunc at magna. Praesent malesuada. Praesent mattis odio vitae dui. Pellentesque a orci. Aenean a leo id sapien malesuada porta. Aenean imperdiet sem ut mi. Fusce consequat ipsum at magna. Curabitur sit amet nisl. Nam sagittis nulla sed eros. Curabitur id nulla vel arcu malesuada porttitor. Ut nunc neque, cursus eu, ultricies sit amet, rutrum ac, nisi.
+            
+            Nunc cursus, ipsum ut pulvinar tincidunt, leo augue mollis pede, vel iaculis leo turpis vel magna. Proin risus turpis, convallis eget, elementum et, faucibus et, pede. Duis augue est, sodales et, pulvinar vel, fermentum ullamcorper, massa. Vivamus dui. Nullam mattis dui non libero. </p>
+            <p>Donec eget nunc at quam imperdiet feugiat. Phasellus nec nibh sed leo pretium varius. Maecenas eu risus a lectus dignissim adipiscing. Morbi tincidunt tellus sit amet augue. Curabitur purus odio, vestibulum in, sollicitudin in, varius bibendum, urna. Quisque a est ac elit malesuada vehicula. Vivamus fermentum pede. Aenean nunc felis, hendrerit et, facilisis quis, dignissim vel, mi. Integer sapien eros, posuere non, tincidunt vel, bibendum ut, lacus. Curabitur tempus ultricies nunc. Mauris est ipsum, dictum ut, hendrerit sed, eleifend quis, tortor. Pellentesque viverra ante quis dui. Phasellus pretium venenatis leo.
+            
+            Morbi a neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas mauris. Mauris hendrerit tincidunt leo. Donec nec tellus vestibulum sapien scelerisque euismod. </p>
+            <p>Ut ac elit. Mauris eleifend aliquet enim. In at diam ac elit cursus luctus. Quisque consequat quam vel est. In metus nisl, mollis et, vulputate congue, pellentesque eget, sem. Curabitur nulla mauris, convallis sed, porttitor eu, lobortis at, eros.</p>
+  	  </div>  
+        
+        <div class="clearfix"></div>  
+        
+  </div>
+
+</div>
+
+<!--#include virtual="../ssi/disclaimer.ssi" -->
+
+</body>
+
+</html>

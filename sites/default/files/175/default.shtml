@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--#include virtual="ssi/head.ssi" -->	  
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+
+</head>
+
+<body>
+
+<!--#include virtual="ssi/headerHome.ssi" -->
+    
+<div id="wrapper">
+
+    <div id="flashcontent">
+    
+        <strong>You need to upgrade your Flash Player</strong>Please go <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">here</a> to get the latest version.	
+    
+    </div>
+
+    <script type="text/javascript">
+    // <![CDATA[
+    
+    var so = new SWFObject("flash/Fireworks_v04.swf", "Fireworks_v04", "780", "580", "9", "#000");
+    so.addParam("wmode", "transparent");
+    so.write("flashcontent");
+    
+    // ]]>
+    </script>
+    
+</div>
+
+<!--#include virtual="ssi/disclaimer.ssi" -->
+
+<div id="logos">
+
+	<p><a href="sponsorship/"><img src="images/sponsors/helmer2.jpg" alt="Helmer, Martins, Rice and Popham, Co." border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="sponsorship/">
+    <img src="images/sponsors/top2.jpg" alt="Top Gun Publishing" border="0"/></a></p>
+  	<p>Thank you to our Platinum Sponsors<br/>
+    Helmer, Martins, Rice &amp; Popham, Co., LPA | Top Gun Publishing, LLC</p>
+
+</div>
+
+</body>
+
+</html>
