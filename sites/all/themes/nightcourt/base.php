@@ -22,6 +22,60 @@
 		$('ul.nice-menu-right a.active').parent().parent().show();
 	});
     </script>
+ 
+<style>
+@import 'css/reset.css';
+@import 'css/nice_menus.css';
+address {font-style: normal;}
+
+body {background: url('images/law-school-pg-bkg.jpg') repeat scroll center top #D2C7A0;}
+.page_wrapper {margin: .8em 0 0 0;}
+.full_width {display: block;float: none;width: 100%;position:relative;}
+.wrapper {display: block;float:none;margin:0 auto;width: 980px;}
+
+.header.full_width {background: #ffffff;
+-webkit-box-shadow: 0px 0px 6px 0 #000000;
+-moz-box-shadow: 0px 0px 6px 0 #000000;
+box-shadow: 0px 0px 6px 0 #000000;
+z-index: 1000;
+  }
+.primary-nav.full_width {background: #CF0101;height: 44px;z-index:600;}
+
+.header .wrapper {background: url('images/law-school-hdr-bkg.jpg') no-repeat center top;
+height: 135px;}
+.body .wrapper {background: #ffffff;}
+.body .breadcrumb {height: 50px;}
+.body .sidebar {width: 200px;}
+.body .sidebar-left {float:left;margin-right: 20px;background:purple;}
+.body .content-area {float: left;width:760px;background:aqua;}
+.footer .wrapper {background: url('images/law-school-ftr-bkg.png') repeat-x center top; padding: 12px 0 0 0;}
+
+.clear {clear:both;float:none;}
+
+.header .university-of-cincinnati a {
+    display: block;
+    float: left;
+    height: 135px;
+    text-indent: -9000px;
+    width: 180px;
+}
+.header .college-of-law a {
+    display: block;
+    float: left;
+    height: 135px;
+    text-indent: -9000px;
+    width: 180px;
+}
+
+
+body {color: #555555;
+    font-family: 'Trebuchet MS',Arial,Tahoma,Verdana;
+    font-size: .75em;}
+.footer, .footer a {color: #897458;}
+.footer {font-size:.9em;line-height:1.2em;}
+.footer ul li {display:inline;float: left;margin:0 30px 0 0;width:200px;}
+
+</style>
 </head>
 <body class="<?php print $body_classes; ?>">
 <div class="page_wrapper">

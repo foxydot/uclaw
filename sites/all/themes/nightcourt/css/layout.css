@@ -1,102 +1,50 @@
+@CHARSET "UTF-8";
 
-/** Layout
----------------------------------
-*  Using a negative margin technique, adapted from ZEN. The page is loaded by this order:
-*  
-*  1. Header
-*  2. Content
-*  3. Navigation menus
-*  4. Sidebar Left
-*  5. Sideabr Right
-*	
-*/
+address {font-style: normal;}
 
-#page {
-	width: 960px; /* edit to change the width of the page */
-	margin: 0 auto; /* remove 'auto' and the width to switch to a fluid width */
+body {background: url('../images/law-school-pg-bkg.jpg') repeat scroll center top #D2C7A0;}
+.page_wrapper {margin: .8em 0 0 0;}
+.full_width {display: block;float: none;width: 100%;position:relative;}
+.wrapper {display: block;float:none;margin:0 auto;width: 980px;}
+
+.header.full_width {background: #ffffff;
+-webkit-box-shadow: 0px 0px 6px 0 #000000;
+-moz-box-shadow: 0px 0px 6px 0 #000000;
+box-shadow: 0px 0px 6px 0 #000000;
+z-index: 100;
+  }
+.primary-nav.full_width {background: #CF0101;height: 44px;z-index:90;}
+
+.header .wrapper {background: url('../images/law-school-hdr-bkg.jpg') no-repeat center top;
+height: 135px;}
+.body .wrapper {background: #ffffff;}
+.body .breadcrumb {height: 50px;}
+.body .sidebar {width: 200px;}
+.body .sidebar-left {float:left;margin-right: 20px;background:purple;}
+.body .content-area {float: left;width:760px;background:aqua;}
+.footer .wrapper {background: url('../images/law-school-ftr-bkg.png') repeat-x center top; padding: 12px 0 0 0;}
+
+.clear {clear:both;float:none;}
+
+.header .university-of-cincinnati a {
+    display: block;
+    float: left;
+    height: 135px;
+    text-indent: -9000px;
+    width: 180px;
 }
-
-/** LAYOUT RULES
----------------------------------
-*  do not change if you're not sure you know what you're doing
-*/
-
-#content {
-  float: left;
-  width: 100%;
-  margin-right: -100%;
-  padding: 0;
-}
-.sidebar {
-  float: left;
-}
-#sidebar-second {
-  float: right;
-}
-#footer {
-  float: none;
-  clear: both;
-}
-
-/* Layout Helpers */
-
-#header, #footer, .mission, .breadcrumb, .node {
-  clear: both;
+.header .college-of-law a {
+    display: block;
+    float: left;
+    height: 135px;
+    text-indent: -9000px;
+    width: 180px;
 }
 
-/** Sidebars width
----------------------------------
-*  Changing the width of the sidebars is dead easy, just change the
-*  values below corresponding to the sidebar you want to modify.
-*  Make sure you keep negative values as negative values.
-*  For example, if I want to increase the width of the left sidebar
-*  to 300px, I would have to change each '190' to '300'.
-*/
 
-.two-sidebars .center,
-.sidebar-left .center {
-  margin-left: 190px;     /* LEFT value */
-}
-#sidebar-first {
-  width: 190px;           /* LEFT value */
-	margin-right: -190px;    /* negative LEFT value */
-}
-.two-sidebars .center,
-.sidebar-right .center {
-  margin-right: 200px;    /* RIGHT value */
-}
-#sidebar-second {
-  width: 200px;           /* RIGHT value */
-}
-
-/** Columns inner
----------------------------------
-*  You can change the padding inside the columns without changing the
-*  width of them by just usinbg the INNER div of each column
-*/
-
-.inner {
-	padding: 0px;
-}
-
-/** Navigation styles
----------------------------------
-*  The navigation is loaded after the content, so we need to make space
-*  for it, equal to its height, so if you change the height of the navigation,
-*  remember to adapt the margin top of the content and sidebars.
-*/
-
-#navigation {
-  float: left;
-  margin-left: 0;
-  margin-right: -100%;
-  padding: 0;
-  width: 100%;
-}
-.with-navigation #content,
-.with-navigation .sidebar {
-  margin-top: 40px;        /* Navigation Height */
-}
-#navigation {
-  height: 40px;            /* Navigation Height */
-}
+body {color: #555555;
+    font-family: 'Trebuchet MS',Arial,Tahoma,Verdana;
+    font-size: .75em;}
+.footer, .footer a {color: #897458;}
+.footer {font-size:.9em;line-height:1.2em;}
+.footer ul li {display:inline;float: left;margin:0 30px 0 0;width:200px;}

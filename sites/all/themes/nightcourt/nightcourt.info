@@ -5,13 +5,15 @@ core = 6.x
 project = nightcourt
 engine = phptemplate
 
-regions[banner] = Banner
-regions[content_top] = Content top
+regions[primary_navigation] = Primary Navigation
+regions[breadcrumb] = Breadcrumb
+regions[sidebar_left_1] = Sidebar Left 1
+regions[sidebar_left_2] = Sidebar Left 2
+regions[sidebar_left_3] = Sidebar Left 3
+regions[content_top] = Content Top
+regions[content_bottom] = Content Bottom
 regions[header] = Header
-regions[left] = First sidebar
-regions[right] = Second sidebar
-regions[footer_block] = Footer
-regions[content_bottom] = Content bottom
+regions[footer] = Footer
 
 features[] = logo
 features[] = name
@@ -21,12 +23,12 @@ features[] = node_user_picture
 features[] = comment_user_picture
 features[] = search
 features[] = favicon
-features[] = primary_links
-features[] = secondary_links
+features[] = nc_primary_links
+features[] = nc_secondary_links
 
 stylesheets[all][] = css/reset.css
-stylesheets[all][] = css/default.css
-stylesheets[all][] = css/stylesV3.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/content.css
 stylesheets[print][] = css/print.css
              
 settings[nightcourt_zen_tabs]             = 1
