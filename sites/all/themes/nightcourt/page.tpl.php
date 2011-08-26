@@ -1,50 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
-
-  <head>
-    <title><?php print $head_title; ?></title>
-    <?php print $head; ?>
-    <?php print $styles; ?>
-    <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css";</style><![endif]-->
-    <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css";</style><![endif]-->
-    <?php print $scripts; ?>
-    <script type="text/javascript">
-    jQuery(document).ready(function(){
-		$('ul.nice-menu-right>li.menuparent>a').click(function() {
-			$(this).next().toggle('slow');
-			return false;
-		}).next().hide();
-		$('ul.nice-menu-right>li.menuparent>span.nolink').click(function() {
-			$(this).next().toggle('slow');
-			return false;
-		}).next().hide();
-		$('ul.nice-menu-right a.active').parent().parent().show();
-	});
-    </script>
-</head>
-<body class="<?php print $body_classes; ?>">
-<div class="page_wrapper">
-	<div id="header" class="header full_width">
-		<div class="wrapper">
-			<h2 class="university-of-cincinnati"><a href="http://www.uc.edu" target="_blank">University of Cincinnati</a></h2>
-			<h1 class="college-of-law"><a href="/">College of Law</a></h1>
-		</div>
-	</div>
-	<div id="primary-nav" class="primary-nav navigation full_width">
-		<div class="wrapper">
-			<?php if (!empty($primary_navigation)){ print theme('links', $primary_navigation, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-		</div>
-	</div>
-	<div id="body" class="body full_width">
-		<div class="wrapper">
-			<?php if ($breadcrumb): ?>
-				<div id="breadcrumb"  class="breadcrumb">
-					<?php print $breadcrumb; ?>
-				</div> <!-- /#breadcrumb -->
-			<?php endif; ?>
+<?php include_once('header.php');?>
+			
 			<?php if ($sidebar_left_1 || $sidebar_left_2 || $sidebar_left_3): ?>
-				<div id="sidebar-left"  class="sidebar sidebar-left">
+				<div id="sidebar-left"  class="sidebar sidebar-left equalize">
 					<?php if ($sidebar_left_1): ?>
 						<div id="sidebar-left-1"  class="sidebar-left-1">
 							<?php print $sidebar_left_1; ?>
@@ -62,12 +19,14 @@
 					<?php endif; ?>
 				</div> <!-- /#sidebar-left -->
 			<?php endif; ?>
-			<div class="content-area">
+			<div class="content-area equalize">
 				<?php if ($content_top): ?>
 					<div id="content-top"  class="content-top">
 						<?php print $content_top; ?>
 					</div> <!-- /#content-top -->
 				<?php endif; ?>
+	          		<div class="content">
+					<h1 class="title"><?php print $title; ?></h1>
 				<?php if(!empty($sidebar_image['filepath']) || $sidebar_text){?>           
 					<div class="right-sidebar resources">
 	                <?php if(!empty($sidebar_image['filepath'])){ ?>
@@ -75,43 +34,10 @@
 	                <?php } ?>
 	          		<?php print $sidebar_text; ?>
 	          		</div>
-	          		<div class="content-col-narrow">
+	          	<?php } ?>
 	          		 <?php print $content; ?>
 	          		</div>
-	          	<?php } else {?>
-	          		<div class="content">
-						<?php print $content; ?>
-					</div>
-	          	<?php } ?>
 	          	<?php print $feed_icons; ?>
-				<?php if ($content_bottom): ?>
-					<div id="content-bottom"  class="content-bottom">
-						<?php print $content_bottom; ?>
-					</div> <!-- /#content-bottom -->
-				<?php endif; ?>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-	<div id="footer" class="footer full_width">
-		<div class="wrapper">
-			<?php if(!empty($footer_message) || !empty($footer_block)): ?>
-				<?php print $footer_message; ?>
-				<?php print $footer_block; ?>
-			<?php endif; ?>
-			<ul>
-				<li class="highlight">&copy; University of Cincinnati <?php print date("Y"); ?><br />
-				All Rights Reserved.</li>
-				<li><address>PO Box 210040<br />
-				Clifton Avenue &amp; Calhoun Street<br/>
-				Cincinnati, OH 45221-0040</address></li>
-				<li><address>513-556-6805 (p) / 513-556-2391 (f)</address><br />
-				<a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a></li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-	</div>
-</div>
-<?php print $closure; ?>
-</body>
-</html>
+	         </div>
+	         <div class="clear"></div>
+<?php include_once('footer.php');?>	          	

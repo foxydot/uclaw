@@ -20,20 +20,13 @@ if (theme_get_setting('nightcourt_zen_tabs')) {
  */
 
 function nightcourt_preprocess_page(&$vars, $hook) {
-	if(in_array('page-node-edit',$vars['template_files'])||
-	in_array('page-node-clone',$vars['template_files'])||
-	in_array('page-node-node_export',$vars['template_files'])||
-	in_array('page-node-devel',$vars['template_files'])){
-		$edit = true;
-	} else {
-		$edit = false;
-	}
+  $vars['edit'] = nightcourt_check_edit($vars);
   $node = $vars['node'];
   $vars['url'] = explode('/',$node->path);
-  	$vars['edit'] = $edit;
-  //create variable for node type faculty
-  if ($node->type == "faculty") {
-	if($node->field_staff_title[0]['value']){ $vars['staff_title'] = $node->field_staff_title[0]['value']; }
+  switch($node->type){
+  	case "faculty":
+  		//----------------------//
+  if($node->field_staff_title[0]['value']){ $vars['staff_title'] = $node->field_staff_title[0]['value']; }
 	if($node->field_phone_fax[0]['value'] || $node->field_email[0]['value']){ 
   		$vars['contact_info'] = '<h4>Contact Information</h4>';
   		$vars['contact_info'] .= '<ul class="listSquare">';
@@ -101,18 +94,85 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">News</a></li>';
 		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_news[0]['value'].'</div>';			
 	}
-
-  } elseif($node->type == 'institute') {
-  		//institute specific stuff
+  		//----------------------//
+  		break;
+  	case "institute":
   		$vars['sidebar_image'] = $node->field_sb_img[0];
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
-  		
-    } else {
+  		break;
+  	case "homepage":
+  		$vars['feature_img'] = $node->field_feature_img[0]['view'];
+		$vars['feature_title'] = $node->field_feature_title[0]['value'];
+		$vars['feature_caption'] = $node->field_feature_caption[0]['value'];
+		$vars['sb1_title'] = $node->field_sb1_title[0]['value'];
+		$vars['sb1_content'] = $node->field_sb1_content[0]['value'];
+		$vars['sb2_title'] = $node->field_sb2_title[0]['value'];
+		$vars['sb2_content'] = $node->field_sb2_content[0]['value'];
+		$vars['sb3_title'] = $node->field_sb3_title[0]['value'];
+		$vars['sb3_content'] = $node->field_sb3_content[0]['value'];
+		$vars['feature_1_title'] = $node->field_feature_1_title[0]['value'];
+		$vars['feature_1_content'] = $node->field_feature_1_content[0]['value'];
+		$vars['feature_1_image'] = $node->field_feature_1_image[0]['view'];
+		$vars['feature_2_title'] = $node->field_feature_2_title[0]['value'];
+		$vars['feature_3_title'] = $node->field_feature_3_title[0]['value'];
+		$vars['feature_4_title'] = $node->field_feature_4_title[0]['value'];
+		$vars['feature_2_image'] = $node->field_feature_2_image[0]['view'];
+		$vars['feature_3_image'] = $node->field_feature_3_image[0]['view'];
+		$vars['feature_4_image'] = $node->field_feature_4_image[0]['view'];
+		$vars['feature_2_content'] = $node->field_feature_2_content[0]['value'];
+		$vars['feature_3_content'] = $node->field_feature_3_content[0]['value'];
+		$vars['feature_4_content'] = $node->field_feature_4_content[0]['value'];
+		$vars['feature_link'] = $node->field_feature_link[0];
+		$vars['sb1_link'] = $node->field_sb1_link[0];
+		$vars['sb2_link'] = $node->field_sb2_link[0];
+		$vars['sb3_link'] = $node->field_sb3_link[0];
+		$vars['feature_1_link'] = $node->field_feature_1_link[0];
+		$vars['feature_2_link'] = $node->field_feature_2_link[0];
+		$vars['feature_3_link'] = $node->field_feature_3_link[0];
+		$vars['feature_4_link'] = $node->field_feature_4_link[0];
+		$vars['feature_1_subtitle'] = $node->field_feature_1_subtitle[0]['value'];
+		$vars['feature_2_subtitle'] = $node->field_feature_2_subtitle[0]['value'];
+		$vars['feature_3_subtitle'] = $node->field_feature_3_subtitle[0]['value'];
+		$vars['feature_4_subtitle'] = $node->field_feature_4_subtitle[0]['value'];
+		/*foreach($node AS $k => $v){
+			$data .= '$vars[\''.preg_replace('#field_#i','',$k).'\'] = $node->'.$k.'[0][\'value\'];'."\n";
+		}
+		ts_data($data);*/
+  		break;
+  	case "landingpage":
+  		$vars['feature_img'] = $node->field_feature_img[0]['view'];
+		$vars['feature_title'] = $node->field_feature_title[0]['value'];
+		$vars['feature_caption'] = $node->field_feature_caption[0]['value'];
+		$vars['feature_1_title'] = $node->field_feature_1_title[0]['value'];
+		$vars['feature_1_content'] = $node->field_feature_1_content[0]['value'];
+		$vars['feature_1_image'] = $node->field_feature_1_image[0]['view'];
+		$vars['feature_2_title'] = $node->field_feature_2_title[0]['value'];
+		$vars['feature_3_title'] = $node->field_feature_3_title[0]['value'];
+		$vars['feature_4_title'] = $node->field_feature_4_title[0]['value'];
+		$vars['feature_2_image'] = $node->field_feature_2_image[0]['view'];
+		$vars['feature_3_image'] = $node->field_feature_3_image[0]['view'];
+		$vars['feature_4_image'] = $node->field_feature_4_image[0]['view'];
+		$vars['feature_2_content'] = $node->field_feature_2_content[0]['value'];
+		$vars['feature_3_content'] = $node->field_feature_3_content[0]['value'];
+		$vars['feature_4_content'] = $node->field_feature_4_content[0]['value'];
+		$vars['feature_1_link'] = $node->field_feature_1_link[0];
+		$vars['feature_2_link'] = $node->field_feature_2_link[0];
+		$vars['feature_3_link'] = $node->field_feature_3_link[0];
+		$vars['feature_4_link'] = $node->field_feature_4_link[0];
+		$vars['feature_1_subtitle'] = $node->field_feature_1_subtitle[0]['value'];
+		$vars['feature_2_subtitle'] = $node->field_feature_2_subtitle[0]['value'];
+		$vars['feature_3_subtitle'] = $node->field_feature_3_subtitle[0]['value'];
+		$vars['feature_4_subtitle'] = $node->field_feature_4_subtitle[0]['value'];
+  		break;
+  	default:
   		$vars['sidebar_image'] = $node->field_sb_img[0];
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
     	$vars['attachments'] = $node->content['files']['#value'];
     	$vars['content'] = preg_replace("/".preg_quote($vars['attachments'],'/')."/",'',$vars['content']);
-    }
+  		break;
+  }
+  
+
   // Don't display empty help from node_help().
   if ($vars['help'] == "<div class=\"help\"><p></p>\n</div>") {
     $vars['help'] = '';
@@ -160,7 +220,7 @@ function nightcourt_preprocess_page(&$vars, $hook) {
       }
     }
   }
-  /*  // Check what the user's browser is and add it as a body class
+   // Check what the user's browser is and add it as a body class
       // DEACTIVATED - Only works if page cache is deactivated
       $user_agent = $_SERVER['HTTP_USER_AGENT'];
       if($user_agent) {
@@ -212,6 +272,16 @@ function nightcourt_preprocess_page(&$vars, $hook) {
   $vars['body_classes'] = implode(' ', $body_classes); // Concatenate with spaces
 }
 
+function nightcourt_check_edit(&$vars){
+	if(in_array('page-node-edit',$vars['template_files'])||
+	in_array('page-node-clone',$vars['template_files'])||
+	in_array('page-node-node_export',$vars['template_files'])||
+	in_array('page-node-devel',$vars['template_files'])){
+		return true;
+	} else {
+		return false;
+	}
+}
 /*
  *	 This function creates the NODES classes, like 'node-unpublished' for nodes
  *	 that are not published, or 'node-mine' for node posted by the connected user...

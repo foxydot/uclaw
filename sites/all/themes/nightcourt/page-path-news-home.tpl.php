@@ -1,32 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
-
-  <head>
-    <title><?php print $head_title; ?></title>
-    <?php print $head; ?>
-    <?php print $styles; ?>
-    <link type="text/css" href="<?php print $base_path . path_to_theme() ?>/css/news_page.css" rel="stylesheet" />
-    <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css";</style><![endif]-->
-    <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css";</style><![endif]-->
-    <?php print $scripts; ?>
-    <script type="text/javascript" src="<?php print $base_path . path_to_theme() ?>/assets/js/scrollable.js"></script>
-    <script type="text/javascript" src="<?php print $base_path . path_to_theme() ?>/assets/js/newspage_jquery.js"></script>
-  </head>
-
-  <body class="<?php print $body_classes; ?>">
-    
-    <div id="page">
-		<div id="container">
-			<div id="wrapper">
-<?php include_once('header.php');?>
-<!-- start here -->
-    <!-- ______________________ MAIN _______________________ -->
-    <div id="main" class="clearfix"></div>
- 	<div id="content">
+<?php $add_css[] = 'news_page.css'; ?>
+<?php $add_js[] = 'scrollable.js'; ?>
+<?php $add_js[] = 'newspage_jquery.js'; ?>
+<?php include_once('header.php');?> 	
+ 	
         <div id="content-area">
-<?php print $banner; ?>
-		
+		<?php 
+		$block = module_invoke('ddblock', 'block', 'view', 20);
+		print $block['content'];
+		 ?>		
 		
 		<div class="clear"></div>
 		
@@ -82,53 +63,4 @@
 
           <?php print $feed_icons; ?>
 
-          <?php if ($content_bottom): ?>
-            <div id="content-bottom">
-              <?php print $content_bottom; ?>
-            </div><!-- /#content-bottom -->
-          <?php endif; ?>
-
-          </div>
-          <div class='clearfix'></div>
-        </div> <!-- /content-inner /content -->
-		
-        <?php if ($right): ?>
-          <div id="sidebar-second" class="column sidebar second">
-            <div id="sidebar-second-inner" class="inner">
-              <?php print $right; ?>
-            </div>
-          </div>
-        <?php endif; ?> <!-- /sidebar-second -->
-
-      </div> <!-- /main -->
-      
-      </div> <!-- /wrapper -->
-</div> <!-- /container -->
-<!-- end here -->
-      <!-- ______________________ FOOTER _______________________ -->
-
-        <div id="footer">
-	      <?php if(!empty($footer_message) || !empty($footer_block)): ?>
-          <?php print $footer_message; ?>
-          <?php print $footer_block; ?>
- 	     <?php endif; ?>
- 	     	<ul>
-		<li class="highlight">&copy; University of Cincinnati <?php print date("Y"); ?>.</li>
-		<li>All Rights Reserved.</li>
-	</ul>
-	<ul>
-		<li>PO Box 210040</li>
-		<li>Clifton Avenue & Calhoun Street</li>
-		<li>Cincinnati, OH 45221-0040</li>
-	</ul>
-	<ul>
-		<li>513-556-6805 (p) / 513-556-2391 (f)</li>
-		<li><a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a></li>
-	</ul>
-	<div class="clear"></div>
-        </div> <!-- /footer -->
-
-    </div> <!-- /page -->
-    <?php print $closure; ?>
-  </body>
-</html>
+<?php include_once('footer.php');?>

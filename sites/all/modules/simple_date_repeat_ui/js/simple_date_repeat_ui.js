@@ -63,6 +63,7 @@ Drupal.simpleDateRepeatUi = function() {
     attachEvents();
     $('#repeat-byday, #repeat-bymonth, .repeat-clone').hide();
     $('.rrule-sum').css('display', 'block');
+    $('.repeat-FREQ option[value=NONE]').remove();
   }
   
   uncheck = function() {
@@ -84,12 +85,17 @@ Drupal.simpleDateRepeatUi = function() {
       open();
       return false;
     });
-    $(form).bind('submit', function() { 
-      saveRepeat(true);
-      moveForm();
-      multiWarn();
-      if(Drupal.settings.simple_date_repeat_ui.continueSubmit !== true) {
-        return false;
+    $(form).bind('submit', function() {
+      if (chb.is(":checked")){
+        saveRepeat(true);
+        moveForm();
+        multiWarn();
+        if(Drupal.settings.simple_date_repeat_ui.continueSubmit !== true) {
+          return false;
+        }
+      }
+      else {
+        blankValues();
       }
     });
     $('#repeat-freq select').live('change', function() { showExtra($(this)); changeInterval($(this).val())}).trigger('change');
@@ -122,6 +128,8 @@ Drupal.simpleDateRepeatUi = function() {
   }
   
   moveForm = function() {
+    //Just in case there are any of hidden FREQ inputs.
+    $('.hiddenFREQ').remove();
     $('.repeat-popup :input').each(function() {
       $val = $(this).val();
       $name = $(this).attr('name');
@@ -133,6 +141,17 @@ Drupal.simpleDateRepeatUi = function() {
         .appendTo(form);
       }
     });
+  }
+  
+  blankValues = function() {
+    //Just in case there are any hidden FREQ inputs already.
+    $('.hiddenFREQ').remove();
+    $('<input type="hidden"></input>').attr({
+          'name': $fieldname + '[rrule][FREQ]',
+     })
+     .val('NONE')
+     .addClass('hiddenFREQ')
+     .appendTo(form);
   }
   
   updateDesc = function(only) {
