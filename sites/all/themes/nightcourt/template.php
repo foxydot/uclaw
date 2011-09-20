@@ -96,10 +96,10 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 	}
   		//----------------------//
   		break;
-  	case "institute":
+  	/*case "institute":
   		$vars['sidebar_image'] = $node->field_sb_img[0];
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
-  		break;
+  		break;*/
   	case "homepage":
   		$vars['feature_img'] = $node->field_feature_img[0]['view'];
 		$vars['feature_title'] = $node->field_feature_title[0]['value'];
@@ -164,6 +164,7 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['feature_3_subtitle'] = $node->field_feature_3_subtitle[0]['value'];
 		$vars['feature_4_subtitle'] = $node->field_feature_4_subtitle[0]['value'];
   		break;
+  	case "institute":
   	default:
   		$vars['sidebar_image'] = $node->field_sb_img[0];
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];

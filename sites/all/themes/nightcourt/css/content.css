@@ -1,5 +1,10 @@
 @CHARSET "UTF-8";
 
+a:link, a:visited {
+    color: #E0001F;
+    text-decoration: none;
+}
+
 /* BANNER STYLES */ 
 
 #bannerHome {
@@ -15,9 +20,10 @@
 }
 
 h1.title {
-	font-size: 2.8em;
-	border-bottom: 2px solid #860000;
+	font-size: 1.7em;
+	border-bottom: 2px solid #FF0000;
 	margin: 0 0 12px;
+	padding-bottom: 5px;
 }
 
 /* CONTENT STYLES */   
@@ -68,16 +74,32 @@ h1.title {
 }
 
 .body .node-inner .content {font-size: 1em; line-height: 1.6em;}
-.body .node-inner .content p:first-child {
+/**.body .node-inner .content p:first-child {
     border-bottom: 1px solid #CCCCCC;
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.6em;
     margin-bottom: 1.6em;
     padding-bottom: 2em;
+}**/
+
+.body .node-inner .content p {
+    line-height: 1.6em;
+    margin-bottom: .6em;
 }
+
+.body .node-inner .content ul {
+    margin: 15px 25px;
+}
+
+.body .node-inner .content ul li {
+    list-style: square;
+    padding-bottom: 4px;
+}
+
 .body .node-inner .content h2 {
 	font-size: 1.8em;
 }
+
 .body .node-inner .content h3 {
 	font-family: 'Trebuchet MS',Arial,Tahoma,Verdana;
 	font-size: 1.4em;

@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+.node-type-homepage h3 {
+	font-size: 1.666em;
+	color: #FF0000;
+}
+
+.homepage-header-area {
+	background: #000;
+}
+.homepage-header-area h3 {
+	}
+.homepage-header-area .homepage-header-feature {
+	width: 659px;
+	height: 300px;
+	float: left;
+	position: relative;
+}
+.homepage-header-area .homepage-header-feature img {
+	width: 659px;
+	height: 300px;
+}
+.homepage-header-area .homepage-header-feature h3 {
+	height: 30px;
+	width: 300px;
+	padding: 0 12px;
+	position: absolute;
+	bottom: 0;
+}
+.homepage-header-area .homepage-header-feature div {
+	text-align: right;
+	height: 30px;
+	width: 300px;
+	padding: 0 12px;
+	position: absolute;
+	bottom: 0;
+	left: 330px;
+	color: #FFFFFF;
+	font-family: Times, “Times New Roman”, Georgia, serif;
+}
+.homepage-header-area .homepage-header-feature a {
+	display: block;
+	text-indent: -9999px;
+	height: 300px;
+	width: 659px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.homepage-header-area .homepage-header-sidebar {
+	width: 320px;
+	border-left: 1px solid #333;
+	float: left;
+}
+.homepage-header-sidebar ul {
+}
+.homepage-header-sidebar li {
+	padding: 12px;
+	height: 74px;
+	border-bottom: 1px solid #333;
+	color: #FFFFFF;
+	position: relative;
+}
+.homepage-header-sidebar li:last-child {
+	border: 0;
+}
+.homepage-header-sidebar li a {
+	display: block;
+	text-indent: -9999px;
+	height: 100px;
+	width: 320px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.homepage-content-area {
+	background: url(../images/lawschool-home-hdr-bkg.png) no-repeat top center;
+	padding: 40px 12px;
+}
+.homepage-content-area .homepage-content-features {
+	width: 647px;
+	float: left;
+	position: relative;
+}
+.homepage-content-area .homepage-content-features ul {
+	}
+.homepage-content-area .homepage-content-features li {
+	width: 300px;
+	height: 120px;
+	padding: 0 23px 0 0;
+	float: left;
+	position: relative;
+	}
+.homepage-content-area .homepage-content-features h3 {
+	border-bottom: 3px solid #FF0000;
+	}
+.homepage-content-area .homepage-content-features h4 {
+	font-size: 1.333em;
+	margin: 12px 0 0;
+	color: #333;
+	font-style: italic;
+	}
+.homepage-content-area .homepage-content-features img {
+	float: left;
+	margin: 12px 12px 12px 0;
+	width: 75px;
+	}
+.homepage-content-area .homepage-content-features div {
+	font-size: .875em;
+	}
+.homepage-content-area .homepage-content-features a {
+	display: block;
+	text-indent: -9999px;
+	height: 120px;
+	width: 330px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+.homepage-content-area .homepage-content-sidebar{
+	width: 308px;
+	float: left;
+}
+.homepage-content-area .homepage-content-sidebar ul {
+	list-style: none outside none;
+	margin: 0;
+}
+.homepage-content-area .homepage-content-sidebar li {
+	list-style: none outside none;
+	margin: 8px 0 0 8px;
+	height: 50px;
+	font-family: Times, “Times New Roman”, Georgia, serif;
+}
+.homepage-content-area .homepage-content-sidebar a {
+	color: #333;
+	text-decoration: none;
+	font-size: 1.167em;
+}
+.homepage-content-area .homepage-content-sidebar .more-link a {
+	color: #FF0000;
+	}
+.homepage-content-area .homepage-content-sidebar li .views-field-field-datetime-value {
+	float: left;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	border-right: 1px dotted #999;
+	margin-right: 8px;
+	
+}
+.homepage-content-area .homepage-content-sidebar li .views-field-field-datetime-value span {
+	display: block;
+}
+.homepage-content-area .homepage-content-sidebar li .views-field-field-datetime-value span.day {
+	font-size: 2.667em;
+	text-transform: uppercase;
+}
+.homepage-content-area .homepage-content-sidebar li .views-field-field-datetime-value span.month {
+	font-size: 1.167em;
+	text-transform: uppercase;
+	color: #FF0000;
+}
+
+.homepage-footer-area {
+	height: 100px;
+	background: url(../images/lawschool-home-ftr-bkg.png);
+}
+

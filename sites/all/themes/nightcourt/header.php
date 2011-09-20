@@ -47,11 +47,14 @@
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div id="body" class="body full_width">
+	<div id="body" class="body	
+	<?php if (!$sidebar_left_1 && !$sidebar_left_2 && !$sidebar_left_3): ?>
+	full_width
+	<?php endif;?>">
 		<div class="wrapper">
 		<?php if ($breadcrumb || $title || $mission || $messages || $help || $tabs): ?>
             <div id="content-header">
-				<?php print $breadcrumb; ?>
+				<?php print $is_front?'':$breadcrumb; ?>
 
               <?php if ($mission): ?>
                 <div id="mission"><?php print $mission; ?></div>

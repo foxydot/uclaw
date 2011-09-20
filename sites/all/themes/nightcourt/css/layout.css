@@ -39,7 +39,8 @@ height: 135px;}
     padding-top: 12px;
 }
 .body .content-area {}
-.body .content-area>.content {float: left; width:740px;}
+.body .content-area>.content {float: left; width:740px; padding-bottom: 20px;}
+.body.full_width .content-area>.content {float: none;width: 940px;padding: 0 20px;}
 .footer .wrapper {background: url('../images/law-school-ftr-bkg.png') repeat-x center top; padding: 12px 0 0 0;}
 
 .clear {clear:both;float:none;}
@@ -70,7 +71,7 @@ body {color: #555555;
 h1, h2,h3,h4,h5,h6 {
 	font-family: Times, “Times New Roman”, Georgia, serif;
 	font-weight: normal;
-	color: #860000;
+	color: #FF0000;
 }
 
 /* EDITING */
