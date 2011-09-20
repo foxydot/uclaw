@@ -35,10 +35,18 @@
 </head>
 <body class="<?php print $body_classes; ?>">
 <div class="page_wrapper">
+			<!-- SUBNAV -->
+		<?php if (!empty($secondary_links)): ?>
+          <div id="subnav" class="wrapper menu with-sub-menu">
+            <?php print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); ?>
+          </div> <!-- /navigation -->
+        <?php endif; ?>
+		<!-- SUBNAV -->
 	<div id="header" class="header full_width">
 		<div class="wrapper">
 			<h2 class="university-of-cincinnati"><a href="http://www.uc.edu" target="_blank">University of Cincinnati</a></h2>
 			<h1 class="college-of-law"><a href="/">College of Law</a></h1>
+			<?php print $search_box; ?>	
 		</div>
 	</div>
 	<div id="primary-nav" class="primary-nav navigation full_width">

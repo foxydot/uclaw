@@ -59,7 +59,21 @@ height: 135px;}
     text-indent: -9000px;
     width: 180px;
 }
-
+.header #search {
+    float: right;
+    height: 30px;
+    margin-top: 103px;
+    width: 200px;
+}
+#edit-search-theme-form-1 {
+    background: none repeat scroll 0 0 #CBCBCB;
+    border: 1px solid #B8B8B8;
+    color: #777777;
+    float: left;
+    font-size: 11px;
+    padding: 6px;
+    width: 150px;
+}
 
 body {color: #555555;
     font-family: 'Trebuchet MS',Arial,Tahoma,Verdana;
