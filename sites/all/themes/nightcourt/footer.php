@@ -8,6 +8,7 @@
 			<div class="clear"></div>
 		</div>
 	</div>
+	<div class="clear"></div>
 	<div id="footer" class="footer full_width">
 		<div class="wrapper">
 			<?php if(!empty($footer_message) || !empty($footer_block)): ?>
@@ -27,6 +28,7 @@
 		</div>
 	</div>
 </div>
+<?php print $footer; ?>
 <?php print $closure; ?>
 </body>
 </html>

@@ -125,3 +125,10 @@ ul.secondary a.active:hover {
   color: #000;
   background: url(images/tabs/tab-secondary.png) repeat-x left top;
 }
+
+
+/* Dumb Quicktab Stuff */
+.quicktabs_tabpage .sticky-header,
+.quicktabs_tabpage #attachments {
+	display: none;
+}

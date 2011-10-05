@@ -218,7 +218,7 @@ ul.nice-menu-down {
   color:#FFFFFF;
   position: relative;
   text-shadow: 0px 1px 2px #666666;
-  filter: dropshadow(color=#666666, offx=0, offy=1); 
+  z-index: 500;
 }
 
 ul.nice-menu-down li {
@@ -233,6 +233,7 @@ ul.nice-menu-down li {
 ul.nice-menu-down ul {
 	position: absolute;
 	top:45px;
+  z-index: 500;
 }
 
 ul.nice-menu-down li li {
@@ -263,7 +264,6 @@ ul.nice-menu-down li:last-child {
 	border: none;
 }
 ul.nice-menu-down li ul li ul,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down li ul li ul {
   left: 12.5em;
   top: -1px;
@@ -275,29 +275,24 @@ ul.nice-menu-down a {
 }
 
 ul.nice-menu-down>li:hover,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down>li:hover {
 	}
 	
 ul.nice-menu-down li:hover a,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down li:hover a {
 	color: #fff;
 	}
 
 ul.nice-menu-down li:hover li a,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down li:hover li a {
 	color: #fff;
 	}
 	
 ul.nice-menu-down ul li.hover a,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down ul li.hover a {
 	}
 
 ul.nice-menu-down li li.hover,
-/* Repeat for Garland header. */
 #header-region ul.nice-menu-down li li.hover {
   background: none;
 }
@@ -310,7 +305,14 @@ ul.nice-menu-down li:hover ul {
 ul.nice-menu-down li:hover ul ul {
 	display: none;
 }
+
 /* Special Types for Sections */
+/* Quick fix for follow menus */
+ul.nice-menu-right ul {
+display: block !important;
+visibility: visible !important;
+margin-right: 8px;
+}
 
 /* Institutes section */
 
