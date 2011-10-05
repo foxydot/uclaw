@@ -25,6 +25,7 @@
 	padding: 0 12px;
 	position: absolute;
 	bottom: 0;
+	left: 0;
 }
 .homepage-header-area .homepage-header-feature div {
 	text-align: right;
@@ -71,6 +72,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	background: url(images/theme/blank.gif); 
 }
 .homepage-content-area {
 	background: url(../images/lawschool-home-hdr-bkg.png) no-repeat top center;
@@ -115,6 +117,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	background: url(images/theme/blank.gif); 
 	}
 .homepage-content-area .homepage-content-sidebar{
 	width: 308px;

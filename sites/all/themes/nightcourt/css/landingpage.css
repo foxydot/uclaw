@@ -15,6 +15,7 @@
 .landingpage-header-area h3 {
 	}
 .landingpage-header-area .landingpage-header-feature {
+	width: 760px;
 	height: 300px;
 	float: left;
 	position: relative;
@@ -29,6 +30,7 @@
 	padding: 0 12px;
 	position: absolute;
 	bottom: 0;
+	left: 0;
 }
 .landingpage-header-area .landingpage-header-feature div {
 	text-align: right;
@@ -78,7 +80,7 @@
 }
 .landingpage-content-area {
 	background: url("../images/law-school-ftr-bkg.png") repeat-x scroll center top transparent;
-	padding: 40px 12px;
+	padding: 40px 12px 40px 0;
 }
 .landingpage-content-area .landingpage-content-features {
 	width: 760px;
@@ -126,6 +128,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	background: url(images/theme/blank.gif); 	
 	}
 .landingpage-content-area .landingpage-content-sidebar{
 	width: 308px;

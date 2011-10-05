@@ -180,7 +180,22 @@ span.inline-right {
 
 span.inline-right img {
   border: 2px solid #ccc;
-}			
+}
+
+.section-faculty-staff span.inline-right {
+  display:block;
+  float:right;
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:0;
+  margin-top:20px;
+  padding: 0px;
+  border: 0px double #dedede;
+  background: #FFF;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
+}		
 
 .body .node-inner .content .listDecibal li {list-style: decimal;}
 
@@ -264,6 +279,11 @@ span.inline-right img {
 	padding: 2px;
 	border: double #CCC;
 	}		
+	
+.resources h4 {text-align: left;}	
+
+.locked {padding-left: 15px;background: url(images/theme/locked.png) no-repeat;}
+
 
 /* NEWS CONTENT TYPE */
 
@@ -275,7 +295,20 @@ div.ddblock-cycle-nightcourt div.custom-pager h3 {
 
 /* FACULTY CONTENT TYPE */
 
-/* NICE MENUS */
+.section-faculty-staff p {
+	padding-bottom: 15px;
+	}
+
+/* SEARCH MENUS */
+
+.search-results dt {
+    padding-bottom: 5px;
+    font-weight: bold;
+    }
+    
+.search-results dd {
+    line-height: 17px;
+	}    
 
 /* TABLE STYLES */	
 
@@ -376,3 +409,43 @@ tfoot th em {
 	font-size: 1.1em;
 	font-style: normal;
 	}
+	
+dl.header_tbl dt {
+  	float: left;
+  	width: 220px;
+	margin-left:20px;
+  	text-align: left;
+	color:#666;
+	font-weight:bold;
+	}
+
+dl.header_tbl dd {
+  	margin-left: 250px;
+	color:#666;
+	font-weight:bold;
+	}
+	
+.header_tbl {
+	margin-bottom:15px;
+	background-color:#f7f7f7;
+	border: 1px solid #CCC;
+	}	
+	
+dl.sd_tblII dt {
+  	float: left;
+  	width: 220px;
+  	text-align: left;
+	color:#E80022;
+	font-weight:bold;
+	}
+
+dl.sd_tblII dd {
+  	margin-left: 230px;
+	margin-top:5px;	
+	margin-bottom: 15px;	
+	}
+	
+.sd_tblII {
+	margin-bottom:15px;
+	margin-left:20px;
+	}		
