@@ -579,11 +579,24 @@ function quicktabs_render_tabpage($tab, $hide_empty = FALSE) {
 /**
  * Helper function to determine active tab from the url.
  */
+ /*
 function _quicktabs_get_active_tab($quicktabs) {
   $active_tab = isset($quicktabs['default_tab']) ? $quicktabs['default_tab'] : key($quicktabs['tabs']);
   $active_tab = isset($_GET['quicktabs_'. $quicktabs['qtid']]) ? $_GET['quicktabs_'. $quicktabs['qtid']] : $active_tab;
   if (isset($active_tab) && isset($quicktabs['tabs'][$active_tab])) {
     return $active_tab;
+  }
+  return NULL;
+}
+*/
+/**
+* Somewhat larger hack to keep selected tab
+*/
+function _quicktabs_get_active_tab($quicktabs) {
+  $active_tab = isset($_COOKIE['quicktabs' . $quicktabs['qtid']]) ? $_COOKIE['quicktabs' . $quicktabs['qtid']] : key($quicktabs['tabs']); //check cookie for active tab***add this line***
+  $active_tab2 = isset($_GET['quicktabs_' . $quicktabs['qtid']]) ? $_GET['quicktabs_' . $quicktabs['qtid']] : $active_tab;  //check for args after cookies to override cookies***change this line***
+  if (isset($active_tab2) && isset($quicktabs['tabs'][$active_tab2])) {                         // ***change to $active_tab2***/
+    return $active_tab2;
   }
   return NULL;
 }

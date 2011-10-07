@@ -1,7 +1,9 @@
 <?php $add_css[] = 'homepage.css'; ?>
+<?php if(count($header_feature)>1): ?>
 <?php $add_css[] = 'nivo-slider.css'; ?>
 <?php $add_js[] = 'jquery.nivo.slider.pack.js'; ?>
 <?php $add_js[] = 'homepage_jquery.js'; ?>
+<?php endif; ?>
 <?php include_once('header.php');?>
 			<div class="content-area">
 				<?php if ($content_top): ?>
@@ -11,16 +13,22 @@
 				<?php endif; ?>
 
 <div id="homepage-header-area" class="homepage-header-area">
+	<div id="homepage-header-feature" class="homepage-header-feature nivoSlider">
 	<?php foreach($header_feature AS $key => $feature): ?>
-		<?php if(!empty($feature['feature_img'])): ?>
-	<div id="homepage-header-feature-<?php print $key;?>" class="homepage-header-feature header-feature-<?php print $key; ?><?php print $key==1?' first':'';?>">
-		<?php print $feature['feature_img']; ?>
-		<h3><?php print $feature['feature_title']; ?></h3>
-		<div><?php print $feature['feature_caption']; ?></div>
-		<?php print $feature['feature_link']['view']; ?>
-	</div>
-		<?php endif; ?>
+			<?php if(!empty($feature['feature_link']['url'])): ?>
+				<?php $target = isset($feature['feature_link']['attributes']['target'])?' target="'.$feature['feature_link']['attributes']['target'].'"':''; ?>
+				<a href="<?php print $feature['feature_link']['url']; ?>"<?php print $target?>>
+			<?php endif; ?>
+		<?php print preg_replace('@title=\".*?\"@i','title="#slider-caption-'.$key.'"',$feature['feature_img']); ?>
+			<?php if(!empty($feature['feature_link']['url'])): ?>
+				</a>
+			<?php endif; ?>
+		<div id="slider-caption-<?php print $key;?>" class="nivo-html-caption">
+			<h3><?php print $feature['feature_title']; ?></h3>
+			<div><?php print $feature['feature_caption']; ?></div>
+		</div>
 	<?php endforeach; ?>
+	</div>
 	<div id="homepage-header-sidebar" class="homepage-header-sidebar">
 		<ul>
 			<li>

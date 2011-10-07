@@ -24,7 +24,15 @@
 	width: 760px;
 	height: 300px;
 }
-.landingpage-header-area .landingpage-header-feature h3 {
+.landingpage-header-area .landingpage-header-feature .nivo-caption {
+	height: 40px;
+}
+.landingpage-header-area .landingpage-header-feature .nivo-caption,
+.landingpage-header-area .landingpage-header-feature .nivo-html-caption {
+	background: #000;
+	}
+.landingpage-header-area .landingpage-header-feature .nivo-caption h3, 
+.landingpage-header-area .landingpage-header-feature .nivo-html-caption h3 {
 	height: 30px;
 	width: 300px;
 	padding: 0 12px;
@@ -32,7 +40,8 @@
 	bottom: 0;
 	left: 0;
 }
-.landingpage-header-area .landingpage-header-feature div {
+.landingpage-header-area .landingpage-header-feature .nivo-caption div,
+.landingpage-header-area .landingpage-header-feature .nivo-html-caption div {
 	text-align: right;
 	height: 30px;
 	width: 400px;
@@ -42,15 +51,6 @@
 	left: 330px;
 	color: #FFFFFF;
 	font-family: Times, “Times New Roman”, Georgia, serif;
-}
-.landingpage-header-area .landingpage-header-feature a {
-	display: block;
-	text-indent: -9999px;
-	height: 300px;
-	width: 659px;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 .landingpage-header-area .landingpage-header-sidebar {
 	width: 320px;

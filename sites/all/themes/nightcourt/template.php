@@ -101,26 +101,36 @@ function nightcourt_preprocess_page(&$vars, $hook) {
   		$vars['sidebar_text'] = $node->field_sb_text[0]['value'];
   		break;*/
   	case "homepage":
-  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
-		$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];
-		$vars['header_feature'][1]['feature_caption'] = $node->field_feature_caption[0]['value'];
-		$vars['header_feature'][1]['feature_link'] = $node->field_feature_link[0];
-  		$vars['header_feature'][2]['feature_img'] = $node->field_feature_img_2[0]['view'];
-		$vars['header_feature'][2]['feature_title'] = $node->field_feature_title_2[0]['value'];
-		$vars['header_feature'][2]['feature_caption'] = $node->field_feature_caption_2[0]['value'];
-		$vars['header_feature'][2]['feature_link'] = $node->field_feature_link_2[0];
-  		$vars['header_feature'][3]['feature_img'] = $node->field_feature_img_3[0]['view'];
-		$vars['header_feature'][3]['feature_title'] = $node->field_feature_title_3[0]['value'];
-		$vars['header_feature'][3]['feature_caption'] = $node->field_feature_caption_3[0]['value'];
-		$vars['header_feature'][3]['feature_link'] = $node->field_feature_link_3[0];
-  		$vars['header_feature'][4]['feature_img'] = $node->field_feature_img_4[0]['view'];
-		$vars['header_feature'][4]['feature_title'] = $node->field_feature_title_4[0]['value'];
-		$vars['header_feature'][4]['feature_caption'] = $node->field_feature_caption_4[0]['value'];
-		$vars['header_feature'][4]['feature_link'] = $node->field_feature_link_4[0];
-  		$vars['header_feature'][5]['feature_img'] = $node->field_feature_img_5[0]['view'];
-		$vars['header_feature'][5]['feature_title'] = $node->field_feature_title_5[0]['value'];
-		$vars['header_feature'][5]['feature_caption'] = $node->field_feature_caption_5[0]['value'];
-		$vars['header_feature'][5]['feature_link'] = $node->field_feature_link_5[0];
+  		if(!empty($node->field_feature_img[0]['view'])){
+	  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
+			$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];
+			$vars['header_feature'][1]['feature_caption'] = $node->field_feature_caption[0]['value'];
+			$vars['header_feature'][1]['feature_link'] = $node->field_feature_link[0];
+  		}
+  		if(!empty($node->field_feature_img_2[0]['view'])){
+	  		$vars['header_feature'][2]['feature_img'] = $node->field_feature_img_2[0]['view'];
+			$vars['header_feature'][2]['feature_title'] = $node->field_feature_title_2[0]['value'];
+			$vars['header_feature'][2]['feature_caption'] = $node->field_feature_caption_2[0]['value'];
+			$vars['header_feature'][2]['feature_link'] = $node->field_feature_link_2[0];
+  		}
+  		if(!empty($node->field_feature_img_3[0]['view'])){
+	  		$vars['header_feature'][3]['feature_img'] = $node->field_feature_img_3[0]['view'];
+			$vars['header_feature'][3]['feature_title'] = $node->field_feature_title_3[0]['value'];
+			$vars['header_feature'][3]['feature_caption'] = $node->field_feature_caption_3[0]['value'];
+			$vars['header_feature'][3]['feature_link'] = $node->field_feature_link_3[0];
+  		}
+  		if(!empty($node->field_feature_img_4[0]['view'])){
+	  		$vars['header_feature'][4]['feature_img'] = $node->field_feature_img_4[0]['view'];
+			$vars['header_feature'][4]['feature_title'] = $node->field_feature_title_4[0]['value'];
+			$vars['header_feature'][4]['feature_caption'] = $node->field_feature_caption_4[0]['value'];
+			$vars['header_feature'][4]['feature_link'] = $node->field_feature_link_4[0];
+  		}
+  		if(!empty($node->field_feature_img_5[0]['view'])){
+	  		$vars['header_feature'][5]['feature_img'] = $node->field_feature_img_5[0]['view'];
+			$vars['header_feature'][5]['feature_title'] = $node->field_feature_title_5[0]['value'];
+			$vars['header_feature'][5]['feature_caption'] = $node->field_feature_caption_5[0]['value'];
+			$vars['header_feature'][5]['feature_link'] = $node->field_feature_link_5[0];
+  		}
 		$vars['sb1_title'] = $node->field_sb1_title[0]['value'];
 		$vars['sb1_content'] = $node->field_sb1_content[0]['value'];
 		$vars['sb2_title'] = $node->field_sb2_title[0]['value'];
@@ -156,26 +166,36 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		ts_data($data);*/
   		break;
   	case "landingpage":
-  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
-		$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];
-		$vars['header_feature'][1]['feature_caption'] = $node->field_feature_caption[0]['value'];
-		$vars['header_feature'][1]['feature_link'] = $node->field_feature_link[0];
-  		$vars['header_feature'][2]['feature_img'] = $node->field_feature_img_2[0]['view'];
-		$vars['header_feature'][2]['feature_title'] = $node->field_feature_title_2[0]['value'];
-		$vars['header_feature'][2]['feature_caption'] = $node->field_feature_caption_2[0]['value'];
-		$vars['header_feature'][2]['feature_link'] = $node->field_feature_link_2[0];
-  		$vars['header_feature'][3]['feature_img'] = $node->field_feature_img_3[0]['view'];
-		$vars['header_feature'][3]['feature_title'] = $node->field_feature_title_3[0]['value'];
-		$vars['header_feature'][3]['feature_caption'] = $node->field_feature_caption_3[0]['value'];
-		$vars['header_feature'][3]['feature_link'] = $node->field_feature_link_3[0];
-  		$vars['header_feature'][4]['feature_img'] = $node->field_feature_img_4[0]['view'];
-		$vars['header_feature'][4]['feature_title'] = $node->field_feature_title_4[0]['value'];
-		$vars['header_feature'][4]['feature_caption'] = $node->field_feature_caption_4[0]['value'];
-		$vars['header_feature'][4]['feature_link'] = $node->field_feature_link_4[0];
-  		$vars['header_feature'][5]['feature_img'] = $node->field_feature_img_5[0]['view'];
-		$vars['header_feature'][5]['feature_title'] = $node->field_feature_title_5[0]['value'];
-		$vars['header_feature'][5]['feature_caption'] = $node->field_feature_caption_5[0]['value'];
-		$vars['header_feature'][5]['feature_link'] = $node->field_feature_link_5[0];
+  		if(!empty($node->field_feature_img[0]['view'])){
+	  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
+			$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];
+			$vars['header_feature'][1]['feature_caption'] = $node->field_feature_caption[0]['value'];
+			$vars['header_feature'][1]['feature_link'] = $node->field_feature_link[0];
+  		}
+  		if(!empty($node->field_feature_img_2[0]['view'])){
+	  		$vars['header_feature'][2]['feature_img'] = $node->field_feature_img_2[0]['view'];
+			$vars['header_feature'][2]['feature_title'] = $node->field_feature_title_2[0]['value'];
+			$vars['header_feature'][2]['feature_caption'] = $node->field_feature_caption_2[0]['value'];
+			$vars['header_feature'][2]['feature_link'] = $node->field_feature_link_2[0];
+  		}
+  		if(!empty($node->field_feature_img_3[0]['view'])){
+	  		$vars['header_feature'][3]['feature_img'] = $node->field_feature_img_3[0]['view'];
+			$vars['header_feature'][3]['feature_title'] = $node->field_feature_title_3[0]['value'];
+			$vars['header_feature'][3]['feature_caption'] = $node->field_feature_caption_3[0]['value'];
+			$vars['header_feature'][3]['feature_link'] = $node->field_feature_link_3[0];
+  		}
+  		if(!empty($node->field_feature_img_4[0]['view'])){
+	  		$vars['header_feature'][4]['feature_img'] = $node->field_feature_img_4[0]['view'];
+			$vars['header_feature'][4]['feature_title'] = $node->field_feature_title_4[0]['value'];
+			$vars['header_feature'][4]['feature_caption'] = $node->field_feature_caption_4[0]['value'];
+			$vars['header_feature'][4]['feature_link'] = $node->field_feature_link_4[0];
+  		}
+  		if(!empty($node->field_feature_img_5[0]['view'])){
+	  		$vars['header_feature'][5]['feature_img'] = $node->field_feature_img_5[0]['view'];
+			$vars['header_feature'][5]['feature_title'] = $node->field_feature_title_5[0]['value'];
+			$vars['header_feature'][5]['feature_caption'] = $node->field_feature_caption_5[0]['value'];
+			$vars['header_feature'][5]['feature_link'] = $node->field_feature_link_5[0];
+  		}
 		$vars['feature_1_title'] = $node->field_feature_1_title[0]['value'];
 		$vars['feature_1_content'] = $node->field_feature_1_content[0]['value'];
 		$vars['feature_1_image'] = $node->field_feature_1_image[0]['view'];

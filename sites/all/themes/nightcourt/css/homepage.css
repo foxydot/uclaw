@@ -19,16 +19,25 @@
 	width: 659px;
 	height: 300px;
 }
-.homepage-header-area .homepage-header-feature h3 {
-	height: 30px;
+.homepage-header-area .homepage-header-feature .nivo-caption {
+	height: 40px;
+}
+.homepage-header-area .homepage-header-feature .nivo-caption,
+.homepage-header-area .homepage-header-feature .nivo-html-caption {
+	background: #000;
+	}
+.homepage-header-area .homepage-header-feature .nivo-caption h3,
+.homepage-header-area .homepage-header-feature .nivo-html-caption h3 {
+		height: 30px;
 	width: 300px;
 	padding: 0 12px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
-.homepage-header-area .homepage-header-feature div {
-	text-align: right;
+.homepage-header-area .homepage-header-feature .nivo-caption div,
+.homepage-header-area .homepage-header-feature .nivo-html-caption div {
+		text-align: right;
 	height: 30px;
 	width: 300px;
 	padding: 0 12px;
@@ -38,15 +47,7 @@
 	color: #FFFFFF;
 	font-family: Times, “Times New Roman”, Georgia, serif;
 }
-.homepage-header-area .homepage-header-feature a {
-	display: block;
-	text-indent: -9999px;
-	height: 300px;
-	width: 659px;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+
 .homepage-header-area .homepage-header-sidebar {
 	width: 320px;
 	border-left: 1px solid #333;
