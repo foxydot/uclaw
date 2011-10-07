@@ -1,4 +1,7 @@
 <?php $add_css[] = 'homepage.css'; ?>
+<?php $add_css[] = 'nivo-slider.css'; ?>
+<?php $add_js[] = 'jquery.nivo.slider.pack.js'; ?>
+<?php $add_js[] = 'homepage_jquery.js'; ?>
 <?php include_once('header.php');?>
 			<div class="content-area">
 				<?php if ($content_top): ?>
@@ -8,12 +11,16 @@
 				<?php endif; ?>
 
 <div id="homepage-header-area" class="homepage-header-area">
-	<div id="homepage-header-feature" class="homepage-header-feature">
-		<?php print $feature_img; ?>
-		<h3><?php print $feature_title; ?></h3>
-		<div><?php print $feature_caption; ?></div>
-		<?php print $feature_link['view']; ?>
+	<?php foreach($header_feature AS $key => $feature): ?>
+		<?php if(!empty($feature['feature_img'])): ?>
+	<div id="homepage-header-feature-<?php print $key;?>" class="homepage-header-feature header-feature-<?php print $key; ?><?php print $key==1?' first':'';?>">
+		<?php print $feature['feature_img']; ?>
+		<h3><?php print $feature['feature_title']; ?></h3>
+		<div><?php print $feature['feature_caption']; ?></div>
+		<?php print $feature['feature_link']['view']; ?>
 	</div>
+		<?php endif; ?>
+	<?php endforeach; ?>
 	<div id="homepage-header-sidebar" class="homepage-header-sidebar">
 		<ul>
 			<li>
