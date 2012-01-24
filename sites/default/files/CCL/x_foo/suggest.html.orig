@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+	<TITLE>Suggestions/Comments </TITLE> 
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME="Author" CONTENT="Nick Finke">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#009900" VLINK="#009900" ALINK="#009900" TEXT="#006600">
+<P>
+	<FONT SIZE="2" COLOR="#006600"> <I> The Center for Corporate Law</I></FONT><I> 
+		<BR>
+	</I> <FONT SIZE="2" COLOR="#006600"> <I> University of Cincinnati College of Law</I></FONT><I></I> 
+</P>
+<P>
+<H3 ALIGN="CENTER"> <FONT SIZE="5" COLOR="#006600"> Securities Lawyer's Deskbook</FONT> </H3> <H3 ALIGN="CENTER"><FONT SIZE="5" COLOR="#006600">Suggestions and Comments</FONT></H3> 
+<DIV ALIGN="CENTER">
+</DIV>
+<HR>
+<P>&nbsp;
+	
+</P>
+<FORM ACTION="cgi-bin/mail_form_suggest.cgi" METHOD="post">
+	<TABLE WIDTH="550" BORDER="0" CELLSPACING="3" CELLPADDING="3" ALIGN="CENTER">
+		<TR>
+			<TD COLSPAN="2">
+				<P>
+					<FONT COLOR="#006600" SIZE="3" FACE="Verdana, Arial, Helvetica, sans-serif">We are always looking for ways to make this Website a better resource for you. </FONT>
+				</P>
+				<P>
+					<FONT COLOR="#006600" SIZE="3" FACE="Verdana, Arial, Helvetica, sans-serif">If you have comments about our site or suggestions for additional items that you think would make the site more useful, we would appreciate your letting us know using the form below. </FONT>
+				</P>
+				<P>
+					<FONT COLOR="#006600" SIZE="3" FACE="Verdana, Arial, Helvetica, sans-serif">While it is not necessary for you to tell us anything about yourself or your practice/research interests, information of this sort is extremely helpful to us. </FONT>
+				</P>
+				<P>
+					<FONT COLOR="#006600" SIZE="3" FACE="Verdana, Arial, Helvetica, sans-serif">We will, of course, keep any information you provide in confidence. It will be used only to improve the site and will never be given to third parties.</FONT>
+				</P>
+				<P>
+					<FONT COLOR="#006600" SIZE="3" FACE="Verdana, Arial, Helvetica, sans-serif">If you have a question you want us to answer, you <B>do</B> have to give us a working e-mail address. </FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">Name:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341">
+				<INPUT TYPE="text" NAME="01name" SIZE="50" MAXLENGTH="50"> 
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">Email Address:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341">
+				<INPUT TYPE="text" NAME="02email" SIZE="50" MAXLENGTH="50"> 
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">Name of Organization:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341">
+				<INPUT TYPE="text" NAME="03orgname" SIZE="50" MAXLENGTH="50"> 
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif"> I use the Securities Lawyer's Deskbook:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341" VALIGN="TOP">
+				<P>
+					<INPUT TYPE="radio" NAME="04use" VALUE="practice"> in law practice
+				</P>
+				<P>
+					<INPUT TYPE="radio" NAME="04use" VALUE="academic"> in academic work
+				</P>
+				<P>
+					<INPUT TYPE="radio" NAME="04use" VALUE="other"> other
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">If &quot;other&quot; please describe:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341" ALIGN="LEFT" VALIGN="TOP">
+				<TEXTAREA NAME="05whatother" COLS="50" ROWS="5">
+				</TEXTAREA>
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="RIGHT" VALIGN="TOP">&nbsp;
+				
+			</TD>
+			<TD WIDTH="341" ALIGN="LEFT" VALIGN="TOP">&nbsp;
+				
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">Comments about the site</FONT>:
+				</DIV>
+			</TD>
+			<TD WIDTH="341">
+				<TEXTAREA NAME="06comments" COLS="50" ROWS="5">
+				</TEXTAREA>
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="RIGHT">
+					<FONT FACE="Verdana, Arial, Helvetica, sans-serif">Suggestions for additions to the site:</FONT>
+				</DIV>
+			</TD>
+			<TD WIDTH="341">
+				<TEXTAREA NAME="07suggestions" COLS="50" ROWS="5">
+				</TEXTAREA>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN="2" ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="CENTER">
+					<INPUT TYPE="submit" NAME="submit" VALUE="Send us your Suggestions"> <INPUT TYPE="reset" NAME="reset" VALUE="Reset the form"> 
+				</DIV>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN="3" ALIGN="RIGHT" VALIGN="TOP">
+				<DIV ALIGN="CENTER">
+					<FONT SIZE="4">Thank you very much for taking the time to help us improve the site.
+						<BR>
+						We look forward to being able to serve you better.</FONT>
+				</DIV>
+			</TD>
+		</TR>
+	</TABLE>
+</FORM>
+<P>&nbsp;
+	 
+</P>
+<HR>
+<DIV ALIGN="RIGHT">
+	<P>
+		<FONT SIZE="2" COLOR="#006600"> <I> Published for the Center for Corporate Law 
+				<BR>
+				by Library Publications</I> </FONT> 
+</DIV>
+<P>
+	<BR>
+</P>
+</BODY>
+</HTML>

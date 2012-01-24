@@ -1,4 +1,3 @@
-// $Id: quicktabs.js,v 1.3.2.21 2010/04/20 18:24:05 katbailey Exp $
 
 Drupal.settings.views = Drupal.settings.views || {'ajax_path': 'views/ajax'};
 
@@ -150,11 +149,6 @@ var quicktabsClick = function() {
   $(this).parents('li').siblings().removeClass('active');
   $(this).parents('li').addClass('active');
 
-  //add cookie for active qtab -- small hack to retain last clicked.           
-  var active_tab_id = this.id.split('-')[3];      //active tab Id number
-  var qtid = this.id.split('-')[2];                      //quicktab Id number
-  document.cookie = "quicktabs" + qtid + "=" + active_tab_id + "; path=/"; //create cookie for quicktab
-  
   // Hide all tabpages.
   tab.container.children().addClass('quicktabs-hide');
 
@@ -174,7 +168,7 @@ var quicktabsClick = function() {
             qtAjaxPath +=  tab.tabObj.nid + '/' + tab.tabObj.teaser + '/' + tab.tabObj.hide_title;
             break;
           case 'block':
-            qtAjaxPath +=  tab.tabObj.bid + '/' + tab.tabObj.hide_title;
+            qtAjaxPath +=  tab.qtid + '/' + tab.tabObj.bid + '/' + tab.tabObj.hide_title;
             break;
           case 'qtabs':
             qtAjaxPath +=  tab.tabObj.qtid;
@@ -218,7 +212,10 @@ Drupal.quicktabs.ajax.scripts = function(files) {
 
   var html = '';
   for (i in files) {
-    if (!Drupal.quicktabs.scripts[files[i]]) {
+    // Load all files that aren't already present on the page, but make sure not
+    // to add misc/jquery.js because this could override a newer version of
+    // jQuery loaded by jQuery Update module.
+    if (!Drupal.quicktabs.scripts[files[i]] && !files[i].match(/^\/misc\/jquery\.js.*$/)) {
       Drupal.quicktabs.scripts[files[i]] = files[i];
       html += '<script type="text/javascript" src="' + files[i] + '"></script>';
     }
