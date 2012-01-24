@@ -26,6 +26,9 @@ function nightcourt_preprocess_page(&$vars, $hook) {
   switch($node->type){
   	case "faculty":
   		//----------------------//
+  	/* Get some RSS goodness */
+  	$faculty_feed = 'http://ucfacultynews.wordpress.com/category/'.$vars['url'][count($vars['url'])-1].'/feed/';	
+  	$faculty_news = get_feed_for_display($faculty_feed);
   if($node->field_staff_title[0]['value']){ $vars['staff_title'] = $node->field_staff_title[0]['value']; }
 	if($node->field_phone_fax[0]['value'] || $node->field_email[0]['value']){ 
   		$vars['contact_info'] = '<h4>Contact Information</h4>';
@@ -89,10 +92,10 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">Awards</a></li>';
 		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_awards[0]['value'].'</div>';			
 	}
-	if($node->field_news[0]['value']){
+	if($node->field_news[0]['value'] || !empty($faculty_news)){
 		$my_i++;
 		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">News</a></li>';
-		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$node->field_news[0]['value'].'</div>';			
+		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$faculty_news.$node->field_news[0]['value'].'</div>';			
 	}
   		//----------------------//
   		break;
@@ -683,6 +686,38 @@ function escape_string_for_regex($str)
 '\[', '\]', '\*', '\+', '\?', '\{', '\}', '\,');
        
         return preg_replace($patterns,$replace, $str);
+}
+
+function get_feed_for_display($feed){
+# INSTANTIATE CURL.
+$curl = curl_init();
+
+# CURL SETTINGS.
+curl_setopt($curl, CURLOPT_URL, $feed);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
+
+# GRAB THE XML FILE.
+$xmlFeed = curl_exec($curl);
+
+curl_close($curl);
+
+# SET UP XML OBJECT.
+$xmlObjFeed = simplexml_load_string( $xmlFeed );
+
+$tempCounter = 0;
+	foreach ( $xmlObjFeed->channel->item as $item )
+	{                    
+	    # DISPLAY ONLY 10 ITEMS.
+	    if ( $tempCounter < 11 )
+	    {
+	        $ret .= "<div class=\"news-item\"><h3><a href=\"{$item -> link}\">{$item -> title}</a></h3>{$item -> description}</div>
+	";
+	    }
+	
+	    $tempCounter += 1;
+	}
+return $ret;
 }
 
 	/*
