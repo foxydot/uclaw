@@ -161,7 +161,11 @@ this file, so you can be assured I haven't overwritten your stuff.
 	
 .social-block {
 	height: 70px;
-	}		
+	}	
+	
+.social-block img {
+	margin-right: 3px;
+	}			
 	
 span.inline-right {
   display:block;
@@ -179,6 +183,25 @@ span.inline-right {
 }	
 
 span.inline-right img {
+  border: 2px solid #ccc;
+}
+
+span.inline-left {
+  display:block;
+  float:left;
+  margin-bottom:20px;
+  margin-left:0px;
+  margin-right:20px;
+  margin-top:20px;
+  padding: 15px;
+  border: double #dedede;
+  background: #f2f2f2;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
+}	
+
+span.inline-left img {
   border: 2px solid #ccc;
 }
 
@@ -226,7 +249,17 @@ span.inline-right img {
 	color: #FF0000;
 	font-size: 1.3em;
 	padding-bottom: 10px;
-	}	
+	}
+	
+.blog-entry {
+	height: 185px;
+	border-bottom: 1px dotted #dedede;
+	margin: 30px 0 0 0;
+}
+
+.blog-entry h4, .blog-entry h5 {
+	color: #252525;
+}		
 	
 .blog {
 	background:#F7F7F7;
@@ -239,12 +272,14 @@ span.inline-right img {
 	display: inline;
 	}
 	
-.blog .feature {font-size: 1.2em; font-weight: bold; line-height: 16px;}	
+.blog .feature {font-size: 13px; font-weight: bold; line-height: 16px;}	
 	
 .blog img {
 	width:100px;
 	height: 140px;
-	}		
+	}	
+	
+.blog .listNone {list-style: none;}		
 
 .blogStudent {
 	background:#F7F7F7;

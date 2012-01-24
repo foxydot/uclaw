@@ -110,11 +110,21 @@
 .homepage-content-area .homepage-content-features div {
 	font-size: .875em;
 	}
-.homepage-content-area .homepage-content-features a {
+.homepage-content-area .homepage-content-features a.full-width {
 	display: block;
 	text-indent: -9999px;
 	height: 120px;
 	width: 330px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(images/theme/blank.gif); 
+	}
+.homepage-content-area .homepage-content-features a.half-width {
+	display: block;
+	text-indent: -9999px;
+	height: 120px;
+	width: 75px;
 	position: absolute;
 	top: 0;
 	left: 0;

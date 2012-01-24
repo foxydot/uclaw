@@ -156,6 +156,10 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['feature_2_link'] = $node->field_feature_2_link[0];
 		$vars['feature_3_link'] = $node->field_feature_3_link[0];
 		$vars['feature_4_link'] = $node->field_feature_4_link[0];
+		$vars['feature_1_readmore'] = $node->field_feature_1_readmore[0];
+		$vars['feature_2_readmore'] = $node->field_feature_2_readmore[0];
+		$vars['feature_3_readmore'] = $node->field_feature_3_readmore[0];
+		$vars['feature_4_readmore'] = $node->field_feature_4_readmore[0];
 		$vars['feature_1_subtitle'] = $node->field_feature_1_subtitle[0]['value'];
 		$vars['feature_2_subtitle'] = $node->field_feature_2_subtitle[0]['value'];
 		$vars['feature_3_subtitle'] = $node->field_feature_3_subtitle[0]['value'];

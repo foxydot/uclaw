@@ -120,6 +120,7 @@
 	font-size: 1em;
 	line-height: 1.6em;
 	}
+/*
 .landingpage-content-area .landingpage-content-features a {
 	display: block;
 	text-indent: -9999px;
@@ -129,7 +130,8 @@
 	top: 0;
 	left: 0;
 	background: url(images/theme/blank.gif); 	
-	}
+	}	
+*/	
 .landingpage-content-area .landingpage-content-sidebar{
 	width: 308px;
 	float: left;

@@ -57,28 +57,32 @@
 				<h3><?php print $feature_1_title; ?></h3>
 				<?php print $feature_1_image; ?>
 				<h4><?php print $feature_1_subtitle; ?></h4>
-				<div><?php print $feature_1_content; ?></div>
-				<?php print $feature_1_link['view']; ?>
+				<div><?php print $feature_1_content; ?>
+				<?php print $feature_1_readmore['view']; ?></div>
+				<?php print $feature_1_readmore['view']?preg_replace('/full-width/i','half-width',$feature_1_link['view']):$feature_1_link['view']; ?>
 			</li>
 			<li>
 				<h3><?php print $feature_2_title; ?></h3>
 				<?php print $feature_2_image; ?>
 				<h4><?php print $feature_2_subtitle; ?></h4>
-				<div><?php print $feature_2_content; ?></div>
+				<div><?php print $feature_2_content; ?>
+				<?php print $feature_2_readmore['view']; ?></div>
 				<?php print $feature_2_link['view']; ?>
 			</li>
 			<li>
 				<h3><?php print $feature_3_title; ?></h3>
 				<?php print $feature_3_image; ?>
 				<h4><?php print $feature_3_subtitle; ?></h4>
-				<div><?php print $feature_3_content; ?></div>
+				<div><?php print $feature_3_content; ?>
+				<?php print $feature_3_readmore['view']; ?></div>
 				<?php print $feature_3_link['view']; ?>
 			</li>
 			<li>
 				<h3><?php print $feature_4_title; ?></h3>
 				<?php print $feature_4_image; ?>
 				<h4><?php print $feature_4_subtitle; ?></h4>
-				<div><?php print $feature_4_content; ?></div>
+				<div><?php print $feature_4_content; ?>
+				<?php print $feature_4_readmore['view']; ?></div>
 				<?php print $feature_4_link['view']; ?>
 			</li>
 		</ul>
