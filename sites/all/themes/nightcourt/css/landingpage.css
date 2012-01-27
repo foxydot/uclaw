@@ -96,8 +96,34 @@
 	position: relative;
 	}
 .landingpage-content-area .landingpage-content-features li.feature_1,
-.landingpage-content-area .landingpage-content-features li.feature_3 {
+.landingpage-content-area .landingpage-content-features li.feature_3, 
+.landingpage-content-area .landingpage-content-features.layout-4sq li.feature_1,
+.landingpage-content-area .landingpage-content-features.layout-4sq li.feature_3,
+.landingpage-content-area .landingpage-content-features.layout-1v3 li.feature_1 {
 	width: 385px;
+} 
+.landingpage-content-area .landingpage-content-features.layout-1v3 li.feature_3 {
+	width: 300px;
+}
+
+.landingpage-content-area .landingpage-content-features.layout-1h2 li.feature_1,
+.landingpage-content-area .landingpage-content-features.layout-1h3 li.feature_1 {
+	width: 737px;
+}
+
+.landingpage-content-area .landingpage-content-features.layout-1h2 li.feature_2,
+.landingpage-content-area .landingpage-content-features.layout-1h2 li.feature_3 {
+	width: 357px;
+}
+
+.landingpage-content-area .landingpage-content-features.layout-1h2 li.feature_4 {
+	display: none;
+}
+
+.landingpage-content-area .landingpage-content-features.layout-1h3 li.feature_2,
+.landingpage-content-area .landingpage-content-features.layout-1h3 li.feature_3,
+.landingpage-content-area .landingpage-content-features.layout-1h3 li.feature_4 {
+	width: 230px;
 }
 .landingpage-content-area .landingpage-content-features h3 {
 	border-bottom: 3px solid #FF0000;

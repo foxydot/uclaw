@@ -223,6 +223,7 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['feature_2_subtitle'] = $node->field_feature_2_subtitle[0]['value'];
 		$vars['feature_3_subtitle'] = $node->field_feature_3_subtitle[0]['value'];
 		$vars['feature_4_subtitle'] = $node->field_feature_4_subtitle[0]['value'];
+		$vars['features_layout'] = $node->field_features_layout[0]['value'];
   		break;
   	case "institute":
   	default:

@@ -52,7 +52,7 @@
 	<div class="clear"></div>
 </div>
 <div id="landingpage-content-area" class="landingpage-content-area">
-	<div id="landingpage-content-features" class="landingpage-content-features">
+	<div id="landingpage-content-features" class="landingpage-content-features layout-<?php print $features_layout;?>">
 		<ul>
 			<li class="feature_1<?php if(empty($feature_1_title) && empty($feature_1_subtitle) && empty($feature_1_image)){ print ' plain-content'; } ?>">
 				<?php if($feature_1_title){ ?><h3><?php print $feature_1_title; ?></h3><?php } ?>
