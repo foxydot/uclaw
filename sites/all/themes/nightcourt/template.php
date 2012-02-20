@@ -225,6 +225,20 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$vars['feature_4_subtitle'] = $node->field_feature_4_subtitle[0]['value'];
 		$vars['features_layout'] = $node->field_features_layout[0]['value'];
   		break;
+  	case "newshomepage":
+  		$vars['sb'][0]['title'] = $node->field_sb1_title[0]['value'];
+		$vars['sb'][0]['content'] = $node->field_sb1_content[0]['value'];
+		$vars['sb'][1]['title'] = $node->field_sb2_title[0]['value'];
+		$vars['sb'][1]['content'] = $node->field_sb2_content[0]['value'];
+		$vars['sb'][2]['title'] = $node->field_sb3_title[0]['value'];
+		$vars['sb'][2]['content'] = $node->field_sb3_content[0]['value'];
+		$vars['sb'][0]['link'] = $node->field_sb1_link[0];
+		$vars['sb'][1]['link'] = $node->field_sb2_link[0];
+		$vars['sb'][2]['link'] = $node->field_sb3_link[0];
+		$vars['sb'][0]['image'] = $node->field_sb1_image[0]['filepath'];
+		$vars['sb'][1]['image'] = $node->field_sb2_image[0]['filepath'];
+		$vars['sb'][2]['image'] = $node->field_sb3_image[0]['filepath'];
+  		break;
   	case "institute":
   	default:
   		$vars['sidebar_image'] = $node->field_sb_img[0];

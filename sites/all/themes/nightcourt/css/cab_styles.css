@@ -484,3 +484,10 @@ dl.sd_tblII dd {
 	margin-bottom:15px;
 	margin-left:20px;
 	}		
+	
+	
+/* forcing a video to float left on a short notice */
+.page-alumni-new-building .node-inner .content iframe {
+	float: right;
+	margin: 10px;
+}

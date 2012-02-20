@@ -5,7 +5,7 @@
  	
         <div id="content-area">
 		<?php 
-		$block = module_invoke('ddblock', 'block', 'view', 20);
+		$block = module_invoke('ddblock', 'block', 'view', 22);
 		print $block['content'];
 		 ?>		
 		
