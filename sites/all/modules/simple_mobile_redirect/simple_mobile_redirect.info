@@ -1,0 +1,9 @@
+name = Simple Mobile Redirect
+description = Redirect to mobile site, optional cookie to not redirect
+core = 6.x
+; Information added by drupal.org packaging script on 2012-05-15
+version = "6.x-1.4"
+core = "6.x"
+project = "simple_mobile_redirect"
+datestamp = "1337092892"
+
