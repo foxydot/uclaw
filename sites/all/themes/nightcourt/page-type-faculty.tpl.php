@@ -26,7 +26,7 @@
           	<div id="sd_content_left">
           		<div class="resources">
           		<?php print_r($image); ?>
-          		<?php print $contact_info.$education.$links.$subjects; ?>
+          		<?php print $contact_info.$teaching.$education.$links.$subjects; ?>
           		</div>
           	</div>
           	<div id="sd_content_right">
@@ -35,7 +35,8 @@
                 <?php print $staff_title; ?></h2>
               <?php endif; ?>
               <br />
-              
+              <?php print $the_content; ?>
+<?php /* ?>              
 <div id="block-quicktabs-100" class="clearfix">
     <div class="content">
       <div id="quicktabs-100" class="quicktabs_wrapper quicktabs-style-uclaw quicktabs-processed">
@@ -46,7 +47,7 @@
       		<?php print $qt_pages; ?>
 	</div>
 </div>
-
+<?php */ ?>
 
   </div> <!-- /block-inner -->
 </div> <!-- /block -->

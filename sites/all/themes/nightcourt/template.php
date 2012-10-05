@@ -60,6 +60,7 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 			$linky = explode("|",$item['value']);
 			$vars['links'] .= '<li><a href="'.$linky[0].'">'.$linky[1].'</a></li>'; 
 		}
+		$vars['links'] .= $_GET['scholarship']?'<li><a href="/'.$node->path.'">Overview</a></li>':'<li><a href="/'.$node->path.'?scholarship=1">Scholarship</a></li>';
   		$vars['links'] .= '</ul>';
 	}  	
 	if($node->field_subjects[0]['value']){ 
@@ -70,10 +71,24 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		}
   		$vars['subjects'] .= '</ul>';
 	}
+	//Add teaching to sidebar
+	if($node->field_teaching[0]['value']){ 
+		foreach($node->field_teaching AS $item){
+			$vars['teaching'] .= preg_replace('/h3/i','h4',$item['value']); 
+		}
+	}
+	
 	$vars['image'] = preg_replace('/(class=")(image\s)/','$1grayBorder $2',$node->content['image_attach']['#value']);
 	
+	//main content area vars
+	$vars['overview'] = '<div id="overview" class="overview content">'.$node->content['body']['#value'].'</div>';
+	$vars['awards'] .= '<div id="awards" class="awards content">'.$node->field_awards[0]['value'].'</div>';			
+	$vars['scholarship'] .= '<div id="scholarship" class="scholarship content">'.$node->field_scholarship[0]['value'].'</div>';			
+	
+	$vars['the_content'] = $_GET['scholarship']?$vars['scholarship']:$vars['overview'].$vars['awards'];
+		
 	//tabs
-	$vars['qt_tabs'] = '<li class="qtab-0 active first"><a href="javascript:void(0);" id="quicktabs-tab-0" class="qt_tab active" onclick="qtClick(0);">Overview</a></li>';
+	/*$vars['qt_tabs'] = '<li class="qtab-0 active first"><a href="javascript:void(0);" id="quicktabs-tab-0" class="qt_tab active" onclick="qtClick(0);">Overview</a></li>';
 	$vars['qt_pages'] = '<div id="quicktabs_tabpage_100_0" class="quicktabs_tabpage">'.$node->content['body']['#value'].'</div>';
 	$fields_to_test = array('field_scholarship','field_teaching','field_awards','field_news');
 	$my_i = 0;
@@ -96,7 +111,8 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		$my_i++;
 		$vars['qt_tabs'] .= '<li class="qtab-'.$my_i.'"><a href="javascript:void(0);" id="quicktabs-tab-'.$my_i.'" class="qt_tab" onclick="qtClick('.$my_i.');">News</a></li>';
 		$vars['qt_pages'] .= '<div id="quicktabs_tabpage_100_'.$my_i.'" class="quicktabs_tabpage quicktabs-hide">'.$faculty_news.$node->field_news[0]['value'].'</div>';			
-	}
+	}*/
+	
   		//----------------------//
   		break;
   	/*case "institute":
