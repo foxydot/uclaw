@@ -146,7 +146,7 @@ ini_set('session.use_cookies',      1);
 ini_set('session.use_only_cookies', 1);
 ini_set('session.use_trans_sid',    0);
 ini_set('url_rewriter.tags',        '');
-ini_set('memory_limit', '200M');
+ini_set('memory_limit', '400M');
 
 /**
  * If you encounter a situation where users post a large amount of text, and
@@ -238,3 +238,4 @@ ini_set('memory_limit', '200M');
 #   'forum'      => 'Discussion board',
 #   '@count min' => '@count minutes',
 # );
+register_shutdown_function('session_write_close');

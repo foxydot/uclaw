@@ -1,4 +1,5 @@
 <?php $add_css[] = 'landingpage.css'; ?>
+<?php $add_css[] = 'jquery.cookie.js'; ?>
 <?php if(count($header_feature)>1): ?>
 <?php $add_css[] = 'nivo-slider.css'; ?>
 <?php $add_js[] = 'jquery.nivo.slider.pack.js'; ?>
@@ -39,14 +40,14 @@
 				<?php $target = isset($feature['feature_link']['attributes']['target'])?' target="'.$feature['feature_link']['attributes']['target'].'"':''; ?>
 				<a href="<?php print $feature['feature_link']['url']; ?>"<?php print $target?>>
 			<?php endif; ?>
-		<?php print preg_replace('@title=\".*?\"@i','title="#slider-caption-'.$key.'"',$feature['feature_img']); ?>
+		<?php print trim($feature['feature_title']) != '' || trim($feature['feature_caption']) != ''?preg_replace('@title=\".*?\"@i','title="#slider-caption-'.$key.'"',$feature['feature_img']):preg_replace('@title=\".*?\"@i','title=""',$feature['feature_img']); ?>
 			<?php if(!empty($feature['feature_link']['url'])): ?>
 				</a>
 			<?php endif; ?>
-		<div id="slider-caption-<?php print $key;?>" class="nivo-html-caption">
-			<h3><?php print $feature['feature_title']; ?></h3>
-			<div><?php print $feature['feature_caption']; ?></div>
-		</div>
+		<div id="slider-caption-<?php print $key;?>" class="nivo-html-caption"><?php 
+			print trim($feature['feature_title']) != ''?'<h3>'.$feature['feature_title'].'</h3>':'';
+			print trim($feature['feature_caption']) != ''?'<div>'.$feature['feature_caption'].'</div>':'';
+		?></div>
 	<?php endforeach; ?>
 	</div>
 	<div class="clear"></div>
@@ -90,4 +91,23 @@
 </div>
 </div>
 	<div class="clear"></div>
+	<style type="text/css">
+                                #highlight-cycle {
+                                        left: 0;
+                                        position: relative;
+                                        top: 0;
+                                }
+                                
+                                #highlight-cycle .hl {
+                                        background: #FFFFFF;
+                                        left: 0;
+                                        position: absolute;
+                                        top: 0;
+                                }
+                                
+                                #highlight-cycle .hl .bio { margin-top: 0; }
+                                #highlight-cycle .hl h4 { font-size: 14px; }
+                                #highlight-cycle .hl p { font-size: 12px; }
+                        </style>
+	
 <?php include_once('footer.php');?>  	

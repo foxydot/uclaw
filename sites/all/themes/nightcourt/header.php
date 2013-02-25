@@ -13,6 +13,7 @@
     }?>
     <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css";</style><![endif]-->
     <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css";</style><![endif]-->
+    <!--[if gte IE 8]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie.css";</style><![endif]-->
     <?php print $scripts; ?>
     <?php if($add_js){ 
     	foreach($add_js AS $this_js){
@@ -55,8 +56,7 @@
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div id="body" class="body	
-	<?php if (!$sidebar_left_1 && !$sidebar_left_2 && !$sidebar_left_3): ?>
+	<div id="body" class="body<?php if (!$sidebar_left_1 && !$sidebar_left_2 && !$sidebar_left_3): ?>
 	full_width
 	<?php endif;?>">
 		<div class="wrapper">

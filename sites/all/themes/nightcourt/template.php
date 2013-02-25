@@ -25,6 +25,7 @@ function nightcourt_preprocess_page(&$vars, $hook) {
   $vars['url'] = explode('/',$node->path);
   switch($node->type){
   	case "faculty":
+  	
   		//----------------------//
   	/* Get some RSS goodness */
   	$faculty_feed = 'http://ucfacultynews.wordpress.com/category/'.$vars['url'][count($vars['url'])-1].'/feed/';	
@@ -189,6 +190,8 @@ function nightcourt_preprocess_page(&$vars, $hook) {
 		ts_data($data);*/
   		break;
   	case "landingpage":
+  		drupal_add_js(drupal_get_path('theme', 'nightcourt') . '/js/jquery.cookie.js');
+  		$vars['scripts'] = drupal_get_js(); // necessary in D7?
   		if(!empty($node->field_feature_img[0]['view'])){
 	  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
 			$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];

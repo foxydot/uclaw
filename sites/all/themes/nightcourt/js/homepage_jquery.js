@@ -4,8 +4,8 @@ jQuery(document).ready(function($) {
         slices: 1, // For slice animations
         boxCols: 1, // For box animations
         boxRows: 1, // For box animations
-        animSpeed: 600, // Slide transition speed
-        pauseTime: 6000, // How long each slide will show
+        animSpeed: 300, // Slide transition speed
+        pauseTime: 2000, // How long each slide will show
         startSlide: 0, // Set starting Slide (0 index)
         directionNav: false, // Next & Prev navigation
         directionNavHide: true, // Only show on hover

@@ -23,10 +23,12 @@
 			<?php if(!empty($feature['feature_link']['url'])): ?>
 				</a>
 			<?php endif; ?>
+			<?php /*
 		<div id="slider-caption-<?php print $key;?>" class="nivo-html-caption">
 			<h3><?php print $feature['feature_title']; ?></h3>
-			<div><?php print $feature['feature_caption']; ?></div>
+			<div><?php print $feature['feature_caption']; ?></div> 
 		</div>
+		*/ ?>
 	<?php endforeach; ?>
 	</div>
 	<div id="homepage-header-sidebar" class="homepage-header-sidebar">

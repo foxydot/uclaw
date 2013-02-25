@@ -347,9 +347,6 @@
 				$('.nivo-controlNav a:eq('+ vars.currentSlide +')', slider).addClass('active');
 			}
 			
-			//Process caption
-			processCaption(settings);
-			
 			// Remove any slices from last transition
 			$('.nivo-slice', slider).remove();
 			
@@ -609,7 +606,9 @@
 			for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
 			return arr;
 		}
-        
+
+		//Process caption
+		processCaption(settings);
         // For debugging
         var trace = function(msg){
             if (this.console && typeof console.log != "undefined")

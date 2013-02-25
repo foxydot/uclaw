@@ -475,14 +475,23 @@ dl.sd_tblII dt {
 	}
 
 dl.sd_tblII dd {
-  	margin-left: 230px;
-	margin-top:5px;	
-	margin-bottom: 15px;	
+	margin-left: 230px;
+margin-top: 5px;
+margin-bottom: 15px;
 	}
+	
+dl.sd_tblII dd:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;}
 	
 .sd_tblII {
 	margin-bottom:15px;
 	margin-left:20px;
+	clear:both;
 	}		
 	
 	

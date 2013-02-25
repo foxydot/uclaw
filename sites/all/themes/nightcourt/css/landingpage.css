@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 .node-type-landingpage h3 {
-	font-size: 1.666em;
+	font-size: 1.333em;
 	color: #FF0000;
 }
 
@@ -34,7 +34,7 @@
 .landingpage-header-area .landingpage-header-feature .nivo-caption h3, 
 .landingpage-header-area .landingpage-header-feature .nivo-html-caption h3 {
 	height: 30px;
-	width: 300px;
+	width: 700px;
 	padding: 0 12px;
 	position: absolute;
 	bottom: 0;
