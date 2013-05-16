@@ -37,23 +37,23 @@
 		
 		<!-- Numbers -->
 		
-		<div class="row numbers">
+		<div class="row numbers header-sidebar">
 			<div class="container">
 
 				
 				<div class="row">
 					
-					<div class="span4">
+					<div class="span4 equalize sb">
 						<h4><?php print $sb1_title; ?><span><?php print $sb1_subtitle; ?></span></h4>
 						<?php print $sb1_content; ?>
 						<?php print $sb1_link['view']; ?>
 					</div>
-					<div class="span4">
+					<div class="span4 equalize sb">
 						<h4><?php print $sb2_title; ?><span><?php print $sb2_subtitle; ?></span></h4>
 						<?php print $sb2_content; ?>
 						<?php print $sb2_link['view']; ?>
 					</div>
-					<div class="span4">
+					<div class="span4 equalize sb">
 						<h4><?php print $sb3_title; ?><span><?php print $sb3_subtitle; ?></span></h4>
 						<?php print $sb3_content; ?>
 						<?php print $sb3_link['view']; ?>
@@ -68,6 +68,7 @@
 			
 				<div class="span4 events">
 					<!-- Events -->
+					<h3 class="red">Events</h3>
 					<?php 
 					$block = module_invoke('views', 'block', 'view', 'Events-block_1');
 					print '<h3>'.$block['subject'].'</h3>
@@ -82,25 +83,25 @@
 					<section class="story clearfix">
 						<?php print $feature_1_image; ?>
 						<h4 class="title"><?php print $feature_1_title; ?></h4>
-						<h4><?php print $feature_1_readmore['view']?preg_replace('/full-width/i','half-width',$feature_1_link['view']):$feature_1_link['view']; ?></h4>
-						<a class="more" href="<?php print ($feature_4_link['url']); ?>">Read More</a>
+						<?php print $feature_1_content; ?>
+						<a class="more" href="<?php print ($feature_1_link['url']); ?>">Read More</a>
 					</section>
 					<section class="story clearfix">
 						<?php print $feature_2_image; ?>
 						<h4 class="title"><?php print $feature_2_title; ?></h4>
-						<h4><?php print $feature_2_readmore['view']?preg_replace('/full-width/i','half-width',$feature_2_link['view']):$feature_2_link['view']; ?></h4>
-						<a class="more" href="<?php print ($feature_4_link['url']); ?>">Read More</a>
+						<?php print $feature_2_content; ?>
+						<a class="more" href="<?php print ($feature_2_link['url']); ?>">Read More</a>
 					</section>
 					<section class="story clearfix">
 						<?php print $feature_3_image; ?>
 						<h4 class="title"><?php print $feature_3_title; ?></h4>
-						<h4><?php print $feature_3_readmore['view']?preg_replace('/full-width/i','half-width',$feature_3_link['view']):$feature_3_link['view']; ?></h4>
-						<a class="more" href="<?php print ($feature_4_link['url']); ?>">Read More</a>
+						<?php print $feature_3_content; ?>
+						<a class="more" href="<?php print ($feature_3_link['url']); ?>">Read More</a>
 					</section>
 					<section class="story clearfix">
 						<?php print $feature_4_image; ?>
 						<h4 class="title"><?php print $feature_4_title; ?></h4>
-						<h4><?php print $feature_4_readmore['view']?preg_replace('/full-width/i','half-width',$feature_4_link['view']):$feature_4_link['view']; ?></h4>
+						<?php print $feature_4_content; ?>
 						<a class="more" href="<?php print ($feature_4_link['url']); ?>">Read More</a>
 					</section>
 					
@@ -111,10 +112,10 @@
 			</div>
 		</div> <!-- /.container -->
 		
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>    
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-    jQuery(document).ready(function(){
+    $jq(document).ready(function($){
 		$('#home-carousel').carousel({'interval' : 8000});
 	});
     </script>      	

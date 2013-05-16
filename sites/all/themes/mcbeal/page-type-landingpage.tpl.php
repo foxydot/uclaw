@@ -1,10 +1,5 @@
 <?php $add_css[] = 'landingpage.css'; ?>
 <?php $add_js[] = 'jquery.cookie.js'; ?>
-<?php if(count($header_feature)>1): ?>
-<?php $add_css[] = 'nivo-slider.css'; ?>
-<?php $add_js[] = 'jquery.nivo.slider.pack.js'; ?>
-<?php $add_js[] = 'homepage_jquery.js'; ?>
-<?php endif; ?>
 <?php include_once('header.php');?>
 			
 			<?php if ($sidebar_left_1 || $sidebar_left_2 || $sidebar_left_3): ?>
@@ -33,23 +28,45 @@
 		</div> <!-- /#content-top -->
 	<?php endif; ?>
 
-<div id="landingpage-header-area" class="landingpage-header-area clearfix">
-	<div id="landingpage-header-feature" class="landingpage-header-feature nivoSlider">
-	<?php foreach($header_feature AS $key => $feature): ?>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+<div id="landingpage-header-area" class="landingpage-header-area clearfix carousel slide">
+	<div id="landingpage-header-feature" class="carousel-inner landingpage-header-feature">
+		<?php $num_features=0; ?>
+		<?php foreach($header_feature AS $key => $feature): ?>
+			 <div class="item<?php print $key == 1?' active':''; ?>" style="background: url('/<?php print $feature['feature_img']; ?>') center top no-repeat #000000;">
+		            <div class="container">
+		                <div class="carousel-caption">
+		                    <?php if(!empty($feature['feature_title'])): ?>
+		                    <h1><?php print $feature['feature_title']; ?></h1>
+		                    <?php endif; ?>
+		                    <?php if(!empty($feature['feature_caption'])): ?>
+		                    <div class="white-box clearfix">
+			                    <?php print $feature['feature_caption']; ?>	
 			<?php if(!empty($feature['feature_link']['url'])): ?>
 				<?php $target = isset($feature['feature_link']['attributes']['target'])?' target="'.$feature['feature_link']['attributes']['target'].'"':''; ?>
-				<a href="<?php print $feature['feature_link']['url']; ?>"<?php print $target?>>
+				<a href="<?php print $feature['feature_link']['url']; ?>"<?php print $target?>></a>
 			<?php endif; ?>
-		<?php print trim($feature['feature_title']) != '' || trim($feature['feature_caption']) != ''?preg_replace('@title=\".*?\"@i','title="#slider-caption-'.$key.'"',$feature['feature_img']):preg_replace('@title=\".*?\"@i','title=""',$feature['feature_img']); ?>
-			<?php if(!empty($feature['feature_link']['url'])): ?>
-				</a>
-			<?php endif; ?>
-		<div id="slider-caption-<?php print $key;?>" class="nivo-html-caption"><?php 
-			print trim($feature['feature_title']) != ''?'<h3>'.$feature['feature_title'].'</h3>':'';
-			print trim($feature['feature_caption']) != ''?'<div>'.$feature['feature_caption'].'</div>':'';
-		?></div>
+		                    </div>
+		                    <?php endif; ?>
+		                </div>
+		            </div>
+		        </div>
+		        <?php $num_features++; ?>
 	<?php endforeach; ?>
 	</div>
+	<?php if($num_features>1):?>
+		    <a class="left carousel-control" href="#landingpage-header-area" data-slide="prev">&lsaquo;</a>
+		    <a class="right carousel-control" href="#landingpage-header-area" data-slide="next">&rsaquo;</a>
+	<?php endif; ?>
 	<div class="clear"></div>
 </div>
 <div id="landingpage-content-area" class="landingpage-content-area">
@@ -91,23 +108,78 @@
 </div>
 </div>
 	<div class="clear"></div>
+	<?php 
+	$my_page = $_SERVER['REQUEST_URI']; 
+	if($my_page == '/jd-program' || $my_page == '/faculty-staff' ): ?>
 	<style type="text/css">
-                                #highlight-cycle {
-                                        left: 0;
-                                        position: relative;
-                                        top: 0;
-                                }
-                                
-                                #highlight-cycle .hl {
-                                        background: #FFFFFF;
-                                        left: 0;
-                                        position: absolute;
-                                        top: 0;
-                                }
-                                
-                                #highlight-cycle .hl .bio { margin-top: 0; }
-                                #highlight-cycle .hl h4 { font-size: 14px; }
-                                #highlight-cycle .hl p { font-size: 12px; }
-                        </style>
-	
+		#highlight-cycle {
+			left: 0;
+			position: relative;
+			top: 0;
+		}
+		#highlight-cycle .hl {
+			display:none;
+		}
+		#highlight-cycle .hl .bio { margin-top: 0; }
+		#highlight-cycle .hl h4 { font-size: 14px; }
+		#highlight-cycle .hl p { font-size: 12px; }
+	</style>
+	<script src="<?php print $base_path . path_to_theme(); ?>/js/jquery.cookie.js" type="text/javascript"></script>    
+	<script type="text/javascript">
+<!--
+function randomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+} // randomint();
+
+var slide_time = 12;
+var tallest = 0;
+var viewed = 0;
+var display_index = 0;
+   
+$jq(document).ready(function($) {
+    // Resize bios to cover all
+   
+   
+    // Select random image based on what's been seen
+    if ($.cookie('highlights')) {
+        viewed = $.cookie('highlights').split(',');
+        viewed.pop();
+        if ((viewed.length == 1) && (viewed[0] == '')) {
+            viewed.length = 0;
+        }
+    }
+   
+    if (viewed.length > 0) {
+        var next = parseInt(viewed.pop());
+        if (viewed.length >= $('#highlight-cycle .hl').length - 1) {
+            display_index = 0;
+            $.cookie('highlights', '');
+        } else {
+            display_index = next + 1;
+        }
+    }
+    
+   
+    $('#highlight-cycle .hl:eq(' + display_index + ')').addClass('save');
+    $.cookie('highlights', $.cookie('highlights') + display_index + ',');
+    $('#highlight-cycle .hl').each(function() {
+    	if (!$(this).hasClass('save')) {
+    		$(this).remove();
+    	} else {
+    		$(this).css('display', 'block');
+    	}
+    });
+
+      
+});
+
+//-->
+</script>
+     <?php endif; ?>
+	    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+    $jq(document).ready(function($){
+		$('#landingpage-header-area').carousel({'interval' : 8000});
+	});
+    </script>  
 <?php include_once('footer.php');?>  	

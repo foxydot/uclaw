@@ -1895,7 +1895,7 @@ function img_assist_wysiwyg_plugin($editor, $version) {
             'path' => drupal_get_path('module', 'img_assist') .'/drupalimage/editor_plugin.js',
             'buttons' => array('img_assist' => t('Image Assist')),
             'url' => 'http://drupal.org/project/img_assist',
-            'extended_valid_elements' => array('img[class|src|border=0|alt|title|width|height|align|name|style]'),
+            'extended_valid_elements' => array('img[class|src|border=0|alt|title|width|height|align|name|style|usemap|id]'),
             'load' => TRUE,
           ),
         );

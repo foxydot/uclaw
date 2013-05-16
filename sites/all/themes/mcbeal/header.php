@@ -13,7 +13,12 @@
     }?>
     <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css";</style><![endif]-->
     <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css";</style><![endif]-->
-    <!--[if gte IE 8]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie8.css";</style><![endif]-->
+    <!--[if gte IE 9]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie.css";</style><![endif]-->
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
     <?php print $scripts; ?>
     <?php if($add_js){ 
     	foreach($add_js AS $this_js){
@@ -33,6 +38,12 @@
 		$('ul.nice-menu-right a.active').parent().parent().show();
 	});
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	  var $jq = jQuery.noConflict();
+	</script> 
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/ui-lightness/jquery-ui.css" />
 </head>
 <body class="<?php print $body_classes; ?>">
 <header>

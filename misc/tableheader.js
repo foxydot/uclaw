@@ -6,10 +6,11 @@ Drupal.tableHeaderDoScroll = function() {
 };
 
 Drupal.behaviors.tableHeader = function (context) {
-  // This breaks in anything less than IE 7. Prevent it from running.
-  if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 7) {
-    return;
-  }
+  // This breaks in anything less than IE 7. Prevent it from running. 
+	//No longer supporting <IE7
+  //if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 7) {
+    //return;
+  //}
 
   // Keep track of all cloned table headers.
   var headers = [];

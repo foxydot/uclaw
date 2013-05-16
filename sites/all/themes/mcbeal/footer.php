@@ -17,13 +17,14 @@
 				<div class="row">
 					
 					<div class="span3 offset2">
-						<img src="<?php global $theme_path;echo $theme_path;?>/images/footer-logo.jpg" alt="UC College of Law, Est. 1833">
+						<img src="/<?php global $theme_path;echo $theme_path;?>/images/footer-logo.jpg" alt="UC College of Law, Est. 1833">
 						<p>&copy; University of Cincinnati 2013<br />All Rights Reserved.</p>
 						
 						<div class="social">
-							<a class="facebook" href="#"></a>
-							<a class="twitter" href="#"></a>
-							<a class="youtube" href="#"></a>
+							<a class="facebook" href="http://www.facebook.com/#!/pages/University-of-Cincinnati-College-of-Law/318653248160979?fref=ts"></a>
+							<a class="twitter" href="https://twitter.com/GoBEARCATS"></a>
+							<a class="youtube" href="http://www.youtube.com/user/UCincinnatiLaw"></a>
+							<a class="linkedin" href="http://www.linkedin.com/groups/University-Cincinnati-College-Law-Students-1033937?goback=%2Egdr_1247502868379_1%2Egna_1033937"></a>
 						</div>
 
 					</div>

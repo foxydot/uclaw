@@ -193,31 +193,31 @@ function mcbeal_preprocess_page(&$vars, $hook) {
   		drupal_add_js(drupal_get_path('theme', 'mcbeal') . '/js/jquery.cookie.js');
   		$vars['scripts'] = drupal_get_js(); // necessary in D7?
   		if(!empty($node->field_feature_img[0]['view'])){
-	  		$vars['header_feature'][1]['feature_img'] = $node->field_feature_img[0]['view'];
+	  		$vars['header_feature'][1]['feature_img'] = imagecache_create_path('lp_feature',$node->field_feature_img[0]['filepath']);
 			$vars['header_feature'][1]['feature_title'] = $node->field_feature_title[0]['value'];
 			$vars['header_feature'][1]['feature_caption'] = $node->field_feature_caption[0]['value'];
 			$vars['header_feature'][1]['feature_link'] = $node->field_feature_link[0];
   		}
   		if(!empty($node->field_feature_img_2[0]['view'])){
-	  		$vars['header_feature'][2]['feature_img'] = $node->field_feature_img_2[0]['view'];
+	  		$vars['header_feature'][2]['feature_img'] = imagecache_create_path('lp_feature',$node->field_feature_img_2[0]['filepath']);
 			$vars['header_feature'][2]['feature_title'] = $node->field_feature_title_2[0]['value'];
 			$vars['header_feature'][2]['feature_caption'] = $node->field_feature_caption_2[0]['value'];
 			$vars['header_feature'][2]['feature_link'] = $node->field_feature_link_2[0];
   		}
   		if(!empty($node->field_feature_img_3[0]['view'])){
-	  		$vars['header_feature'][3]['feature_img'] = $node->field_feature_img_3[0]['view'];
+	  		$vars['header_feature'][3]['feature_img'] = imagecache_create_path('lp_feature',$node->field_feature_img_3[0]['filepath']);
 			$vars['header_feature'][3]['feature_title'] = $node->field_feature_title_3[0]['value'];
 			$vars['header_feature'][3]['feature_caption'] = $node->field_feature_caption_3[0]['value'];
 			$vars['header_feature'][3]['feature_link'] = $node->field_feature_link_3[0];
   		}
   		if(!empty($node->field_feature_img_4[0]['view'])){
-	  		$vars['header_feature'][4]['feature_img'] = $node->field_feature_img_4[0]['view'];
+	  		$vars['header_feature'][4]['feature_img'] = imagecache_create_path('lp_feature',$node->field_feature_img_4[0]['filepath']);
 			$vars['header_feature'][4]['feature_title'] = $node->field_feature_title_4[0]['value'];
 			$vars['header_feature'][4]['feature_caption'] = $node->field_feature_caption_4[0]['value'];
 			$vars['header_feature'][4]['feature_link'] = $node->field_feature_link_4[0];
   		}
   		if(!empty($node->field_feature_img_5[0]['view'])){
-	  		$vars['header_feature'][5]['feature_img'] = $node->field_feature_img_5[0]['view'];
+	  		$vars['header_feature'][5]['feature_img'] = imagecache_create_path('lp_feature',$node->field_feature_img_5[0]['filepath']);
 			$vars['header_feature'][5]['feature_title'] = $node->field_feature_title_5[0]['value'];
 			$vars['header_feature'][5]['feature_caption'] = $node->field_feature_caption_5[0]['value'];
 			$vars['header_feature'][5]['feature_link'] = $node->field_feature_link_5[0];

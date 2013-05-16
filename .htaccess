@@ -1,3 +1,6 @@
+# enable PHP error logging
+php_flag  log_errors on
+php_value error_log  /var/www/html/sites/all/error.log
 #
 # Apache/PHP/Drupal settings:
 #
@@ -24,7 +27,7 @@ ErrorDocument 404 /index.php
 
 # Set the default handler.
 DirectoryIndex index.php
-
+#Deny from *.theplanet.com
 # Override PHP settings. More in sites/default/settings.php
 # but the following cannot be changed at runtime.
 
@@ -64,8 +67,9 @@ DirectoryIndex index.php
   ExpiresActive On
 
   # Cache all files for 2 weeks after access (A).
-  ExpiresDefault A1209600
-
+  # ExpiresDefault A1209600 #turn this back on after cache busting is done
+  ExpiresDefault A0
+	
   <FilesMatch \.php$>
     # Do not allow PHP scripts to be cached unless they explicitly send cache
     # headers themselves. Otherwise all scripts would have to overwrite the
@@ -104,7 +108,171 @@ DirectoryIndex index.php
   #
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
-  # RewriteBase /
+  RewriteBase /
+  
+  # Bumper rules for sites not being moved at this time
+RewriteRule ^taxstories(/?)(.*)$ http://taft.law.uc.edu/taxstories/$2 [R,NC,L]
+RewriteRule ^taxprof(/?)(.*)$ http://taft.law.uc.edu/taxprof/$2 [R,NC,L]
+
+  
+  # 301 Maps from old site
+RewriteRule ^faculty/profiles/aaron.php$ /faculty-staff/faculty/marjorie-corman-aaron [R=301,NC,L]
+RewriteRule ^faculty/profiles/armstrong.php$ /faculty-staff/faculty/timothy-k-armstrong [R=301,NC,L]
+RewriteRule ^faculty/profiles/bai.php$ /faculty-staff/faculty/lin-lynn-bai [R=301,NC,L]
+RewriteRule ^faculty/profiles/bergin.php$ /faculty-staff/faculty/kathleen-bergin [R=301,NC,L]
+RewriteRule ^faculty/profiles/bettman.php$ /faculty-staff/faculty/marianna-brown-bettman [R=301,NC,L]
+RewriteRule ^faculty/profiles/bilionis.php$ /faculty-staff/staff/louis-d-bilionis [R=301,NC,L]
+RewriteRule ^faculty/profiles/black.php$ /faculty-staff/faculty/barbara-black [R=301,NC,L]
+RewriteRule ^faculty/profiles/bradley.php$ /faculty-staff/faculty/michele-bradley [R=301,NC,L]
+RewriteRule ^faculty/profiles/bryant.php$ /faculty-staff/faculty/christopher-bryant [R=301,NC,L]
+RewriteRule ^faculty/profiles/caron.php$ /faculty-staff/faculty/paul-l-caron [R=301,NC,L]
+RewriteRule ^faculty/profiles/cogan.php$ /faculty-staff/faculty/jacob-katz-cogan [R=301,NC,L]
+RewriteRule ^faculty/profiles/drew.php$ /faculty-staff/faculty/margaret-b-drew [R=301,NC,L]
+RewriteRule ^faculty/profiles/eisele.php$ /faculty-staff/faculty/thomas-d-eisele [R=301,NC,L]
+RewriteRule ^faculty/profiles/godsey.php$ /faculty-staff/faculty/mark-godsey [R=301,NC,L]
+RewriteRule ^faculty/profiles/hirsh.php$ /faculty-staff/faculty/kenneth-j-hirsh [R=301,NC,L]
+RewriteRule ^faculty/profiles/houh.php$ /faculty-staff/faculty/emily-ming-sue-houh [R=301,NC,L]
+RewriteRule ^faculty/profiles/hubbard.php$ /faculty-staff/faculty/ann-hubbard [R=301,NC,L]
+RewriteRule ^faculty/profiles/kalsem.php$ /faculty-staff/faculty/kristin-kalsem [R=301,NC,L]
+RewriteRule ^faculty/profiles/lassiter.php$ /faculty-staff/faculty/christo-lassiter [R=301,NC,L]
+RewriteRule ^faculty/profiles/lenhart.php$ /faculty-staff/faculty/elizabeth-lenhart [R=301,NC,L]
+RewriteRule ^faculty/profiles/lockwood.php$ /faculty-staff/faculty/bert-b-lockwood [R=301,NC,L]
+RewriteRule ^faculty/profiles/malloy.php$ /faculty-staff/faculty/s-elizabeth-betsy-malloy [R=301,NC,L]
+RewriteRule ^faculty/profiles/mank.php$ /faculty-staff/faculty/bradford-c-mank [R=301,NC,L]
+RewriteRule ^faculty/profiles/mcmahon.php$ /faculty-staff/faculty/stephanie-mcmahon [R=301,NC,L]
+RewriteRule ^faculty/profiles/mickles.php$ /faculty-staff/faculty/kenyatta-mickles [R=301,NC,L]
+RewriteRule ^faculty/profiles/miller.php$ /faculty-staff/faculty/darrell-ah-miller [R=301,NC,L]
+RewriteRule ^faculty/profiles/mossman.php$ /faculty-staff/faculty/douglas-mossman-md [R=301,NC,L]
+RewriteRule ^faculty/profiles/oliver.php$ /faculty-staff/faculty/nancy-oliver [R=301,NC,L]
+RewriteRule ^faculty/profiles/pierrelouis.php$ /faculty-staff/faculty/lydie-nadia-cabrera-pierre-louis [R=301,NC,L]
+RewriteRule ^faculty/profiles/schneider.php$ /faculty-staff/faculty/ronna-greff-schneider [R=301,NC,L]
+RewriteRule ^faculty/profiles/smith.php$ /faculty-staff/faculty/rachel-jay-smith [R=301,NC,L]
+RewriteRule ^faculty/profiles/solimine.php$ /faculty-staff/faculty/michael-e-solimine [R=301,NC,L]
+RewriteRule ^faculty/profiles/tarkington.php$ /faculty-staff/faculty/margaret-tarkington [R=301,NC,L]
+RewriteRule ^faculty/profiles/tomain.php$ /faculty-staff/faculty/joseph-p-tomain [R=301,NC,L]
+RewriteRule ^president/biography.html$ /faculty-staff/faculty/gregory-h-williams [R=301,NC,L]
+RewriteRule ^faculty/profiles/williams.php$ /faculty-staff/faculty/verna-l-williams [R=301,NC,L]
+RewriteRule ^faculty/profiles/christenson.php$ /faculty-staff/faculty/gordon-a-christenson [R=301,NC,L]
+RewriteRule ^faculty/profiles/martineau.php$ /faculty-staff/emeriti/robert-j-martineau [R=301,NC,L]
+RewriteRule ^faculty/profiles/murphy.php$ /faculty-staff/emeriti/john-j-murphy [R=301,NC,L]
+RewriteRule ^faculty/profiles/rands.php$ /faculty-staff/emeriti/william-j-rands [R=301,NC,L]
+RewriteRule ^faculty/profiles/watts.php$ /faculty-staff/emeriti/barbara-g-watts [R=301,NC,L]
+RewriteRule ^faculty/profiles/wilson.php$ /faculty-staff/emeriti/samuel-s-wilson [R=301,NC,L]
+RewriteRule ^faculty/profiles/bilionis.php$ /faculty-staff/staff/louis-d-bilionis [R=301,NC,L]
+RewriteRule ^faculty/profiles/carpenter.php$ /faculty-staff/faculty/charlene-carpenter [R=301,NC,L]
+RewriteRule ^faculty/profiles/english.php$ /faculty-staff/staff/sherry-y-english [R=301,NC,L]
+RewriteRule ^current/careers/jefferson.shtml$ /faculty-staff/staff/mina-jones-jefferson-esq [R=301,NC,L]
+RewriteRule ^faculty/profiles/hogan.php$ /faculty-staff/staff/michael-hogan-0 [R=301,NC,L]
+RewriteRule ^faculty/profiles/schoenfeld.php$ /faculty-staff/staff/jim-j-schoenfeld [R=301,NC,L]
+RewriteRule ^faculty/profiles/sieber.php$ /faculty-staff/staff/karen-sieber [R=301,NC,L]
+RewriteRule ^prospective/contact/watson.shtml$ /prospective-students/contact-us/al-watson [R=301,NC,L]
+RewriteRule ^archives(/?)(.*)$ /library?quicktabs_2=5 [R=301,NC,L]
+
+
+	# 301 Maps from even older site
+RewriteRule ^faculty/aaron.shtml$ /faculty-staff/faculty/marjorie-corman-aaron [R=301,NC,L]
+RewriteRule ^faculty/armstrong.shtml$ /faculty-staff/faculty/timothy-k-armstrong [R=301,NC,L]
+RewriteRule ^faculty/bai.shtml$ /faculty-staff/faculty/lin-lynn-bai [R=301,NC,L]
+RewriteRule ^faculty/bergin.shtml$ /faculty-staff/faculty/kathleen-bergin [R=301,NC,L]
+RewriteRule ^faculty/bettman.shtml$ /faculty-staff/faculty/marianna-brown-bettman [R=301,NC,L]
+RewriteRule ^faculty/bilionis.shtml$ /faculty-staff/staff/louis-d-bilionis [R=301,NC,L]
+RewriteRule ^faculty/black.shtml$ /faculty-staff/faculty/barbara-black [R=301,NC,L]
+RewriteRule ^faculty/bradley.shtml$ /faculty-staff/faculty/michele-bradley [R=301,NC,L]
+RewriteRule ^faculty/bryant.shtml$ /faculty-staff/faculty/christopher-bryant [R=301,NC,L]
+RewriteRule ^faculty/caron.shtml$ /faculty-staff/faculty/paul-l-caron [R=301,NC,L]
+RewriteRule ^faculty/cogan.shtml$ /faculty-staff/faculty/jacob-katz-cogan [R=301,NC,L]
+RewriteRule ^faculty/drew.shtml$ /faculty-staff/faculty/margaret-b-drew [R=301,NC,L]
+RewriteRule ^faculty/eisele.shtml$ /faculty-staff/faculty/thomas-d-eisele [R=301,NC,L]
+RewriteRule ^faculty/godsey.shtml$ /faculty-staff/faculty/mark-godsey [R=301,NC,L]
+RewriteRule ^faculty/hirsh.shtml$ /faculty-staff/faculty/kenneth-j-hirsh [R=301,NC,L]
+RewriteRule ^faculty/houh.shtml$ /faculty-staff/faculty/emily-ming-sue-houh [R=301,NC,L]
+RewriteRule ^faculty/hubbard.shtml$ /faculty-staff/faculty/ann-hubbard [R=301,NC,L]
+RewriteRule ^faculty/kalsem.shtml$ /faculty-staff/faculty/kristin-kalsem [R=301,NC,L]
+RewriteRule ^faculty/lassiter.shtml$ /faculty-staff/faculty/christo-lassiter [R=301,NC,L]
+RewriteRule ^faculty/lenhart.shtml$ /faculty-staff/faculty/elizabeth-lenhart [R=301,NC,L]
+RewriteRule ^faculty/lockwood.shtml$ /faculty-staff/faculty/bert-b-lockwood [R=301,NC,L]
+RewriteRule ^faculty/malloy.shtml$ /faculty-staff/faculty/s-elizabeth-betsy-malloy [R=301,NC,L]
+RewriteRule ^faculty/mank.shtml$ /faculty-staff/faculty/bradford-c-mank [R=301,NC,L]
+RewriteRule ^faculty/mcmahon.shtml$ /faculty-staff/faculty/stephanie-mcmahon [R=301,NC,L]
+RewriteRule ^faculty/mickles.shtml$ /faculty-staff/faculty/kenyatta-mickles [R=301,NC,L]
+RewriteRule ^faculty/miller.shtml$ /faculty-staff/faculty/darrell-ah-miller [R=301,NC,L]
+RewriteRule ^faculty/mossman.shtml$ /faculty-staff/faculty/douglas-mossman-md [R=301,NC,L]
+RewriteRule ^faculty/oliver.shtml$ /faculty-staff/faculty/nancy-oliver [R=301,NC,L]
+RewriteRule ^faculty/pierrelouis.shtml$ /faculty-staff/faculty/lydie-nadia-cabrera-pierre-louis [R=301,NC,L]
+RewriteRule ^faculty/schneider.shtml$ /faculty-staff/faculty/ronna-greff-schneider [R=301,NC,L]
+RewriteRule ^faculty/smith.shtml$ /faculty-staff/faculty/rachel-jay-smith [R=301,NC,L]
+RewriteRule ^faculty/solimine.shtml$ /faculty-staff/faculty/michael-e-solimine [R=301,NC,L]
+RewriteRule ^faculty/tarkington.shtml$ /faculty-staff/faculty/margaret-tarkington [R=301,NC,L]
+RewriteRule ^faculty/tomain.shtml$ /faculty-staff/faculty/joseph-p-tomain [R=301,NC,L]
+RewriteRule ^faculty/williams.shtml$ /faculty-staff/faculty/verna-l-williams [R=301,NC,L]
+RewriteRule ^faculty/christenson.shtml$ /faculty-staff/faculty/gordon-a-christenson [R=301,NC,L]
+RewriteRule ^faculty/martineau.shtml$ /faculty-staff/emeriti/robert-j-martineau [R=301,NC,L]
+RewriteRule ^faculty/murphy.shtml$ /faculty-staff/emeriti/john-j-murphy [R=301,NC,L]
+RewriteRule ^faculty/rands.shtml$ /faculty-staff/emeriti/william-j-rands [R=301,NC,L]
+RewriteRule ^faculty/watts.shtml$ /faculty-staff/emeriti/barbara-g-watts [R=301,NC,L]
+RewriteRule ^faculty/wilson.shtml$ /faculty-staff/emeriti/samuel-s-wilson [R=301,NC,L]
+RewriteRule ^faculty/bilionis.shtml$ /faculty-staff/staff/louis-d-bilionis [R=301,NC,L]
+RewriteRule ^faculty/carpenter.shtml$ /faculty-staff/faculty/charlene-carpenter [R=301,NC,L]
+RewriteRule ^faculty/english.shtml$ /faculty-staff/staff/sherry-y-english [R=301,NC,L]
+RewriteRule ^faculty/hogan.shtml$ /faculty-staff/staff/michael-hogan-0 [R=301,NC,L]
+RewriteRule ^faculty/schoenfeld.shtml$ /faculty-staff/staff/jim-j-schoenfeld [R=301,NC,L]
+RewriteRule ^faculty/sieber.shtml$ /faculty-staff/staff/karen-sieber [R=301,NC,L]
+
+#rules to restrict access to some pages based on ip
+#RewriteCond %{REMOTE_ADDR} !^10\.139\.
+#RewriteCond %{REMOTE_ADDR} !^10\.24\.
+#RewriteCond %{REMOTE_ADDR} !^172\.30\.
+#RewriteCond %{REMOTE_ADDR} !^10\.139\.0\.[0-9]|1[0-6]$
+#RewriteCond %{REMOTE_ADDR} !^10\.24\.0\.[0-9]|1[0-6]$
+#RewriteCond %{REMOTE_ADDR} !^172\.30\.0\.[0-9]|1[0-6]$ 
+#RewriteCond %{REQUEST_URI} ^/directory/class(.*)$ [NC,OR]
+#RewriteCond %{REQUEST_URI} ^/directory/email-lists$ [NC,OR]
+#RewriteCond %{REQUEST_URI} ^/user$ [NC,OR]
+#RewriteCond %{QUERY_STRING} q=user [NC] 
+#RewriteRule (.*) /blocked-ip [R=301,L] 
+
+
+  # Rules Added by CMOS to capture archive moves (temporary?)
+RewriteRule ^175(/?)(.*)$ /sites/default/files/175/$2 [NC,L]
+RewriteRule ^archives/(.*)$ /sites/default/files/archives/$1 [NC,L]
+# Hold onto these for hte archival option
+#RewriteRule ^CCL/$ /sites/default/files/CCL/index.html [R,NC,L]
+#RewriteRule ^CCL$ /sites/default/files/CCL/index.html [R,NC,L]
+# forcing back to old server for now.
+RewriteRule ^CCL/(.*)$ http://taft.law.uc.edu/CCL/$1 [R,NC,L]
+RewriteRule ^faculty/news/images/(.*)$ /sites/default/images/$1 [NC,L]
+RewriteRule ^faculty/(.*)$ /sites/default/files/faculty/$1 [NC,L]
+RewriteRule ^facnews(/?)(.*)$ /sites/default/files/facnews/$2 [NC,L]
+RewriteRule ^ssi/(.*)$ /sites/default/files/ssi/$1 [R,NC,L]
+RewriteRule ^news/updates$ /sites/default/files/updates/index.shtml [R,NC,L]
+RewriteRule ^news/updates/(.*)$ /sites/default/files/updates/$1 [R,NC,L]
+RewriteRule	^news/news(/?)(.*)$ /news/placeholder [NC,L]
+RewriteRule ^current-student/practical-experiences/publications/docs/(.*)$ /sites/default/files/archive_docs/publications/docs/$1 [NC,L]
+RewriteRule ^(.+?)/faculty-staff/(.*)$ /faculty-staff/$2 [R,NC,L]
+RewriteRule ^(.+?)/current-students/(.*)$ /current-students/$2 [R,NC,L]
+RewriteRule ^(.+?)/prospective-students/(.*)$ /prospective-students/$2 [R,NC,L]
+RewriteRule ^(.+?)/institutes-centers/(.*)$ /institutes-centers/$2 [R,NC,L]
+RewriteRule ^(.+?)/alumni/(.*)$ /alumni/$2 [R,NC,L]
+
+RewriteRule ^prospective$ /prospective-students [R=301,NC,L]
+RewriteRule ^current$ /current-students [R=301,NC,L]
+RewriteRule ^faculty$ /faculty-staff [R=301,NC,L]
+RewriteRule ^blogs$ /faculty-staff/blogs [R=301,NC,L]
+RewriteRule ^about$ /about-us [R=301,NC,L]
+RewriteRule ^prospective/(.*)$ /prospective-students/$1 [R=301,NC,L]
+RewriteRule ^current/(.*)$ /current-students/$1 [R=301,NC,L]
+RewriteRule ^faculty/(.*)$ /faculty-staff/$1 [R=301,NC,L]
+RewriteRule ^blogs/(.*)$ /faculty-staff/blogs/$1 [R=301,NC,L]
+RewriteRule ^institutes/(.*)$ /institutes-centers/$1 [R=301,NC,L]
+RewriteRule ^about/(.*)$ /about-us/$1 [R=301,NC,L]
+RewriteRule ^clinics/(.*)$ /institutes-centers/clinics/$1 [R=301,NC,L]
+
+#special request rewrites
+RewriteRule ^golf$ /news/2011-charity-golf-tournament [R=301,NC,L]
+RewriteRule ^oip/multi-media$ /institutes-centers/ohio-innocence-project/multi-media [R=301,NC,L]
+
+#mobile
+RewriteRule ^mobile/*(.*)$ /sites/default/mobile/$1 [NC,L]
 
   # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -113,4 +281,4 @@ DirectoryIndex index.php
   RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 </IfModule>
 
-# $Id$
+# $Id: .htaccess,v 1.90.2.5 2010/02/02 07:25:22 dries Exp $
