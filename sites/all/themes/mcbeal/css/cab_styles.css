@@ -1,0 +1,502 @@
+@CHARSET "UTF-8";
+/**
+This file exists solely to prevent overwrites. As I add more to the 
+main stylesheets, I may incorporate items from here, but I won't edit
+this file, so you can be assured I haven't overwritten your stuff.
+**/
+
+/* LAYOUT */
+
+/* CONTENT */
+
+/* HOMEPAGE CONTENT TYPE */
+
+#homepage-header-sidebar h3 {
+	padding-bottom: 8px;
+	}
+	
+#homepage-header-sidebar p {
+	line-height: 15px;
+	font-size: 11px;
+	}	
+
+#homepage-content-features h3 {
+	padding-bottom: 6px;
+	font-size: 1.4em;
+	}
+	
+#homepage-content-features h4 {
+	padding: 3px 0 6px 0;
+	}	
+	
+#homepage-content-features p {
+	line-height: 14px;
+	}		
+	
+#homepage-content-features li {
+	height: 140px;
+	}
+	
+#homepage-content-features li img {
+	border: 2px solid #DEDEDE;
+	}		
+	
+#homepage-content-sidebar {
+	width: 268px;
+	padding-left: 20px;
+	}	
+
+#homepage-content-sidebar .views-field-title span {
+	font-size: 11px;
+	}
+	
+#homepage-content-sidebar h3 {
+	padding-bottom: 10px;
+	}	
+
+/* LANDING CONTENT TYPE */
+
+#landingpage-content-features p {
+	line-height: 16px;
+	margin-bottom: 15px;
+	}
+	
+#landingpage-content-features li img {
+	border: 2px solid #DEDEDE;
+	}	
+	
+#landingpage-content-features .feature_1 ul {
+	margin-left: 25px;
+	margin-bottom: 10px;
+	}
+	
+#landingpage-content-features .feature_1 p {
+	font-size: 12px;
+	clear: both;
+	line-height: 19px;
+	} 
+	
+#landingpage-content-features .feature_1 ul li {
+	list-style: square;
+	padding: 0px;
+	margin-bottom: 4px;
+	}		
+	
+#landingpage-content-features h3 {
+	font-size: 16px;
+	padding-bottom: 6px;
+	}	
+	
+#landingpage-content-features li {
+	padding-bottom: 15px;
+	}	
+	
+.landingpage-content-area .landingpage-content-features ul li ul {
+	margin: 15px 10px;
+	}
+	
+.landingpage-content-area .landingpage-content-features ul li ul li  {
+	font-size: 12px;
+	margin-bottom: 5px;
+	}
+	
+.landingpage-content-area .landingpage-content-features ul li ul li a {
+	display: block;
+	text-indent: 0px;
+	height: 120px;
+	width: 330px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(images/theme/bg-list-faq.png) no-repeat;
+	padding: 2px 0 8px 18px;
+	color: #252525;
+	text-decoration: none;
+	}
+	
+.landingpage-content-area .landingpage-content-features ul li ul li a:hover {
+	text-decoration: underline;
+	}	
+	
+#listAd {margin: 15px 0 15px -4px}	
+
+#landingpage-content-features .feature_2 h5 {
+	font-size: 14px;
+	color: #252525;
+	margin:0;
+	font-weight: bold;
+	padding-top: 10px;
+	}
+	
+#landingpage-content-features .feature_2 .listPrograms {
+	margin: 10px 0 10px 15px;
+	}
+
+#landingpage-content-features .feature_2 .listPrograms li {
+	padding: 0 0 9px 0;
+	}		
+
+/* INSIDE PAGE CONTENT TYPE */
+
+.content .columns, .floatLeftWhite, .floatLeftWhite2 {
+	float: left;
+	width: 50%
+	}	
+	
+.floatLeftWhite, .floatRightWhite2 {
+	float: left;
+	width: 50%
+	}		
+
+.content h6 {
+	font-size: 1.25em;
+	font-weight: bold;
+	margin: 10px 0;
+	color: #252525;
+	}
+		
+.content .listSquare  {
+	margin: 0 0 0 25px;
+	}	
+	
+.social-block {
+	height: 70px;
+	}	
+	
+.social-block img {
+	margin-right: 3px;
+	}			
+	
+span.inline-right {
+  display:block;
+  float:right;
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:0;
+  margin-top:20px;
+  padding: 15px;
+  border: double #dedede;
+  background: #f2f2f2;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
+}	
+
+span.inline-right img {
+  border: 2px solid #ccc;
+}
+
+span.inline-left {
+  display:block;
+  float:left;
+  margin-bottom:20px;
+  margin-left:0px;
+  margin-right:20px;
+  margin-top:20px;
+  padding: 15px;
+  border: double #dedede;
+  background: #f2f2f2;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
+}	
+
+span.inline-left img {
+  border: 2px solid #ccc;
+}
+
+.section-faculty-staff span.inline-right {
+  display:block;
+  float:right;
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:0;
+  margin-top:20px;
+  padding: 0px;
+  border: 0px double #dedede;
+  background: #FFF;
+  text-align: center;
+  font-size: 11px;
+  line-height: 15px;
+}		
+
+.body .node-inner .content .listDecibal li {list-style: decimal;}
+
+.body .node-inner .content .grayBorder {border: 5px solid #dedede;}
+
+.body .node-inner .content h2 {
+	font-size: 1.4em;
+	}	
+
+#content, #content #content-inner, .content h2 {
+	color: #FF0000;
+	padding-bottom: 10px;
+	}
+	
+#content, #content #content-inner, .content h3 {
+	color: #FF0000;
+	font-size: 1.3em;
+	padding-bottom: 10px;
+	}
+	
+#content, #content #content-inner, .content h4 {
+	color: #FF0000;
+	font-size: 1.3em;
+	padding-bottom: 10px;
+	}
+	
+#content, #content #content-inner, .content h5 {
+	color: #FF0000;
+	font-size: 1.3em;
+	padding-bottom: 10px;
+	}
+	
+.blog-entry {
+	height: 185px;
+	border-bottom: 1px dotted #dedede;
+	margin: 30px 0 0 0;
+}
+
+.blog-entry h4, .blog-entry h5 {
+	color: #252525;
+}		
+	
+.blog {
+	background:#F7F7F7;
+	border:1px solid #DEDEDE;
+	margin:10px 15px 10px 10px;
+	padding:10px;
+	float: left;
+	width: 315px;
+	height: 205px;
+	display: inline;
+	}
+	
+.blog .feature {font-size: 13px; font-weight: bold; line-height: 16px;}	
+	
+.blog img {
+	width:100px;
+	height: 140px;
+	}	
+	
+.blog .listNone {list-style: none;}		
+
+.blogStudent {
+	background:#F7F7F7;
+	border:1px solid #DEDEDE;
+	margin:10px 15px 10px 10px;
+	padding:10px;
+	float: left;
+	width: 325px;
+	height: 370px;
+	display: inline;
+	font-size: 11px;
+	}
+	
+.vCard {
+	float: left;
+	width: 225px;
+	height: 200px;
+	display: inline;
+	margin: 0 0 0 10px;
+	}
+	
+.imageLeft {
+	float: left;
+	margin: 0 25px 0 0;
+	padding: 2px;
+	border: double #CCC;
+	}
+	
+.imageBlog {
+	float: left;
+	margin: 0 25px 0 0;
+	padding: 2px;
+	border: double #CCC;
+	}		
+	
+.resources h4 {text-align: left;}	
+
+.locked {padding-left: 15px;background: url(images/theme/locked.png) no-repeat;}
+
+
+/* NEWS CONTENT TYPE */
+
+div.ddblock-cycle-nightcourt div.custom-pager h3 {
+	line-height: 19px;
+	}
+
+/* INSTITUTES CONTENT TYPE */
+
+/* FACULTY CONTENT TYPE */
+
+.section-faculty-staff p {
+	padding-bottom: 15px;
+	}
+
+/* SEARCH MENUS */
+
+.search-results dt {
+    padding-bottom: 5px;
+    font-weight: bold;
+    }
+    
+.search-results dd {
+    line-height: 17px;
+	}    
+
+/* TABLE STYLES */	
+
+table a,
+table a:link,
+table a:visited {
+	color:#666;
+	text-decoration:underline;
+	}
+
+table a:hover {
+	text-decoration:none;
+	color:#333;
+	}	
+			
+table {
+	width:100%;
+	border-top:1px solid #DEDEDE;
+	border-right:1px solid #DEDEDE;
+	margin:1em auto;
+	border-collapse:collapse;
+	}
+	
+table img {
+	border:0;
+	margin-top:.5em;
+	}		
+	
+caption {
+	color: #000;
+	font-size:1.2em;
+	letter-spacing:.1em;
+	padding:0;
+	margin:1em 0 0 0;
+	margin-bottom:0;
+	caption-side:top;
+	text-align:center;
+	}	
+	
+tr.odd td,
+tr.odd .column1 {
+	background:#F7F7F7 url(/faculty/colloquia/images/bgTable.gif) no-repeat;
+	}	
+	
+.column1 {
+	background:#f9fcfe;
+	}
+	
+td {
+	color:#666;
+	border-bottom: 1px solid #DEDEDE;
+	border-left:1px solid #DEDEDE;
+	padding:.3em 1em;
+	text-align:left;
+	min-width: 100px;
+	}
+	
+.tableDate {
+	width: 85px;
+	}	
+	
+.tableSpeaker {
+	width: 150px;
+	}		
+					
+th {
+	font-weight:normal;
+	color: #678197;
+	text-align:left;
+	border-bottom: 1px solid #DEDEDE;
+	border-left:1px solid #DEDEDE;
+	padding:.3em 1em;
+	}	
+	
+thead th {
+	background:#F0F0F0;
+	text-align:left;
+	font-weight:bold;
+	font-size:1.2em;
+	color:#333
+	}	
+				
+tfoot th {
+	background:#CCC;
+	text-align:center;
+	border:none;
+	}
+		
+tfoot th strong {
+	font:bold 1.2em;
+	margin:.5em .5em .5em 0;
+	color:#66a3d3;
+	}
+				
+tfoot th em {
+	color:#f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+	}
+	
+dl.header_tbl dt {
+  	float: left;
+  	width: 220px;
+	margin-left:20px;
+  	text-align: left;
+	color:#666;
+	font-weight:bold;
+	}
+
+dl.header_tbl dd {
+  	margin-left: 250px;
+	color:#666;
+	font-weight:bold;
+	}
+	
+.header_tbl {
+	margin-bottom:15px;
+	background-color:#f7f7f7;
+	border: 1px solid #CCC;
+	}	
+	
+dl.sd_tblII dt {
+  	float: left;
+  	width: 220px;
+  	text-align: left;
+	color:#E80022;
+	font-weight:bold;
+	}
+
+dl.sd_tblII dd {
+	margin-left: 230px;
+margin-top: 5px;
+margin-bottom: 15px;
+	}
+	
+dl.sd_tblII dd:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;}
+	
+.sd_tblII {
+	margin-bottom:15px;
+	margin-left:20px;
+	clear:both;
+	}		
+	
+	
+/* forcing a video to float left on a short notice */
+.page-alumni-new-building .node-inner .content iframe {
+	float: right;
+	margin: 10px;
+}

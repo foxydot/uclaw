@@ -9,51 +9,70 @@
 	width: 760px;
 	float: left;
 }
+.landingpage-header-area.carousel {
+	margin-bottom: 0;
+	height: 300px;		
+	.item {
+		width: 760px;
+		height: 300px;
+		.container {
+		  	position: relative;
+		  	height: 300px;
+		  	z-index: 0;
+		  	.carousel-caption {
+				background: none;
+				bottom: 0px;
+			  	position: absolute;
+			  	left: 0px;
+			  	width: 730px;
+			  	h1 {
+				    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
+				    color: #FFFFFF;
+				    font-size: 14px;
+				    line-height: 1.2em;
+				    font-weight: 400;
+				    margin: 0;
+				    padding: 10px;
+				    width: 75%;
+				}
+				.white-box {
+					background: #FFFFFF;
+					display: inline-block;
+					margin-left: 22%;
+					padding: 10px;
+					width: 75%;
+					font-size: 10px;
+					line-height: 1.2em;
+					p {
+						color: #666666;
+						float: left;
+						width: auto;
+						line-height: 1.2em;
+					}
+					a {
+					    background: url("../images/carousel-link.jpg") no-repeat scroll center center #FFFFFF;
+					    float: right;
+					    height: 40px;
+					    margin: -14px -14px 0 0;
+					    padding: 14px;
+					    width: 34px;
+					}
+				}
+			}
+		}
+	}
 
-.landingpage-header-area {
-	background: #000;
-}
-.landingpage-header-area h3 {
+	.carousel-control {
+	  	height: 80px;
+	  	margin-top: 0;
+	  	font-size: 120px;
+	  	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+	  	background-color: transparent;
+	  	border: 0;
 	}
-.landingpage-header-area .landingpage-header-feature {
-	width: 760px;
-	height: 300px;
-	float: left;
-	position: relative;
 }
-.landingpage-header-area .landingpage-header-feature img {
-	width: 760px;
-	height: 300px;
-}
-.landingpage-header-area .landingpage-header-feature .nivo-caption {
-	height: 40px;
-}
-.landingpage-header-area .landingpage-header-feature .nivo-caption,
-.landingpage-header-area .landingpage-header-feature .nivo-html-caption {
-	background: #000;
-	}
-.landingpage-header-area .landingpage-header-feature .nivo-caption h3, 
-.landingpage-header-area .landingpage-header-feature .nivo-html-caption h3 {
-	height: 30px;
-	width: 500px;
-	padding: 0 12px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-.landingpage-header-area .landingpage-header-feature .nivo-caption div,
-.landingpage-header-area .landingpage-header-feature .nivo-html-caption div {
-	text-align: right;
-	height: 30px;
-	width: 300px;
-	padding: 0 12px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	color: #FFFFFF;
-	font-family: Times, "Times New Roman", Georgia, serif;
-	p{line-height: 1em;}
-}
+
+
 .landingpage-header-area .landingpage-header-sidebar {
 	width: 320px;
 	border-left: 1px solid #333;
