@@ -1,6 +1,7 @@
 # enable PHP error logging
 php_flag  log_errors on
 php_value error_log  /var/www/html/sites/all/error.log
+php_value max_input_vars 10000
 #
 # Apache/PHP/Drupal settings:
 #
