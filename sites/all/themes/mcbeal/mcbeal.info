@@ -34,6 +34,7 @@ stylesheets[all][] = css/menus.css
 stylesheets[all][] = css/content.css
 stylesheets[print][] = css/print.css
 stylesheets[all][] = css/calendar.css
+stylesheets[all][] = css/patch.css
 stylesheets[all][] = css/cab_styles.css
              
 settings[nightcourt_zen_tabs]             = 1

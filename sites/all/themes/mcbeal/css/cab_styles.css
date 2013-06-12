@@ -118,7 +118,7 @@ this file, so you can be assured I haven't overwritten your stuff.
 	text-decoration: underline;
 	}	
 	
-#listAd {margin: 15px 0 15px -4px}	
+#listAd {margin: 15px 0 15px -4px; padding: 0;}	
 
 #landingpage-content-features .feature_2 h5 {
 	font-size: 14px;
