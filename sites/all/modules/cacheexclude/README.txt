@@ -8,13 +8,13 @@ paths from being cached so that dynamic content is actually dynamic.
 
 REQUIREMENTS
 
-- Drupal 6.x
+- Drupal 7.x
 
 INSTALLATION
 
 - Copy the cacheexclude directory to your modules directory.
-- Go to admin/build/modules and enable it.
-- Go to admin/settings/cacheexclude and configure paths you want excluded from caching.
+- Go to admin/modules and enable it.
+- Go to admin/config/system/cacheexclude and configure paths you want excluded from caching.
 
 AUTHOR AND CREDITS
 

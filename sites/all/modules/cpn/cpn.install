@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implementation of hook_schema().
+ * Implements hook_schema().
  */
 function cpn_schema() {
   $schema['cpn'] = array(
@@ -16,77 +16,62 @@ function cpn_schema() {
 }
 
 /**
- * Implementation of hook_schema_alter().
+ * Implements hook_schema_alter().
  */
 function cpn_schema_alter(&$schema) {
-  $schema['blocks']['fields']['css'] = array('type' => 'text', 'not null' => FALSE);
-  $schema['blocks']['fields']['js'] = array('type' => 'text', 'not null' => FALSE);
+  $schema['block']['fields']['css'] = array('type' => 'text', 'not null' => FALSE);
+  $schema['block']['fields']['js'] = array('type' => 'text', 'not null' => FALSE);
 }
 
 /**
- * Implementation of hook_install().
+ * Implements hook_install().
  */
 function cpn_install() {
-  drupal_install_schema('cpn');
-
-  // Alter blocks table, as defined in hook_schema_alter().
+  // Alter block table, as defined in cpn_schema_alter().
   $ret = array();
   $schema = array();
   cpn_schema_alter($schema);
-  foreach ($schema['blocks']['fields'] as $name => $spec) {
-    db_add_field($ret, 'blocks', $name, $spec);
+  foreach ($schema['block']['fields'] as $name => $spec) {
+    db_add_field('block', $name, $spec);
   }
 }
 
 /**
- * Implementation of hook_uninstall().
+ * Implements hook_uninstall().
  */
 function cpn_uninstall() {
-  drupal_uninstall_schema('cpn');
-  variable_del('cpn_syntax_highlighting');
-
-  // Drop fields from blocks table, as defined in hook_schema_alter().
+  // Drop fields from block table, as defined in cpn_schema_alter().
   $ret = array();
   $schema = array();
   cpn_schema_alter($schema);
-  foreach ($schema['blocks']['fields'] as $name => $spec) {
-    db_drop_field($ret, 'blocks', $name);
+  foreach ($schema['block']['fields'] as $name => $spec) {
+    db_drop_field('block', $name);
   }
 
   // Delete CSS & JS files.
-  cpn_recursive_delete(file_create_path('cpn'));
+  file_unmanaged_delete_recursive(variable_get('cpn_path', 'public://cpn'));
+
+  // Delete variables.
+  variable_del('cpn_syntax_highlighting');
+  variable_del('cpn_path');
+  foreach (array_keys(node_type_get_types()) as $type) {
+    variable_del('cpn_css_' . $type);
+    variable_del('cpn_js_' . $type);
+    variable_del('cpn_css_enabled_' . $type);
+    variable_del('cpn_js_enabled_' . $type);
+  }
 }
 
 /**
- * Recursive delete function.
+ * Update variables to new format.
  */
-function cpn_recursive_delete($path) {
-  if (is_file($path) or is_link($path)) {
-    unlink($path);
-  }
-  elseif (is_dir($path)) {
-    $d = dir($path);
-    while (($entry = $d->read()) !== FALSE) {
-      if ($entry == '.' or $entry == '..') {
-        continue;
+function cpn_update_7000() {
+  foreach (array_keys(node_type_get_types()) as $node_type) {
+    foreach (array('css', 'js') as $type) {
+      if (variable_get('cpn_' . $type . '_' . $node_type, FALSE)) {
+        variable_set('cpn_' . $type . '_enabled_' . $node_type, TRUE);
+        variable_del('cpn_' . $type . '_' . $node_type);
       }
-      $entry_path = $path .'/'. $entry;
-      cpn_recursive_delete($entry_path);
     }
-    $d->close();
-    rmdir($path);
   }
-  else {
-    watchdog('cpn', 'Unknown file type(%path) stat: %stat ', array('%path' => $path,  '%stat' => print_r(stat($path),1)), WATCHDOG_ERROR);
-  }
-}
-
-/**
- * Adds fields in blocks table.
- */
-function cpn_update_6000() {
-  $ret = array();
-  db_add_field($ret, 'blocks', 'css', array('type' => 'text', 'not null' => FALSE));
-  db_add_field($ret, 'blocks', 'js', array('type' => 'text', 'not null' => FALSE));
-  return $ret;
 }

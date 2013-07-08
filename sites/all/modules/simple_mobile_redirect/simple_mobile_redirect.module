@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function simple_mobile_redirect_menu() {
-  $items['admin/settings/simple_mobile_redirect'] = array(
-    'title' => 'Simple Mobile Redirect Settings',
+  $items['admin/config/system/simple_mobile_redirect'] = array(
+    'title' => 'Simple Mobile Redirect',
     'description' => 'Setup site settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('simple_mobile_redirect_admin_settings_form'),
@@ -24,10 +24,15 @@ function simple_mobile_redirect_menu() {
 }
 
 /**
- * Implementation of hook_perm().
+ * Implements hook_permission().
  */
-function simple_mobile_redirect_perm() {
-  return array('administer simple mobile');
+function simple_mobile_redirect_permission() {
+  return array(
+    'administer simple mobile' => array(
+      'title' => t('Administer Simple Mobile Redirect'),
+      'description' => t('Alter redirect paths for different mobile devices.'),
+    ),
+  );
 }
 
 /**
@@ -45,18 +50,22 @@ function _simple_mobile_redirect_clearcookie() {
 /**
  * Function to set the do not redirect cookie.
  */
-function _simple_mobile_redirect_setcookie() {
+function _simple_mobile_redirect_setcookie($redirect = FALSE) {
   global $base_url;
   $simplemobilehome = variable_get('simple_mobile_redirect_home', '/');
   $expire = REQUEST_TIME + 60 * 60 * 24 * 30;
   setcookie("nomobi", "yes", $expire);
   // drupal_goto() does not exist here, as we are triggering at boot.
   // suggestions to work around this, perhaps a variable setting to get the full URL via the admin.
-  header('Location: ' . $base_url . '/' . $simplemobilehome, TRUE, 302);
+  if ($redirect) {
+    header('Location: ' . $base_url . '/' . $simplemobilehome, TRUE, 302);
+  }
 }
 
 /**
- * Implementation of hook_boot().
+ * Implements hook_boot().
+ *
+ * Running the checks in hook_boot() because we need to beat the cache.
  */
 function simple_mobile_redirect_boot() {
   global $base_url;
@@ -64,7 +73,7 @@ function simple_mobile_redirect_boot() {
   // check for nomobi to skip out as well
   if ((isset($_COOKIE['smr_redirect']) && $_COOKIE['smr_redirect'] == 1) ||
       (isset($_COOKIE['nomobi']) && $_COOKIE['nomobi'] == 'yes') ||
-      (isset($_GET['mobi_bypass']))) {
+      (isset($_GET['mobi_redirect']))) {
     return;
   }
 
@@ -137,9 +146,12 @@ function simple_mobile_redirect_boot() {
     if (strpos($simplemobileredirect, '://') === FALSE) {
       $simplemobileredirect = $base_url . '/' . $simplemobileredirect;
     }
-
     // redirect to the right url for this device
     header('Location: ' . $simplemobileredirect, TRUE, 302);
     exit;
+  }
+  else {
+    // set a cookie so we don't need to go through that again.
+    _simple_mobile_redirect_setcookie();
   }
 }

@@ -1,13 +1,22 @@
 name = "Menu Block"
 description = "Provides configurable blocks of menu items."
 
-core = 6.x
-dependencies[] = block
-dependencies[] = menu
+core = 7.x
+dependencies[] = menu (>7.11)
 
-; Information added by drupal.org packaging script on January 1, 1970 - 00:00
-version = "6.x-2.4"
-core = "6.x"
+files[] = menu_block.module
+files[] = menu_block.admin.inc
+files[] = menu_block.follow.inc
+files[] = menu_block.pages.inc
+files[] = menu_block.sort.inc
+files[] = menu_block.install
+files[] = plugins/content_types/menu_tree/menu_tree.inc
+
+configure = admin/config/user-interface/menu-block
+
+; Information added by drupal.org packaging script on 2012-02-03
+version = "7.x-2.3"
+core = "7.x"
 project = "menu_block"
-datestamp = "1297370223"
+datestamp = "1328286646"
 

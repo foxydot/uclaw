@@ -1,8 +1,7 @@
-
 /**
  * @file Plugin for inserting video tags with video_filter
  */
-(function() {
+(function ($) {
   CKEDITOR.plugins.add('video_filter', {
 
     requires : [],
@@ -31,8 +30,9 @@
 
   function insert(params, editor) {
     var selection = editor.getSelection(),
-      ranges    = selection.getRanges(),
-      range, textNode;
+      ranges = selection.getRanges(),
+      range,
+      textNode;
 
     editor.fire('saveSnapshot');
 
@@ -51,9 +51,7 @@
     }
     str += ']';
 
-
-    for (var i = 0, len = ranges.length; i < len; i++)
-    {
+    for (var i = 0, len = ranges.length; i < len; i++) {
       range = ranges[i];
       range.deleteContents();
 
@@ -67,4 +65,4 @@
     editor.fire('saveSnapshot');
   }
 
-})();
+})(jQuery);

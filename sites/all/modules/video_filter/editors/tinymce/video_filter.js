@@ -1,5 +1,7 @@
+var video_filter_dialog = {};
 
-var video_filter_dialog = {
+(function ($) {
+video_filter_dialog = {
   insert : function() {
     var ed = tinyMCEPopup.editor, e;
 
@@ -42,12 +44,16 @@ var video_filter_dialog = {
   }
 };
 
-$(document).ready(function() {
-  $('#edit-insert').click(function() {
-    video_filter_dialog.insert();
-  });
+Drupal.behaviors.video_filter_tinymce =  {
+  attach: function(context, settings) {
+    $('#edit-insert').click(function() {
+      video_filter_dialog.insert();
+    });
 
-  $('#edit-cancel').click(function() {
-    tinyMCEPopup.close();
-  });
-});
+    $('#edit-cancel').click(function() {
+      tinyMCEPopup.close();
+    });
+  }
+}
+
+})(jQuery);

@@ -1,10 +1,21 @@
 <?php
-// $Id: customerror.install,v 1.2.2.2 2008/09/13 02:56:30 kbahey Exp $
 
+/**
+ * @file
+ * Install, update and uninstall functions for the customerror module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
 function customerror_uninstall() {
-  db_query("DELETE FROM {variable} WHERE name LIKE 'customerror_%'");
+  db_delete('variable')
+    ->condition('name', 'customerror_%', 'LIKE')
+    ->execute();
 
-  foreach(_customerror_enum_errors() as $code => $desc) {
+  // @todo document, why manually loading .module file.
+  module_load_include('module', 'customerror');
+  foreach (_customerror_enum_errors() as $code => $desc) {
     if (variable_get('site_' . $code, '') == 'customerror/' . $code) {
       variable_del('site_' . $code, '');
     }

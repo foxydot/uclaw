@@ -14,9 +14,14 @@
 /**
  * Overview page of all components for this webform.
  */
-function webform_components_page($node) {
-  $form = drupal_get_form('webform_components_form', $node);
-  return theme('webform_components_page', $node, $form);
+function webform_components_page($node, $page_number = 1) {
+  $output = drupal_get_form('webform_components_form', $node);
+
+  return array(
+    '#theme' => 'webform_components_page',
+    '#node' => $node,
+    '#form' => $output,
+  );
 }
 
 /**
@@ -25,18 +30,17 @@ function webform_components_page($node) {
  * This theming provides a way to toggle between the editing modes if Form
  * Builder module is available.
  */
-function theme_webform_components_page($node, $form) {
-  // Add CSS and JS. Don't preprocess because these files are used rarely.
-  drupal_add_css(drupal_get_path('module', 'webform') . '/css/webform-admin.css', 'theme', 'all', FALSE);
-  drupal_add_js(drupal_get_path('module', 'webform') . '/js/webform-admin.js', 'module', 'header', FALSE, TRUE, FALSE);
+function theme_webform_components_page($variables) {
+  $node = $variables['node'];
+  $form = $variables['form'];
 
-  return $form;
+  return drupal_render($form);
 }
 
 /**
  * The table-based listing of all components for this webform.
  */
-function webform_components_form($form_state, $node) {
+function webform_components_form($form, $form_state, $node) {
   $form = array(
     '#tree' => TRUE,
     '#node' => $node,
@@ -127,6 +131,8 @@ function webform_components_form($form_state, $node) {
     '#type' => 'submit',
     '#value' => t('Add'),
     '#weight' => 45,
+    '#validate' => array('webform_components_form_add_validate', 'webform_components_form_validate'),
+    '#submit' => array('webform_components_form_add_submit'),
   );
 
   $form['submit'] = array(
@@ -147,11 +153,12 @@ function webform_components_form($form_state, $node) {
  * @return
  *   Formatted HTML form, ready for display.
  */
-function theme_webform_components_form($form) {
-  // Add CSS to display submission info. Don't preprocess because this CSS file is used rarely.
-  drupal_add_css(drupal_get_path('module', 'webform') . '/css/webform-admin.css', 'theme', 'all', FALSE);
-  drupal_add_js(drupal_get_path('module', 'webform') . '/js/webform-admin.js', 'module', 'header', FALSE, TRUE, FALSE);
+function theme_webform_components_form($variables) {
+  $form = $variables['form'];
 
+  $form['components']['#attached']['library'][] = array('webform', 'admin');
+
+  // TODO: Attach these. See http://drupal.org/node/732022.
   drupal_add_tabledrag('webform-components', 'order', 'sibling', 'webform-weight');
   drupal_add_tabledrag('webform-components', 'match', 'parent', 'webform-pid', 'webform-pid', 'webform-cid');
 
@@ -163,10 +170,10 @@ function theme_webform_components_form($form) {
   // Add a row containing form elements for a new item.
   unset($form['add']['name']['#title'], $form['add_type']['#description']);
   $form['add']['name']['#attributes']['rel'] = t('New component name');
-  $form['add']['name']['#attributes']['class'] = 'webform-default-value';
-  $form['add']['cid']['#attributes']['class'] = 'webform-cid';
-  $form['add']['pid']['#attributes']['class'] = 'webform-pid';
-  $form['add']['weight']['#attributes']['class'] = 'webform-weight';
+  $form['add']['name']['#attributes']['class'] = array('webform-default-value');
+  $form['add']['cid']['#attributes']['class'] = array('webform-cid');
+  $form['add']['pid']['#attributes']['class'] = array('webform-pid');
+  $form['add']['weight']['#attributes']['class'] = array('webform-weight');
   $row_data = array(
     drupal_render($form['add']['name']),
     drupal_render($form['add']['type']),
@@ -175,7 +182,7 @@ function theme_webform_components_form($form) {
     drupal_render($form['add']['cid']) . drupal_render($form['add']['pid']) . drupal_render($form['add']['weight']),
     array('colspan' => 3, 'data' => drupal_render($form['add']['add'])),
   );
-  $add_form = array('data' => $row_data, 'class' => 'draggable webform-add-form');
+  $add_form = array('data' => $row_data, 'class' => array('draggable', 'webform-add-form'));
   $form_rendered = FALSE;
 
   if (!empty($node->webform['components'])) {
@@ -198,9 +205,9 @@ function theme_webform_components_form($form) {
       unset($form['components'][$cid]['weight']['#title']);
 
       // Add special classes for weight and parent fields.
-      $form['components'][$cid]['cid']['#attributes']['class'] = 'webform-cid';
-      $form['components'][$cid]['pid']['#attributes']['class'] = 'webform-pid';
-      $form['components'][$cid]['weight']['#attributes']['class'] = 'webform-weight';
+      $form['components'][$cid]['cid']['#attributes']['class'] = array('webform-cid');
+      $form['components'][$cid]['pid']['#attributes']['class'] = array('webform-pid');
+      $form['components'][$cid]['weight']['#attributes']['class'] = array('webform-weight');
 
       // Build indentation for this row.
       $indents = '';
@@ -219,13 +226,14 @@ function theme_webform_components_form($form) {
         l(t('Clone'), 'node/' . $node->nid . '/webform/components/' . $cid . '/clone', array('query' => drupal_get_destination())),
         l(t('Delete'), 'node/' . $node->nid . '/webform/components/' . $cid . '/delete', array('query' => drupal_get_destination())),
       );
-      $row_class = 'draggable';
+      $row_class = array('draggable');
       if (!webform_component_feature($component['type'], 'group')) {
-        $row_class .= ' tabledrag-leaf';
+        $row_class[] = 'tabledrag-leaf';
       }
       if ($component['type'] == 'pagebreak') {
-        $row_class .= ' tabledrag-root webform-pagebreak';
-        $row_data[0] = array('class' => 'webform-pagebreak', 'data' => $row_data[0]);
+        $row_class[] = 'tabledrag-root';
+        $row_class[] = 'webform-pagebreak';
+        $row_data[0] = array('class' => array('webform-pagebreak'), 'data' => $row_data[0]);
       }
       $rows[] = array('data' => $row_data, 'class' => $row_class);
       if (isset($component['children']) && is_array($component['children'])) {
@@ -255,17 +263,15 @@ function theme_webform_components_form($form) {
   }
 
   $output = '';
-  $output .= theme('table', $header, $rows, array('id' => 'webform-components'));
-  $output .= drupal_render($form);
+  $output .= theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'webform-components')));
+  $output .= drupal_render_children($form);
   return $output;
 }
 
+/**
+ * Validate handler for webform_components_form().
+ */
 function webform_components_form_validate($form, &$form_state) {
-  // Check that the entered component name is valid.
-  if ($form_state['values']['op'] == t('Add') && drupal_strlen(trim($form_state['values']['add']['name'])) <= 0) {
-    form_error($form['add']['name'], t('When adding a new component, the name field is required.'));
-  }
-
   // Check that no two components end up with the same form key.
   $duplicates = array();
   $parents = array();
@@ -273,10 +279,10 @@ function webform_components_form_validate($form, &$form_state) {
     foreach ($form_state['values']['components'] as $cid => $component) {
       $form_key = $form['#node']->webform['components'][$cid]['form_key'];
       if (isset($parents[$component['pid']]) && ($existing = array_search($form_key, $parents[$component['pid']])) && $existing !== FALSE) {
-        if (!isset($duplicates[$component['form_key']])) {
-          $duplicates[$component['form_key']] = array($existing);
+        if (!isset($duplicates[$form_key])) {
+          $duplicates[$form_key] = array($existing);
         }
-        $duplicates[$component['form_key']][] = $cid;
+        $duplicates[$form_key][] = $cid;
       }
       $parents[$component['pid']][$cid] = $form_key;
     }
@@ -291,56 +297,61 @@ function webform_components_form_validate($form, &$form_state) {
       }
     }
 
-    form_error($form['components'], $error . theme('item_list', $items));
+    form_error($form['components'], $error . theme('item_list', array('items' => $items)));
   }
 }
 
+/**
+ * Validate handler for webform_component_form() when adding a new component.
+ */
+function webform_components_form_add_validate($form, &$form_state) {
+  // Check that the entered component name is valid.
+  if (drupal_strlen(trim($form_state['values']['add']['name'])) <= 0) {
+    form_error($form['add']['name'], t('When adding a new component, the name field is required.'));
+  }
+}
+
+/**
+ * Submit handler for webform_components_form() to save component order.
+ */
 function webform_components_form_submit($form, &$form_state) {
   $node = node_load($form_state['values']['nid']);
 
   // Update all mandatory and weight values.
+  $changes = FALSE;
   foreach ($node->webform['components'] as $cid => $component) {
     if ($component['pid'] != $form_state['values']['components'][$cid]['pid'] || $component['weight'] != $form_state['values']['components'][$cid]['weight'] || $component['mandatory'] != $form_state['values']['components'][$cid]['mandatory']) {
-      $component['weight'] = $form_state['values']['components'][$cid]['weight'];
-      $component['mandatory'] = $form_state['values']['components'][$cid]['mandatory'];
-      $component['pid'] = $form_state['values']['components'][$cid]['pid'];
-      $component['nid'] = $node->nid;
-      webform_component_update($component);
+      $changes = TRUE;
+      $node->webform['components'][$cid]['weight'] = $form_state['values']['components'][$cid]['weight'];
+      $node->webform['components'][$cid]['mandatory'] = $form_state['values']['components'][$cid]['mandatory'];
+      $node->webform['components'][$cid]['pid'] = $form_state['values']['components'][$cid]['pid'];
     }
   }
 
-  if (isset($_POST['op']) && $_POST['op'] == t('Publish')) {
-    $node->status = 1;
+  if ($changes) {
     node_save($node);
-    drupal_set_message(t('Your webform has been published.'));
-    return 'node/' . $node->nid;
   }
-  elseif (isset($_POST['op']) && $_POST['op'] == t('Add')) {
-    $component = $form_state['values']['add'];
-    $form_state['redirect'] = array('node/' . $node->nid . '/webform/components/new/' . $component['type'], 'name=' . urlencode($component['name']) . '&mandatory=' . $component['mandatory'] . '&pid=' . $component['pid'] . '&weight=' . $component['weight']);
-  }
-  else {
-    drupal_set_message(t('The component positions and mandatory values have been updated.'));
 
-    // Since Webform components have been updated but the node itself has not
-    // been saved, it is necessary to explicitly clear the cache to make sure
-    // the updated webform is visible to anonymous users.
-    cache_clear_all();
+  drupal_set_message(t('The component positions and mandatory values have been updated.'));
+}
 
-    // Clear the entity cache if Entity Cache module is installed.
-    if (module_exists('entitycache')) {
-      cache_clear_all($node->nid, 'cache_entity_node');
-    }
-  }
+/**
+ * Submit handler for webform_components_form() that adds a new component.
+ */
+function webform_components_form_add_submit($form, &$form_state) {
+  $node = node_load($form_state['values']['nid']);
+
+  $component = $form_state['values']['add'];
+  $form_state['redirect'] = array('node/' . $node->nid . '/webform/components/new/' . $component['type'], array('query' => array('name' => $component['name'], 'mandatory' => $component['mandatory'], 'pid' => $component['pid'], 'weight' => $component['weight'])));
 }
 
 /**
  * Form to configure a webform component.
  */
-function webform_component_edit_form(&$form_state, $node, $component, $clone = FALSE) {
-  drupal_set_title(t('Edit component: @name', array('@name' => $component['name'])));
-  drupal_add_css(drupal_get_path('module', 'webform') . '/css/webform-admin.css', 'theme', 'all', FALSE);
+function webform_component_edit_form($form, $form_state, $node, $component, $clone = FALSE) {
+  drupal_set_title(t('Edit component: @name', array('@name' => $component['name'])), PASS_THROUGH);
 
+  $form['#attached']['library'][] = array('webform', 'admin');
   $form['#tree'] = TRUE;
 
   // Print the correct field type specification.
@@ -427,19 +438,19 @@ function webform_component_edit_form(&$form_state, $node, $component, $clone = F
     }
     $form['display']['title_display']['#weight'] = 8;
     $form['display']['title_display']['#parents'] = array('extra', 'title_display');
+  }
 
-    if (webform_component_feature($component['type'], 'private')) {
+  if (webform_component_feature($component['type'], 'private')) {
     // May user mark fields as Private?
-      $form['display']['private'] = array(
+    $form['display']['private'] = array(
       '#type' => 'checkbox',
       '#title' => t('Private'),
       '#default_value' => ($component['extra']['private'] == '1' ? TRUE : FALSE),
       '#description' => t('Private fields are shown only to users with results access.'),
       '#weight' => 45,
       '#parents' => array('extra', 'private'),
-      '#disabled' => !webform_results_access($node),
-      );
-    }
+      '#disabled' => empty($node->nid) ? FALSE : !webform_results_access($node),
+    );
   }
 
   // Validation settings.
@@ -469,25 +480,24 @@ function webform_component_edit_form(&$form_state, $node, $component, $clone = F
     '#collapsed' => TRUE,
     '#tree' => FALSE,
     '#weight' => 20,
-    '#attributes' => array('class' => 'webform-position'),
+    '#attributes' => array('class' => array('webform-position')),
   );
 
-  if (variable_get('webform_enable_fieldset', TRUE) && is_array($node->webform['components'])) {
-    $options = array('0' => t('Root'));
-    foreach ($node->webform['components'] as $existing_cid => $value) {
-      if (webform_component_feature($value['type'], 'group') && (!isset($component['cid']) || $existing_cid != $component['cid'])) {
-        $options[$existing_cid] = $value['name'];
-      }
+  $options = array('0' => t('Root'));
+  foreach ($node->webform['components'] as $existing_cid => $value) {
+    if (webform_component_feature($value['type'], 'group') && (!isset($component['cid']) || $existing_cid != $component['cid'])) {
+      $options[$existing_cid] = $value['name'];
     }
-    $form['position']['pid'] = array(
-      '#type' => 'select',
-      '#title' => t('Parent Fieldset'),
-      '#default_value' => $component['pid'],
-      '#description' => t('Optional. You may organize your form by placing this component inside another fieldset.'),
-      '#options' => $options,
-      '#weight' => 3,
-    );
   }
+  $form['position']['pid'] = array(
+    '#type' => 'select',
+    '#title' => t('Parent'),
+    '#default_value' => $component['pid'],
+    '#description' => t('Optional. You may organize your form by placing this component inside another fieldset.'),
+    '#options' => $options,
+    '#access' => count($options) > 1,
+    '#weight' => 3,
+  );
   $form['position']['weight'] = array(
     '#type' => 'textfield',
     '#size' => 4,
@@ -664,13 +674,13 @@ function webform_component_edit_form_submit($form, &$form_state) {
     cache_clear_all($node->nid, 'cache_entity_node');
   }
 
-  $form_state['redirect'] = array('node/' . $node->nid . '/webform/components', isset($cid) ? 'cid=' . $cid : '');
+  $form_state['redirect'] = array('node/' . $node->nid . '/webform/components', isset($cid) ? array('query' => array('cid' => $cid)) : array());
 }
 
 /**
  * Form to confirm deletion of a component.
  */
-function webform_component_delete_form($form_state, $node, $component) {
+function webform_component_delete_form($form, $form_state, $node, $component) {
   $cid = $component['cid'];
 
   $form = array();
@@ -735,18 +745,40 @@ function webform_component_insert(&$component) {
     $function($component);
   }
 
-  if (lock_acquire('webform_component_insert_' . $component['nid'], 5)) {
-    $component['cid'] = isset($component['cid']) ? $component['cid'] : db_result(db_query('SELECT MAX(cid) FROM {webform_component} WHERE nid = %d', $component['nid'])) + 1;
-    $component['value'] = isset($component['value']) ? $component['value'] : NULL;
-    $component['mandatory'] = isset($component['mandatory']) ? $component['mandatory'] : 0;
-    $component['extra']['private'] = isset($component['extra']['private']) ? $component['extra']['private'] : 0;
-    db_query("INSERT INTO {webform_component} (nid, cid, pid, form_key, name, type, value, extra, mandatory, weight) VALUES (%d, %d, %d, '%s', '%s', '%s', '%s', '%s', %d, %d)", $component['nid'], $component['cid'], $component['pid'], $component['form_key'], $component['name'], $component['type'], $component['value'], serialize($component['extra']), $component['mandatory'], $component['weight']);
-    lock_release('webform_component_insert_' . $component['nid']);
+  $component['value'] = isset($component['value']) ? $component['value'] : NULL;
+  $component['mandatory'] = isset($component['mandatory']) ? $component['mandatory'] : 0;
+  $component['extra']['private'] = isset($component['extra']['private']) ? $component['extra']['private'] : 0;
+
+  if (!isset($component['cid'])) {
+    if (lock_acquire('webform_component_insert_' . $component['nid'], 5)) {
+      $next_id_query = db_select('webform_component')->condition('nid', $component['nid']);
+      $next_id_query->addExpression('MAX(cid) + 1', 'cid');
+      $component['cid'] = $next_id_query->execute()->fetchField();
+      if ($component['cid'] == NULL) {
+        $component['cid'] = 1;
+      }
+      lock_release('webform_component_insert_' . $component['nid']);
+    }
+    else {
+      watchdog('webform', 'A Webform component could not be saved because a timeout occurred while trying to acquire a lock for the node. Details: <pre>@component</pre>', array('@component' => print_r($component, TRUE)));
+      return FALSE;
+    }
   }
-  else {
-    watchdog('webform', 'A Webform component could not be saved because a timeout occurred while trying to acquire a lock for the node. Details: <pre>@component</pre>', array('@component' => print_r($component, TRUE)));
-    return FALSE;
-  }
+
+  $query = db_insert('webform_component')
+    ->fields(array(
+      'nid' => $component['nid'],
+      'cid' => $component['cid'],
+      'pid' => $component['pid'],
+      'form_key' => $component['form_key'],
+      'name' => $component['name'],
+      'type' => $component['type'],
+      'value' => (string) $component['value'],
+      'extra' => serialize($component['extra']),
+      'mandatory' => $component['mandatory'],
+      'weight' => $component['weight'],
+    ))
+    ->execute();
 
   // Post-insert actions.
   module_invoke_all('webform_component_insert', $component);
@@ -771,12 +803,23 @@ function webform_component_update($component) {
   $component['value'] = isset($component['value']) ? $component['value'] : NULL;
   $component['mandatory'] = isset($component['mandatory']) ? $component['mandatory'] : 0;
   $component['extra']['private'] = isset($component['extra']['private']) ? $component['extra']['private'] : 0;
-  $success = db_query("UPDATE {webform_component} SET pid = %d, form_key = '%s', name = '%s', type = '%s', value = '%s', extra = '%s', mandatory = %d, weight = %d WHERE nid = %d AND cid = %d", $component['pid'], $component['form_key'], $component['name'], $component['type'], $component['value'], serialize($component['extra']), $component['mandatory'], $component['weight'], $component['nid'], $component['cid']);
+  db_update('webform_component')
+    ->fields(array(
+      'pid' => $component['pid'],
+      'form_key' => $component['form_key'],
+      'name' => $component['name'],
+      'type' => $component['type'],
+      'value' => isset($component['value']) ? $component['value'] : '',
+      'extra' => serialize($component['extra']),
+      'mandatory' => $component['mandatory'],
+      'weight' => $component['weight']
+    ))
+    ->condition('nid', $component['nid'])
+    ->condition('cid', $component['cid'])
+    ->execute();
 
   // Post-update actions.
   module_invoke_all('webform_component_update', $component);
-
-  return $success;
 }
 
 function webform_component_delete($node, $component) {
@@ -796,12 +839,22 @@ function webform_component_delete($node, $component) {
   }
 
   // Remove database entries.
-  db_query('DELETE FROM {webform_component} WHERE nid = %d AND cid = %d', $node->nid, $component['cid']);
-  db_query('DELETE FROM {webform_submitted_data} WHERE nid = %d AND cid = %d', $node->nid, $component['cid']);
+  db_delete('webform_component')
+    ->condition('nid', $node->nid)
+    ->condition('cid', $component['cid'])
+    ->execute();
+  db_delete('webform_submitted_data')
+    ->condition('nid', $node->nid)
+    ->condition('cid', $component['cid'])
+    ->execute();
 
   // Delete all elements under this element.
-  $result = db_query('SELECT cid FROM {webform_component} WHERE nid = %d AND pid = %d', $node->nid, $component['cid']);
-  while ($row = db_fetch_object($result)) {
+  $result = db_select('webform_component', 'c')
+    ->fields('c')
+    ->condition('nid', $node->nid)
+    ->condition('pid', $component['cid'])
+    ->execute();
+  foreach ($result as $row) {
     $child_component = $node->webform['components'][$row->cid];
     webform_component_delete($node, $child_component);
   }
@@ -939,8 +992,17 @@ function webform_component_select($element) {
     );
   }
 
+  $element['#theme_wrappers'] = array();
   $element['#type'] = 'webform_component_select';
   $element['#theme'] = 'webform_component_select';
+  $element['#attached'] = array(
+    'library' => array(
+      array('webform', 'admin'),
+    ),
+    'js' => array(
+      'misc/tableselect.js' => array(),
+    ),
+  );
 
   return $element;
 }
@@ -948,35 +1010,38 @@ function webform_component_select($element) {
 /**
  * Theme the contents of a Webform component select element.
  */
-function theme_webform_component_select($element) {
-  drupal_add_js('misc/tableselect.js');
-  drupal_add_js(drupal_get_path('module', 'webform') . '/js/webform-admin.js', 'module', 'header', FALSE, TRUE, FALSE);
+function theme_webform_component_select($variables) {
+  $element = $variables['element'];
 
   $rows = array();
   $header = array();
   if (!isset($element['#all_checkbox']) || $element['#all_checkbox']) {
-    $header = array(array('class' => 'select-all', 'data' => ' ' . t('Include all components')));
+    $header = array(array('class' => array('select-all'), 'data' => ' ' . t('Include all components')));
   }
   foreach (element_children($element) as $key) {
     $rows[] = array(
-      theme('indentation', $element[$key]['#indent']) . drupal_render($element[$key]),
+      theme('indentation', array('size' => $element[$key]['#indent'])) . drupal_render($element[$key]),
     );
   }
 
-  $element['#collapsible'] = isset($element['#collapsible']) ? $element['#collapsible'] : TRUE;
-  $element['#collapsed'] = isset($element['#collapsed']) ? $element['#collapsed'] : TRUE;
+  $element['#type'] = 'fieldset';
+  $element['#value'] = NULL;
+  $element['#attributes']['class'] = array('webform-component-select-table');
+  if (!isset($element['#collapsible']) || $element['#collapsible']) {
+    $element['#attributes']['class'][] = 'collapsible';
+  }
+  if (!isset($element['#collapsed']) || $element['#collapsed']) {
+    $element['#attributes']['class'][] = 'collapsed';
+  }
 
-  $element['#attributes']['class'] = 'webform-component-select-table';
   if (empty($rows)) {
     $element['#children'] = t('No available components.');
   }
   else {
-    $element['#children'] = '<div class="webform-component-select-wrapper">' . theme('table', $header, $rows) . '</div>';
+    $element['#children'] = '<div class="webform-component-select-wrapper">' . theme('table', array('header' => $header, 'rows' => $rows)) . '</div>';
   }
 
-  $element['#value'] = NULL;
-
-  return theme('fieldset', $element);
+  return theme('fieldset', array('element' => $element));
 }
 
 /**
@@ -1021,8 +1086,17 @@ function webform_component_defaults(&$component) {
 function webform_validate_unique($element, $form_state) {
   if ($element['#value'] !== '') {
     $nid = $form_state['values']['details']['nid'];
-    $sid = empty($form_state['values']['details']['sid']) ? 0 : $form_state['values']['details']['sid'];
-    $count = db_result(db_query("SELECT count(*) FROM {webform_submitted_data} WHERE nid = %d AND cid = %d AND sid <> %d AND LOWER(data) = '%s'", $nid, $element['#webform_component']['cid'], $sid, $element['#value']));
+    $sid = $form_state['values']['details']['sid'];
+    $query = db_select('webform_submitted_data')
+      ->fields('webform_submitted_data', array('sid'))
+      ->condition('nid', $nid)
+      ->condition('cid', $element['#webform_component']['cid'])
+      ->condition('data', $element['#value'])
+      ->range(0, 1); // More efficient than using countQuery() for data checks.
+    if ($sid) {
+      $query->condition('sid', $sid, '<>');
+    }
+    $count = $query->execute()->fetchField();
     if ($count) {
       form_error($element, t('The value %value has already been submitted once for the %title field. You may have already submitted this form, or you need to use a different value.', array('%value' => $element['#value'], '%title' => $element['#title'])));
     }

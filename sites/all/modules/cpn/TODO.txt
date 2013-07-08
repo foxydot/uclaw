@@ -1,3 +1,4 @@
+
 TODO
 ----
 - keep syntax highlighting on if it was on when previewing or if validation fails

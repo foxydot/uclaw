@@ -1,5 +1,4 @@
-
-(function() {
+(function ($) {
   tinymce.create('tinymce.plugins.video_filter', {
     init : function(ed, url) {
       // Register commands
@@ -36,4 +35,4 @@
   });
   // Register plugin
   tinymce.PluginManager.add('video_filter', tinymce.plugins.video_filter);
-})();
+})(jQuery);

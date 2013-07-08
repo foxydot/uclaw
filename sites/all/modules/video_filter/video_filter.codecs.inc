@@ -246,8 +246,8 @@ function video_filter_archive($video) {
 function video_filter_bliptv($video) {
   $id = $video['codec']['matches'][1];
 
-  // Since video ID in URL is different than in embed code, use API
-  // to lookup the embed code video ID. Adapted from emfield.module.
+  // Since video ID in URL is different than in embed code, use API to lookup
+  // the embed code video ID. Adapted from emfield.module.
   $result = drupal_http_request('http://blip.tv/file/' . $id . '?skin=api');
 
   if ($result->code == 200) {
@@ -258,6 +258,7 @@ function video_filter_bliptv($video) {
     xml_parser_free($parser);
 
     $response = array();
+    // @todo: What's $arghash supposed to be? It's undefined.
     $response['_emfield_arghash'] = $arghash;
     $level = array();
     $start_level = 1;
@@ -342,7 +343,7 @@ function video_filter_flickr_slideshows($video) {
   $user_name = $video['codec']['matches'][1];
   $set_id = $video['codec']['matches'][2];
 
-  $params['flashvars'] = "&amp;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2F{$user_name}%2Fsets%2F{$set_id}%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2F{$user_name}%2Fsets%2F{$set_id}%2F&amp;set_id={$set_id}&amp;jump_to=";
+  $params['flashvars'] = "&amp;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2F$user_name%2Fsets%2F$set_id%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2F$user_name%2Fsets%2F$set_id%2F&amp;set_id=$set_id&amp;jump_to=";
 
   return video_filter_flash($video, $params);
 }
@@ -374,7 +375,7 @@ function video_filter_gametrailers($video) {
   }
   $video['source'] = 'http://media.mtvnservices.com/embed/mgid:moses:video:gametrailers.com:' . $match;
 
-  return video_filter_iframe($video, $params);
+  return video_filter_iframe($video);
 }
 
 /**
@@ -525,42 +526,6 @@ function video_filter_vimeo_html5($video) {
 }
 
 /**
- * Callback for Wistia codec.
- *
- * Adapted from the media_wistia module.
- *
- * @see video_filter_codec_info()
- */
-function video_filter_wistia_html5($video) {
-  $video_code = $video['codec']['matches'][6];
-  $matches = $video['codec']['matches'];
-  $embed_type = ($matches[3] == 'projects' || $matches[5] == 'playlists') ? 'playlists' : 'iframe';
-
-  // Get embed code via oEmbed.
-  $endpoint = 'http://fast.wistia.com/oembed';
-  $options = array(
-    'url' => "http://fast.wistia.com/embed/{$embed_type}/{$video_code}",
-    'width' => $video['width'],
-    'height' => $video['height'],
-  );
-  $data = video_filter_oembed_request($endpoint, $options);
-  $html = $data['html'];
-
-  // See if the video source is already an iframe src.
-  $pattern = '@https?://fast.wistia.com/embed/(iframe|playlists)/[a-zA-Z0-9]+\?+.+@';
-  $matches = array();
-  if (preg_match($pattern, $video['source'], $matches)) {
-    // Replace the oEmbed iframe src with that provided in the token, in order
-    // to support embed builder URLs.
-    $pattern = '@https?://fast.wistia.com/embed/(iframe|playlists)/[a-zA-Z0-9]+\?[^"]+@';
-    $replacement = $matches[0];
-    $html = preg_replace($pattern, $replacement, $html);
-  }
-
-  return $html;
-}
-
-/**
  * Callback for YouTube codec.
  *
  * @see video_filter_codec_info()
@@ -609,4 +574,40 @@ function video_filter_youtube_playlist_html5($video) {
   $video['source'] = 'http://www.youtube.com/embed/videoseries?list=' . $video['codec']['matches'][1] . '&amp;' . implode('&amp;', $attributes);
 
   return video_filter_iframe($video);
+}
+
+/**
+ * Callback for Wistia codec.
+ *
+ * Adapted from the media_wistia module.
+ *
+ * @see video_filter_codec_info()
+ */
+function video_filter_wistia_html5($video) {
+  $video_code = $video['codec']['matches'][6];
+  $matches = $video['codec']['matches'];
+  $embed_type = ($matches[3] == 'projects' || $matches[5] == 'playlists') ? 'playlists' : 'iframe';
+
+  // Get embed code via oEmbed.
+  $endpoint = 'http://fast.wistia.com/oembed';
+  $options = array(
+    'url' => "http://fast.wistia.com/embed/{$embed_type}/{$video_code}",
+    'width' => $video['width'],
+    'height' => $video['height'],
+  );
+  $data = video_filter_oembed_request($endpoint, $options);
+  $html = $data['html'];
+
+  // See if the video source is already an iframe src.
+  $pattern = '@https?://fast.wistia.com/embed/(iframe|playlists)/[a-zA-Z0-9]+\?+.+@';
+  $matches = array();
+  if (preg_match($pattern, $video['source'], $matches)) {
+    // Replace the oEmbed iframe src with that provided in the token, in order
+    // to support embed builder URLs.
+    $pattern = '@https?://fast.wistia.com/embed/(iframe|playlists)/[a-zA-Z0-9]+\?[^"]+@';
+    $replacement = $matches[0];
+    $html = preg_replace($pattern, $replacement, $html);
+  }
+
+  return $html;
 }

@@ -4,19 +4,19 @@ Link Checker
 
 Installation:
 
-1. Place the entire linkchecker folder into your modules directory.
-2. Go to Administer -> Site building -> Modules and enable the Link checker module.
-3. Go to Administer -> Site configuration -> Link checker and enable the node types to scan.
-4. Check all HTML tags that should be scanned.
-5. Adjust the other parameters if the defaults don't suit your needs.
+1. Install linkchecker via Modules page.
+2. Go to Modules and enable the "Link checker" module.
+3. Go to Configuration -> Content authoring -> Link checker and enable the node types to scan.
+4. Under "Link extraction" check all HTML tags that should be scanned.
+5. Adjust the other settings if the defaults don't suit your needs.
 6. Save configuration
 7. Wait for cron to check all your links... this may take some time! :-)
 
-If links are broken they appear under Administer -> Reports -> Broken links.
+If links are broken they appear under Reports -> Broken links.
 
-If not, make sure the cron is configured and running properly on your Drupal
+If not, make sure cron is configured and running properly on your Drupal
 installation. The Link checker module also logs somewhat useful info about it's
-activity under Administer -> Reports -> Recent log entries.
+activity under Reports -> Recent log messages.
 
 
 Required:
@@ -44,8 +44,3 @@ Known issues:
    to the newly provided URL.
    
    -> Workaround: Manually fix these links or try the patch.
-
-2. Drupal 6.14 only: A critical core bug has been introduced by #193383:
-   set_time_limit: Centralize calls and prevent warnings and errors that stops
-   link checker from verifying links. Apply the available D6 hotfix in #111 or
-   update to Drupal 6.15+ to fix your installation.

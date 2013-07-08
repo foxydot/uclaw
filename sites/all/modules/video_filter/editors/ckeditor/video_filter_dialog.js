@@ -1,8 +1,10 @@
-
 /**
  * @file video_filter ckeditor dialog helper
  */
-var video_filter_dialog = {
+
+var video_filter_dialog = {};
+(function ($) {
+video_filter_dialog = {
   init : function() {
     //Get CKEDITOR
     CKEDITOR = dialogArguments.opener.CKEDITOR;
@@ -59,3 +61,5 @@ $(document).ready(function() {
     return false;
   });
 });
+
+})(jQuery);

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function cacheexclude_menu() {
 
-  $items['admin/settings/cacheexclude'] = array(
+  $items['admin/config/system/cacheexclude'] = array(
     'title' => t('Cache exclusions'),
     'description' => t('Configure pages to exclude from caching.'),
     'page callback' => 'drupal_get_form',
@@ -31,17 +31,11 @@ function cacheexclude_admin_settings() {
     '#description' => t("Enter one page per line as Drupal paths. Don't begin link with trailing slash. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.", array('%blog' => 'blog', '%blog-wildcard' => 'blog/*', '%front' => '<front>')),
   );
 
-  // Options to exclude by node type.
-  $full_types = node_get_types();
-  foreach ($full_types as $type) {
-    $types[$type->type] = $type->name;
-  }
-
   $form['cacheexclude_node_types'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Content types to exclude from caching'),
     '#default_value' => variable_get('cacheexclude_node_types', array()),
-    '#options' => $types,
+    '#options' => node_type_get_names(),
     '#description' => t("Check all content types that you do not want to be cached."),
   );
 
@@ -61,24 +55,16 @@ function cacheexclude_admin_settings_submit() {
 }
 
 /**
- * Implementation of hook_init().
- *
- * $_GET['q'] should be set by drupal_init_path() already,
- * but some users have reported that it may not be.
- * Just to be safe, reinitialize it if it's not already set.
+ * Implements hook_init().
  */
 function cacheexclude_init() {
   $pages = trim(variable_get('cacheexclude_list', ''));
-
-  if (!$_GET['q']) {
-    drupal_init_path();
-  }
 
   // If the current page is one we want to exclude from the cache,
   // set the page caching to false temporarily.
   if (strlen($pages) && (drupal_match_path($_GET['q'], $pages) ||
                          drupal_match_path(drupal_get_path_alias($_GET['q']), $pages) )) {
-    $GLOBALS['conf']['cache'] = 0;
+    drupal_page_is_cacheable(FALSE);
     return;
   }
 
@@ -87,7 +73,7 @@ function cacheexclude_init() {
     $types = array_filter(variable_get('cacheexclude_node_types', array()));
 
     if (in_array($node->type, $types)) {
-      $GLOBALS['conf']['cache'] = 0;
+      drupal_page_is_cacheable(FALSE);
     }
   }
 }

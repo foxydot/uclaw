@@ -6,35 +6,23 @@
  */
 
 /**
- * Defines the minimum MySQL version number this module supports.
- *
- * Previous versions do not support subselects, but for performance reasons
- * the module makes use of them whenever possible. PgSQL do not have this
- * kind of limitations in the versions supported by Drupal 6.
- */
-define('LINKCHECKER_MINIMUM_MYSQL', '5.0');
-
-/**
- * Implementation of hook_install().
+ * Implements hook_install().
  */
 function linkchecker_install() {
-  drupal_install_schema('linkchecker');
-
   $linkchecker_default_impersonate_user = user_load(1);
   variable_set('linkchecker_impersonate_user', $linkchecker_default_impersonate_user->name);
 }
 
 /**
- * Implementation of hook_uninstall().
+ * Implements hook_uninstall().
  */
 function linkchecker_uninstall() {
-  drupal_uninstall_schema('linkchecker');
-
   variable_del('linkchecker_action_status_code_301');
   variable_del('linkchecker_action_status_code_404');
   variable_del('linkchecker_check_connections_max');
   variable_del('linkchecker_check_library');
   variable_del('linkchecker_check_links_interval');
+  variable_del('linkchecker_check_links_types');
   variable_del('linkchecker_check_useragent');
   variable_del('linkchecker_cleanup_links_last');
   variable_del('linkchecker_disable_link_check_for_urls');
@@ -44,10 +32,8 @@ function linkchecker_uninstall() {
   variable_del('linkchecker_extract_from_iframe');
   variable_del('linkchecker_extract_from_img');
   variable_del('linkchecker_extract_from_object');
-  variable_del('linkchecker_extract_from_source');
   variable_del('linkchecker_extract_from_video');
   variable_del('linkchecker_filter_blacklist');
-  variable_del('linkchecker_fqdn_only');
   variable_del('linkchecker_ignore_response_codes');
   variable_del('linkchecker_impersonate_user');
   variable_del('linkchecker_scan_blocks');
@@ -56,11 +42,77 @@ function linkchecker_uninstall() {
 }
 
 /**
- * Implementation of hook_schema().
+ * Implements hook_schema().
  */
 function linkchecker_schema() {
 
-  $schema['linkchecker_links'] = array(
+  $schema['linkchecker_block_custom'] = array(
+    'description' => 'Stores all link references for custom blocks.',
+    'fields' => array(
+      'bid'  => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {block_custom}.bid.',
+      ),
+      'lid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {linkchecker_link}.lid.',
+      ),
+    ),
+    'primary key' => array('bid', 'lid'),
+    'foreign keys' => array(
+      'bid' => array('block_custom' => 'bid'),
+      'lid' => array('linkchecker_link' => 'lid'),
+    ),
+    'indexes' => array('lid' => array('lid')),
+  );
+
+  $schema['linkchecker_comment'] = array(
+    'description' => 'Stores all link references for comments.',
+    'fields' => array(
+      'cid'  => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {comment}.cid.',
+      ),
+      'lid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {linkchecker_link}.lid.',
+      ),
+    ),
+    'primary key' => array('cid', 'lid'),
+    'foreign keys' => array(
+      'cid' => array('comment' => 'cid'),
+      'lid' => array('linkchecker_link' => 'lid'),
+    ),
+    'indexes' => array('lid' => array('lid')),
+  );
+
+  $schema['linkchecker_node'] = array(
+    'description' => 'Stores all link references for nodes.',
+    'fields' => array(
+      'nid'  => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {node}.nid.',
+      ),
+      'lid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique {linkchecker_link}.lid.',
+      ),
+    ),
+    'primary key' => array('nid', 'lid'),
+    'foreign keys' => array(
+      'nid' => array('node' => 'nid'),
+      'lid' => array('linkchecker_link' => 'lid'),
+    ),
+    'indexes' => array('lid' => array('lid')),
+  );
+
+  $schema['linkchecker_link'] = array(
     'description' => 'Stores all links.',
     'fields' => array(
       'lid'  => array(
@@ -70,9 +122,9 @@ function linkchecker_schema() {
       ),
       'urlhash' => array(
         'type' => 'varchar',
-        'length' => 32,
+        'length' => 64,
         'not null' => TRUE,
-        'description' => 'The indexable md5 hash of the {linkchecker_links}.url.',
+        'description' => 'The indexable hash of the {linkchecker_link}.url.',
       ),
       'url' => array(
         'type' => 'text',
@@ -127,545 +179,262 @@ function linkchecker_schema() {
     ),
   );
 
-  $schema['linkchecker_boxes'] = array(
-    'description' => 'Stores all link references for boxes.',
-    'fields' => array(
-      'bid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {boxes}.bid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('bid', 'lid'),
-    'indexes' => array('lid' => array('lid')),
-  );
-
-  $schema['linkchecker_nodes'] = array(
-    'description' => 'Stores all link references for nodes.',
-    'fields' => array(
-      'nid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {node}.nid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('nid', 'lid'),
-    'indexes' => array('lid' => array('lid')),
-  );
-
-  $schema['linkchecker_comments'] = array(
-    'description' => 'Stores all link references for comments.',
-    'fields' => array(
-      'cid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {comments}.cid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('cid', 'lid'),
-    'indexes' => array('lid' => array('lid')),
-  );
-
   return $schema;
 }
 
 /**
- * Implementation of hook_requirements().
+ * If the core modules are disabled the integration need to be disabled.
  */
-function linkchecker_requirements($phase) {
-  $requirements = array();
-  $t = get_t();
-
-  switch ($phase) {
-    case 'install' :
-      // MySQL version with subselect support is required.
-      $version = db_version();
-      if (in_array($GLOBALS['db_type'], array('mysql', 'mysqli')) && version_compare($version, LINKCHECKER_MINIMUM_MYSQL) < 0) {
-        $requirements['linkchecker_minimum_mysql'] = array(
-          'title' => $t('MySQL database'),
-          'value' => $version,
-          'severity' => REQUIREMENT_ERROR,
-          'description' => $t('Your MySQL Server is too old. Link Checker requires at least MySQL %version.', array('%version' => LINKCHECKER_MINIMUM_MYSQL)),
-        );
-      }
-      break;
-
-    case 'runtime':
-      // Module cannot work without external HTTP requests.
-      if (variable_get('drupal_http_request_fails', TRUE) && !system_check_http_request()) {
-        $requirements['http requests'] = array(
-          'title' => $t('HTTP request status'),
-          'value' => $t('Fails'),
-          'severity' => REQUIREMENT_ERROR,
-          'description' => $t('Your system or network configuration does not allow Drupal to access web pages, resulting in reduced functionality. This could be due to your webserver configuration or PHP settings, and should be resolved in order to download information about available updates, fetch aggregator feeds, sign in via OpenID, or use other network-dependent services.'),
-        );
-      }
-
-/*      $requirements['linkchecker_curl'] = array(
-        'title' => $t('cURL'),
-        'value' => $has_curl ? $t('Enabled') : $t('Not found'),
-        'severity' => $has_curl ? REQUIREMENT_OK : REQUIREMENT_WARNING,
-        'description' => $t('You should install cURL for checking links with link checker module. If cURL is installed, simultaneuos link checks are used to speeds up the link checking process dramatically.'),
-      ); */
-      break;
+function linkchecker_modules_disabled($modules) {
+  // Disable link checks for custom blocks.
+  if (in_array('block', $modules)) {
+    variable_set('linkchecker_scan_blocks', 0);
+    drupal_set_message(t('Link checks for blocks have been disabled.'));
   }
-  return $requirements;
+
+  // Disable link checks for comments.
+  if (in_array('comment', $modules)) {
+    variable_set('linkchecker_scan_comments', 0);
+    drupal_set_message(t('Link checks for comments have been disabled.'));
+  }
 }
 
 /**
- * Upgrade module to new D5 schema.
+ * Rename database tables.
  */
-function linkchecker_update_5200() {
-  $ret = array();
+function linkchecker_update_7000() {
+  db_rename_table('linkchecker_boxes', 'linkchecker_block_custom');
+  db_rename_table('linkchecker_comments', 'linkchecker_comment');
+  db_rename_table('linkchecker_nodes', 'linkchecker_node');
+  db_rename_table('linkchecker_links', 'linkchecker_link');
 
-  // Module functions are required. Make sure the module is loaded.
-  drupal_load('module', 'linkchecker');
+  return t('Renamed database tables to new schema names.');
+}
 
-  // Remove obsolete tables no longer required.
-  db_drop_table($ret, 'linkchecker_tasks');
-  db_drop_table($ret, 'linkchecker_results');
+/**
+ * Increase the size of 'urlhash' field for drupal_hash_base64() hashes.
+ */
+function linkchecker_update_7001() {
+  db_drop_unique_key('linkchecker_link', 'urlhash');
 
-  // Create new tables.
-  $schema['linkchecker_links'] = array(
-    'description' => 'Stores all links.',
-    'fields' => array(
-      'lid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique link ID.',
-      ),
-      'token' => array(
-        'type' => 'varchar',
-        'length' => 32,
-        'not null' => TRUE,
-        'description' => 'The indexable md5 hash of the {linkchecker_links}.url.',
-      ),
-      'url' => array(
-        'type' => 'text',
-        'not null' => TRUE,
-        'description' => 'The full qualified link URL.',
-      ),
-      'method' => array(
-        'type' => 'varchar',
-        'length' => 4,
-        'default' => 'HEAD',
-        'not null' => TRUE,
-        'description' => 'The method for checking links (HEAD, GET, POST).',
-      ),
-      'code' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'description' => 'HTTP status code from link checking.',
-      ),
-      'error' => array(
-        'type' => 'text',
-        'not null' => FALSE,
-        'description' => 'The error message received from the remote server while doing link checking.',
-      ),
-      'fail_count' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'description' => 'Fail count of unsuccessful link checks. No flapping detection. (Successful = 0, Unsuccessful = fail_count+1).',
-      ),
-      'last_checked' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'default' => 0,
-        'description' => 'Timestamp of the last link check.',
-      ),
-    ),
-    'primary key' => array('lid'),
-    'unique keys' => array('token' => array('token')),
+  $spec = array(
+    'type' => 'varchar',
+    'length' => 64,
+    'not null' => TRUE,
+    'description' => 'The indexable hash of the {linkchecker_link}.url.',
   );
 
-  $schema['linkchecker_boxes'] = array(
-    'description' => 'Stores all link references for boxes.',
-    'fields' => array(
-      'bid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {boxes}.bid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('bid', 'lid'),
-  );
+  db_change_field('linkchecker_link', 'urlhash', 'urlhash', $spec, array('unique keys' => array('urlhash' => array('urlhash'))));
 
-  $schema['linkchecker_nodes'] = array(
-    'description' => 'Stores all link references for nodes.',
-    'fields' => array(
-      'nid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {node}.nid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('nid', 'lid'),
-  );
-
-  // Create schema.
-  db_create_table($ret, 'linkchecker_links', $schema['linkchecker_links']);
-  db_create_table($ret, 'linkchecker_boxes', $schema['linkchecker_boxes']);
-  db_create_table($ret, 'linkchecker_nodes', $schema['linkchecker_nodes']);
-
-  // Upgrade settings. Could be less code, but is easier to follow.
-  $ignore_response_codes = preg_split('/(\r\n?|\n)/', variable_get('linkchecker_ignore_responses', "200\n304\n401\n403"));
-
-  // Filter all invalid responds codes and outdated error messages out.
-  $ignore_response_codes = array_filter($ignore_response_codes, '_linkchecker_isvalid_response_code');
-
-  // Make sure we have status code 200 and 304 in the ignore list.
-  $ignore_response_codes = array_merge(array('200', '304'), $ignore_response_codes);
-  $ignore_response_codes = array_unique($ignore_response_codes);
-
-  variable_set('linkchecker_ignore_response_codes', implode("\n", $ignore_response_codes));
-  $ret[] = array('success' => TRUE, 'query' => 'Ignored response codes have been upgraded to '. implode(",", $ignore_response_codes));
-
-  // Remove obsolete settings.
-  variable_del('linkchecker_ignore_responses');
-  variable_del('linkchecker_rebuild');
-  variable_del('linkchecker_maxtime');
-  variable_del('linkchecker_socket_timeout');
-  variable_del('linkchecker_max_links_per_node');
-  variable_del('linkchecker_remove_after');
-  variable_del('linkchecker_give_up');
-
-  return $ret;
+  return t('Extended data length of {linkchecker_link}.urlhash field.');
 }
 
 /**
- * Upgrade module to new D6 schema.
+ * Recalculate the 'urlhash' using drupal_hash_base64().
  */
-function linkchecker_update_6200() {
-  $ret = array();
+function linkchecker_update_7002(&$sandbox) {
+  $sandbox['#finished'] = 0;
 
-  db_change_field($ret, 'linkchecker_links', 'lid', 'lid', array('type' => 'serial', 'not null' => TRUE));
+  // How many links are updated per batch run.
+  $count = 1000;
 
-  // Upgrade line break converter from D5 filter/2 to D6 filter/1.
-  $linkchecker_filter_blacklist = variable_get('linkchecker_filter_blacklist', array());
-  if (!empty($linkchecker_filter_blacklist) && $linkchecker_filter_blacklist['filter/2']) {
-    $linkchecker_filter_blacklist['filter/2'] = 0;
-    $linkchecker_filter_blacklist['filter/1'] = 'filter/1';
-    variable_set('linkchecker_filter_blacklist', $linkchecker_filter_blacklist);
-    $ret[] = array('success' => TRUE, 'query' => 'Upgraded the default exclusion of line break converter filter from D5 filter/2 to D6 filter/1.');
-  }
-
-  return $ret;
-}
-
-/**
- * Install linkchecker_comments table.
- */
-function linkchecker_update_6201() {
-  $ret = array();
-
-  // Create new tables.
-  $schema['linkchecker_comments'] = array(
-    'description' => 'Stores all link references for comments.',
-    'fields' => array(
-      'cid'  => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {comments}.cid.',
-      ),
-      'lid' => array(
-        'type' => 'int',
-        'not null' => TRUE,
-        'description' => 'Primary Key: Unique {linkchecker_links}.lid.',
-      ),
-    ),
-    'primary key' => array('cid', 'lid'),
-  );
-
-  // Table may be created in 5201 by 5.x-2.x.
-  if (!db_table_exists('linkchecker_comments')) {
-    db_create_table($ret, 'linkchecker_comments', $schema['linkchecker_comments']);
-  }
-
-  return $ret;
-}
-
-/**
- * Remove unnecessary elements from custom submit buttons.
- */
-function linkchecker_update_6202() {
-  $ret = array();
-
-  variable_del('linkchecker_analyze');
-  variable_del('linkchecker_clear_analyze');
-
-  return $ret;
-}
-
-/**
- * Make fields unsigned.
- */
-function linkchecker_update_6204() {
-  $ret = array();
-
-  // Make linkchecker_links.lid unsigned.
-  db_change_field($ret, 'linkchecker_links', 'lid', 'lid', array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE));
-  if ($GLOBALS['db_type'] == 'pgsql') {
-    db_add_primary_key($ret, 'linkchecker_links', array('lid'));
-  }
-
-  // Make linkchecker_boxes.bid and linkchecker_boxes.lid unsigned.
-  db_drop_primary_key($ret, 'linkchecker_boxes');
-  db_change_field($ret, 'linkchecker_boxes', 'bid', 'bid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_change_field($ret, 'linkchecker_boxes', 'lid', 'lid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_add_primary_key($ret, 'linkchecker_boxes', array('bid', 'lid'));
-
-  // Make linkchecker_comments.cid and linkchecker_comments.lid unsigned.
-  db_drop_primary_key($ret, 'linkchecker_comments');
-  db_change_field($ret, 'linkchecker_comments', 'cid', 'cid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_change_field($ret, 'linkchecker_comments', 'lid', 'lid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_add_primary_key($ret, 'linkchecker_comments', array('cid', 'lid'));
-
-  // Make linkchecker_nodes.nid and linkchecker_nodes.lid unsigned.
-  db_drop_primary_key($ret, 'linkchecker_nodes');
-  db_change_field($ret, 'linkchecker_nodes', 'nid', 'nid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_change_field($ret, 'linkchecker_nodes', 'lid', 'lid', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE));
-  db_add_primary_key($ret, 'linkchecker_nodes', array('nid', 'lid'));
-
-  return $ret;
-}
-
-/**
- * Remove any references to nodes that are not published and also remove their comments references.
- */
-function linkchecker_update_6205() {
-  $ret = array();
-
-  $ret[] = update_sql("DELETE FROM {linkchecker_nodes} WHERE nid IN (SELECT nid FROM {node} WHERE status = 0)");
-  $ret[] = update_sql("DELETE FROM {linkchecker_comments} WHERE cid IN (SELECT c.cid FROM {node} n INNER JOIN {comments} c ON c.nid = n.nid WHERE n.status = 0)");
-
-  return $ret;
-}
-
-/**
- * Add status column to links table.
- */
-function linkchecker_update_6206() {
-  $ret = array();
-
-  // Add the column only if not exists. Column may been added in D5 (5207).
-  if (!db_column_exists('linkchecker_links', 'status')) {
-    db_add_field($ret, 'linkchecker_links', 'status', array('type' => 'int', 'not null' => TRUE, 'default' => 1));
-  }
-
-  return $ret;
-}
-
-/**
- * Remove obsolete variable.
- */
-function linkchecker_update_6207() {
-  $ret = array();
-
-  variable_del('linkchecker_cleanup_links_interval');
-
-  return $ret;
-}
-
-/**
- * Change default value for linkchecker_links.code to -1.
- *
- * fsockopen may return 0 as an indication that the error occurred before
- * the connect() call. This is most likely due to a problem initializing the
- * socket.
- */
-function linkchecker_update_6208() {
-  $ret = array();
-
-  db_change_field($ret, 'linkchecker_links', 'code', 'code', array('type' => 'int', 'not null' => TRUE, 'default' => -1));
-
-  return $ret;
-}
-
-/**
- * Update the permissions table, to reflect changes to hook_perm.
- */
-function linkchecker_update_6209() {
-  $ret = array();
-
-  $res = db_query('SELECT rid, perm FROM {permission}');
-  $perms = array();
-  while ($p = db_fetch_object($res)) {
-    $perm = $p->perm;
-    $perm = preg_replace('/access linkchecker/', 'access broken links report', $perm);
-    $perms[$p->rid] = $perm;
-  }
-
-  foreach ($perms as $rid => $renamed_permission) {
-    db_query("UPDATE {permission} SET perm = '%s' WHERE rid = %d", $renamed_permission, $rid);
-    $ret[] = array('success' => TRUE, 'query' => 'UPDATE {permission} SET perm = ' . check_plain($renamed_permission) . ' WHERE rid = '. $rid);
-  }
-
-  return $ret;
-}
-
-/**
- * Add status code 302 to the default list of ignored response codes.
- */
-function linkchecker_update_6210() {
-  $ret = array();
-
-  $ignore_response_codes = preg_split('/(\r\n?|\n)/', variable_get('linkchecker_ignore_response_codes', "200\n302\n304\n401\n403"));
-  if (!in_array('302', $ignore_response_codes)) {
-    $ignore_response_codes[] = '302';
-    sort($ignore_response_codes);
-    variable_set('linkchecker_ignore_response_codes', implode("\n", $ignore_response_codes));
-    $ret[] = array('success' => TRUE, 'query' => 'Added the status code 302 to the list of ignored response codes.');
+  // Count the number of links and chunks if not yet set and save to $sandbox
+  // to avoid a query on every batch run.
+  if (!isset($sandbox['chunk'])) {
+    // Count number of total links.
+    $links_total = db_query('SELECT COUNT(1) FROM {linkchecker_link}')->fetchField();
+    // Calculate number of batch chunks.
+    $sandbox['total'] = ceil($links_total / $count);
+    // The current batch chunk, start at link number 0.
+    $sandbox['chunk'] = 0;
   }
   else {
-    $ret[] = array('success' => TRUE, 'query' => 'No action taken. The status code 302 was already on the list of ignored response codes.');
+    // Recalculate the 'urlhash' using drupal_hash_base64().
+    $has_rows = FALSE;
+    $result = db_query_range('SELECT url, lid FROM {linkchecker_link}', ($sandbox['chunk'] * $count), $count);
+    foreach ($result as $link) {
+      $has_rows = TRUE;
+      db_update('linkchecker_link')
+        ->condition('lid', $link->lid)
+        ->fields(array('urlhash' => drupal_hash_base64($link->url)))
+        ->execute();
+    }
+
+    // Increase current chunk number until batches are finished.
+    $sandbox['chunk']++;
+    $sandbox['#finished'] = 0.99;
+
+    if (!$has_rows) {
+      $sandbox['#finished'] = 1;
+      return t("Recalculated the 'urlhash' using drupal_hash_base64().");
+    }
   }
-
-  return $ret;
 }
 
 /**
- * Remove obsolete variable.
+ * Issue #1321378: Improve performance of queries.
  */
-function linkchecker_update_6211() {
-  $ret = array();
+function linkchecker_update_7003() {
+  db_drop_index('linkchecker_block_custom', 'lid');
+  db_drop_index('linkchecker_comment', 'lid');
+  db_drop_index('linkchecker_node', 'lid');
 
-  variable_del('linkchecker_pathfilter_support');
-  $ret[] = array('success' => TRUE, 'query' => 'Removed obsolete linkchecker_pathfilter_support variable.');
+  db_add_index('linkchecker_block_custom', 'lid', array('lid'));
+  db_add_index('linkchecker_comment', 'lid', array('lid'));
+  db_add_index('linkchecker_node', 'lid', array('lid'));
 
-  return $ret;
+  return t('Added indexes to database tables.');
 }
 
 /**
- * Change unique key and column name 'token' into 'urlhash'.
+ * Add status code 206 to the default list of ignored response codes.
  */
-function linkchecker_update_6212() {
-  $ret = array();
-
-  db_drop_unique_key($ret, 'linkchecker_links', 'token');
-  db_change_field($ret, 'linkchecker_links', 'token', 'urlhash', array('type' => 'varchar', 'length' => 32, 'not null' => TRUE));
-  db_add_unique_key($ret, 'linkchecker_links', 'urlhash', array('urlhash'));
-
-  return $ret;
-}
-
-/**
- * Add RFC documenation domains back if they have been removed.
- */
-function linkchecker_update_6213() {
-  $ret = array();
-
-  $linkchecker_disable_link_check_for_urls = array_filter(preg_split('/(\r\n?|\n)/', variable_get('linkchecker_disable_link_check_for_urls', LINKCHECKER_RESERVED_DOCUMENTATION_DOMAINS)));
-  variable_set('linkchecker_disable_link_check_for_urls', implode("\n", array_unique(array_merge(explode("\n", LINKCHECKER_RESERVED_DOCUMENTATION_DOMAINS), $linkchecker_disable_link_check_for_urls))));
-  $ret[] = array('success' => TRUE, 'query' => 'Added RFC documenation domains back if they have been removed.');
-
-  return $ret;
-}
-
-/**
-* #1321378: Improve performance of queries.
-*/
-function linkchecker_update_6214() {
-  $ret = array();
-
-  db_add_index($ret, 'linkchecker_boxes', 'lid', array('lid'));
-  db_add_index($ret, 'linkchecker_comments', 'lid', array('lid'));
-  db_add_index($ret, 'linkchecker_nodes', 'lid', array('lid'));
-
-  return $ret;
-}
-
-/**
-* Add status code 206 to the default list of ignored response codes.
-*/
-function linkchecker_update_6215() {
-  $ret = array();
-
+function linkchecker_update_7004() {
   $ignore_response_codes = preg_split('/(\r\n?|\n)/', variable_get('linkchecker_ignore_response_codes', "200\n206\n302\n304\n401\n403"));
   if (!in_array('206', $ignore_response_codes)) {
     $ignore_response_codes[] = '206';
     sort($ignore_response_codes);
     variable_set('linkchecker_ignore_response_codes', implode("\n", $ignore_response_codes));
-    $ret[] = array('success' => TRUE, 'query' => 'Added the status code 206 to the list of ignored response codes.');
+    return t('Added the status code 206 to the list of ignored response codes.');
   }
   else {
-    $ret[] = array('success' => TRUE, 'query' => 'No action taken. The status code 206 was already on the list of ignored response codes.');
+    return t('No action taken. The status code 206 was already on the list of ignored response codes.');
+  }
+}
+
+/**
+ * Upgrade from linkchecker_fqdn_only to linkchecker_check_links_types variable.
+ */
+function linkchecker_update_7005() {
+
+  $linkchecker_fqdn_only = variable_get('linkchecker_fqdn_only', 1);
+  variable_set('linkchecker_check_links_types', $linkchecker_fqdn_only);
+  variable_del('linkchecker_fqdn_only');
+
+  return t('Upgraded "Check full qualified domain names only" to "What type of links should be checked" setting.');
+}
+
+/**
+ * Remove obsolete settings variable.
+ */
+function linkchecker_update_7006() {
+  // Remove obsolete variable.
+  variable_del('linkchecker_extract_from_source');
+
+  return t('Removed obsolete settings variable.');
+}
+
+/**
+ * Upgrade blacklisted internal filter names.
+ */
+function linkchecker_update_7007() {
+  // Available D7 filters (12/30/2011):
+  //
+  // - Line break converter, http://drupal.org/project/drupal
+  //     name: filter_autop (D6: filter/1)
+  // - Insert block, http://drupal.org/project/insert_block
+  //     name: insert_block (D6 insert_block/0)
+  //     tags: [block:name of module=delta of block]
+  // - Insert view filter, http://drupal.org/project/insert_view
+  //     name: insert_view (D6: insert_view/0)
+
+  // See core filter_update_7003();
+  // Get an array of the renamed filter deltas, organized by module.
+  $renamed_deltas = array(
+    'filter' => array(
+      '0' => 'filter_html',
+      '1' => 'filter_autop',
+      '2' => 'filter_url',
+      '3' => 'filter_htmlcorrector',
+      '4' => 'filter_html_escape',
+    ),
+    'php' => array(
+      '0' => 'php_code',
+    ),
+    'gotwo' => array(
+      '0' => 'gotwo',
+    ),
+    'insert_block' => array(
+      '0' => 'insert_block',
+    ),
+    'insert_view' => array(
+      '0' => 'insert_view',
+    ),
+    'smileys' => array(
+      '0' => 'smileys',
+    ),
+  );
+
+  // Manually load the linkchecker.module file or the constant may not defined.
+  drupal_load('module', 'linkchecker');
+
+  $linkchecker_filter_blacklist = variable_get('linkchecker_filter_blacklist', explode('|', LINKCHECKER_DEFAULT_FILTER_BLACKLIST));
+  $linkchecker_filter_blacklist = array_values($linkchecker_filter_blacklist);
+  $linkchecker_filter_blacklist = array_filter($linkchecker_filter_blacklist);
+
+  // Loop through each filter and make changes to the core filter name.
+  foreach ($renamed_deltas as $module => $deltas) {
+    foreach ($deltas as $old_delta => $new_name) {
+      if (in_array($module . '/' . $old_delta, $linkchecker_filter_blacklist)) {
+        $id = array_search($module . '/' . $old_delta, $linkchecker_filter_blacklist);
+        $linkchecker_filter_blacklist = array_replace($linkchecker_filter_blacklist, array($id => $new_name));
+      }
+    }
   }
 
-  return $ret;
+  $linkchecker_filter_blacklist = drupal_map_assoc($linkchecker_filter_blacklist);
+  variable_set('linkchecker_filter_blacklist', $linkchecker_filter_blacklist);
+
+  // This is not a 100% solution, but we tried the best... tell the admin.
+  return t('Updated the blacklisted internal filter names from Drupal 6 to Drupal 7. The update has only updated the blacklisted filters linkchecker is aware of. Please review the "Filters disabled for link extraction" settings, if all filters with <em>references</em> to other content are still disabled.');
 }
 
 /**
-* #965720: Add indexes to improve performance of views queries.
-*/
-function linkchecker_update_6216() {
-  $ret = array();
-
-  db_add_index($ret, 'linkchecker_links', 'method', array('method'));
-  db_add_index($ret, 'linkchecker_links', 'code', array('code'));
-  db_add_index($ret, 'linkchecker_links', 'fail_count', array('fail_count'));
-  db_add_index($ret, 'linkchecker_links', 'last_checked', array('last_checked'));
-  db_add_index($ret, 'linkchecker_links', 'status', array('status'));
-
-  return $ret;
-}
-
-/**
- * #1450672: Set user 1 as default user to impersonate content updates.
+ * Issue #965720: Add indexes to improve performance of views queries.
  */
-function linkchecker_update_6217() {
-  $ret = array();
+function linkchecker_update_7008() {
+  db_drop_index('linkchecker_link', 'method');
+  db_drop_index('linkchecker_link', 'code');
+  db_drop_index('linkchecker_link', 'fail_count');
+  db_drop_index('linkchecker_link', 'last_checked');
+  db_drop_index('linkchecker_link', 'status');
 
-  $linkchecker_default_impersonate_user = user_load(1);
-  variable_set('linkchecker_impersonate_user', $linkchecker_default_impersonate_user->name);
-  $ret[] = array('success' => TRUE, 'query' => 'Set user 1 as default user to impersonate content updates.');
+  db_add_index('linkchecker_link', 'method', array('method'));
+  db_add_index('linkchecker_link', 'code', array('code'));
+  db_add_index('linkchecker_link', 'fail_count', array('fail_count'));
+  db_add_index('linkchecker_link', 'last_checked', array('last_checked'));
+  db_add_index('linkchecker_link', 'status', array('status'));
 
-  return $ret;
+  return t('Added indexes to linkchecker_link database table.');
 }
 
 /**
- * Removed obsolete linkchecker_check_links_max variable.
+ * Set user 1 as default user to impersonate content updates.
  */
-function linkchecker_update_6218() {
-  $ret = array();
+function linkchecker_update_7009() {
+  // Do not overwrite D6 settings.
+  $linkchecker_impersonate_user = variable_get('linkchecker_impersonate_user', '');
+  if (empty($linkchecker_impersonate_user)) {
+    $linkchecker_default_impersonate_user = user_load(1);
+    variable_set('linkchecker_impersonate_user', $linkchecker_default_impersonate_user->name);
+  }
 
+  return t('Set user 1 as default user to impersonate content updates.');
+}
+
+/**
+ * Remove obsolete linkchecker_check_links_max variable.
+ */
+function linkchecker_update_7010() {
   variable_del('linkchecker_check_links_max');
-  $ret[] = array('success' => TRUE, 'query' => 'Removed obsolete linkchecker_check_links_max variable.');
 
-  return $ret;
+  return t('Removed obsolete linkchecker_check_links_max variable.');
 }
 
 /**
  * Upgrade outdated HTTP user agents.
  */
-function linkchecker_update_6219() {
-  $ret = array();
+function linkchecker_update_7011() {
 
   $linkchecker_check_useragent = variable_get('linkchecker_check_useragent', 'Drupal (+http://drupal.org/)');
 
@@ -678,11 +447,24 @@ function linkchecker_update_6219() {
 
   if (isset($useragent_upgrade[$linkchecker_check_useragent])) {
     variable_set('linkchecker_check_useragent', $useragent_upgrade[$linkchecker_check_useragent]);
-    $ret[] = array('success' => TRUE, 'query' => 'Upgraded outdated HTTP user agent.');
+    return t('Upgraded outdated HTTP user agent from "@user_agent_old" to "@user_agent_new".', array('@user_agent_old' => $linkchecker_check_useragent, '@user_agent_new' => $useragent_upgrade[$linkchecker_check_useragent]));
   }
   else {
-    $ret[] = array('success' => TRUE, 'query' => 'User agent already up to date.');
+    return t('User agent already up to date.');
   }
+}
 
-  return $ret;
+
+if (!function_exists('array_replace')) {
+  /**
+   * PHP 5.3 backport for array_replace().
+   */
+  function array_replace() {
+    $array = array();
+    $n = func_num_args();
+    while ($n-- > 0) {
+      $array += func_get_arg($n);
+    }
+    return $array;
+  }
 }

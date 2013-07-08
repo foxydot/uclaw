@@ -3,7 +3,7 @@
  * @file
  * Callback for settings page
  */
-function simple_mobile_redirect_admin_settings_form(&$form_state) {
+function simple_mobile_redirect_admin_settings_form($form, &$form_state) {
   $form['simple_mobile_redirect_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Simple Mobile Redirect Settings'),

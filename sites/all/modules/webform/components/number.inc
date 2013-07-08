@@ -43,11 +43,11 @@ function _webform_defaults_number() {
 function _webform_theme_number() {
   return array(
     'webform_number' => array(
-      'variables' => array('element' => NULL),
+      'render element' => 'element',
       'file' => 'components/number.inc',
     ),
     'webform_display_number' => array(
-      'variables' => 'element',
+      'render element' => 'element',
       'file' => 'components/number.inc',
     ),
   );
@@ -83,7 +83,7 @@ function _webform_edit_number($component) {
     '#type' => 'textfield',
     '#title' => t('Prefix text placed to the left of the field'),
     '#default_value' => $component['extra']['field_prefix'],
-    '#description' => t('Examples: $, #, -.') . ' ' . t('This option only affects text fields.'),
+    '#description' => t('Examples: $, #, -.'),
     '#size' => 20,
     '#maxlength' => 127,
     '#weight' => 1.1,
@@ -93,7 +93,7 @@ function _webform_edit_number($component) {
     '#type' => 'textfield',
     '#title' => t('Postfix text placed to the right of the field'),
     '#default_value' => $component['extra']['field_suffix'],
-    '#description' => t('Examples: lb, kg, %.') . ' ' . t('This option only affects text fields.'),
+    '#description' => t('Examples: lb, kg, %.'),
     '#size' => 20,
     '#maxlength' => 127,
     '#weight' => 1.2,
@@ -160,7 +160,7 @@ function _webform_edit_number($component) {
     '#description' => t('Minimum numeric value. e.g. 0 would ensure positive numbers.'),
     '#size' => 5,
     '#maxlength' => 10,
-    '#weight' => 2,
+    '#weight' => 2.1,
     '#parents' => array('extra', 'min'),
     '#element_validate' => array('_webform_edit_number_validate'),
   );
@@ -171,7 +171,7 @@ function _webform_edit_number($component) {
     '#description' => t('Maximum numeric value. This may also determine the display width of your field.'),
     '#size' => 5,
     '#maxlength' => 10,
-    '#weight' => 2,
+    '#weight' => 2.2,
     '#parents' => array('extra', 'max'),
     '#element_validate' => array('_webform_edit_number_validate'),
   );
@@ -209,7 +209,9 @@ function _webform_edit_number($component) {
 /**
  * Theme function to render a number component.
  */
-function theme_webform_number($element) {
+function theme_webform_number($variables) {
+  $element = $variables['element'];
+
   // This IF statement is mostly in place to allow our tests to set type="text"
   // because SimpleTest does not support type="number".
   if (!isset($element['#attributes']['type'])) {
@@ -217,9 +219,18 @@ function theme_webform_number($element) {
   }
 
   // Step property *must* be a full number with 0 prefix if a decimal.
-  if (!is_int($element['#step'] * 1)) {
+  if (!empty($element['#step']) && !is_int($element['#step'] * 1)) {
     $decimals = strlen($element['#step']) - strrpos($element['#step'], '.') - 1;
     $element['#step'] = sprintf('%1.' . $decimals . 'F', $element['#step']);
+  }
+
+  // If the number is not an integer and step is undefined/empty, set the "any"
+  // value to allow any decimal.
+  if (empty($element['#integer']) && empty($element['#step'])) {
+    $element['#step'] = 'any';
+  }
+  elseif ($element['#integer'] && empty($element['#step'])) {
+    $element['#step'] = 1;
   }
 
   // Convert properties to attributes on the element if set.
@@ -230,18 +241,7 @@ function theme_webform_number($element) {
   }
   _form_set_class($element, array('form-text', 'form-number'));
 
-  $output = '';
-  if (isset($element['#field_prefix'])) {
-    $output .= '<span class="field-prefix">'. $element['#field_prefix'] .'</span> ';
-  }
-
-  $output .= '<input' . drupal_attributes($element['#attributes']) . ' />';
-
-  if (isset($element['#field_suffix'])) {
-    $output .= ' <span class="field-suffix">'. $element['#field_suffix'] .'</span>';
-  }
-
-  return theme('form_element', $element, $output);
+  return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
 
 /**
@@ -261,14 +261,12 @@ function _webform_render_number($component, $value = NULL, $filter = TRUE) {
     '#description' => $filter ? _webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
     '#attributes' => $component['extra']['attributes'],
     '#element_validate' => array('_webform_validate_number'),
-    '#theme_wrappers' => array('webform_element_wrapper'),
-    '#pre_render' => array('webform_element_title_display'),
-    '#post_render' => array('webform_element_wrapper'),
+    '#theme_wrappers' => array('webform_element'),
     '#min' => $component['extra']['min'],
     '#max' => $component['extra']['max'],
-    '#step' => abs($component['extra']['step']),
+    '#step' => $component['extra']['step'] ? abs($component['extra']['step']) : '',
     '#integer' => $component['extra']['integer'],
-    '#translatable' => array('title', 'description', 'field_prefix', 'field_suffix'),
+    '#translatable' => array('title', 'description'),
   );
 
   // Flip the min and max properties to make min less than max if needed.
@@ -291,7 +289,7 @@ function _webform_render_number($component, $value = NULL, $filter = TRUE) {
     // Set the size property based on #max, to ensure consistent behavior for
     // browsers that do not support type = number.
     if ($element['#max']) {
-      $element['#size'] = strlen($element['#max']) + 1;
+      $element['#size'] =  strlen($element['#max']) + 1;
     }
   }
   else {
@@ -301,10 +299,10 @@ function _webform_render_number($component, $value = NULL, $filter = TRUE) {
     // Create user-specified options list as an array.
     $element['#options'] = _webform_number_select_options($component);
 
-    // Add default options if using a select list with no default. This matches
-    // Drupal 7's handling of select lists.
+    // Add default options if using a select list with no default. This trigger's
+    // Drupal 7's adding of the option for us. See form_process_select().
     if ($component['extra']['type'] == 'select' && $element['#default_value'] === '') {
-      $element['#options'] = array('' => ($component['mandatory'] ? t('- Select -') : t('- None -'))) + $element['#options'];
+      $element['#empty_value'] = '';
     }
   }
 
@@ -330,20 +328,20 @@ function _webform_display_number($component, $value, $format = 'html') {
     '#title' => $component['name'],
     '#weight' => $component['weight'],
     '#theme' => 'webform_display_number',
-    '#theme_wrappers' => $format == 'html' ? array('webform_element', 'webform_element_wrapper') : array('webform_element_text'),
-    '#post_render' => array('webform_element_wrapper'),
+    '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
     '#field_prefix' => $empty ? '' : $component['extra']['field_prefix'],
     '#field_suffix' => $empty ? '' : $component['extra']['field_suffix'],
     '#format' => $format,
     '#value' => $empty ? '' : _webform_number_format($component, $value[0]),
-    '#translatable' => array('title', 'field_prefix', 'field_suffix'),
+    '#translatable' => array('title'),
   );
 }
 
 /**
  * Format the output of data for this component.
  */
-function theme_webform_display_number($element) {
+function theme_webform_display_number($variables) {
+  $element = $variables['element'];
   $prefix = $element['#format'] == 'html' ? filter_xss($element['#field_prefix']) : $element['#field_prefix'];
   $suffix = $element['#format'] == 'html' ? filter_xss($element['#field_suffix']) : $element['#field_suffix'];
   $value = $element['#format'] == 'html' ? check_plain($element['#value']) : $element['#value'];
@@ -356,12 +354,14 @@ function theme_webform_display_number($element) {
 function _webform_analysis_number($component, $sids = array(), $single = FALSE) {
   $advanced_stats = $single;
 
-  $placeholders = count($sids) ? array_fill(0, count($sids), "'%s'") : array();
-  $sidfilter = count($sids) ? " AND sid in (" . implode(",", $placeholders) . ")" : "";
-  $query = 'SELECT data ' .
-    ' FROM {webform_submitted_data} ' .
-    ' WHERE nid = %d ' .
-    ' AND cid = %d ' . $sidfilter;
+  $query = db_select('webform_submitted_data', 'wsd', array('fetch' => PDO::FETCH_ASSOC))
+    ->fields('wsd', array('data'))
+    ->condition('nid', $component['nid'])
+    ->condition('cid', $component['cid']);
+
+  if (count($sids)) {
+    $query->condition('sid', $sids, 'IN');
+  }
 
   $population = array();
   $submissions = 0;
@@ -369,13 +369,13 @@ function _webform_analysis_number($component, $sids = array(), $single = FALSE) 
   $not_empty = 0;
   $sum = 0;
 
-  $result = db_query($query, array_merge(array($component['nid'], $component['cid']), $sids));
-  while ($data = db_fetch_array($result)) {
+  $result = $query->execute();
+  foreach ($result as $data) {
     $value = trim($data['data']);
     if ($value == '') {
       $number = 0.0;
     }
-    else{
+    else {
       $number = $value * 1.0;
     }
 
@@ -486,7 +486,7 @@ function _webform_analysis_number($component, $sids = array(), $single = FALSE) 
     array_unshift($count, t('Count'));
     array_unshift($percent, t('% of !description', array('!description' => $description)));
 
-    $output = theme('table', $header, array($limit, $count, $percent), array('class' => 'webform-grid'));
+    $output = theme('table', array('header' => $header, 'rows' => array($limit, $count, $percent)));
 
     $rows[4] = array(t('Range'), t('!low to !high', array('!low' => $low, '!high' => $high)));
     $rows[5] = array(t('Standard deviation (!sigma)', array('!sigma' => $sigma)), $stddev);
@@ -518,7 +518,7 @@ function _webform_csv_headers_number($component, $export_options) {
  * Implements _webform_csv_data_component().
  */
 function _webform_csv_data_number($component, $export_options, $value) {
-  if (isset($value[0]) && $component['extra']['decimals'] !== '') {
+  if (isset($value[0]) && is_numeric($value[0]) && $component['extra']['decimals'] !== '') {
     $value[0] = number_format($value[0], $component['extra']['decimals'], '.', '');
   }
   return isset($value[0]) ? $value[0] : '';
@@ -597,13 +597,18 @@ function _webform_validate_number($element, &$form_state) {
  * Validation of number edit form items.
  */
 function _webform_edit_number_validate($element, &$form_state) {
-  // Shorten field names.
-  $values = $form_state['values']['extra'];
+  // Find the value of all related fields to this element.
+  $parents = $element['#parents'];
+  $key = array_pop($parents);
+  $values = $form_state['values'];
+  foreach ($parents as $parent) {
+    $values = $values[$parent];
+  }
 
-  switch ($element['#name']) {
-    case 'extra[min]':
+  switch ($key) {
+    case 'min':
       if ($values['min'] == '') {
-        if ($values['type'] == 'select') {
+        if (isset($values['type']) && $values['type'] === 'select') {
           form_error($element, t('Minimum is required when using a select list element.'));
         }
       }
@@ -616,9 +621,9 @@ function _webform_edit_number_validate($element, &$form_state) {
         }
       }
       break;
-    case 'extra[max]':
+    case 'max':
       if ($values['max'] == '') {
-        if ($values['type'] == 'select') {
+        if (isset($values['type']) && $values['type'] === 'select') {
           form_error($element, t('Maximum is required when using a select list element.'));
         }
       }
@@ -631,8 +636,8 @@ function _webform_edit_number_validate($element, &$form_state) {
         }
       }
       break;
-    case 'extra[step]':
-      if ($values['step'] != '') {
+    case 'step':
+      if ($values['step'] !== '') {
         if (!is_numeric($values['step'])) {
           form_error($element, t('Step must be numeric.'));
         }
@@ -694,6 +699,9 @@ function _webform_number_select_options($component) {
  * Apply number format.
  */
 function _webform_number_format($component, $value) {
+  if (!is_numeric($value)) {
+    return '';
+  }
   // If no decimal places are specified, do a best guess length of decimals.
   $decimals = $component['extra']['decimals'];
   if ($decimals === '') {
