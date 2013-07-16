@@ -4,14 +4,15 @@ core = 7.x
 base theme = bootstrap
 
 ; Regions
-regions[navigation]     = 'Navigation'
-regions[header]         = 'Top Bar'
+;regions[navigation]     = 'Navigation'
+;regions[header]         = 'Top Bar'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
 regions[content]        = 'Content'
-regions[sidebar_first]  = 'Primary'
-regions[sidebar_second] = 'Secondary'
-regions[footer]         = 'Footer'
+;regions[sidebar_first]  = 'Primary'
+;regions[sidebar_second] = 'Secondary'
+;regions[footer]         = 'Footer'
+regions[sidebar]		= 'Sidebar'
 
 ; Stylesheets
 stylesheets[all][] = 'css/font-awesome.css'

@@ -1,13 +1,68 @@
-<div class="main-container container">
+	
+		<!-- Content -->
+		<section id="content">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<ul class="breadcrumb">
+						  <li><a href="/law">Home</a> <span class="divider">/</span></li>
+						  <li class="active">About</li>
+						</ul>
+					</div>
+				</div>
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
+				<?php if (!empty($page['highlighted'])) { ?>
+					<div class="row">
+						<div class="span12">
+							<div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
+						</div>
+					</div>
+				<?php } ?>
 
-    <?php print render($page['header']); ?>
-  </header> <!-- /#header -->
+				<?php if (!empty($messages)) { ?>
+					<div class="row">
+						<div class="span12">
+							<?php print $messages; ?>
+						</div>
+					</div>
+				<?php } ?>
 
+
+				<?php if (!empty($tabs)) { ?>
+					<div class="row">
+						<div class="span12">
+							<?php print render($tabs); ?>
+						</div>
+					</div>
+				<?php } ?>
+
+
+				<?php if (!empty($page['help'])) { ?>
+					<div class="row">
+						<div class="span12">
+							<div class="well"><?php print render($page['help']); ?></div>
+						</div>
+					</div>
+				<?php } ?>
+
+
+				<div class="row">
+
+				    <?php if (!empty($page['sidebar'])) { ?>
+				    <div id="sidebar" class="span3">
+				        <?php print render($page['sidebar']); ?>
+				    </div>
+				    <?php } ?>  
+
+					<div id="main" class=" <?php if (!empty($page['sidebar'])) { ?>span8 offset1<?php } else { ?>span12<?php } ?>">
+						<?php print render($page['content']); ?>
+					</div>
+				</div>
+		</section>
+			
+
+<?php /*
+  
   <div class="row-fluid">
 
     <?php if (!empty($page['sidebar_first'])): ?>
@@ -39,12 +94,9 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
     </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="span3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
+*/ ?>
 
   </div>
 </div>
+
+
