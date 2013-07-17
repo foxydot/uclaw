@@ -1,16 +1,33 @@
-	
+		<div id="home-carousel" class="carousel slide">
+		   
+		    <div class="carousel-inner">
+		    
+		        <?php $i = 0; foreach($content['banners'] as $banner) { ?>
+				 <div class="item<?php echo (($i == 0) ? ' active' : NULL); ?>" style="background: url('<?php echo $banner['image']; ?>') center top no-repeat #000000;background-size: cover;">
+		            <div class="container">
+		                <div class="carousel-caption">
+		                    <h1><?php echo $banner['title']; ?></h1>
+		                    <div class="white-box clearfix">
+			                    <p><?php echo $banner['caption']; ?></p>
+			                    <?php if (!empty($banner['link'])) { ?>
+								<a href="<?php echo $banner['link']; ?>" target="_blank"></a>
+								<?php } ?>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <?php $i++; } ?>
+					
+		    </div>
+		    <a class="left carousel-control" href="#home-carousel" data-slide="prev">&lsaquo;</a>
+		    <a class="right carousel-control" href="#home-carousel" data-slide="next">&rsaquo;</a>
+		    
+		</div> <!-- /#home-carousel -->
+		
+		
 		<!-- Content -->
 		<section id="content">
 			<div class="container">
-				<div class="row">
-					<div class="span12">
-						<ul class="breadcrumb">
-						  <li><a href="/law">Home</a> <span class="divider">/</span></li>
-						  <li class="active">About</li>
-						</ul>
-					</div>
-				</div>
-
 				<?php if (!empty($page['highlighted'])) { ?>
 					<div class="row">
 						<div class="span12">
@@ -48,14 +65,8 @@
 
 				<div class="row">
 
-				    <?php if (!empty($page['sidebar'])) { ?>
-				    <div id="sidebar" class="span3">
-				        <?php print render($page['sidebar']); ?>
-				    </div>
-				    <?php } ?>  
-
-					<div id="main" class="<?php if (!empty($page['sidebar'])) { ?>span8 offset1<?php } else { ?>span12<?php } ?>">
-						<?php print render($page['content']); ?>
+					<div id="main" class="span12">
+						<?php //print render($page['content']); ?>
 					</div>
 				</div>
 		</section>
