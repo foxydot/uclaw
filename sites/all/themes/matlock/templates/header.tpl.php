@@ -4,9 +4,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="span6">
-					<?php if (!empty($logo)): ?>
-				        <a class="brandmark" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-				          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+					<?php if (theme_get_setting('logo')): ?>
+				        <a class="brandmark" href="/" title="<?php print t('Home'); ?>">
+				          <img src="<?php print theme_get_setting('logo'); ?>" alt="<?php print t('Home'); ?>" />
 				        </a>
 				      <?php endif; ?>
 				</div>
@@ -27,77 +27,19 @@
 							<nav id="secondary-nav">
 								<ul class="clearfix">
 								
-									<li>
-										<a href="http://www.law.uc.edu/faculty-staff">Faculty <i class="icon-angle-down"></i></a>
-										<ul class="sub">
-											<li><a href="http://www.law.uc.edu/faculty-staff/faculty">Faculty Directory</a></li>
-											<li><a href="http://www.law.uc.edu/faculty-staff/adjunct-faculty">Adjunct Faculty</a></li>
-											<li><a href="http://www.law.uc.edu/faculty-staff/faculty-expertise">Faculty Expertise</a></li>
-											<li><a href="http://scholarship.law.uc.edu/">Scholarship Repository</a></li>
-											<li><a href="http://papers.ssrn.com/sol3/JELJOUR_Results.cfm?form_name=journalBrowse&amp;journal_id=216828">SSRN Research Papers</a></li>
-											<li><a href="http://www.law.uc.edu/faculty-staff/blogs">Faculty Blogs</a></li>
-											<li><a href="http://ucfacultynews.wordpress.com/">Faculty News</a></li>
-											<li><a href="http://www.law.uc.edu/faculty-staff/awards">University Awards</a></li>
-											<li><a href="http://www.law.uc.edu/faculty-staff/resources">Resources for Faculty</a></li>
-										</ul>
-									</li>
+									<li><a href="http://www.law.uc.edu/faculty-staff">Faculty</a></li>
 									
-									<li>
-										<a href="http://www.law.uc.edu/directory/staff">Staff</a>
-									</li>
+									<li><a href="http://www.law.uc.edu/directory/staff">Staff</a></li>
 									
 									
-									<li>
-										<a href="http://www.law.uc.edu/alumni">Alumni <i class="icon-angle-down"></i></a>
-										<ul class="sub">
-											<li><a href="http://www.law.uc.edu/alumni/awards-and-honors">Alumni News</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/events">Alumni Events</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/events/continuing-legal-education">CLE</a></li>
-											<li><a href="http://www.law.uc.edu/sites/default/files/transcript.pdf">Transcript Requests</a></li>
-											<li><a href="http://www.law.uc.edu/career/alumni">Career Services</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/volunteer">Get Involved</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/association">UC Law Alumni Association</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/resources">Useful Links</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/support">Giving</a></li>
-											<li><a href="http://www.law.uc.edu/alumni/contact-us">Contact Us</a></li>
-										</ul>
-									</li>
+									<li><a href="http://www.law.uc.edu/alumni">Alumni</a></li>
 									
 									
-									<li>
-										<a href="#">Library <i class="icon-angle-down"></i></a>
-										<ul class="sub">
-											<li><a href="http://www.law.uc.edu/library/Circulation">Circulation</a></li>
-											<li><a href="http://www.law.uc.edu/library/research">Research</a></li>
-											<li><a href="http://www.law.uc.edu/library/guides">Guides</a></li>
-											<li><a href="http://www.law.uc.edu/library/it-computing">IT &amp; Computing</a></li>
-											<li><a href="http://www.law.uc.edu/library/archives-special-collections">Archives, Rare Books, &amp; Manuscript Collections</a></li>
-											<li><a href="http://www.law.uc.edu/library/securities-lawyers-deskbook">Securities Lawyer's Deskbook</a></li>
-											<li><a href="http://www.law.uc.edu/library/Faculty-Scholarship">Faculty Scholarship</a></li>
-										</ul>
-									</li>
+									<li><a href="#">Library</a></li>
 									
-									<li>
-										<a href="#">Current Students <i class="icon-angle-down"></i></a>
-										<ul class="sub">
-											<li><a href="http://www.law.uc.edu/current-students/register">Registration</a></li>
-											<li><a href="http://law.uc.edu/current-students/academic-success-program">Academic Success Program</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/exams">Exams</a></li>
-											<li><a href="http://law.uc.edu/sites/default/files/Graduation%20requirements_2.pdf">Degree Requirements</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/graduation">Graduation</a></li>
-											<li><a href="http://www.law.uc.edu/value">Financial Aid</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/resources">Policies and Procedures</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/resources">Forms</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/resources">UC Resource Links</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/resources">Technology</a></li>
-											<li><a href="http://www.law.uc.edu/current-students/student-organizations">Student Organizations</a></li>
-											<li><a href="http://www.law.uc.edu/uc-law-directories">Email Directories</a></li>
-											<li><a href="http://taft.law.uc.edu/rooms/day.php?day=23&amp;month=05&amp;year=2013">Room Reservations</a></li>
-										</ul>
-									</li>
+									<li><a href="#">Current Students</a></li>
 									
-									<li>
-										<a href="#"><i class="icon-search"></i></a>
+									<li><a href="#"><i class="icon-search"></i></a>
 										<ul class="sub search">
 											<li>
 												<form name="search" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">

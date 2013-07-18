@@ -1,3 +1,5 @@
+		<?php if (!all_empty( $page['highlighted'], $messages, $tabs, $page['help'])) { ?>
+		
 		<div class="container space-min">
 			<?php if (!empty($page['highlighted'])) { ?>
 				<div class="row">
@@ -33,7 +35,8 @@
 				</div>
 			<?php } ?>
 
-		</div>		
+		</div>
+		<?php } // all_not_empty() ?>	
 		
 		<?php if (!empty($content['banners'])) { ?>
 		<div id="home-carousel" class="carousel slide">
@@ -44,13 +47,15 @@
 				 <div class="item<?php echo (($i == 0) ? ' active' : NULL); ?>" style="background: url('<?php echo $banner['image']; ?>') center top no-repeat #000000;background-size: cover;">
 		            <div class="container">
 		                <div class="carousel-caption">
-		                    <h1><?php if (!empty($banner['title'])) { echo $banner['title']; } ?></h1>
+		                    <?php if (!empty($banner['title'])) { ?><h1><?php echo $banner['title']; ?></h1><?php } ?>
+		                     
+		                    <?php if ((!empty($banner['caption'])) || (!empty($banner['link']))) { ?>
 		                    <div class="white-box clearfix">
-			                    <p><?php echo $banner['caption']; ?></p>
-			                    <?php if (!empty($banner['link'])) { ?>
-								<a href="<?php echo $banner['link']; ?>" target="_blank"></a>
-								<?php } ?>
+			                    <?php if (!empty($banner['caption'])) { ?> <p><?php echo $banner['caption']; ?></p><?php } ?>
+			                    <?php if (!empty($banner['link'])) { ?><a href="<?php echo $banner['link']; ?>" target="_blank"></a><?php } ?>
 		                    </div>
+		                    <?php } ?>
+		                    
 		                </div>
 		            </div>
 		        </div>

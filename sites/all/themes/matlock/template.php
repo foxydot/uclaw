@@ -73,6 +73,15 @@ function blank_first($i = 0, $underscore = TRUE) {
 	}
 } // blank_first()
 
+function all_empty() {
+	foreach(func_get_args() as $variable) {
+		if (!empty($variable)) {
+			return FALSE;
+		} else {
+			return TRUE;
+		}
+	}
+} // all_not_empty()
 
 function get_text_value($item = array()) {
 	if (!array_key_exists('und', $item)) { return FALSE; }
@@ -94,12 +103,15 @@ function get_image_url($item = array()) {
 function matlock_menu_link(array $variables) {
 	$element = $variables['element'];
 	$sub_menu = '';
-	
+	//print_r($element);
 	if ($element['#below']) {
 		$sub_menu = drupal_render($element['#below']);
 	}
-	$output = l('<i class="icon-double-angle-right"></i> ' . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
+	$output = l((($element['#original_link']['depth'] == 1) ? '<i class="icon-double-angle-right"></i> ' : NULL) . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 } // matlock_menu_link()
 
-
+// Override 'menu nav' classes from bootstrap
+function matlock_menu_tree(&$variables) {
+	return '<ul class="menu">' . $variables['tree'] . '</ul>';
+}
