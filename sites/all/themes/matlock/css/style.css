@@ -1145,6 +1145,7 @@ header #secondary-nav ul li ul.search form .btn{border:1px solid #444;background
 .numbers p{font-weight:300;}
 h3.red{color:#91392E;}
 .events section{padding:10px 0;border-top:1px dotted #dedede;}
+.events section:hover{background:#FAFAFA;}
 .events section.last{border-bottom:1px dotted #dedede;margin-bottom:22px;}
 .events section a:hover{text-decoration:none;background:#efefef;}
 .events section a p{color:#444;}

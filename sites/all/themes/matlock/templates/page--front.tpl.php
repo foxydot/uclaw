@@ -44,7 +44,7 @@
 				 <div class="item<?php echo (($i == 0) ? ' active' : NULL); ?>" style="background: url('<?php echo $banner['image']; ?>') center top no-repeat #000000;background-size: cover;">
 		            <div class="container">
 		                <div class="carousel-caption">
-		                    <h1><?php echo $banner['title']; ?></h1>
+		                    <h1><?php if (!empty($banner['title'])) { echo $banner['title']; } ?></h1>
 		                    <div class="white-box clearfix">
 			                    <p><?php echo $banner['caption']; ?></p>
 			                    <?php if (!empty($banner['link'])) { ?>
@@ -86,20 +86,12 @@
 					
 				</div>
 			</div>
-		</div>
+		</div> <!-- /.numbers -->
 		
 		<div class="container">
 			<div class="row">
 			
 				<div class="span4 events">
-					<!-- Events -->
-					<h3 class="red">Upcoming Events</h3>
-					<?php $block = module_invoke('views', 'block', 'Events-block_1');
-					print_r($block);
-						//print '<h3>'.$block['subject'].'</h3>
-						print $block['content'];
-					 ?>
-				
 				
 					<!-- Events -->
 					<h3 class="red">Upcoming Events</h3>
@@ -139,25 +131,21 @@
 					<!-- News -->
 					<h3 class="red">Law School Highlights</h3>
 					
+					<?php foreach($content['features'] as $feature) { ?>
+					
 					<section class="story clearfix">
-						<a href="http://law.uc.edu/news/sean-myers"><img src="http://law.uc.edu/sites/default/files/imagecache/hp_feature/Sean%20Meyers-Home.jpg" alt="" title="" width="75" height="75" class="img-polaroid">						
-						<h4 class="title">Comedy Writer Brings Interesting Spin to the Law</h4>
-						<p>Sean Myers loves to make people laugh. Now he's a rising 3L. Read his story.&nbsp;</p></a>
+						<a href="<?php echo $feature['link']; ?>">
+						
+							<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75" class="img-polaroid"><?php } ?>			
+							<h4 class="title"><?php echo $feature['title']; ?></h4>
+							<p><?php echo $feature['subtitle']; ?></p>
+						</a>
 					</section>
-					<section class="story clearfix">
-						<a href="http://www.law.uc.edu/news/lori-krafte"><img src="http://law.uc.edu/sites/default/files/imagecache/hp_feature/krafte_sm.jpg" alt="" title="" width="75" height="75" class="img-polaroid">				<h4 class="title">Krafte Presented with Distinguished Service Award</h4>
-						<p>Congratulations to Lori Krafte '98 who was awarded the American Advertising Federation of Cincinnati's highest honor.</p></a>
-					</section>
-					<section class="story clearfix">
-						<a href="http://www.law.uc.edu/news/jean-geoppinger"><img src="http://law.uc.edu/sites/default/files/imagecache/hp_feature/Jean%20G%20McCoy100-homepage.jpg" alt="Jean Geoppinger McCoy Named President of CBA" title="Jean Geoppinger McCoy Named President of CBA" width="75" height="75" class="img-polaroid">						
-						<h4 class="title">Jean Geoppinger McCoy Named President of CBA</h4>
-						<p>Congratulations to Jean Geoppinger McCoy '90, recently named president of the CBA.</p></a>
-					</section>
-					<section class="story clearfix">
-						<a href="http://law.uc.edu/news/home" class="pull-right"><img src="http://law.uc.edu/sites/default/files/imagecache/hp_feature/Barb%20Howard100-homepage.jpg" alt="Barb Howard Receives Ohio Bar Medal Award " title="Barb Howard Receives Ohio Bar Medal Award " width="75" height="75" class="img-polaroid">						
-						<h4 class="title">Barbara Howard Receives Ohio Bar Medal Award </h4>
-						<p>Howard '79 is the recipient of the Ohio Bar Medal Award, the highest honor of the OSBA.</p></a>
-					</section>
+					
+					<?php } ?>
+					
+					
+					<div class="clearfix"></div>
 					<a href="/news/home" class="pull-right"><strong>More News</strong> <i class="icon-double-angle-right"></i></a>
 					
 				</div>

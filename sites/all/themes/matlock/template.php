@@ -39,13 +39,22 @@ function matlock_preprocess_page(&$vars, $hook) {
 function preprocess_home_page($ret = object) {
 	$node = $ret->node;
 	//print_r($node);
-	$ret->content['banners'] = array();
 	
+	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_image' . blank_first($i)})); $i++) {
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_image' . blank_first($i)});
 		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)});
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)});
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)});
+	}
+
+	$ret->content['features'] = array();
+	for ($i = 1; (!empty($node->{'field_feature_' . $i . '_title'})); $i++) {
+		$ret->content['features'][$i]['title'] = get_text_value($node->{'field_feature_' . $i . '_title'});
+		$ret->content['features'][$i]['subtitle'] = get_text_value($node->{'field_feature_' . $i . '_subtitle'});
+		$ret->content['features'][$i]['image'] = get_image_url($node->{'field_feature_' . $i . '_image'});
+		$ret->content['features'][$i]['content'] = get_text_value($node->{'field_feature_' . $i . '_content'});
+		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'});
 	}
 	
 	return $ret;
