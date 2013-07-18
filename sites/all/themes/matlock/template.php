@@ -99,6 +99,8 @@ function get_image_url($item = array()) {
 } // get_link()
 
 
+/**** CUSTOMIZATION SHIZ ****/
+
 // Add arrows to menus
 function matlock_menu_link(array $variables) {
 	$element = $variables['element'];
@@ -115,3 +117,12 @@ function matlock_menu_link(array $variables) {
 function matlock_menu_tree(&$variables) {
 	return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
+
+function matlock_breadcrumb($bcs) {
+	if (!empty($bcs['breadcrumb'])) {
+
+		$bcrumb = '<li>' . implode(' <span class="divider">/</span></li>', $bcs['breadcrumb']) . ' <span class="divider">/</span></li>';
+    	return $bcrumb;
+	}
+
+} // matlock_breadcrumb()

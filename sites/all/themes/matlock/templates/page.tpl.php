@@ -2,15 +2,26 @@
 		<!-- Content -->
 		<section id="content">
 			<div class="container">
-				<div class="row">
-					<div class="span12">
-						<ul class="breadcrumb">
-						  <li><a href="/law">Home</a> <span class="divider">/</span></li>
-						  <li class="active">About</li>
-						</ul>
-					</div>
-				</div>
+				
+				<?php if (!empty($breadcrumb)) { ?>
+					<div class="row">
+						<div class="span12">
+							<ul class="breadcrumb">
 
+					<?php
+					
+						echo $breadcrumb;
+						
+						$title = drupal_get_title();
+						if ($title) { ?><li class="active"><?php echo $title; ?></li><?php } ?>
+								
+							</ul>
+						</div>
+					</div>
+
+					<?php } // !empty $breadcrumb ?>
+				
+				
 				<?php if (!empty($page['highlighted'])) { ?>
 					<div class="row">
 						<div class="span12">
