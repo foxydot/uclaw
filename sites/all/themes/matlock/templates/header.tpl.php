@@ -17,7 +17,7 @@
 							<ul class="inline quicklinks">
 								<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall"><i class="icon-file"></i> Apply Now</a></li>
 								<li><a href="http://www.law.uc.edu/prospective-students/admissions/visit-college-law "><i class="icon-calendar"></i> Schedule A Visit</a></li>
-								<li><a href="http://law.uc.edu/advantage  http://www.cincinnatiusa.com/about"><i class="icon-map-marker"></i> Explore Cincinnati</a></li>
+								<li><a href="http://www.cincinnatiusa.com/about"><i class="icon-map-marker"></i> Explore Cincinnati</a></li>
 							</ul>	
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 											<li><a href="http://www.law.uc.edu/faculty-staff/adjunct-faculty">Adjunct Faculty</a></li>
 											<li><a href="http://www.law.uc.edu/faculty-staff/faculty-expertise">Faculty Expertise</a></li>
 											<li><a href="http://scholarship.law.uc.edu/">Scholarship Repository</a></li>
-											<li><a href="http://papers.ssrn.com/sol3/JELJOUR_Results.cfm?form_name=journalBrowse&journal_id=216828">SSRN Research Papers</a></li>
+											<li><a href="http://papers.ssrn.com/sol3/JELJOUR_Results.cfm?form_name=journalBrowse&amp;journal_id=216828">SSRN Research Papers</a></li>
 											<li><a href="http://www.law.uc.edu/faculty-staff/blogs">Faculty Blogs</a></li>
 											<li><a href="http://ucfacultynews.wordpress.com/">Faculty News</a></li>
 											<li><a href="http://www.law.uc.edu/faculty-staff/awards">University Awards</a></li>
@@ -70,8 +70,8 @@
 											<li><a href="http://www.law.uc.edu/library/Circulation">Circulation</a></li>
 											<li><a href="http://www.law.uc.edu/library/research">Research</a></li>
 											<li><a href="http://www.law.uc.edu/library/guides">Guides</a></li>
-											<li><a href="http://www.law.uc.edu/library/it-computing">IT & Computing</a></li>
-											<li><a href="http://www.law.uc.edu/library/archives-special-collections">Archives, Rare Books, & Manuscript Collections</a></li>
+											<li><a href="http://www.law.uc.edu/library/it-computing">IT &amp; Computing</a></li>
+											<li><a href="http://www.law.uc.edu/library/archives-special-collections">Archives, Rare Books, &amp; Manuscript Collections</a></li>
 											<li><a href="http://www.law.uc.edu/library/securities-lawyers-deskbook">Securities Lawyer's Deskbook</a></li>
 											<li><a href="http://www.law.uc.edu/library/Faculty-Scholarship">Faculty Scholarship</a></li>
 										</ul>
@@ -92,7 +92,7 @@
 											<li><a href="http://www.law.uc.edu/current-students/resources">Technology</a></li>
 											<li><a href="http://www.law.uc.edu/current-students/student-organizations">Student Organizations</a></li>
 											<li><a href="http://www.law.uc.edu/uc-law-directories">Email Directories</a></li>
-											<li><a href="http://taft.law.uc.edu/rooms/day.php?day=23&month=05&year=2013">Room Reservations</a></li>
+											<li><a href="http://taft.law.uc.edu/rooms/day.php?day=23&amp;month=05&amp;year=2013">Room Reservations</a></li>
 										</ul>
 									</li>
 									

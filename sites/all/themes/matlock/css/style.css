@@ -1092,6 +1092,7 @@ header a.brandmark{margin:20px 0 0 0;display:inline-block;}
 header a.brandmark:hover{opacity:.8;}
 .main-nav{background:#AC0101;position:relative;text-align:center;}
 header .main-nav a{width:134px;}
+header .main-nav a:last-child{border-right:0 none;}
 header .main-nav a:hover{background:#B80000;}
 header #main-dropdown{background:#B80000;display:none;}
 header #main-dropdown section{display:inline-block;margin:0 1px;padding:0;text-align:left;vertical-align:top;width:139px;}
@@ -1133,6 +1134,7 @@ header #secondary-nav ul li ul.search form .btn{border:1px solid #444;background
 #home-carousel.carousel .carousel-caption .white-box{background:#FFFFFF;display:inline-block;height:40px;margin-left:25px;padding:14px;width:480px;}
 #home-carousel.carousel .carousel-caption .white-box p{color:#666666;float:left;width:400px;}
 #home-carousel.carousel .carousel-caption .white-box a{background:url("../img/carousel-link.jpg") no-repeat scroll center center #ffffff;float:right;height:40px;margin:-14px -14px 0 0;padding:14px;width:34px;}
+[class^="icon-"],[class*=" icon-"]{background-image:none;}
 .numbers{background:#ededed url("../img/bg-gray.png");padding-bottom:20px;padding-top:20px;}
 .numbers a{color:#33518F;display:inline-block;padding:10px;}
 .numbers a p{color:#444;height:50px;}

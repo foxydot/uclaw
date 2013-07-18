@@ -15,7 +15,7 @@
 						<h5>Get Started</h5>
 						<ul>
 								<li><a href="#welcomevideo" class="button" data-toggle="modal">Welcome Message</a></li>
-								<li><a href="http://law.uc.edu/advantage  http://www.cincinnatiusa.com/about/ ">Explore Cincinnati</a></li>
+								<li><a href="http://www.cincinnatiusa.com/about/ ">Explore Cincinnati</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/visit-college-law ">Schedule A Visit</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall">Apply Now</a></li>
 			            </ul>
