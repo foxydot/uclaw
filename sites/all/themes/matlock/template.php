@@ -61,6 +61,9 @@ function preprocess_home_page($ret = object) {
 	
 } // preprocess_home_page()
 
+function preprocess_landing_page($ret = object) {
+	$node = $ret->node;
+} // preprocess_landing_page()
 
 /**** UTILITY FUNCTIONS ****/
 
