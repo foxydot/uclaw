@@ -5,13 +5,15 @@
  */
 
 /**** Preprocessing ****/
-function matlock_preprocess_page(&$vars, $hook) {
-	// Typekit Reference
-	drupal_add_js('//use.typekit.net/joq3zvd.js');
-	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
-	  
+function matlock_preprocess_page(&$vars, $hook, $media = TRUE) {
+	if ($media == TRUE) {
+		// Typekit Reference
+		drupal_add_js('//use.typekit.net/joq3zvd.js');
+		drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
+	}
 	  
 	$vars['content'] = array('text');
+    
     if (isset($vars['node'])) {
         $node = $vars['node'];
     } elseif (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) !== 'edit') {
@@ -27,19 +29,28 @@ function matlock_preprocess_page(&$vars, $hook) {
 			$ret->content = array();
 		
 		if (function_exists($pre_function)) {
-			$ret = call_user_func($pre_function, $ret);
+			$content = call_user_func($pre_function, $ret);
 		}
 		
-		$vars['content'] = $ret->content;
+		if ($content) {
+			$vars['page_content'] = $content;
+		}
+
+		
 	} // !empty $node
 	
 } // matlock_preprocess_html()
+
+function matlock_preprocess_node(&$vars, $hook) {
+	matlock_preprocess_page($vars, $hook, FALSE);
+} // matlock_preprocess_node()
 
 
 function preprocess_home_page($ret = object) {
 	$node = $ret->node;
 	//print_r($node);
 	
+	// Banners
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_image' . blank_first($i)})); $i++) {
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_image' . blank_first($i)});
@@ -47,7 +58,8 @@ function preprocess_home_page($ret = object) {
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)});
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)});
 	}
-
+	
+	// Featured Stories
 	$ret->content['features'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_' . $i . '_title'})); $i++) {
 		$ret->content['features'][$i]['title'] = get_text_value($node->{'field_feature_' . $i . '_title'});
@@ -57,12 +69,32 @@ function preprocess_home_page($ret = object) {
 		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'});
 	}
 	
-	return $ret;
+	return $ret->content;
 	
 } // preprocess_home_page()
 
 function preprocess_landing_page($ret = object) {
 	$node = $ret->node;
+
+	$ret->content['banners'] = array();
+	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
+		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)});
+		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)});
+		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)});
+		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)});
+	}
+
+	// Featured Stories
+	$ret->content['features'] = array();
+	for ($i = 1; (!empty($node->{'field_feature_' . $i . '_title'})); $i++) {
+		$ret->content['features'][$i]['title'] = get_text_value($node->{'field_feature_' . $i . '_title'});
+		$ret->content['features'][$i]['subtitle'] = get_text_value($node->{'field_feature_' . $i . '_subtitle'});
+		$ret->content['features'][$i]['image'] = get_image_url($node->{'field_feature_' . $i . '_image'});
+		$ret->content['features'][$i]['content'] = get_text_value($node->{'field_feature_' . $i . '_content'});
+		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'});
+	}
+	
+	return $ret->content;
 } // preprocess_landing_page()
 
 /**** UTILITY FUNCTIONS ****/

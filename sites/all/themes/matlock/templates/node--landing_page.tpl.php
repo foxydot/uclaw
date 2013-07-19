@@ -1,3 +1,8 @@
+<?php
+	print_r($page_content);
+
+?>						
+						
 						<div id="myCarousel" class="carousel slide">
 						  <ol class="carousel-indicators">
 						    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

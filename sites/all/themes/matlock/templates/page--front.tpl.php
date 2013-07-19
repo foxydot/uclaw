@@ -38,12 +38,12 @@
 		</div>
 		<?php } // all_not_empty() ?>	
 		
-		<?php if (!empty($content['banners'])) { ?>
+		<?php if (!empty($page_content['banners'])) { ?>
 		<div id="home-carousel" class="carousel slide">
 		   
 		    <div class="carousel-inner">
 		    
-		        <?php $i = 0; foreach($content['banners'] as $banner) { ?>
+		        <?php $i = 0; foreach($page_content['banners'] as $banner) { ?>
 				 <div class="item<?php echo (($i == 0) ? ' active' : NULL); ?>" style="background: url('<?php echo $banner['image']; ?>') center top no-repeat #000000;background-size: cover;">
 		            <div class="container">
 		                <div class="carousel-caption">
@@ -132,28 +132,32 @@
 
 				</div>
 				
+				<?php if (!empty($page_content['features'])) { ?>
+
 				<div class="span8 news clearfix">
 					<!-- News -->
 					<h3 class="red">Law School Highlights</h3>
 					
-					<?php foreach($content['features'] as $feature) { ?>
-					
-					<section class="story clearfix">
-						<a href="<?php echo $feature['link']; ?>">
+					<?php
+						foreach($page_content['features'] as $feature) { ?>
 						
-							<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75" class="img-polaroid"><?php } ?>			
-							<h4 class="title"><?php echo $feature['title']; ?></h4>
-							<p><?php echo $feature['subtitle']; ?></p>
-						</a>
-					</section>
-					
-					<?php } ?>
+						<section class="story clearfix">
+							<a href="<?php echo $feature['link']; ?>">
+							
+								<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75" class="img-polaroid"><?php } ?>			
+								<h4 class="title"><?php echo $feature['title']; ?></h4>
+								<p><?php echo $feature['subtitle']; ?></p>
+							</a>
+						</section>
+						
+						<?php } ?>
 					
 					
 					<div class="clearfix"></div>
 					<a href="/news/home" class="pull-right"><strong>More News</strong> <i class="icon-double-angle-right"></i></a>
 					
 				</div>
+				<?php } // !empty $page_content['features'] ?>
 				
 			</div>
 		</div> <!-- /.container -->		
