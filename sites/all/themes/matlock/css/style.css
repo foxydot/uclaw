@@ -1,3 +1,4 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
@@ -1181,6 +1182,12 @@ h3.red{color:#91392E;}
 #content #sidebar .block-menu>ul.menu li a:hover,#content #sidebar .block-menu>ul.menu li a:active,#content #sidebar .block-menu>ul.menu li a:focus{text-decoration:none;}
 #content #sidebar .block-menu>ul.menu li a:hover{background:#f3f3f3;color:#91392e;}
 #content #sidebar .block-menu>ul.menu li ul li a{padding:0 10px;}
+.faculty-social i{display:inline-block;text-align:right;width:16px;}
+.faculty-social a.fb{color:#3B5998;}
+.faculty-social a.tw{color:#4099FF;}
+.nobullet{list-style:none;}
+.list-space li{margin-bottom:15px;}
+.icons-ul li i{font-size:15px;margin-left:-25px;margin-right:5px;}
 .faculty .thumbnail{display:block;padding:4px;line-height:20px;border:none;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 0px 0px rgba(0, 0, 0, 0.055);-moz-box-shadow:0 0px 0px rgba(0, 0, 0, 0.055);box-shadow:0 0px 0px rgba(0, 0, 0, 0.055);-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;text-align:center;height:230px;overflow:hidden;}
 .faculty a.thumb-wrap{display:inline;height:120px;overflow:hidden;}
 .faculty a.thumb-wrap img{max-height:150px;max-width:150px;}
