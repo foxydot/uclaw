@@ -59,7 +59,7 @@
 
 				<div class="row">
 
-				    <?php if (!empty($page['sidebar'])) { ?>
+				    <?php if (!empty($page['sidebar'])) { $has_sidebar = TRUE; ?>
 				    <div id="sidebar" class="span3">
 				        <?php print render($page['sidebar']); ?>
 				    </div>

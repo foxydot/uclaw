@@ -136,12 +136,13 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['education'] = get_text_value($node->field_education,			$lang);
 	$ret->content['contact'] = get_array_values($node->field_phone_fax,			$lang);
 	$ret->content['email'] = get_text_value($node->field_email,					$lang);
-	//$ret->content['facebook'] = get_text_value($node->field_facebook_link,		$lang);
+	//$ret->content['facebook'] = get_text_value($node->field_facebook_link,	$lang);
 	//$ret->content['twitter'] = get_text_value($node->field_twitter_link,		$lang);
 	$ret->content['subjects'] = get_array_values($node->field_subjects,			$lang);
 	$ret->content['scholarship'] = get_text_value($node->field_scholarship,		$lang);
 	$ret->content['teaching'] = get_text_value($node->field_teaching,			$lang);
-	$ret->content['overview'] = get_text_value($node->field_news,				$lang);
+	//$ret->content['overview'] = get_text_value($node->field_overview,			$lang);
+	$ret->content['news'] = get_text_value($node->field_news,					$lang);
 	$ret->content['awards'] = explode('\n', get_text_value($node->field_awards,	$lang));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
 	

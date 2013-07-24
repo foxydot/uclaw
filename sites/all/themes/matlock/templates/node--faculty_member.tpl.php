@@ -98,12 +98,20 @@
 	<hr>
 
 <div class="row">
-	<?php if (!empty($page_content['overview'])) { ?>
 	<div class="span8">
-		<h2>Overview</h2>
-		<?php echo $page_content['overview']; ?>
+		<?php if (!empty($page_content['overview'])) { ?>
+			<h2>Overview</h2>
+			<?php echo $page_content['overview'];
+		} ?>
+		
+		<?php if (!empty($page_content['news'])) { ?>
+			<h2>News</h2>
+			<?php echo $page_content['news'];
+		} ?>
+		
+		
+		
 	</div> <!-- /.span8 -->
-<?php } ?>
 	
 	<div class="span4">
 		<div class="well">
