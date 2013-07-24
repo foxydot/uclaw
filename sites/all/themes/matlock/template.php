@@ -84,7 +84,6 @@ function preprocess_home_page($ret = object) {
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)},					$lang);
 	}
-	print_r($ret->content['banners']);
 	
 	// Featured Stories
 	$ret->content['features'] = array();
