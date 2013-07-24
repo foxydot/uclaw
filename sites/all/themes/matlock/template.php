@@ -58,6 +58,7 @@ function matlock_preprocess_node(&$vars, $hook) {
 			$ret->node = $node;
 			$ret->vars = $vars;
 			$ret->content = array();
+			
 		if (function_exists($pre_function)) {
 			$vars['page_content'] = call_user_func($pre_function, $ret);
 		}
@@ -68,7 +69,7 @@ function matlock_preprocess_node(&$vars, $hook) {
 } // matlock_preprocess()
 
 function preprocess_page($ret = object) {
-	return preprocess_home_page($ret);
+	return preprocess_landing_page($ret);
 } // preprocess_page()
 
 function preprocess_home_page($ret = object) {
@@ -83,6 +84,7 @@ function preprocess_home_page($ret = object) {
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)},					$lang);
 	}
+	print_r($ret->content['banners']);
 	
 	// Featured Stories
 	$ret->content['features'] = array();
