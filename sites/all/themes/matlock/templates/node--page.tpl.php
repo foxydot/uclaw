@@ -34,7 +34,11 @@
 						  </div>
 		<?php }
 		
-				
+				echo '<h1>', drupal_get_title(), '</h1>';
+				// Body
+				if (!empty($page_content['body'])) {
+					print $page_content['body'];
+				}	
 				
 				// Features
 					if (!empty($page_content['features'])) { ?>

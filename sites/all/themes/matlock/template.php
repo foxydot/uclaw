@@ -102,7 +102,8 @@ function preprocess_home_page($ret = object) {
 function preprocess_landing_page($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
-
+	
+	//print_r($node);
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
@@ -120,6 +121,8 @@ function preprocess_landing_page($ret = object) {
 		$ret->content['features'][$i]['content'] = get_text_value($node->{'field_feature_' . $i . '_content'},		$lang);
 		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'},					$lang);
 	}
+	
+	$ret->content['body'] = get_text_value($node->body);
 	
 	return $ret->content;
 } // preprocess_landing_page()
@@ -143,7 +146,7 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['teaching'] = get_text_value($node->field_teaching,			$lang);
 	//$ret->content['overview'] = get_text_value($node->field_overview,			$lang);
 	$ret->content['news'] = get_text_value($node->field_news,					$lang);
-	$ret->content['awards'] = explode('\n', get_text_value($node->field_awards,	$lang));
+	$ret->content['awards'] = explode("\n", get_text_value($node->field_awards,	$lang));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
 	
 	return $ret->content;
@@ -172,7 +175,7 @@ function all_empty() {
 
 function get_text_value($item = array(), $lang = 'und') {
 	if (!array_key_exists($lang, $item)) { return FALSE; }
-	return ($item[$lang][0]['safe_value']) ? $item[$lang][0]['safe_value'] : $item[$lang][0]['value'];
+	return $item[$lang][0]['value'];
 } // get_link()
 
 function get_url($item = array(), $lang = 'und') {
@@ -187,8 +190,9 @@ function get_image_url($item = array(), $lang = 'und') {
 
 function get_array_values($item = array(), $lang = 'und') {
 	$ret = array();
+	if (!array_key_exists($lang, $item)) { return FALSE; }
 	foreach($item[$lang] as $it) {
-		$ret[] = (array_key_exists('safe_value', $it)) ? $it['safe_value'] : $it['value'];
+		$ret[] = $it['value'];
 	}
 	
 	return $ret;

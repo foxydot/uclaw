@@ -6,7 +6,7 @@
 	
 	<div class="span9">
 		<h1><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></h1>
-		<h2><?php echo $page_content['title']; ?></h2>
+		<h3><?php echo $page_content['title']; ?></h3>
 		
 		<hr>
 		
@@ -25,17 +25,19 @@
 			<div class="span3">
 
 				<h3>Contact</h3>
+				<ul class="unstyled">
 		<?php
 			if (!empty($page_content['contact'])) {
 				foreach($page_content['contact'] as $con) {
 			?>
-				<p><?php echo $con; ?></p>
+				<li><?php echo $con; ?></li>
 		<?php }
 			}
 			
 			if (!empty($page_content['email'])) { ?>
-				<p><abbr title="Email">e:</abbr> <?php echo $page_content['email']; ?></p>
+				<li><abbr title="Email">e:</abbr> <?php echo $page_content['email']; ?></li>
 			<?php } ?>
+				</ul>
 			</div>
 		<?php } // contact || email not empty
 		
@@ -98,7 +100,7 @@
 	<hr>
 
 <div class="row">
-	<div class="span8">
+	<div class="span12">
 		<?php if (!empty($page_content['overview'])) { ?>
 			<h2>Overview</h2>
 			<?php echo $page_content['overview'];
@@ -111,25 +113,34 @@
 		
 		
 		
-	</div> <!-- /.span8 -->
-	
-	<div class="span4">
-		<div class="well">
-			<h3>Awards</h3>
-			<ul class="nobullet list-space icons-ul">
-				<li><i class="icon-legal"></i> Goldman Prize for Excellence in Teaching, University of Cincinnati College of Law, April 2010</li>
-				<li><i class="icon-legal"></i> University President’s Excellence Award for Teaching, University of Cincinnati, May 2006.</li>
-				<li><i class="icon-legal"></i> American College of Civil Trial Mediators, 1998 Education/Training Achievement Award</li>
-				<li><i class="icon-legal"></i> Center for Public Resources (CPR) Institute for Dispute Resolution, 1995 Second Prize for Excellence, Articles, "The Value of Decision Analysis in Mediation Practice," Negotiation Journal 11.2: 123-134 (1995)</li>
-			</ul>
-			
-			<h3>Links</h3>
-			
-			<ul class="nobullet list-space">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-			</ul>
-		</div> <!-- /.well -->
+	</div> <!-- /.span12 -->
+</div> <!-- /.row -->
 
+<div class="row">
+	
+	<div class="span12">
+		
+		<?php // Awards
+			if (!empty($page_content['awards'])) { ?>
+		<h3>Awards</h3>
+		<ul class="nobullet list-space icons-ul">
+			<?php foreach($page_content['awards'] as $award) {
+				if (empty($award)) { continue; }
+			?>
+				<li><i class="icon-legal"></i> <?php echo strip_tags($award); ?></li>
+			<?php } ?>
+		</ul>
+		<?php } ?>
+		
+		<?php // Links
+		if (!empty($page_content['links'])) { ?>
+		<h3>Links</h3>
+		<ul class="nobullet list-space icons-ul">
+			<?php foreach($page_content['links'] as $link) { ?>
+				<li><a href="<?php echo $link; ?>"><?php echo $link; ?></a></li>
+			<?php } ?>
+		</ul>
+		<?php } ?>
+		
 	</div> <!-- /.span3 -->
 </div> <!-- /.row -->
