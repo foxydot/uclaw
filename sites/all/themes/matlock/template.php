@@ -6,7 +6,7 @@
 
 /**** Preprocessing ****/
 
-function matlock_preprocess(&$vars, $hook) {
+function matlock_preprocess_page(&$vars, $hook) {
 	// Typekit Reference
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
@@ -17,8 +17,13 @@ function matlock_preprocess(&$vars, $hook) {
         $node = node_load(arg(1));
     }
     
-    
     if (!empty($node)) {
+    
+    	$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $vars['node']->type);
+    	
+    	if ($node->type != 'home_page') {
+    		return;
+    	}
 		$pre_function = 'preprocess_' . $node->type;
 		
 		$ret = new stdClass;
@@ -35,6 +40,36 @@ function matlock_preprocess(&$vars, $hook) {
 	
 } // matlock_preprocess()
 
+function matlock_preprocess_node(&$vars, $hook) {
+	// Typekit Reference
+	//drupal_add_js('//use.typekit.net/joq3zvd.js');
+	//drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
+	  
+    if (isset($vars['node'])) {
+        $node = $vars['node'];
+    } elseif (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) !== 'edit') {
+        $node = node_load(arg(1));
+    }
+    
+    if (!empty($node)) {
+		$pre_function = 'preprocess_' . $node->type;
+		
+		$ret = new stdClass;
+			$ret->node = $node;
+			$ret->vars = $vars;
+			$ret->content = array();
+		if (function_exists($pre_function)) {
+			$vars['page_content'] = call_user_func($pre_function, $ret);
+		}
+		
+		
+	} // !empty $node
+	
+} // matlock_preprocess()
+
+function preprocess_page($ret = object) {
+	return preprocess_home_page($ret);
+} // preprocess_page()
 
 function preprocess_home_page($ret = object) {
 	$node = $ret->node;
