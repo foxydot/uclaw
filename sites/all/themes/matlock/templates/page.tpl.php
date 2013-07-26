@@ -1,4 +1,3 @@
-	
 		<!-- Content -->
 		<section id="content">
 			<div class="container">
@@ -13,7 +12,7 @@
 						echo $breadcrumb;
 						
 						$title = drupal_get_title();
-						if ($title) { ?><li class="active"><?php echo $title; ?></li><?php } ?>
+						if ($title) { ?><li class="active"> <?php echo $title; ?></li><?php } ?>
 								
 							</ul>
 						</div>

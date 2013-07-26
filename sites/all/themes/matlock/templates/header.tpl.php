@@ -42,9 +42,9 @@
 									<li><a href="#"><i class="icon-search"></i></a>
 										<ul class="sub search">
 											<li>
-												<form name="search" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+												<form name="search" action="/search/node" method="post" id="header-search">
 													<div class="input-append">
-														<input type="text" name="search_terms" placeholder="Search..." class="input-medium">
+														<input type="text" name="search" placeholder="Search..." class="input-medium">
 														<button class="btn" type="submit">Go</button>
 													</div>
 												</form>
@@ -67,115 +67,107 @@
 	<div class="main-nav new">
 		<div class="container">
 			<nav id="newnav" class="row top-level">
-				<a href="landing">About Us</a><!--
-				--><a href="#">Admissions</a><!--
-				--><a href="#">Academics</a><!--
-				--><a href="#">Experiences</a><!--
-				--><a href="http://law.uc.edu/career">Careers</a><!--
-				--><a href="http://www.law.uc.edu/institutes">Centers</a><!--
-				--><a href="#">International</a>
-			</nav>										
+				<a href="/about-us">About Us</a><!--
+				--><a href="/admissions">Admissions</a><!--
+				--><a href="/academics">Academics</a><!--
+				--><a href="/experiences">Experiences</a><!--
+				--><a href="/career">Careers</a><!--
+				--><a href="/centers">Centers</a><!--
+				--><a href="/international">International</a>
+			</nav>
 		</div>
 		
 		<div class="row" id="main-dropdown">
 			<section>
 				<ul>
-					<li><a href="http://www.law.uc.edu/about-us/fast-facts">Fast Facts</a></li>
-					<li><a href="http://www.law.uc.edu/prospective-students/admissions/consumer-information">ABA Information</a></li>
-					<li><a href="http://www.law.uc.edu/about-us/strategic-plan">Mission</a></li>
-					<li><a href="http://www.law.uc.edu/about-us/history">History</a></li>
-					<li><a href="http://www.uc.edu/about.html">Our University</a></li>
-					<li><a href="http://law.uc.edu/advantage">Cincinnati and Region</a></li>
-					<li><a href="http://www.law.uc.edu/about-us/board-of-visitors">Board of Visitors</a></li>
-					<li><a href="http://www.law.uc.edu/alumni/new-building">New College of Law Building</a></li>
-					<li><a href="http://law.uc.edu/prospective-students/admissions/visit-college-law">Visit Us</a></li>
-					<li><a href="http://law.uc.edu/about-us/contact-us">Contact Us</a></li>
+					<li><a href="/about-us/fast-facts">Facts and Figures</a></li>
+					<li><a href="/about-us/history">History</a></li>
+					<li><a href="/our-university">Our University</a></li>
+					<li><a href="/advantage">Cincinnati and Region</a></li>
+					<li><a href="/about-us/board-of-visitors">Board of Visitors</a></li>
+					<li><a href="/alumni/new-building">New College of Law Building</a></li>
+					<li><a href="/prospective-students/admissions/consumer-information">ABA Information</a></li>
+					<li><a href="/prospective-students/admissions/visit-college-law">Visit Us</a></li>
+					<li><a href="/about-us/contact-us">Contact Us</a></li>
 				</ul>
 			</section><!--
-			
 			--><section>
 				<ul>
-					<li><a href="http://law.uc.edu/prospective-students/admissions">JD Admissions</a></li>
-					<li><a href="http://law.uc.edu/institutes-centers/llm#">LLM Admissions</a></li>
-					<li><a href="#">Certificate Admissions</a></li>
-					<li><a href="http://law.uc.edu/prospective-students/admissions/transfer-and-visiting-students">Transfer/Visiting Students</a></li>
-					<li><a href="http://www.law.uc.edu/flex-time-program">Flexible Time Program</a></li>
-					<li><a href="http://law.uc.edu/prospective-students/admitted-students">Admitted Students</a></li>
-					<li><a href="#">Guest Students</a></li>
-					<li><a href="http://law.uc.edu/value">Financial Aid</a></li>
-					<li><a href="http://law.uc.edu/prospective-students/admissions/visit-college-law">Visit Us</a></li>
-					<li><a href="http://law.uc.edu/about-us/contact-us">Contact Us</a></li>
+					<li><a href="/prospective-students/admissions">JD Admissions</a></li>
+					<li><a href="/prospective-students/admitted-students/orientation-materials">LLM Admissions</a></li>
+					<li><a href="/admissions-certificate-programs">Certificate Admissions</a></li>
+					<li><a href="/prospective-students/admissions/transfer-and-visiting-students">Transfer/Visiting Students</a></li>
+					<li><a href="/flex-time-program">Flexible Time Program</a></li>
+					<li><a href="/prospective-students/admitted-students">Admitted Students</a></li>
+					<li><a href="/guest-students">Guest Students</a></li>
+					<li><a href="/value">Financial Aid</a></li>
+					<li><a href="/prospective-students/admissions/visit-college-law">Visit Us</a></li>
+					<li><a href="/prospective-students/contact-us">Contact Us</a></li>
 				</ul>
 			</section><!--
-			
-			
 			--><section>
 				<ul>
-					<li><a href="http://law.uc.edu/jd-program">JD Program</a></li>
-					<li><a href="http://law.uc.edu/prospective-students/academic-programs/areas-study">Professional Pathways</a></li>
-					<li><a href="#">Experiencess</a></li>
-					 <li><a href="http://law.uc.edu/faculty-staff">Faculty</a></li>
-					 <li><a href="#">Academic Calendar</a></li>
-					 <li><a href="http://law.uc.edu/current-students/academic-success-program">Academic Success Program</a></li>
-					 <li><a href="http://www.law.uc.edu/prospective-students/academic-programs/individualized-joint-degree-program">Joint Degree Programs</a></li>
-					 <li><a href="#">Study Abroad Program</a></li>
-					 <li><a href="#">Certificate Programs</a></li>
-					 <li><a href="#">Lectures and Visitors</a></li>
-					 <li><a href="http://law.uc.edu/about-us/contact-us">Contact Us</a></li>
+					<li><a href="/jd-program">JD Program</a></li>
+					<li><a href="/prospective-students/academic-programs/areas-study  ">Professional Pathways</a></li>
+					<li><a href="/experiences">Experiences</a></li>
+					<li><a href="/faculty-staff">Faculty</a></li>
+					<li><a href="/academic-calendar">Academic Calendar</a></li>
+					<li><a href="/current-students/academic-success-program">Academic Success Program</a></li>
+					<li><a href="/joint-degree">Joint Degree Programs</a></li>
+					<li><a href="/institutes-centers/llm">LLM Program</a></li>
+					<li><a href="/study-abroad">Study Abroad Program</a></li>
+					<li><a href="/graduate-certificate-program">Certificate Programs</a></li>
+					<li><a href="/lectures-visitors">Lectures and Visitors</a></li>
+					<li><a href="/current-students/department-of-curriculum-and-student-affairs">Contact Us</a></li>
 				</ul>
 			</section><!--
-			
-			
 			--><section>
 				<ul>
-					<li><a href="#">Clinics</a></li>
-					<li><a href="#">Externships</a></li>
-					<li><a href="#">Journals</a></li>
-					<li><a href="http://law.uc.edu/current-students/student-orgs/moot-court-program#">Moot Court</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/center-practice/trial-practice#">Trial Practice</a></li>
-					<li><a href="http://www.law.uc.edu/current-students/practical-experiences/alternative-dispute-resolution">Alternate Dispute Resolution</a></li>
-					<li><a href="#">Fellowships</a></li>
-					<li><a href="http://www.law.uc.edu/current-students/practical-experiences/american-inn-court">American Inn of Court</a></li>
-					<li><a href="#">Writing Competitions</a></li>
-					<li><a href="http://www.law.uc.edu/current-students/student-organizations">Student Organizations</a></li>
-					<li><a href="http://www.law.uc.edu/current-students/practical-experiences/volunteer-opportunities">Pro Bono/Volunteer</a></li>
+					<li><a href="/clinics">Clinics</a></li>
+					<li><a href="/externships">Externships</a></li>
+					<li><a href="/journals">Journals</a></li>
+					<li><a href="/current-students/student-orgs/moot-court-program#">Moot Court</a></li>
+					<li><a href="/institutes-centers/center-practice/trial-practice#">Trial Practice</a></li>
+					<li><a href="/current-students/practical-experiences/alternative-dispute-resolution">Alternate Dispute Resolution</a></li>
+					<li><a href="/fellowships">Fellowships</a></li>
+					<li><a href="/current-students/practical-experiences/american-inn-court">American Inn of Court</a></li>
+					<li><a href="/sites/default/files/writingcompetition_0.xls">Writing Competitions</a></li>
+					<li><a href="/current-students/student-organizations">Student Organizations</a></li>
+					<li><a href="/current-students/practical-experiences/volunteer-opportunities">Pro Bono/Volunteer</a></li>
 				</ul>
 			</section><!--
-			
 			--><section>
 				<ul>
-					<li><a href="http://law.uc.edu/career/student">Students</a></li>
-					<li><a href="http://www.law.uc.edu/career/alumni">Alumni</a></li>
-					<li><a href="http://www.law.uc.edu/career/employer">Employers</a></li>
-					<li><a href="http://www.law.uc.edu/employment-statistics">Employment Statistics</a></li>
-					<li><a href="http://www.law.uc.edu/career/reciprocity">Reciprocity</a></li>
+					<li><a href="/career/student">Students</a></li>
+					<li><a href="/career/alumni">Alumni</a></li>
+					<li><a href="/career/employer">Employers</a></li>
+					<li><a href="/employment-statistics">Employment Statistics</a></li>
+					<li><a href="/career/reciprocity">Reciprocity</a></li>
 					<li><a href="https://law-uc-csm.symplicity.com/">Symplicity</a></li>
-					<li><a href="http://law.uc.edu/career/about-us">About Us</a></li>
+					<li><a href="/career/about-us">About Us</a></li>
 				</ul>
 			</section><!--
-			
 			--><section>
 				<ul>
-					<li><a href="http://www.law.uc.edu/institutes-centers/corporate-law-center">Corporate Law Center</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/center-practice">Center for Practice</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/center-practice">Ohio Innocence Project</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/rgsj">Center for Race, Gender, and Social Justice</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/weaver-institute">Weaver Institute of Law and Psychiatry</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
+					<li><a href="/institutes-centers/corporate-law-center">Corporate Law Center</a></li>
+					<li><a href="/institutes-centers/center-practice">Center for Practice</a></li>
+					<li><a href="/institutes-centers/center-practice">Ohio Innocence Project</a></li>
+					<li><a href="/institutes-centers/rgsj">Center for Race, Gender, and Social Justice</a></li>
+					<li><a href="/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
+					<li><a href="/institutes-centers/weaver-institute">Weaver Institute of Law and Psychiatry</a></li>
+					<li><a href="/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
 				</ul>
 			</section><!--
-			
 			--><section>
 				<ul>
-					<li><a href="http://www.law.uc.edu/institutes-centers/llm">LLM Program</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
-					<li><a href="http://www.law.uc.edu/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
-					<li><a href="#">Study Abroad Program</a></li>
-					<li><a href="#">Certificate in U.S. Legal Studies</a></li>
-					<li><a href="#">Visiting Scholars</a></li>
+					<li><a href="/institutes-centers/llm">LLM Program</a></li>
+					<li><a href="/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
+					<li><a href="/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
+					<li><a href="/study-abroad">Study Abroad Program</a></li>
+					<li><a href="/graduate-certificate-program">Certificate in U.S. Legal Studies</a></li>
+					<li><a href="/visiting-scholars">Visiting Scholars</a></li>
 				</ul>
-			</section>					
+			</section>				
 		</div>
 	</div>
 </header>

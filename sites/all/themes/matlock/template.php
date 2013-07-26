@@ -38,6 +38,7 @@ function matlock_preprocess_page(&$vars, $hook) {
 		
 	} // !empty $node
 	
+
 } // matlock_preprocess()
 
 function matlock_preprocess_node(&$vars, $hook) {
@@ -71,6 +72,8 @@ function matlock_preprocess_node(&$vars, $hook) {
 function preprocess_page($ret = object) {
 	return preprocess_landing_page($ret);
 } // preprocess_page()
+
+
 
 function preprocess_home_page($ret = object) {
 	$node = $ret->node;
@@ -151,6 +154,34 @@ function preprocess_faculty_member($ret = object) {
 	
 	return $ret->content;
 } // preprocess_faculty_member()
+
+
+function matlock_preprocess_search_result(&$vars) {
+	//print_r($vars);
+    //dsm($vars['result']['node']->type);   
+    $content = array();
+      //getting default node search result
+    $node = $vars['result']['node'];
+     if ($node->nid){
+        switch ($node->type){
+            case 'audio':  
+                //get audio node info          
+                $content[] = array(
+                    'nid'				=> $node->nid,
+                    'type'				=> $node->type,
+                    'title' 			=> $node->title,
+                     'thumbnail_url' 	=> $node->user_audio[0]['thumb_url'],
+                    'type_img'			=> base_path() . drupal_get_path('module', 'front_page_content') . '/images/sound.png',
+                    );
+                break; 
+              }
+        }
+       //creating new variable and assign the value to it
+        $vars['search_custom_content'] = $content;
+    //getting the search keyword
+    $vars['search_keyword'] = arg(2);
+ 
+} // matlock_preprocess_search_result()
 
 /**** UTILITY FUNCTIONS ****/
 
