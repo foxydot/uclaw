@@ -27,17 +27,17 @@
 							<nav id="secondary-nav">
 								<ul class="clearfix">
 								
-									<li><a href="http://www.law.uc.edu/faculty-staff">Faculty</a></li>
+									<li><a href="/faculty-staff">Faculty</a></li>
 									
-									<li><a href="http://www.law.uc.edu/directory/staff">Staff</a></li>
-									
-									
-									<li><a href="http://www.law.uc.edu/alumni">Alumni</a></li>
+									<li><a href="/directory/staff">Staff</a></li>
 									
 									
-									<li><a href="#">Library</a></li>
+									<li><a href="/alumni">Alumni</a></li>
 									
-									<li><a href="#">Current Students</a></li>
+									
+									<li><a href="/library">Library</a></li>
+									
+									<li><a href="/current-students">Current Students</a></li>
 									
 									<li><a href="#"><i class="icon-search"></i></a>
 										<ul class="sub search">
