@@ -39,6 +39,7 @@ function matlock_preprocess_page(&$vars, $hook) {
 	} // !empty $node
 	
 
+  
 } // matlock_preprocess()
 
 function matlock_preprocess_node(&$vars, $hook) {
@@ -72,7 +73,6 @@ function matlock_preprocess_node(&$vars, $hook) {
 function preprocess_page($ret = object) {
 	return preprocess_landing_page($ret);
 } // preprocess_page()
-
 
 
 function preprocess_home_page($ret = object) {
@@ -250,9 +250,10 @@ function matlock_menu_tree(&$variables) {
 }
 
 function matlock_breadcrumb($bcs) {
+	
 	if (!empty($bcs['breadcrumb'])) {
 
-		$bcrumb = '<li>' . implode(' <span class="divider">/</span></li>', $bcs['breadcrumb']) . ' <span class="divider">/</span></li>';
+		$bcrumb = '<li>' . implode(' <span class="divider">/</span></li>', $bcs['breadcrumb']) . ' <span class="divider">/</span> </li>';
     	return $bcrumb;
 	}
 
