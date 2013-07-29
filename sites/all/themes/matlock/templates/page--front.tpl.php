@@ -39,7 +39,7 @@
 		<?php } // all_not_empty() ?>	
 		
 		<?php if (!empty($page_content['banners'])) { ?>
-		<div id="home-carousel" class="carousel slide">
+		<div id="home-carousel" class="carousel slide hidden-phone">
 		   
 		    <div class="carousel-inner">
 		    

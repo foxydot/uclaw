@@ -160,6 +160,7 @@ function matlock_preprocess_search_result(&$vars) {
 	//print_r($vars);
     //dsm($vars['result']['node']->type);   
     $content = array();
+    //print_r($vars);
       //getting default node search result
     $node = $vars['result']['node'];
      if ($node->nid){
@@ -176,6 +177,9 @@ function matlock_preprocess_search_result(&$vars) {
                 break; 
               }
         }
+
+		$vars['info'] = date('n/d/Y', $vars['result']['date']);
+       
        //creating new variable and assign the value to it
         $vars['search_custom_content'] = $content;
     //getting the search keyword

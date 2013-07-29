@@ -17,6 +17,7 @@ regions[sidebar]		= 'Sidebar'
 ; Stylesheets
 stylesheets[all][] = 'css/font-awesome.css'
 stylesheets[all][] = 'fonts/ss-social-regular.css'
+stylesheets[all][] = 'css/jquery.sidr.dark.css'
 stylesheets[all][] = 'css/style.css'
 
 ;**********************************
@@ -60,3 +61,4 @@ scripts[] = 'js/main-nav.js'
 scripts[] = 'js/collapsible-sidemenus.js'
 scripts[] = 'js/link-rewrite.js'
 scripts[] = 'js/search.js'
+scripts[] = 'js/jquery.sidr.min.js'

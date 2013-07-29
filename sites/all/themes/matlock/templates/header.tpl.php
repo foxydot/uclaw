@@ -12,7 +12,7 @@
 				</div>
 				<div class="span6">
 				
-					<div class="row">
+					<div class="row hidden-phone">
 						<div class="span6">
 							<ul class="inline quicklinks">
 								<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall"><i class="icon-file"></i> Apply Now</a></li>
@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					
-					<div class="row">
+					<div class="row hidden-phone">
 						<div class="span6">
 							<nav id="secondary-nav">
 								<ul class="clearfix">
@@ -63,8 +63,18 @@
 		</div>
 	</div>
 	
+	<a id="main-menu-toggle" class="visible-phone" href="#newnav"><span>Toggle menu</span></a>
+	 
+	<script>
+		(function($) {
+			$(document).ready(function() {
+				$('#main-menu-toggle').sidr({'source': '#newnav', 'side': 'right'});
+			});
+		})(jQuery);
+	</script>
+
 	<!-- Main Navigation -->
-	<div class="main-nav new">
+	<div class="main-nav new hidden-phone">
 		<div class="container">
 			<nav id="newnav" class="row top-level">
 				<a href="/about-us">About Us</a><!--
@@ -77,7 +87,7 @@
 			</nav>
 		</div>
 		
-		<div class="row" id="main-dropdown">
+		<div class="row hidden-phone" id="main-dropdown">
 			<section>
 				<ul>
 					<li><a href="/about-us/fast-facts">Facts and Figures</a></li>
