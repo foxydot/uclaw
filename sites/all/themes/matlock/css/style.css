@@ -8244,35 +8244,11 @@ a {
 header a.brandmark {
   margin: 20px 0 0 0;
   display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 header a.brandmark:hover {
   opacity: .8;
-}
-/* Responsive */
-#main-menu-toggle {
-  background: url('../img/cheeseburger-no-onion.png') center center no-repeat;
-  height: 25px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 30px;
-}
-#main-menu-toggle span {
-  display: none;
-}
-#sidr a {
-  border-bottom: 1px solid #1A1A1A;
-  border-top: 1px solid #4D4D4D;
-  color: #FAFAFA;
-  display: block;
-  line-height: 48px;
-  text-decoration: none;
-  padding: 2px 12px;
-}
-#sidr a:hover {
-  border-top: 0;
-  box-shadow: 0 0 15px 3px #222222 inset;
-  line-height: 49px;
 }
 .main-nav {
   background: #AC0101;
@@ -8378,10 +8354,12 @@ header #secondary-nav {
   background: none repeat scroll 0 0 #191919;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  float: right;
   height: 22px;
-  left: 68px;
+  left: 0;
   padding: 5px 10px;
   position: relative;
+  right: 0;
   top: 33px;
   width: 390px;
   z-index: 300;
@@ -8449,6 +8427,49 @@ header #secondary-nav ul li ul.search form .btn {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* Responsive */
+#main-menu-toggle {
+  background: url('../img/cheeseburger-no-onion.png') center center no-repeat;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 35px;
+}
+#main-menu-toggle span {
+  display: none;
+}
+#sidr a {
+  border-bottom: 1px solid #1A1A1A;
+  border-top: 1px solid #4D4D4D;
+  color: #FAFAFA;
+  display: block;
+  line-height: 48px;
+  text-decoration: none;
+  padding: 2px 12px;
+}
+#sidr a:hover {
+  border-top: 0;
+  box-shadow: 0 0 15px 3px #222222 inset;
+  line-height: 49px;
+}
+@media (max-width: 1225px) {
+  header .main-nav a {
+    width: 98px;
+  }
+  header #main-dropdown section {
+    width: 103px;
+  }
+  header #main-dropdown ul li a {
+    padding: 6px 13px 6px 10px;
+    width: 80px;
+  }
+}
+@media (max-width: 979px) {
+  header a.brandmark {
+    margin-top: 25px;
+  }
 }
 body {
   padding-top: 0 !important;
@@ -8703,6 +8724,54 @@ h3.red {
 }
 #content #sidebar .block-menu > ul.menu li ul li a {
   padding: 0 10px;
+}
+#content #sidebar .click-area {
+  cursor: pointer;
+  float: right;
+  margin-bottom: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+  padding: 12px 15px;
+  position: relative;
+}
+#content #sidebar .title {
+  float: left;
+  display: inline-block;
+}
+@media (min-width: 1200px) {
+  #content #sidebar .title {
+    width: 210px;
+  }
+}
+@media (max-width: 1199px) {
+  #content #sidebar .title {
+    width: 160px;
+  }
+}
+@media (max-width: 979px) {
+  #content #sidebar .title {
+    width: 106px;
+  }
+}
+@media (max-width: 767px) {
+  #content #sidebar .title {
+    width: auto;
+  }
+  #content #sidebar .click-area {
+    padding: 13px 5px;
+  }
+}
+#mobile-submenus {
+  display: block;
+  padding: 5px 0;
+  text-align: center;
+  text-decoration: none;
+}
+#mobile-submenus:hover {
+  text-decoration: none;
+}
+#mobile-submenus i {
+  margin: 0 10px;
 }
 /* Faculty */
 .faculty-social i {

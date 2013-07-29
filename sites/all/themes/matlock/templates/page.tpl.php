@@ -3,7 +3,7 @@
 			<div class="container">
 				
 				<?php if (!empty($breadcrumb)) { ?>
-					<div class="row">
+					<div class="row hidden-phone hidden-tablet">
 						<div class="span12">
 							<ul class="breadcrumb">
 
@@ -60,7 +60,13 @@
 
 				    <?php if (!empty($page['sidebar'])) { $has_sidebar = TRUE; ?>
 				    <div id="sidebar" class="span3">
-				        <?php print render($page['sidebar']); ?>
+				    	<a href="#" class="visible-phone" id="mobile-submenus">
+				    		<i class="icon-arrow-down"></i><span class="text">View Submenu</span><i class="icon-arrow-down"></i>
+				    	</a>
+				    	
+				    	<div class="hidden-phone" id="sidemenus">
+				     	   <?php print render($page['sidebar']); ?>
+				    	</div>
 				    </div>
 				    <?php } ?>  
 
