@@ -8799,7 +8799,7 @@ h3.red {
   margin-left: -25px;
   margin-right: 5px;
 }
-.faculty .thumbnail {
+.view-faculty-members .thumbnail {
   display: block;
   padding: 4px;
   line-height: 20px;
@@ -8818,16 +8818,16 @@ h3.red {
   height: 230px;
   overflow: hidden;
 }
-.faculty a.thumb-wrap {
+.view-faculty-members a.thumb-wrap {
   display: inline;
   height: 120px;
   overflow: hidden;
 }
-.faculty a.thumb-wrap img {
+.view-faculty-members a.thumb-wrap img {
   max-height: 150px;
   max-width: 150px;
 }
-.faculty .thumbnail h3 {
+.view-faculty-members .thumbnail h3 {
   font-size: 16px;
   line-height: 19px;
   height: 40px;
@@ -8837,14 +8837,14 @@ h3.red {
   margin: 20px 0 0 0;
   padding: 0;
 }
-.faculty .thumbnail p.title {
+.view-faculty-members .thumbnail p.title {
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
   margin: 0px 0 0 0;
   padding: 0;
 }
-.faculty .thumbnail a {
+.view-faculty-members .thumbnail a {
   display: inline-block;
   color: #444;
 }
