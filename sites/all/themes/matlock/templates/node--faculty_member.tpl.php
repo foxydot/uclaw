@@ -1,3 +1,20 @@
+<?php
+
+	if ($teaser) { ?>
+	
+		<div class="thumbnail">
+			<a class="thumb-wrap">
+				<img src="//placehold.it/100x120">
+			</a>	
+			<h3>
+				<a href="#"><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></a>
+			</h3>
+			<p class="title"><?php echo $page_content['title']; ?></p>	
+		</div>
+	
+	<?php } else {
+?>
+
 <div class="row">
 
 	<div class="span3">
@@ -136,11 +153,20 @@
 		if (!empty($page_content['links'])) { ?>
 		<h3>Links</h3>
 		<ul class="nobullet list-space icons-ul">
-			<?php foreach($page_content['links'] as $link) { ?>
-				<li><a href="<?php echo $link; ?>"><?php echo $link; ?></a></li>
+			<?php foreach($page_content['links'] as $link) {
+				if (strpos($link, '|') !== FALSE) {
+					list($href, $title) = explode('|', $link);
+				} else {
+					$href = $title = $link;
+				}
+				
+			?>
+				<li><a href="<?php echo $href; ?>"><?php echo $title; ?></a></li>
 			<?php } ?>
 		</ul>
 		<?php } ?>
 		
 	</div> <!-- /.span3 -->
 </div> <!-- /.row -->
+
+<?php } // not teaser ?>

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="span12">
 				<div id="links" class="row">
-					<div class="span2">
+					<div class="span2 hidden-phone">
 						<h5>Resources</h5>
 						<ul>
 					        <li><a href="http://law.uc.edu/prospective-students/admissions/directions">Directions</a></li>
@@ -11,7 +11,7 @@
 							<li><a href="http://law.uc.edu/alumni/support ">Giving</a></li>
 					    </ul>
 					</div>
-					<div class="span2">
+					<div class="span2 hidden-phone">
 						<h5>Get Started</h5>
 						<ul>
 								<li><a href="#welcomevideo" class="button" data-toggle="modal">Welcome Message</a></li>

@@ -13,18 +13,18 @@
 		}); // each
 		
 
-		
+		// Mobile submenu nav
 		$('#mobile-submenus').on('click', function(e) {
 			e.preventDefault();
 			if ($(this).hasClass('open')) {
 				$('#sidemenus').slideUp(500);
-				$(this).find('.text').text('View Submenu');
-				$(this).find('i').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+				$(this).find('.text').text('Additional Information');
+				$(this).find('i').removeClass('icon-minus').addClass('icon-plus');
 				$(this).removeClass('open');
 			} else {
 				$('#sidemenus').css('display', 'none').removeClass('hidden-phone').slideDown(500);
-				$(this).find('.text').text('Hide Submenu');
-				$(this).find('i').removeClass('icon-arrow-down').addClass('icon-arrow-up');
+				$(this).find('.text').text('Hide Additional Information');
+				$(this).find('i').removeClass('icon-plus').addClass('icon-minus');
 				$(this).addClass('open');
 			}
 		});

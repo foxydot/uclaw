@@ -61,7 +61,7 @@
 				    <?php if (!empty($page['sidebar'])) { $has_sidebar = TRUE; ?>
 				    <div id="sidebar" class="span3">
 				    	<a href="#" class="visible-phone" id="mobile-submenus">
-				    		<i class="icon-arrow-down"></i><span class="text">View Submenu</span><i class="icon-arrow-down"></i>
+				    		<span class="text">Additional Information</span><i class="icon-plus"></i>
 				    	</a>
 				    	
 				    	<div class="hidden-phone" id="sidemenus">
@@ -77,7 +77,7 @@
 		</section>
 			
 
-<?php /*
+<?php /* Saved as a reference
   
   <div class="row-fluid">
 

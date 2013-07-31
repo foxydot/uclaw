@@ -8762,8 +8762,10 @@ h3.red {
   }
 }
 #mobile-submenus {
+  background: #B80000;
+  color: #FAFAFA;
   display: block;
-  padding: 5px 0;
+  padding: 10px 0;
   text-align: center;
   text-decoration: none;
 }
@@ -8772,6 +8774,7 @@ h3.red {
 }
 #mobile-submenus i {
   margin: 0 10px;
+  line-height: 16px;
 }
 /* Faculty */
 .faculty-social i {
@@ -8796,7 +8799,7 @@ h3.red {
   margin-left: -25px;
   margin-right: 5px;
 }
-.faculty .thumbnail {
+.view-content .thumbnail {
   display: block;
   padding: 4px;
   line-height: 20px;
@@ -8815,16 +8818,16 @@ h3.red {
   height: 230px;
   overflow: hidden;
 }
-.faculty a.thumb-wrap {
+.view-content a.thumb-wrap {
   display: inline;
   height: 120px;
   overflow: hidden;
 }
-.faculty a.thumb-wrap img {
+.view-content a.thumb-wrap img {
   max-height: 150px;
   max-width: 150px;
 }
-.faculty .thumbnail h3 {
+.view-content .thumbnail h3 {
   font-size: 16px;
   line-height: 19px;
   height: 40px;
@@ -8834,14 +8837,14 @@ h3.red {
   margin: 20px 0 0 0;
   padding: 0;
 }
-.faculty .thumbnail p.title {
+.view-content .thumbnail p.title {
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
   margin: 0px 0 0 0;
   padding: 0;
 }
-.faculty .thumbnail a {
+.view-content .thumbnail a {
   display: inline-block;
   color: #444;
 }
@@ -8925,4 +8928,10 @@ footer form label {
 }
 .modal.fade.in {
   top: 20%;
+}
+/* Responsive */
+@media (max-width: 767px) {
+  .footer {
+    padding: 0 20px;
+  }
 }
