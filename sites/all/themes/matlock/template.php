@@ -8,8 +8,8 @@
 
 function matlock_preprocess_page(&$vars, $hook) {
 	// Typekit Reference
-	drupal_add_js('//use.typekit.net/joq3zvd.js');
-	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
+	//drupal_add_js('//use.typekit.net/joq3zvd.js');
+	//drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	  
     if (isset($vars['node'])) {
         $node = $vars['node'];
@@ -186,6 +186,15 @@ function matlock_preprocess_search_result(&$vars) {
     $vars['search_keyword'] = arg(2);
  
 } // matlock_preprocess_search_result()
+
+/* Needed?
+function matlock_preprocess_calendar_datebox(&$vars) {
+  $date = $vars['date'];
+  $view = $vars['view'];
+  $day_path = calendar_granularity_path($view, 'day');
+  $vars['url'] = 'events/' . $date;
+  $vars['link'] = !empty($day_path) ? l($vars['day'], $vars['url']) : $vars['day'];
+}*/
 
 /**** UTILITY FUNCTIONS ****/
 
