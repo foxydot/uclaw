@@ -68,14 +68,10 @@ class UCLawArticleMigration extends UCLawNodeMigration {
 
     parent::__construct($arguments);
 
-    $this->addFieldMapping('field_image', 'field_lead_graphic')
-         ->sourceMigration('Image');
-    // Note that we map migrated terms by the vocabulary ID.
-    $this->addFieldMapping('field_countries', '1')
-         ->sourceMigration('Countries')
-         ->arguments(array('source_type' => 'tid'));
-    $this->addFieldMapping('field_topics', '2')
-         ->sourceMigration('Topics')
-         ->arguments(array('source_type' => 'tid'));
+    $this->addFieldMapping('field_speaker', 'field_speaker')->sourceMigration('Speaker');
+    $this->addFieldMapping('field_date_time', 'field_datetime')->sourceMigration('Date Time');
+    $this->addFieldMapping('field_date_time:value2', 'field_date_time:value2')->sourceMigration('value2');
+    $this->addFieldMapping('field_location', 'field_location')->sourceMigration('Location');
+    $this->addFieldMapping('field_series', 'field_series')->sourceMigration('Series');
   }
 }
