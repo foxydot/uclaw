@@ -1,19 +1,20 @@
 <?php
-
-	if ($teaser) { ?>
+	if ($teaser) {
+		
+		$link = url('node/' . $node->nid);
+	?>
 	
 		<div class="thumbnail">
-			<a class="thumb-wrap">
+			<a class="thumb-wrap" href="<?php echo $link; ?>">
 				<img src="//placehold.it/100x120">
 			</a>	
 			<h3>
-				<a href="#"><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></a>
+				<a href="<?php echo $link; ?>"><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></a>
 			</h3>
 			<p class="title"><?php echo $page_content['title']; ?></p>	
 		</div>
 	
-	<?php } else {
-?>
+	<?php } else { ?>
 
 <div class="row">
 
