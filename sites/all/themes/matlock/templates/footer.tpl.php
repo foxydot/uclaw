@@ -8,7 +8,8 @@
 						<ul>
 					        <li><a href="http://law.uc.edu/prospective-students/admissions/directions">Directions</a></li>
 							<li><a href="http://www.law.uc.edu/sites/default/files/WestCampus-July2006-clr.pdf" target="_blank">Maps</a></li>
-							<li><a href="http://law.uc.edu/alumni/support ">Giving</a></li>
+							<li><a href="http://law.uc.edu/alumni/support">Giving</a></li>
+							<li><a href="http://law.uc.edu/uc-law-directories">Directory</a></li>
 					    </ul>
 					</div>
 					<div class="span2 hidden-phone">
