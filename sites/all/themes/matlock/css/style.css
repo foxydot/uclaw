@@ -8677,6 +8677,27 @@ h3.red {
   line-height: 28px;
   font-weight: 300;
 }
+#main h2 {
+  font-size: 24px;
+  line-height: 28px;
+}
+#main h3 {
+  font-size: 22px;
+  line-height: 24px;
+}
+#main h4 {
+  font-size: 20px;
+  line-height: 22px;
+}
+#main h5 {
+  font-size: 18px;
+  line-height: 20px;
+}
+#main h6 {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+}
 #content #main img.pull-right {
   margin: 25px 0 25px 25px;
 }
