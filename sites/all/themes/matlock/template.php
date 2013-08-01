@@ -8,8 +8,8 @@
 
 function matlock_preprocess_page(&$vars, $hook) {
 	// Typekit Reference
-	//drupal_add_js('//use.typekit.net/joq3zvd.js');
-	//drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
+	drupal_add_js('//use.typekit.net/joq3zvd.js');
+	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	  
     if (isset($vars['node'])) {
         $node = $vars['node'];
