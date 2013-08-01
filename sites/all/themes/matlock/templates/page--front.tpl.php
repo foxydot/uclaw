@@ -103,7 +103,7 @@
 					
 					<section>
 							<a href="#" class="clearfix">
-								<span class="calendar pull-left">29 <span>Jan</span></span>
+								<span class="home-cal pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>
@@ -112,7 +112,7 @@
 					
 					<section>
 							<a href="#" class="clearfix">
-								<span class="calendar pull-left">29 <span>Jan</span></span>
+								<span class="home-cal pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>
@@ -121,7 +121,7 @@
 					
 					<section class="last">
 							<a href="#" class="clearfix">
-								<span class="calendar pull-left">29 <span>Jan</span></span>
+								<span class="home-cal pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>
