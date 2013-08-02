@@ -96,14 +96,14 @@
 		<div class="container">
 			<div class="row">
 			
-				<div class="span4 events">
+				<div class="span4 date-list">
 				
 					<!-- Events -->
 					<h3 class="red">Upcoming Events</h3>
 					
 					<section>
 							<a href="#" class="clearfix">
-								<span class="home-cal pull-left">29 <span>Jan</span></span>
+								<span class="cal-date pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>
@@ -112,7 +112,7 @@
 					
 					<section>
 							<a href="#" class="clearfix">
-								<span class="home-cal pull-left">29 <span>Jan</span></span>
+								<span class="cal-date pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>
@@ -121,7 +121,7 @@
 					
 					<section class="last">
 							<a href="#" class="clearfix">
-								<span class="home-cal pull-left">29 <span>Jan</span></span>
+								<span class="cal-date pull-left">29 <span>Jan</span></span>
 								<i class="icon-chevron-right pull-right"></i>
 								<h4>Marine Corps JAG Presentation</h4>
 								<p>Lt. Col. Paul Hackett</p>

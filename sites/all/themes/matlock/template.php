@@ -170,6 +170,27 @@ function preprocess_event($ret = object) {
 	return $ret->content;
 } // preprocess_event()
 
+function preprocess_news_home_page($ret = object) {
+	$node = $ret->node;
+	$lang = $node->language;
+
+	
+	$ret->content['title'] = $node->title;
+	
+	return $ret->content;
+} // preprocess_event()
+
+function preprocess_news_item($ret = object) {
+	$node = $ret->node;
+	$lang = $node->language;
+	
+	$ret->content['date'] = $node->created;
+	$ret->content['title'] = $node->title;
+	$ret->content['body'] = get_text_value($node->body,	$lang);
+	
+	return $ret->content;
+} // preprocess_event()
+
 
 function matlock_preprocess_search_result(&$vars) {
 	//print_r($vars);
@@ -178,7 +199,8 @@ function matlock_preprocess_search_result(&$vars) {
     //print_r($vars);
       //getting default node search result
     $node = $vars['result']['node'];
-     if ($node->nid){
+     
+     /*if ($node->nid) {
         switch ($node->type){
             case 'audio':  
                 //get audio node info          
@@ -191,7 +213,7 @@ function matlock_preprocess_search_result(&$vars) {
                     );
                 break; 
               }
-        }
+        }*/
 
 		$vars['info'] = date('n/d/Y', $vars['result']['date']);
        

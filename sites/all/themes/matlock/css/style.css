@@ -8584,51 +8584,54 @@ body {
 h3.red {
   color: #91392E;
 }
-.events section {
+.date-list section {
   padding: 10px 0;
   border-top: 1px dotted #dedede;
 }
-.events section:hover {
+.date-list section:hover {
   background: #FAFAFA;
 }
-.events section.last {
+.date-list section.last {
   border-bottom: 1px dotted #dedede;
   margin-bottom: 22px;
 }
-.events section a:hover {
+.date-list section a:hover {
   text-decoration: none;
   background: #efefef;
 }
-.events section a p {
+.date-list section a p {
   color: #444;
 }
-.events section .home-cal {
+.date-list section .cal-date {
   color: #91392E;
   font-weight: 500;
   text-align: center;
   font-size: 32px;
   padding: 10px 20px 10px 0;
 }
-.events section .home-cal span {
+.date-list section .cal-date span {
   font-size: 16px;
   line-height: 18px;
   text-transform: lowercase;
   display: block;
 }
-.events section i {
+.date-list section i {
   margin: 15px 0 0 0;
 }
-.events section h4 {
+.date-list section h4 {
   margin: 8px 0 0 0;
   line-height: 18px;
   font-weight: 400;
   font-size: 16px;
 }
-.events section h4,
-.events section h4 a {
+.date-list section h4,
+.date-list section h4 a {
   color: #91392E;
+  font-size: 18px !important;
+  font-weight: 300;
+  width: 270px;
 }
-.events section p {
+.date-list section p {
   font-size: 12px;
   margin-bottom: 0;
 }
@@ -8672,6 +8675,10 @@ h3.red {
   line-height: 14px;
   font-weight: 300;
 }
+.news-list a {
+  display: block;
+  margin-bottom: 22px;
+}
 .event-list {
   list-style: none outside none;
   margin: 0;
@@ -8695,6 +8702,10 @@ h3.red {
   font-size: 16px;
   line-height: 28px;
   font-weight: 300;
+}
+#content #main [class^="icon-"],
+#content #main [class*=" icon-"] {
+  line-height: 21px;
 }
 #main h2 {
   font-size: 24px;
@@ -8898,6 +8909,12 @@ h3.red {
   padding-top: 30px;
 }
 /* Responsive */
+@media (min-width: 1200px) {
+  .date-list section h4,
+  .date-list section h4 a {
+    width: 340px;
+  }
+}
 @media (min-width: 980px) and (max-width: 1199px) {
   .event-list li {
     width: 29%;
@@ -8910,6 +8927,12 @@ h3.red {
     width: auto;
   }
 }
+@media (min-width: 768px) and (max-width: 979px) {
+  .date-list section h4,
+  .date-list section h4 a {
+    width: 190px;
+  }
+}
 @media (max-width: 767px) {
   body {
     padding-left: 0;
@@ -8918,6 +8941,10 @@ h3.red {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .date-list section h4,
+  .date-list section h4 a {
+    width: auto;
   }
 }
 /* Footer */
