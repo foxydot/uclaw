@@ -174,7 +174,6 @@ function preprocess_news_home_page($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 
-	echo 'testingtestingtesting';
 	$ret->content['title'] = $node->title;
 	
 	return $ret->content;
