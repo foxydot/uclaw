@@ -3,21 +3,45 @@
 	if ($teaser)
 	{
 		$link = url('node/' . $node->nid);
-	?>
 	
-	<h3><?php echo $page_content['title']; ?></h3>
-	<p>
-		<strong><?php echo date('F j, Y h:ia', $page_content['date']); ?></strong>
+	
+		if ($node->view->current_display == 'home_events_block')
+		{ ?>
+		
+			<section>
+				<a href="<?php echo $link; ?>" class="clearfix">
+					<span class="cal-date pull-left"><?php echo date('j', $page_content['date']); ?> <span><?php echo date('M', $page_content['date']); ?></span></span>
+					<i class="icon-chevron-right pull-right"></i>
+					<h4><?php echo $page_content['title']; ?></h4>
+					
+					<?php if (!empty($page_content['speaker'])) { ?>
+					<p><?php echo $page_content['speaker']; ?></p>
+					<?php } ?>
+				</a>		
+			</section>
 		<?php
-			if ($page_content['location'])
-			{
-				echo '<br>', $page_content['location'];
-			}		
+		
+		}
+		else
+		{
 		?>
-	</p>
-	<a href="<?php echo $link; ?>" class="pull-right"><strong>View More</strong> <i class="icon-double-angle-right"></i></a>
+		
+		<h3><?php echo $page_content['title']; ?></h3>
+		<p>
+			<strong><?php echo date('F j, Y h:ia', $page_content['date']); ?></strong>
+			<?php
+				if ($page_content['location'])
+				{
+					echo '<br>', $page_content['location'];
+				}		
+			?>
+		</p>
+		<a href="<?php echo $link; ?>" class="pull-right"><strong>View More</strong> <i class="icon-double-angle-right"></i></a>
+		
+<?php
+		} // not home_events_block
 	
-<?php } else { ?>
+	} else { ?>
 
 		<div class="row">
 			<div class="span12">

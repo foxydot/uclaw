@@ -95,40 +95,17 @@
 		
 		<div class="container">
 			<div class="row">
-			
+
 				<div class="span4 date-list">
 				
 					<!-- Events -->
 					<h3 class="red">Upcoming Events</h3>
 					
-					<section>
-							<a href="#" class="clearfix">
-								<span class="cal-date pull-left">29 <span>Jan</span></span>
-								<i class="icon-chevron-right pull-right"></i>
-								<h4>Marine Corps JAG Presentation</h4>
-								<p>Lt. Col. Paul Hackett</p>
-							</a>		
-					</section>
+						<?php 
+							echo views_embed_view('events', 'home_events_block');
+						?>
 					
-					<section>
-							<a href="#" class="clearfix">
-								<span class="cal-date pull-left">29 <span>Jan</span></span>
-								<i class="icon-chevron-right pull-right"></i>
-								<h4>Marine Corps JAG Presentation</h4>
-								<p>Lt. Col. Paul Hackett</p>
-							</a>		
-					</section>
-					
-					<section class="last">
-							<a href="#" class="clearfix">
-								<span class="cal-date pull-left">29 <span>Jan</span></span>
-								<i class="icon-chevron-right pull-right"></i>
-								<h4>Marine Corps JAG Presentation</h4>
-								<p>Lt. Col. Paul Hackett</p>
-							</a>		
-					</section>
-					
-					<a href="http://law.uc.edu/events" class="pull-right"><strong>More Events</strong> <i class="icon-double-angle-right"></i></a>
+					<a href="/events/" class="pull-right"><strong>More Events</strong> <i class="icon-double-angle-right"></i></a>
 
 				</div>
 				

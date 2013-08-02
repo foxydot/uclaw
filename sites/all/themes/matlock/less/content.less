@@ -266,6 +266,40 @@ h3.red {
 	}
 }
 
+
+/* Events / Calendar */
+
+.calendar-calendar .item {
+    border: 1px solid #E8E8E8;
+    display: block;
+    margin-bottom: 8px !important;
+    text-align: left;
+}
+
+.calendar-calendar .item a {
+    background: none repeat scroll 0 0 #FBFBFB !important;
+    font-size: 12px;
+    cursor: pointer;
+    display: block;
+    line-height: normal;
+    padding: 4px 8px !important;
+    text-align: left;
+}
+
+.calendar-calendar .item a:hover {
+    background: none repeat scroll 0 0 #EBEBEB !important;
+}
+
+.calendar-calendar .month-view .full tr td.single-day.today,
+.calendar-calendar .month-view .full tr td.today,
+.calendar-calendar .month-view .full tr.odd td.today,
+.calendar-calendar .month-view .full tr.even td.today
+
+{
+	border-color: @uclawred !important;
+}
+
+
 /* Content */
 
 #content #main {

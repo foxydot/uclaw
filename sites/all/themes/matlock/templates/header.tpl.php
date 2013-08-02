@@ -82,7 +82,7 @@
 	<script>
 		(function($) {
 			$(document).ready(function() {
-				$('#main-menu-toggle').sidr({'source': '#newnav', 'side': 'right'});
+				$('#main-menu-toggle').sidr({'source': '#newnav, #secondary-nav', 'side': 'right'});
 			});
 		})(jQuery);
 	</script>
