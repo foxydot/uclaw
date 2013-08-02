@@ -155,6 +155,21 @@ function preprocess_faculty_member($ret = object) {
 	return $ret->content;
 } // preprocess_faculty_member()
 
+function preprocess_event($ret = object) {
+	$node = $ret->node;
+	$lang = $node->language;
+
+	//print_r($node);
+	
+	$ret->content['title'] = $node->title;
+	$ret->content['date'] = get_text_value($node->field_date_time,				$lang);
+	$ret->content['location'] = get_text_value($node->field_location,			$lang);
+	$ret->content['description'] = get_text_value($node->body,					$lang);
+	$ret->content['speaker'] = get_text_value($node->field_speaker,				$lang);
+	
+	return $ret->content;
+} // preprocess_event()
+
 
 function matlock_preprocess_search_result(&$vars) {
 	//print_r($vars);
