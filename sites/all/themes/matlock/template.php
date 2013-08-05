@@ -164,14 +164,14 @@ function preprocess_event($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 
-	//print_r($node);
+	//ts_data($node);
 	
 	$ret->content['title'] = $node->title;
-	$ret->content['date'] = get_text_value($node->field_date_time,				$lang);
+	$ret->content['date'] = get_text_value($node->field_datetime,				$lang);
 	$ret->content['location'] = get_text_value($node->field_location,			$lang);
 	$ret->content['description'] = get_text_value($node->body,					$lang);
 	$ret->content['speaker'] = get_text_value($node->field_speaker,				$lang);
-	
+
 	return $ret->content;
 } // preprocess_event()
 
