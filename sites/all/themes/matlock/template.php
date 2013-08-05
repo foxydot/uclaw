@@ -18,8 +18,7 @@ function matlock_preprocess_page(&$vars, $hook) {
     }
     
     if (!empty($node)) {
-    	$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $vars['node']->type);
-    	
+    	$vars['theme_hook_suggestions'][] = 'page--'. str_replace('_', '--', $vars['node']->type);
     	if ($node->type != 'home_page') {
     		return;
     	}
@@ -86,16 +85,15 @@ function preprocess_news_home_page($ret = object){
 function preprocess_homepage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
-	
+
 	// Banners
 	$ret->content['banners'] = array();
-	for ($i = 1; (!empty($node->{'field_feature_image' . blank_first($i)})); $i++) {
-		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_image' . blank_first($i)},			$lang);
+	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
+		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
 		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)},		$lang);
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)},					$lang);
 	}
-	
 	// Featured Stories
 	$ret->content['features'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_' . $i . '_title'})); $i++) {
@@ -114,7 +112,7 @@ function preprocess_landingpage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
-	//print_r($node);
+	ts_data($node);
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
 		ts_data($node->{'field_feature_img' . blank_first($i)});
