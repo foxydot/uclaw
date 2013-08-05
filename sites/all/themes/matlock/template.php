@@ -18,14 +18,12 @@ function matlock_preprocess_page(&$vars, $hook) {
     }
     
     if (!empty($node)) {
-    
     	$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $vars['node']->type);
     	
     	if ($node->type != 'home_page') {
     		return;
     	}
 		$pre_function = 'preprocess_' . $node->type;
-		
 		$ret = new stdClass;
 			$ret->node = $node;
 			$ret->vars = $vars;
@@ -55,7 +53,6 @@ function matlock_preprocess_node(&$vars, $hook) {
     
     if (!empty($node)) {
 		$pre_function = 'preprocess_' . $node->type;
-		
 		$ret = new stdClass;
 			$ret->node = $node;
 			$ret->vars = $vars;
@@ -74,8 +71,19 @@ function preprocess_page($ret = object) {
 	return preprocess_landing_page($ret);
 } // preprocess_page()
 
+function preprocess_home_page($ret = object){
+	return preprocess_homepage($ret);
+}
 
-function preprocess_home_page($ret = object) {
+function preprocess_landing_page($ret = object){
+	return preprocess_landingpage($ret);
+}
+
+function preprocess_news_home_page($ret = object){
+	return preprocess_newshomepage($ret);
+}
+
+function preprocess_homepage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
@@ -102,13 +110,14 @@ function preprocess_home_page($ret = object) {
 	
 } // preprocess_home_page()
 
-function preprocess_landing_page($ret = object) {
+function preprocess_landingpage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
 	//print_r($node);
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
+		ts_data($node->{'field_feature_img' . blank_first($i)});
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
 		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)},		$lang);
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
@@ -170,7 +179,7 @@ function preprocess_event($ret = object) {
 	return $ret->content;
 } // preprocess_event()
 
-function preprocess_news_home_page($ret = object) {
+function preprocess_newshomepage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 
@@ -307,3 +316,24 @@ function matlock_breadcrumb($bcs) {
 	}
 
 } // matlock_breadcrumb()
+
+
+/*
+ * A useful troubleshooting function. Displays arrays in an easy to follow format in a textarea.
+*/
+if ( ! function_exists( 'ts_data' ) ) :
+function ts_data($data){
+	$ret = '<textarea class="troubleshoot" cols="100" rows="20">';
+	$ret .= print_r($data,true);
+	$ret .= '</textarea>';
+	print $ret;
+}
+endif;
+/*
+ * A useful troubleshooting function. Dumps variable info in an easy to follow format in a textarea.
+*/
+if ( ! function_exists( 'ts_var' ) && function_exists( 'ts_data' ) ) :
+function ts_var($var){
+	ts_data(var_export( $var , true ));
+}
+endif;
