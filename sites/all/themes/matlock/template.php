@@ -112,10 +112,8 @@ function preprocess_landingpage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
-	ts_data($node);
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
-		ts_data($node->{'field_feature_img' . blank_first($i)});
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
 		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)},		$lang);
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
