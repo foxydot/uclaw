@@ -102,7 +102,7 @@
 					<h3 class="red">Upcoming Events</h3>
 					
 						<?php 
-							echo views_embed_view('events', 'home_events_block');
+							echo views_embed_view('Events', 'block');
 						?>
 					
 					<a href="/events/" class="pull-right"><strong>More Events</strong> <i class="icon-double-angle-right"></i></a>

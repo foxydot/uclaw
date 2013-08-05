@@ -28,7 +28,7 @@
 		
 		<h3><?php echo $page_content['title']; ?></h3>
 		<p>
-			<strong><?php echo date('F j, Y h:ia', $page_content['date']); ?></strong>
+			<strong><?php echo date('F j, Y h:ia', strtotime($page_content['date'])); ?></strong>
 			<?php
 				if ($page_content['location'])
 				{
@@ -52,7 +52,7 @@
 		<div class="row">
 			<div class="span6">
 				<p>
-					<strong><?php echo date('F j, Y h:ia', $page_content['date']); ?></strong>
+					<strong><?php echo date('F j, Y h:ia', strtotime($page_content['date'])); ?></strong>
 				<?php if ($page_content['location']) { ?><br><?php echo $page_content['location']; } ?>
 				</p>
 			</div>

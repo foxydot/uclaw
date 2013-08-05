@@ -5,7 +5,7 @@
 	<?php
 	// Upcoming Events
 		$args = array();
-		$view = views_get_view('events');
+		$view = views_get_view('Events');
 			$view->set_items_per_page(3);
 		echo $view->preview('block', $args);
 		
@@ -32,7 +32,7 @@
 		<div class="span4 news-list<?php /* date-list*/ ?>">
 			<h2><?php print $section['title']; ?></h2>
 				<?php 
-					echo views_embed_view('news', 'block', $section['slug']);
+					echo views_embed_view('News', 'block', $section['slug']);
 				?>
 				<a href="/news/<?php echo $section['slug']; ?>" class="pull-right"><strong>View More</strong> <i class="icon-double-angle-right"></i></a>
 		</div>
