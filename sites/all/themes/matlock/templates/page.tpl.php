@@ -1,3 +1,10 @@
+
+<?php
+	if ($node->type == 'homepage') {
+		print render($page['content']);
+		return;
+	}
+?>	
 		<!-- Content -->
 		<section id="content">
 			<div class="container">
