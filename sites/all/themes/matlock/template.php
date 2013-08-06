@@ -7,10 +7,11 @@
 /**** Preprocessing ****/
 
 function matlock_preprocess_page(&$vars, $hook) {
-	return;
 	// Typekit Reference
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
+	
+	return;
 	  
     if (isset($vars['node'])) {
         $node = $vars['node'];
@@ -41,9 +42,6 @@ function matlock_preprocess_page(&$vars, $hook) {
 } // matlock_preprocess()
 
 function matlock_preprocess_node(&$vars, $hook) {
-	// Typekit Reference
-	drupal_add_js('//use.typekit.net/joq3zvd.js');
-	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	  
     if (isset($vars['node'])) {
         $node = $vars['node'];

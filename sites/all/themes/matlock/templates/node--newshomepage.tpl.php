@@ -9,7 +9,7 @@
 			$view->set_items_per_page(3);
 		echo $view->preview('block', $args);
 		
-		//print_r($ret);
+		//print_r($ret); 
 	?>
 		
 			<div class="clearfix"></div>
@@ -30,7 +30,7 @@
 	{
 		?>
 		<div class="span4 news-list<?php /* date-list*/ ?>">
-			<h2><?php print $section['title']; ?></h2>
+			<h2><?php print $section['title']; ?>s</h2>
 				<?php 
 					echo views_embed_view('News', 'block', $section['slug']);
 				?>

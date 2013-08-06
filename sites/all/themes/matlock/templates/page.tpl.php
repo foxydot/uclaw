@@ -9,7 +9,7 @@
 		<section id="content">
 			<div class="container">
 				
-				<?php if (!empty($breadcrumb)) { ?>
+				<?php /*if (!empty($breadcrumb)) { ?>
 					<div class="row hidden-phone hidden-tablet">
 						<div class="span12">
 							<ul class="breadcrumb">
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 
-					<?php } // !empty $breadcrumb ?>
+					<?php } // !empty $breadcrumb */?>
 				
 				
 				<?php if (!empty($page['highlighted'])) { ?>
@@ -79,9 +79,11 @@
 
 					<div id="main" class="<?php if (!empty($page['sidebar'])) { ?>span9<?php } else { ?>span12<?php } ?>">
 						<?php print render($page['content']); ?>
-					</div>
-				</div>
-		</section>
+					</div> <!-- /#main -->
+				</div> <!-- / .row -->
+					
+			</div> <!-- / .container -->
+		</section> <!-- /#content -->
 			
 
 <?php /* Saved as a reference
@@ -118,8 +120,3 @@
       <?php print render($page['content']); ?>
     </section>
 */ ?>
-
-  </div>
-</div>
-
-

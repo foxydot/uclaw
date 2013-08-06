@@ -10,7 +10,7 @@
 		
 			<section>
 				<a href="<?php echo $link; ?>" class="clearfix">
-					<span class="cal-date pull-left"><?php echo date('j', $page_content['date']); ?> <span><?php echo date('M', $page_content['date']); ?></span></span>
+					<span class="cal-date pull-left"><?php echo date('j', strtotime($page_content['date'])); ?> <span><?php echo date('M', $page_content['date']); ?></span></span>
 					<i class="icon-chevron-right pull-right"></i>
 					<h4><?php echo $page_content['title']; ?></h4>
 					
