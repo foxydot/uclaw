@@ -8723,6 +8723,10 @@ h3.red {
   border-color: #b80000 !important;
 }
 /* Content */
+#content {
+  padding-top: 10px;
+}
+/* Until breadcrumbs are back */
 #content #main {
   font-size: 16px;
   line-height: 28px;
@@ -8803,6 +8807,11 @@ h3.red {
 }
 #content #sidebar .block-menu > ul.menu li ul li a {
   padding: 0 10px;
+}
+#content #sidebar .nolink {
+  font-size: 20px;
+  font-weight: 100;
+  margin-left: 10px;
 }
 #content #sidebar .click-area {
   cursor: pointer;

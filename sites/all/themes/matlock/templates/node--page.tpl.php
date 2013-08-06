@@ -14,7 +14,7 @@
 				</ol>
 				
 				<!-- Carousel items -->
-				<div class="carousel-inner img-polaroid">
+				<div class="carousel-inner">
 				
 				<?php
 					$i = 0;
@@ -23,7 +23,7 @@
 					?>
 					
 					<div class="<?php echo (($i == 0) ? 'active ' : NULL); ?>item">
-					<img src="<?php echo $banner['image']; ?>">
+					<img src="<?php echo $banner['image']; ?>" class="img-polaroid">
 					<?php if ( (!empty($banner['title'])) || (!empty($banner['caption']))) { ?>
 						<div class="carousel-caption">
 							<?php if (!empty($banner['title'])) { ?><h4><?php echo $banner['title']; ?></h4><?php } ?>
