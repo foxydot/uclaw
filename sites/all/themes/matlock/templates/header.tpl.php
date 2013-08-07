@@ -30,7 +30,7 @@
 							<ul class="inline quicklinks">
 								<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall"><i class="icon-file"></i> Apply Now</a></li>
 								<li><a href="http://www.law.uc.edu/prospective-students/admissions/visit-college-law "><i class="icon-calendar"></i> Schedule A Visit</a></li>
-								<li><a href="http://www.cincinnatiusa.com/about"><i class="icon-map-marker"></i> Explore Cincinnati</a></li>
+								<li><a href="http://www.cincinnatiusa.com/about" target="_blank"><i class="icon-map-marker"></i> Explore Cincinnati</a></li>
 							</ul>	
 						</div>
 					</div>
@@ -117,7 +117,7 @@
 			</section><!--
 			--><section>
 				<ul>
-					<li><a href="/prospective-students/admissions">JD Admissions</a></li>
+					<li><a href="/jd-admissions">JD Admissions</a></li>
 					<li><a href="/institutes-centers/llm/application">LLM Admissions</a></li>
 					<li><a href="/admissions-certificate-programs">Certificate Admissions</a></li>
 					<li><a href="/prospective-students/admissions/transfer-and-visiting-students">Transfer/Visiting Students</a></li>
@@ -155,7 +155,7 @@
 					<li><a href="/fellowships">Fellowships</a></li>
 					<li><a href="/current-students/practical-experiences/american-inn-court">American Inn of Court</a></li>
 					<li><a href="/sites/default/files/writingcompetition_0.xls">Writing Competitions</a></li>
-					<li><a href="/current-students/student-organizations">Student Organizations</a></li>
+					<li><a href="/current-students/student-orgs">Student Organizations</a></li>
 					<li><a href="/current-students/practical-experiences/volunteer-opportunities">Pro Bono/Volunteer</a></li>
 				</ul>
 			</section><!--

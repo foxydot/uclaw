@@ -8,9 +8,12 @@
 				<ol class="carousel-indicators">
 					<?php
 						$count = count($page_content['banners']);
-						for ($i=0; $i<$count; $i++) { ?>
-							<li data-target="#landingCarousel" data-slide-to="<?php echo $i; ?>"<?php echo (($i == 0) ? ' class="active"' : NULL); ?>></li>
-					<?php } ?>
+						if ($count > 1) {
+							for ($i=0; $i<$count; $i++) { ?>
+								<li data-target="#landingCarousel" data-slide-to="<?php echo $i; ?>"<?php echo (($i == 0) ? ' class="active"' : NULL); ?>></li>
+						<?php }
+						}
+						?>
 				</ol>
 				
 				<!-- Carousel items -->
@@ -38,6 +41,34 @@
 				</div> <!-- /.carousel-inner -->
 			
 			</div> <!-- /.carousel.slide -->
+			
+			<script>
+				// Resize captions to not overflow on image
+				(function($) {
+					$(window).load(function() {
+						$('#landingCarousel .item').each(function() {
+							var imgwidth = $(this).find('img').outerWidth();
+							var caption = $(this).find('.carousel-caption');
+							var less_padding = parseInt(caption.css('padding-left')) + parseInt(caption.css('padding-right'));
+							$(this).find('.carousel-caption').css('width', (imgwidth - less_padding));
+						});
+					});
+				})(jQuery);			
+			</script>
+			
+		<?php }
+		
+		if (count($page_content['banners']) > 1) { ?>
+		
+		<script>
+			// Start Carousel
+			(function($) {
+				$(document).ready(function() {
+					$('#landingCarousel').carousel();
+				});	
+			})(jQuery);
+		</script>
+		
 		<?php }
 		
 				echo '<h1>', drupal_get_title(), '</h1>';

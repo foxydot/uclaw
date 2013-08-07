@@ -15,7 +15,6 @@
 					<div class="span2 hidden-phone">
 						<h5>Get Started</h5>
 						<ul>
-								<li><a href="#welcomevideo" class="button" data-toggle="modal">Welcome Message</a></li>
 								<li><a href="http://www.cincinnatiusa.com/about/ ">Explore Cincinnati</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/visit-college-law ">Schedule A Visit</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall">Apply Now</a></li>
@@ -28,7 +27,7 @@
 							<li><a class="ss-twitter" href="https://twitter.com/CincyLawCPD"></a></li>
 							<li><a class="ss-youtube" href="http://www.youtube.com/user/UCincinnatiLaw"></a></li>
 							<li><a class="ss-linkedin" href="http://www.linkedin.com/groups/University-Cincinnati-College-Law-Students-1033937?goback=%2Egdr_1247502868379_1%2Egna_1033937"></a></li>
-							<li><a class="ss-rss" href="#"></a></li>
+							<li><a class="ss-rss" href="/news/feed"></a></li>
 			    		</ul>
 					</div>
 					<div class="span3">

@@ -6,6 +6,12 @@ body { padding-top: 0 !important; }
 	margin-bottom: 0;
 }
 
+#landingCarousel .carousel-indicators {
+	left: 15px;
+	right: auto;
+}
+
+
 .carousel .container {
   	position: relative;
   	z-index: 10;
@@ -25,11 +31,12 @@ body { padding-top: 0 !important; }
 }
 
 #home-carousel.carousel .carousel-caption {
-	background: none;
-	top: 250px;
-  	position: absolute;
-  	left: 430px;
-  	width: 578px
+    background: none;
+    left: auto;
+    position: absolute;
+    right: 30px;
+    top: 250px;
+    width: 578px;
 }
 
 #home-carousel.carousel .carousel-caption h1 {
@@ -302,13 +309,41 @@ h3.red {
 
 /* Content */
 
+.well {
+	padding: 5px 10px;
+}
+
 #content { padding-top: 10px; } /* Until breadcrumbs are back */
 
+#content .container {
+	position: relative;
+}
 
 #content #main {
 	font-size: 16px;
 	line-height: 28px;
 	font-weight: 300;
+}
+
+
+
+#content #main .table td,
+#content #main .table th
+{
+	border-top: 0;
+}
+
+#main .nav-tabs.nav-stacked a {
+	font-size: 14px;
+}
+
+#main h3, #main h4, #main h5, #main h6 {
+	font-weight: 400;
+}
+
+#content #main .small {
+	font-size: 14px;
+	line-height: 22px;
 }
 
 #content #main [class^="icon-"],
@@ -343,6 +378,11 @@ h3.red {
 }
 
 
+#cs-links {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
 
 
 #content #main img.pull-right {
@@ -384,9 +424,20 @@ h3.red {
 	margin: 0 0 25px 0;
 }
 
+#content #sidebar .block,
 #content #sidebar .block-menu > ul.menu li {
 	list-style: none;
 }
+
+
+#content #sidebar .block-menu > ul.menu li .menu {
+	display: none;
+}
+
+#content #sidebar .block-menu > ul.menu li.current .menu {
+	display: block;
+}
+
 
 #content #sidebar .block-menu > ul.menu li a {
 	padding: 10px;
@@ -519,7 +570,7 @@ h3.red {
 .view-faculty-members .thumbnail h3 {
 	font-size: 16px;
 	line-height: 19px;
-	height: 40px;
+	height: 60px;
 	overflow: hidden;
 	text-transform:none;
 	font-weight: 500;
@@ -563,7 +614,7 @@ h3.red {
 	.event-list li {
 		width: 29%;
 	}
-
+	
 }
 
 @media (max-width: 979px) {

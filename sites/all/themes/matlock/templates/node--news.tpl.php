@@ -15,7 +15,8 @@
 			</a>		
 		</section>
 	*/
-	?>
+	?>	
+
 		<a href="<?php echo $link; ?>"><?php echo $page_content['title']; ?></a>		
 	
 <?php } else { ?>

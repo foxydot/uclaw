@@ -5,9 +5,13 @@
 	?>
 	
 		<div class="thumbnail">
+			
+			<?php if (!empty($page_content['headshot'])) { ?>
 			<a class="thumb-wrap" href="<?php echo $link; ?>">
-				<img src="//placehold.it/100x120">
-			</a>	
+				<img src="<?php echo $page_content['headshot']; ?>" alt="<?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
+			</a>
+			<?php } ?>
+			
 			<h3>
 				<a href="<?php echo $link; ?>"><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></a>
 			</h3>
@@ -19,7 +23,9 @@
 <div class="row">
 
 	<div class="span3">
-		<img src="http://placehold.it/240x365" class="img-polaroid" alt="Name">
+		<?php if (!empty($page_content['headshot'])) { ?>
+			<img src="<?php echo $page_content['headshot']; ?>" class="img-polaroid" alt="<?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
+		<?php } ?>
 	</div> <!-- /.span3 -->
 	
 	<div class="span9">

@@ -69,22 +69,28 @@ function preprocess_page($ret = object) {
 	return preprocess_landing_page($ret);
 } // preprocess_page()
 
-function preprocess_home_page($ret = object){
+function preprocess_home_page($ret = object) {
 	return preprocess_homepage($ret);
 }
 
-function preprocess_landing_page($ret = object){
+function preprocess_landing_page($ret = object) {
 	return preprocess_landingpage($ret);
 }
 
-function preprocess_news_home_page($ret = object){
+function preprocess_news_home_page($ret = object) {
 	return preprocess_newshomepage($ret);
+}
+
+function preprocess_news($ret = object) {
+	return preprocess_news_item($ret);
 }
 
 function preprocess_homepage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 
+	//print_r($node);
+	
 	// Banners
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
@@ -93,6 +99,7 @@ function preprocess_homepage($ret = object) {
 		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
 		$ret->content['banners'][$i]['link'] = get_url($node->{'field_feature_link' . blank_first($i)},					$lang);
 	}
+	
 	// Featured Stories
 	$ret->content['features'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_' . $i . '_title'})); $i++) {
@@ -103,11 +110,23 @@ function preprocess_homepage($ret = object) {
 		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'},					$lang);
 	}
 	
+	// Grey Bar features
+	$ret->content['grey_features'] = array();
+	for ($i = 1; (!empty($node->{'field_grey_bar_feature_' . $i . '_title'})); $i++) {
+		$ret->content['grey_features'][$i]['title'] = get_text_value($node->{'field_grey_bar_feature_' . $i . '_title'},			$lang);
+		$ret->content['grey_features'][$i]['subhead'] = get_text_value($node->{'field_grey_bar_feature_' . $i . '_subhead'},		$lang);
+		$ret->content['grey_features'][$i]['image'] = get_image_url($node->{'field_feature_' . $i . '_image'},						$lang);
+		$ret->content['grey_features'][$i]['text'] = get_text_value($node->{'field_grey_bar_feature_' . $i . '_text'},				$lang);
+		$ret->content['grey_features'][$i]['link'] = get_url($node->{'field_grey_bar_feature_' . $i . '_link'},						$lang);
+	}
+	
+	
 	return $ret->content;
 	
 } // preprocess_home_page()
 
 function preprocess_landingpage($ret = object) {
+
 	$node = $ret->node;
 	$lang = $node->language;
 	
@@ -129,6 +148,12 @@ function preprocess_landingpage($ret = object) {
 		$ret->content['features'][$i]['link'] = get_url($node->{'field_feature_' . $i . '_link'},					$lang);
 	}
 	
+	// Pull from other fields because some things weren't put in the right place
+	for ($i = 2; (!empty($node->{'field_feature_img_' . $i})); $i++) {
+		$ret->content['features'][]['image'] = get_image_url($node->{'field_feature_img_' . $i},					$lang);
+	}
+	
+	//print_r($node);
 	$ret->content['body'] = get_text_value($node->body);
 	
 	return $ret->content;
@@ -155,7 +180,11 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['news'] = get_text_value($node->field_news,					$lang);
 	$ret->content['awards'] = explode("\n", get_text_value($node->field_awards,	$lang));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
-	
+	$headshot = get_image_url($node->field_headshot,							$lang);
+		if (!empty($headshot)) {
+			$ret->content['headshot'] = substr($headshot, 0, strrpos($headshot, '/')) . '/images' . substr($headshot, strrpos($headshot, '/'));
+		}
+
 	return $ret->content;
 } // preprocess_faculty_member()
 
@@ -177,6 +206,17 @@ function preprocess_event($ret = object) {
 function preprocess_newshomepage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
+
+
+	// Banners
+	$ret->content['banners'] = array();
+	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
+		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
+		$ret->content['banners'][$i]['title'] = get_text_value($node->{'field_feature_title' . blank_first($i)},		$lang);
+		$ret->content['banners'][$i]['caption'] = get_text_value($node->{'field_feature_caption' . blank_first($i)},	$lang);
+		$ret->content['banners'][$i]['link'] = get_url($node->{'field_link_feature_' . blank_first($i)},					$lang);
+	}
+
 
 	$ret->content['title'] = $node->title;
 	
@@ -202,22 +242,6 @@ function matlock_preprocess_search_result(&$vars) {
     //print_r($vars);
       //getting default node search result
     $node = $vars['result']['node'];
-     
-     /*if ($node->nid) {
-        switch ($node->type){
-            case 'audio':  
-                //get audio node info          
-                $content[] = array(
-                    'nid'				=> $node->nid,
-                    'type'				=> $node->type,
-                    'title' 			=> $node->title,
-                     'thumbnail_url' 	=> $node->user_audio[0]['thumb_url'],
-                    'type_img'			=> base_path() . drupal_get_path('module', 'front_page_content') . '/images/sound.png',
-                    );
-                break; 
-              }
-        }*/
-
 		$vars['info'] = date('n/d/Y', $vars['result']['date']);
        
        //creating new variable and assign the value to it
@@ -227,14 +251,6 @@ function matlock_preprocess_search_result(&$vars) {
  
 } // matlock_preprocess_search_result()
 
-/* Needed?
-function matlock_preprocess_calendar_datebox(&$vars) {
-  $date = $vars['date'];
-  $view = $vars['view'];
-  $day_path = calendar_granularity_path($view, 'day');
-  $vars['url'] = 'events/' . $date;
-  $vars['link'] = !empty($day_path) ? l($vars['day'], $vars['url']) : $vars['day'];
-}*/
 
 /**** UTILITY FUNCTIONS ****/
 
@@ -289,11 +305,23 @@ function get_array_values($item = array(), $lang = 'und') {
 function matlock_menu_link(array $variables) {
 	$element = $variables['element'];
 	$sub_menu = '';
-	//print_r($element);
 	if ($element['#below']) {
 		$sub_menu = drupal_render($element['#below']);
 	}
-	$output = l((($element['#original_link']['depth'] == 1) ? '<i class="icon-double-angle-right"></i> ' : NULL) . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
+	
+	if ($_SERVER['REQUEST_URI'] == parse_url($element['#original_link']['link_path'], PHP_URL_PATH)) {
+		$element['#attributes']['class'][] = 'current';
+	} else {
+		foreach($element['#below'] as $child) {
+			if ($_SERVER['REQUEST_URI'] == parse_url($child['#original_link']['link_path'], PHP_URL_PATH)) {
+				$element['#attributes']['class'][] = 'current';
+				break;
+			}
+		}
+	
+	}
+	
+	$output = l(((($element['#original_link']['depth'] == 1) && ($element['#href'] != '<nolink>')) ? '<i class="icon-double-angle-right"></i> ' : NULL) . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 } // matlock_menu_link()
 

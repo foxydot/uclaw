@@ -45,19 +45,17 @@
 		    
 		        <?php $i = 0; foreach($page_content['banners'] as $banner) { ?>
 				 <div class="item<?php echo (($i == 0) ? ' active' : NULL); ?>" style="background: url('<?php echo $banner['image']; ?>') center top no-repeat #000000;background-size: cover;">
-		            <div class="container">
-		                <div class="carousel-caption">
-		                    <?php if (!empty($banner['title'])) { ?><h1><?php echo strip_tags($banner['title']); ?></h1><?php } ?>
-		                     
-		                    <?php if ((!empty($banner['caption'])) || (!empty($banner['link']))) { ?>
-		                    <div class="white-box clearfix">
-			                    <?php if (!empty($banner['caption'])) { ?> <p><?php echo strip_tags($banner['caption']); ?></p><?php } ?>
-			                    <?php if (!empty($banner['link'])) { ?><a href="<?php echo $banner['link']; ?>" target="_blank"></a><?php } ?>
-		                    </div>
-		                    <?php } ?>
-		                    
-		                </div>
-		            </div>
+	                <div class="carousel-caption">
+	                    <?php if (!empty($banner['title'])) { ?><h1><?php echo strip_tags($banner['title']); ?></h1><?php } ?>
+	                     
+	                    <?php if ((!empty($banner['caption'])) || (!empty($banner['link']))) { ?>
+	                    <div class="white-box clearfix">
+		                    <?php if (!empty($banner['caption'])) { ?> <p><?php echo strip_tags($banner['caption']); ?></p><?php } ?>
+		                    <?php if (!empty($banner['link'])) { ?><a href="<?php echo $banner['link']; ?>" target="_blank"></a><?php } ?>
+	                    </div>
+	                    <?php } ?>
+	                    
+	                </div>
 		        </div>
 		        <?php $i++; } ?>
 					
@@ -75,19 +73,22 @@
 
 				
 				<div class="row">
+					<?php foreach($page_content['grey_features'] as $grey) { ?>
 					
 					<div class="span4">
-						<a href="http://www.law.uc.edu/prospective-students/admitted-students"><h4>Orientation Week<span>Introduction to Law</span><span></span></h4>
-						<p>Intro to Law orientation week begins Monday, August 12, 2013 for admitted students.&nbsp;</p></a>					
+						<a href="<?php echo $grey['link']; ?>">
+							<h4>
+								<?php echo $grey['title']; ?>
+								<span><?php echo $grey['subhead']; ?></span>
+							</h4>
+							<p><?php echo $grey['text']; ?></p>
+						</a>
+						
 					</div>
-					<div class="span4">
-						<a href="http://www.law.uc.edu/flex-time-program"><h4>Options<span>Flexible Time Program</span><span></span></h4>
-						<p>Application deadline for admission to the Flexible Time Program is July 1, 2013. Apply now.</p></a>
-					</div>
-					<div class="span4">
-						<a href="http://www.law.uc.edu/institutes-centers/llm"><h4>LLM Program<span>on the US Legal System</span><span></span></h4>
-						<p>Apply now to enter in the Fall 2013 class. Scholarships are available. No fee to apply.</p></a>			
-					</div>
+					
+					<?php } ?>
+					
+					
 					
 				</div>
 			</div>
@@ -123,7 +124,7 @@
 							
 								<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75" class="img-polaroid"><?php } ?>			
 								<h4 class="title"><?php echo $feature['title']; ?></h4>
-								<p><?php echo $feature['subtitle']; ?></p>
+								<p><?php echo $feature['content']; ?></p>
 							</a>
 						</section>
 						
