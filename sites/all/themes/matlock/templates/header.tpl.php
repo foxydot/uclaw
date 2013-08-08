@@ -134,7 +134,6 @@
 					<li><a href="/jd-program">JD Program</a></li>
 					<li><a href="/prospective-students/academic-programs/areas-study  ">Professional Pathways</a></li>
 					<li><a href="/experiences">Experiences</a></li>
-					<li><a href="/faculty-staff">Faculty</a></li>
 					<li><a href="/academic-calendar">Academic Calendar</a></li>
 					<li><a href="/current-students/academic-success-program">Academic Success Program</a></li>
 					<li><a href="/joint-degree">Joint Degree Programs</a></li>

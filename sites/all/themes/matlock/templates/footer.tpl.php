@@ -23,7 +23,7 @@
 					</div>
 					
 					<div class="span2">
-						<h5>Give</h5>
+						<h5>Support</h5>
 						<ul>
 							<li><a href="http://law.uc.edu/alumni/support">Give to UC Law</a></li>
 						</ul>
@@ -47,6 +47,7 @@
 							Cincinnati, OH 45221-0040<br>
 							Fax: (585) 641-8070  <br>
 							<abbr title="Phone">P: </abbr>513-556-6805<br />
+							<abbr title="Fax">F: </abbr>513-556-2391<br />
 							<abbr title="Email">E: </abbr><a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a>
 						</address>
 

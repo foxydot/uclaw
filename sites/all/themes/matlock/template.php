@@ -178,9 +178,9 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['teaching'] = get_text_value($node->field_teaching,			$lang);
 	//$ret->content['overview'] = get_text_value($node->field_overview,			$lang);
 	$ret->content['news'] = get_text_value($node->field_news,					$lang);
-	$ret->content['awards'] = explode("\n", get_text_value($node->field_awards,	$lang));
+	$ret->content['awards'] = array_filter(explode("\n", trim(get_text_value($node->field_awards,	$lang))));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
-	$ret->content['headshot'] = get_image_url($node->field_headshot,							$lang);
+	$ret->content['headshot'] = get_image_url($node->field_headshot,			$lang);
 
 	return $ret->content;
 } // preprocess_faculty_member()
@@ -330,7 +330,7 @@ function matlock_menu_tree(&$variables) {
 function matlock_breadcrumb($bcs) {
 	
 	if (!empty($bcs['breadcrumb'])) {
-
+		$bcs['breadcrumb'] = array_filter($bcs['breadcrumb']);
 		$bcrumb = '<li>' . implode(' <span class="divider">/</span></li>', $bcs['breadcrumb']) . ' <span class="divider">/</span> </li>';
     	return $bcrumb;
 	}

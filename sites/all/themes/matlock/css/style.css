@@ -1083,7 +1083,7 @@ div.password-suggestions ul{margin-bottom:0;}
 .pagination ul>li>a.progress-disabled{float:left;}
 .pagination ul>li>a .throbber{margin:0 -0.25em 0 0.5em;position:relative;top:1px;}
 h1,h2,h3,h4,h5,h6{font-family:'myriad-pro',Helvetica,sans-serif;font-weight:300;}
-p,a{font-family:'proxima-nova',Arial,sans-serif;}
+body,p,a{font-family:'proxima-nova',Arial,sans-serif;}
 a{color:#91392E;-webkit-transition:color 0.3s ease-out;-moz-transition:color 0.3s ease-out;-o-transition:color 0.3s ease-out;transition:color 0.3s ease-out;}
 .center{text-align:center;}
 .space{margin-top:50px;}
@@ -1182,7 +1182,7 @@ h3.red{color:#91392E;}
 #content #main{font-size:16px;line-height:28px;font-weight:300;}
 #content #main .table td,#content #main .table th{border-top:0;}
 #main .nav-tabs.nav-stacked a{font-size:14px;}
-#main h3,#main h4,#main h5,#main h6{font-weight:400;}
+#main h2,main h3,#main h4,#main h5,#main h6{font-weight:400;}
 #content #main .small{font-size:14px;line-height:22px;}
 #content #main [class^="icon-"],#content #main [class*=" icon-"]{line-height:21px;}
 #main h2{font-size:24px;line-height:28px;}

@@ -26,6 +26,37 @@
 		<?php if (!empty($page_content['headshot'])) { ?>
 			<img src="<?php echo $page_content['headshot']; ?>" class="img-polaroid" alt="<?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
 		<?php } ?>
+		
+				
+	<?php // Awards
+			if (!empty($page_content['awards'])) { ?>
+		<h3>Awards</h3>
+		<ul class="nobullet list-space icons-ul">
+			<?php foreach($page_content['awards'] as $award) {
+				if (empty($award)) { continue; }
+			?>
+				<li><i class="icon-legal"></i> <?php echo strip_tags($award); ?></li>
+			<?php } ?>
+		</ul>
+		<?php } ?>
+		
+		<?php // Links
+		if (!empty($page_content['links'])) { ?>
+		<h3>Links</h3>
+		<ul class="nobullet list-space icons-ul">
+			<?php foreach($page_content['links'] as $link) {
+				if (strpos($link, '|') !== FALSE) {
+					list($href, $title) = explode('|', $link);
+				} else {
+					$href = $title = $link;
+				}
+				
+			?>
+				<li><a href="<?php echo $href; ?>"><?php echo $title; ?></a></li>
+			<?php } ?>
+		</ul>
+	<?php } ?>
+		
 	</div> <!-- /.span3 -->
 	
 	<div class="span9">
@@ -87,13 +118,8 @@
 		<div class="row">
 		
 		<?php
-		
-		if ( !empty($page_content['subjects']) || !empty($page_content['teaching']) ) { ?>
-		
-		<div class="span3">
-		
-		<?php
 			if (!empty($page_content['subjects'])) { ?>
+			<div class="span3">
 				<h3>Areas of Interest</h3>
 				
 				<ul class="nobullet">
@@ -101,24 +127,16 @@
 					<li><?php echo $s; ?></li>
 				<?php } ?>
 				</ul>
+			</div>
 		<?php } // teaching not empty 
 		
 
 			if (!empty($page_content['teaching'])) { ?>
-	
+			<div class="span3">
 				<?php echo $page_content['teaching']; ?>
-			<?php } // teaching not empty ?>
-			
-		</div>
-		<?php } 
-				
-		if (!empty($page_content['scholarship'])) { ?>
-
-			<div class="span6">
-				<p><?php echo $page_content['scholarship']; ?></p>
 			</div>
-		<?php } // scholarship not empty ?>
-		
+			<?php } // teaching not empty ?>
+						
 			
 		</div> <!-- /.row -->
 		
@@ -130,12 +148,24 @@
 
 <div class="row">
 	<div class="span12">
-		<?php if (!empty($page_content['overview'])) { ?>
+	
+		<?php
+		if (!empty($page_content['overview'])) { ?>
 			<h2>Overview</h2>
-			<?php echo $page_content['overview'];
-		} ?>
+			<?php echo $page_content['overview']; ?>
+			<hr>
+		<?php
+		}
 		
-		<?php if (!empty($page_content['news'])) { ?>
+		if (!empty($page_content['scholarship'])) { ?>
+			<h2>Scholarship</h2>
+			<?php echo $page_content['scholarship']; ?>
+			<hr>
+		<?php
+		} // scholarship not empty
+		
+
+		if (!empty($page_content['news'])) { ?>
 			<h2>News</h2>
 			<?php echo $page_content['news'];
 		} ?>
@@ -143,42 +173,6 @@
 		
 		
 	</div> <!-- /.span12 -->
-</div> <!-- /.row -->
-
-<div class="row">
-	
-	<div class="span12">
-		
-		<?php // Awards
-			if (!empty($page_content['awards'])) { ?>
-		<h3>Awards</h3>
-		<ul class="nobullet list-space icons-ul">
-			<?php foreach($page_content['awards'] as $award) {
-				if (empty($award)) { continue; }
-			?>
-				<li><i class="icon-legal"></i> <?php echo strip_tags($award); ?></li>
-			<?php } ?>
-		</ul>
-		<?php } ?>
-		
-		<?php // Links
-		if (!empty($page_content['links'])) { ?>
-		<h3>Links</h3>
-		<ul class="nobullet list-space icons-ul">
-			<?php foreach($page_content['links'] as $link) {
-				if (strpos($link, '|') !== FALSE) {
-					list($href, $title) = explode('|', $link);
-				} else {
-					$href = $title = $link;
-				}
-				
-			?>
-				<li><a href="<?php echo $href; ?>"><?php echo $title; ?></a></li>
-			<?php } ?>
-		</ul>
-		<?php } ?>
-		
-	</div> <!-- /.span3 -->
 </div> <!-- /.row -->
 
 <?php } // not teaser ?>
