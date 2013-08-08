@@ -1,6 +1,25 @@
 <?php
+/*
+ * A useful troubleshooting function. Displays arrays in an easy to follow format in a textarea.
+*/
+if ( ! function_exists( 'ts_data' ) ) :
+function ts_data($data){
+	$ret = '<textarea class="troubleshoot" cols="100" rows="20">';
+	$ret .= print_r($data,true);
+	$ret .= '</textarea>';
+	print $ret;
+}
+endif;
+/*
+ * A useful troubleshooting function. Dumps variable info in an easy to follow format in a textarea.
+*/
+if ( ! function_exists( 'ts_var' ) && function_exists( 'ts_data' ) ) :
+function ts_var($var){
+	ts_data(var_export( $var , true ));
+}
+endif;
 
-$prefix = 'uclaw_';
+$prefix = '';
 /*$server = "localhost";
 $login = "msdlabth_uclawd7";
 $password = "(i9f@yco]=fk";
@@ -9,12 +28,12 @@ $database = "msdlabth_uclawd7";
 $server = "localhost";
 $login = "rps_uclawd7";
 $password = "rps_uclawd7";
-$database = "rps_uclawd7";
+$database = "rps_uclawd627_img_assist_test";
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
+echo $database.'<br>';
 $link = mysql_connect($server, $login, $password) or die("Connect error : " . mysql_error());
-echo "Connect OK</br>\n";
+echo "Connect OK</br><br>\n";
 
 $db_selected = mysql_select_db($database, $link);
 if (!$db_selected)
@@ -24,20 +43,23 @@ $query = "SELECT * FROM " . $prefix . "field_data_body WHERE body_value like '%[
 $result = mysql_query($query);
 
 if (!$result) {
-	$message  = 'Query error : ' . mysql_error() . "\n";
+	$message  = 'Query error : ' . mysql_error() . "<br>\n";
 	$message .= 'Query : ' . $query;
 	die($message);
 }
 
+//ts_data($query);
+
 $count=0;
 while ($row = mysql_fetch_assoc($result))
 {
+	//if($count>10){die();}
 	$tmp = $row['body_value'];
 	$count++;
-	echo "</br>\n###############################################################################</br>\n";
-	echo "Entity ID: ".$row['entity_id'];
+	//echo "</br><br>\n###############################################################################</br><br>\n";
+	//echo "Entity ID: ".$row['entity_id'];
 	//echo $tmp;
-	//echo "\n###############################################################################\n";
+	//echo "<br>\n###############################################################################<br>\n";
 
 	$start = strpos($tmp, "[img_assist");
 
@@ -46,30 +68,29 @@ while ($row = mysql_fetch_assoc($result))
 		$end = strpos($tmp, "]", $start);
 		$img = substr($tmp, $start+12, $end-$start-12);
 
-		echo "Img: $img \n";
+		echo "Img: $img <br>\n";
 
-		list($nid, $title, $desc, $link_img, $align, $width, $height) = explode("|", $img);
+		$myimg = explode("|", $img);
+		foreach($myimg AS $i){
+			$set = explode("=",$i);
+			${trim($set[0])} = trim($set[1]);
+		}
+		
+		//echo "NID: $nid <br>\n";
 
-		$nid = substr($nid, strpos($nid, "=")+1);
-		$title = substr($title, strpos($title, "=")+1);
-		$desc = substr($desc, strpos($desc, "=")+1);
-		$link_img = substr($link_img, strpos($link_img, "=")+1);
-		$align = substr($align, strpos($align, "=")+1);
-		$width = substr($width, strpos($width, "=")+1);
-		$height = substr($height, strpos($height, "=")+1);
-
-		echo "NID: $nid \n";
-
-		$query_image = "SELECT * FROM " . $prefix . "image WHERE nid=".$nid . " and image_size = '_original'"; // Changed query to always get the original image. Formerly, the query would return a row for each derivative of the image such as thumbnail.
+		$query_image = "SELECT * FROM " . $prefix . "image WHERE nid=".$nid ;
 		$result_image = mysql_query($query_image);
-
+		
+		//ts_data($query_image);
+		
 		$row_image = mysql_fetch_assoc($result_image);
 		$fid = $row_image['fid'];
 
-		echo "FID: $fid \n";
+		//echo "FID: $fid <br>\n";
 
 		$query_file = "SELECT * FROM " . $prefix . "files WHERE fid=".$fid;
 		$result_file = mysql_query($query_file);
+		//ts_data($query_file);
 
 		$row_file = mysql_fetch_assoc($result_file);
 				$img_path = $row_file['filepath'];
@@ -77,7 +98,7 @@ while ($row = mysql_fetch_assoc($result))
 				if ($img_path[0] != '/')
 					$img_path = '/' . $img_path;
 
-				echo "Src: $img_path \n";
+				//echo "Src: $img_path <br>\n";
 
 				$buffer = substr($tmp, 0, $start);
 
@@ -85,7 +106,9 @@ while ($row = mysql_fetch_assoc($result))
 
 				$buffer .= substr($tmp, $end+1);
 
-				//echo "Buffer: $buffer \n";
+				//echo "Buffer: <br>\n";
+				//ts_data($buffer);
+				//echo '<br>';
 
 				$tmp = $buffer;
 
@@ -93,20 +116,20 @@ while ($row = mysql_fetch_assoc($result))
 				//break; // Test
 	} // End : while ($start = strpos($tmp, "[img_assist"))
 
-	$update_query = "UPDATE " . $prefix . "field_data_body SET body_value = '".addslashes($tmp)."' WHERE entity_id = ".$row['entity_id'];
-	$res = mysql_query($update_query);
+	$update_query .= "UPDATE " . $prefix . "field_data_body SET body_value = '".addslashes($tmp)."' WHERE entity_id = ".$row['entity_id'].';'."\n";
+	/*$res = mysql_query($update_query);
 
 	if (!$res) {
-	$message  = 'Query error : ' . mysql_error() . "\n";
+	$message  = 'Query error : ' . mysql_error() . "<br>\n";
 	$message .= 'Query : ' . $update_query;
 			die($message);
-    }
+    }*/
 
     //break; // Test
 }// End : while ($row = mysql_fetch_assoc($result))
-
+ts_data($update_query);
 mysql_free_result($result);
 
 mysql_close($link);
-			echo "\nEnd ($count entities modified)\n\n";
+			echo "<br>\nEnd ($count entities modified)<br>\n<br>\n";
 			?>
