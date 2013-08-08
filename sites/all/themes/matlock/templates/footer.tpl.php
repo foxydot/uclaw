@@ -9,18 +9,26 @@
 					        <li><a href="http://law.uc.edu/prospective-students/admissions/directions">Directions</a></li>
 							<li><a href="http://www.law.uc.edu/sites/default/files/WestCampus-July2006-clr.pdf" target="_blank">Maps</a></li>
 							<li><a href="http://law.uc.edu/alumni/support">Giving</a></li>
+							<li><a href="http://taft.law.uc.edu/rooms/day.php?day=<?php echo date('d'); ?>&month=<?php echo date('m'); ?>&year=<?php echo date('Y'); ?>">Room Reservation</a>
 							<li><a href="http://law.uc.edu/uc-law-directories">Directory</a></li>
 					    </ul>
 					</div>
 					<div class="span2 hidden-phone">
 						<h5>Get Started</h5>
 						<ul>
-								<li><a href="http://www.cincinnatiusa.com/about/ ">Explore Cincinnati</a></li>
+							<li><a href="http://www.cincinnatiusa.com/about/ ">Explore Cincinnati</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/visit-college-law ">Schedule A Visit</a></li>
 							<li><a href="http://www.law.uc.edu/prospective-students/admissions/application-materials-fall">Apply Now</a></li>
 			            </ul>
 					</div>
-					<div class="span3 offset2">
+					
+					<div class="span2">
+						<h5>Give</h5>
+						<ul>
+							<li><a href="http://law.uc.edu/alumni/support">Give to UC Law</a></li>
+						</ul>
+					</div>
+					<div class="span3">
 						<h5>Connect With Us</h5>
 						<ul id="social" class="inline">
 			    			<li><a class="ss-facebook" href="http://www.facebook.com/#!/pages/University-of-Cincinnati-College-of-Law/318653248160979?fref=ts"></a></li>
@@ -39,7 +47,6 @@
 							Cincinnati, OH 45221-0040<br>
 							Fax: (585) 641-8070  <br>
 							<abbr title="Phone">P: </abbr>513-556-6805<br />
-							<abbr title="Fax">F: </abbr>513-556-2391<br />
 							<abbr title="Email">E: </abbr><a href="mailto:webmaster@law.uc.edu">webmaster@law.uc.edu</a>
 						</address>
 

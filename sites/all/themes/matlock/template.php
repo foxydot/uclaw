@@ -180,10 +180,7 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['news'] = get_text_value($node->field_news,					$lang);
 	$ret->content['awards'] = explode("\n", get_text_value($node->field_awards,	$lang));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
-	$headshot = get_image_url($node->field_headshot,							$lang);
-		if (!empty($headshot)) {
-			$ret->content['headshot'] = substr($headshot, 0, strrpos($headshot, '/')) . '/images' . substr($headshot, strrpos($headshot, '/'));
-		}
+	$ret->content['headshot'] = get_image_url($node->field_headshot,							$lang);
 
 	return $ret->content;
 } // preprocess_faculty_member()

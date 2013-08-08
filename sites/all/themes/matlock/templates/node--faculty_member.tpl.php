@@ -59,7 +59,7 @@
 			}
 			
 			if (!empty($page_content['email'])) { ?>
-				<li><abbr title="Email">e:</abbr> <?php echo $page_content['email']; ?></li>
+				<li><abbr title="Email">e:</abbr> <a href="mailto:<?php echo $page_content['email']; ?>"><?php echo $page_content['email']; ?></a></li>
 			<?php } ?>
 				</ul>
 			</div>
@@ -87,8 +87,13 @@
 		<div class="row">
 		
 		<?php
+		
+		if ( !empty($page_content['subjects']) || !empty($page_content['teaching']) ) { ?>
+		
+		<div class="span3">
+		
+		<?php
 			if (!empty($page_content['subjects'])) { ?>
-			<div class="span3">
 				<h3>Areas of Interest</h3>
 				
 				<ul class="nobullet">
@@ -96,24 +101,24 @@
 					<li><?php echo $s; ?></li>
 				<?php } ?>
 				</ul>
-			</div>
-		<?php } // subjects not empty
+		<?php } // teaching not empty 
 		
+
+			if (!empty($page_content['teaching'])) { ?>
+	
+				<?php echo $page_content['teaching']; ?>
+			<?php } // teaching not empty ?>
+			
+		</div>
+		<?php } 
+				
 		if (!empty($page_content['scholarship'])) { ?>
 
-			<div class="span3">
-				<h3>Scholarship</h3>
+			<div class="span6">
 				<p><?php echo $page_content['scholarship']; ?></p>
 			</div>
-		<?php } // scholarship not empty
+		<?php } // scholarship not empty ?>
 		
-		if (!empty($page_content['teaching'])) { ?>
-
-			<div class="span3">
-				<h3>Teaching</h3>
-				<p><?php echo $page_content['teaching']; ?></p>
-			</div>
-		<?php } // teaching not empty ?>
 			
 		</div> <!-- /.row -->
 		

@@ -1,8 +1,9 @@
 (function($) {
 	$(document).ready(function() {
+		/*
 		$('#sidebar .region-sidebar .menu > li > ul').css('display', 'none');
 		
-		$('#sidebar .region-sidebar .menu > li').each(function() {
+		$('#sidebar .region-sidebar .menu > li').not('.current').each(function() {
 			if ($(this).find('ul').length === 1) {
 				$(this).addClass('closed');
 				$(this).children('a').addClass('clearfix');
@@ -11,6 +12,7 @@
 			}
 			
 		}); // each
+		*/
 		
 
 		// Mobile submenu nav
