@@ -122,7 +122,7 @@
 						<section class="story clearfix">
 							<a href="<?php echo $feature['link']; ?>">
 							
-								<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75" class="img-polaroid"><?php } ?>			
+								<?php if (!empty($feature['image'])) { ?><img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>" title="" width="75" height="75"><?php } ?>			
 								<h4 class="title"><?php echo $feature['title']; ?></h4>
 								<p><?php echo $feature['content']; ?></p>
 							</a>
