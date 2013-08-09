@@ -58,7 +58,7 @@ settings[cdn_bootstrap] = 0
 ; RPS Scripts
 scripts[] = 'fonts/ss-social.js'
 scripts[] = 'js/jquery.sidr.min.js'
-scripts[] = 'js/doubletaptogo.js'
+;scripts[] = 'js/doubletaptogo.js'
 scripts[] = 'js/main-nav.js'
 scripts[] = 'js/collapsible-sidemenus.js'
 scripts[] = 'js/link-rewrite.js'
