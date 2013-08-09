@@ -26,7 +26,7 @@
 					?>
 					
 					<div class="<?php echo (($i == 0) ? 'active ' : NULL); ?>item">
-					<img src="<?php echo $banner['image']; ?>" class="img-polaroid">
+					<img src="<?php echo $banner['image']; ?>">
 					<?php if ( (!empty($banner['title'])) || (!empty($banner['caption']))) { ?>
 						<div class="carousel-caption">
 							<?php if (!empty($banner['title'])) { ?><h4><?php echo $banner['title']; ?></h4><?php } ?>
