@@ -42,7 +42,7 @@
 						<address>
 						  <strong>UC College of Law</strong><br>
 							PO Box 210040<br>
-							Clifton Avenue & Calhoun Street<br>
+							Clifton Avenue &amp; Calhoun Street<br>
 							Cincinnati, OH 45221-0040<br>
 							<abbr title="Phone">P: </abbr>513-556-6805<br />
 							<abbr title="Fax">F: </abbr>513-556-2391<br />
