@@ -10,10 +10,10 @@ function matlock_preprocess_page(&$vars, $hook) {
 	// Typekit Reference
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
-	
+
 	return;
 	  
-    if (isset($vars['node'])) {
+    /*if (isset($vars['node'])) {
         $node = $vars['node'];
     } elseif (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) !== 'edit') {
         $node = node_load(arg(1));
@@ -37,18 +37,17 @@ function matlock_preprocess_page(&$vars, $hook) {
 		
 	} // !empty $node
 	
-
+	*/
   
 } // matlock_preprocess()
 
 function matlock_preprocess_node(&$vars, $hook) {
-	  
     if (isset($vars['node'])) {
         $node = $vars['node'];
     } elseif (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) !== 'edit') {
         $node = node_load(arg(1));
     }
-    
+
     if (!empty($node)) {
 		$pre_function = 'preprocess_' . $node->type;
 		$ret = new stdClass;
@@ -64,6 +63,7 @@ function matlock_preprocess_node(&$vars, $hook) {
 	} // !empty $node
 	
 } // matlock_preprocess()
+
 
 function preprocess_page($ret = object) {
 	return preprocess_landing_page($ret);
@@ -249,6 +249,7 @@ function matlock_preprocess_search_result(&$vars) {
 } // matlock_preprocess_search_result()
 
 
+
 /**** UTILITY FUNCTIONS ****/
 
 function blank_first($i = 0, $underscore = TRUE) {
@@ -310,9 +311,11 @@ function matlock_menu_link(array $variables) {
 		$element['#attributes']['class'][] = 'current';
 	} else {
 		foreach($element['#below'] as $child) {
-			if ($_SERVER['REQUEST_URI'] == parse_url($child['#original_link']['link_path'], PHP_URL_PATH)) {
-				$element['#attributes']['class'][] = 'current';
-				break;
+			if (!empty($child['#original_link']['link_path'])) {
+				if ($_SERVER['REQUEST_URI'] == parse_url($child['#original_link']['link_path'], PHP_URL_PATH)) {
+					$element['#attributes']['class'][] = 'current';
+					break;
+				}
 			}
 		}
 	

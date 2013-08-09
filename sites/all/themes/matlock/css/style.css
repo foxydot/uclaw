@@ -8707,6 +8707,11 @@ h3.red {
   position: absolute;
   right: 8px;
 }
+/* Webforms */
+.block-webform .block-title {
+  display: none;
+}
+/* Hide titles */
 /* Events / Calendar */
 .calendar-calendar .item {
   border: 1px solid #E8E8E8;
