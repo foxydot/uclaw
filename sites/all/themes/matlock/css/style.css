@@ -8951,12 +8951,12 @@ main h3,
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   text-align: center;
-  height: 230px;
+  height: 280px;
   overflow: hidden;
 }
 .view-faculty-members a.thumb-wrap {
   display: inline;
-  height: 120px;
+  height: 150px;
   overflow: hidden;
 }
 .view-faculty-members a.thumb-wrap img {
@@ -8970,7 +8970,7 @@ main h3,
   overflow: hidden;
   text-transform: none;
   font-weight: 500;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   padding: 0;
 }
 .view-faculty-members .thumbnail p.title {
