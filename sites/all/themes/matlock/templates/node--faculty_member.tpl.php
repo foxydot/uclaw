@@ -6,11 +6,11 @@
 	
 		<div class="thumbnail">
 			
-			<?php if (!empty($page_content['headshot'])) { ?>
 			<a class="thumb-wrap" href="<?php echo $link; ?>">
-				<img src="<?php echo $page_content['headshot']; ?>" alt="<?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
-			</a>
+			<?php if (!empty($page_content['headshot'])) { ?>
+				<img src="<?php echo $page_content['headshot']; ?>" alt="Headshot of <?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
 			<?php } ?>
+			</a>
 			
 			<h3>
 				<a href="<?php echo $link; ?>"><?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?></a>
