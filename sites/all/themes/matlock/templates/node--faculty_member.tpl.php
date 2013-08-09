@@ -7,9 +7,7 @@
 		<div class="thumbnail">
 			
 			<a class="thumb-wrap" href="<?php echo $link; ?>">
-			<?php if (!empty($page_content['headshot'])) { ?>
-				<img src="<?php echo $page_content['headshot']; ?>" alt="Headshot of <?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
-			<?php } ?>
+				<img src="<?php echo (!empty($page_content['headshot'])) ? $page_content['headshot'] : '/sites/all/themes/matlock/img/no-photo.jpg'; ?>" alt="Headshot of <?php echo $page_content['firstname'], ' ', $page_content['lastname']; ?>">
 			</a>
 			
 			<h3>
