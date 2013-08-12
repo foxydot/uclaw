@@ -331,10 +331,9 @@ function matlock_menu_tree(&$variables) {
 }
 
 function matlock_breadcrumb($bcs) {
-	
 	if (!empty($bcs['breadcrumb'])) {
 		$bcs['breadcrumb'] = array_filter($bcs['breadcrumb']);
-		$bcrumb = '<li>' . implode(' <span class="divider">/</span></li>', $bcs['breadcrumb']) . ' <span class="divider">/</span> </li>';
+		$bcrumb = '<li>' . implode(' <span class="divider">/</span> </li>', $bcs['breadcrumb']) . ' <span class="divider">/</span> </li>';
     	return $bcrumb;
 	}
 
