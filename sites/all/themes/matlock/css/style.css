@@ -8475,6 +8475,12 @@ header #secondary-nav ul li ul.search form .btn {
 body {
   padding-top: 0 !important;
 }
+/* Undo all frames */
+.img-polaroid {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: 0 !important;
+}
 /* Home */
 .carousel {
   margin-bottom: 0;
