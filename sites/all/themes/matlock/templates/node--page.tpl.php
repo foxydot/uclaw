@@ -53,7 +53,7 @@
 							var caption = $(this).find('.carousel-caption');
 							var less_padding = parseInt(caption.css('padding-left')) + parseInt(caption.css('padding-right'));
 							$(this).find('.carousel-caption').css('width', (imgwidth - less_padding));
-							$(this).css({'visibility': 'visible', 'display': display});
+							$(this).removeProp('style');
 						});
 					});
 				})(jQuery);			
