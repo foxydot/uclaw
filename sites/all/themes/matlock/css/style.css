@@ -8481,6 +8481,15 @@ body {
   border: 0 !important;
   box-shadow: 0 !important;
 }
+img.inline,
+img.inline.inline-left {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+img.inline.inline-right {
+  float: right;
+  margin: 0 10px 0 10px;
+}
 /* Home */
 .carousel {
   margin-bottom: 0;
