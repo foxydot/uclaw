@@ -47,12 +47,13 @@
 				(function($) {
 					$(window).load(function() {
 						$('#landingCarousel .item').each(function() {
+							var display = $(this).css('display');
 							$(this).css({'visibility': 'hidden', 'display': 'block'});
 							var imgwidth = $(this).find('img').outerWidth();
 							var caption = $(this).find('.carousel-caption');
 							var less_padding = parseInt(caption.css('padding-left')) + parseInt(caption.css('padding-right'));
 							$(this).find('.carousel-caption').css('width', (imgwidth - less_padding));
-							$(this).removeProp('style');
+							$(this).css({'visibility': 'visible', 'display': display});
 						});
 					});
 				})(jQuery);			
