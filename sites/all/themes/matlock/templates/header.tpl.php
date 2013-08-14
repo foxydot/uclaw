@@ -104,13 +104,13 @@
 		<div class="row  hidden-tablet hidden-phone" id="main-dropdown">
 			<section>
 				<ul>
-					<li><a href="/about-us/fast-facts">Facts and Figures</a></li>
+					<li><a href="/about-us/fast-facts">Fast Facts</a></li>
+					<li><a href="/prospective-students/admissions/consumer-information">ABA Information</a></li>
 					<li><a href="/about-us/history">History</a></li>
 					<li><a href="/our-university">Our University</a></li>
 					<li><a href="/advantage">Cincinnati and Region</a></li>
 					<li><a href="/about-us/board-of-visitors">Board of Visitors</a></li>
 					<li><a href="/alumni/new-building">New College of Law Building</a></li>
-					<li><a href="/prospective-students/admissions/consumer-information">ABA Information</a></li>
 					<li><a href="/prospective-students/admissions/visit-college-law">Visit Us</a></li>
 					<li><a href="/about-us/contact-us">Contact Us</a></li>
 				</ul>
@@ -160,12 +160,11 @@
 			</section><!--
 			--><section>
 				<ul>
+					<li><a href="https://law-uc-csm.symplicity.com/" target="_blank">Symplicity</a></li>
 					<li><a href="/career/student">Students</a></li>
 					<li><a href="/career/alumni">Alumni</a></li>
 					<li><a href="/career/employer">Employers</a></li>
 					<li><a href="/employment-statistics">Employment Statistics</a></li>
-					<li><a href="/career/reciprocity">Reciprocity</a></li>
-					<li><a href="https://law-uc-csm.symplicity.com/">Symplicity</a></li>
 					<li><a href="/career/about-us">About Us</a></li>
 				</ul>
 			</section><!--
@@ -184,9 +183,13 @@
 				<ul>
 					<li><a href="/institutes-centers/llm">LLM Program</a></li>
 					<li><a href="/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
+					<li><a href="/graduate-certificate-program">Certificate Programs</a></li>
 					<li><a href="/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
-					<li><a href="/graduate-certificate-program">Certificate in U.S. Legal Studies</a></li>
+					<li><a href="/international-jd-students">International JD Students</a></li>
 					<li><a href="/visiting-scholars">Visiting Scholars</a></li>
+					<li><a href="http://ilreports.blogspot.com/" target="_blank">International Law Reporter Blog</a></li>
+					
+					
 				</ul>
 			</section>				
 		</div>
