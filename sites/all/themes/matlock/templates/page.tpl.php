@@ -77,7 +77,7 @@
 				    </div>
 				    <?php } ?>  
 
-					<div id="main" class="<?php if (!empty($page['sidebar'])) { ?>span9<?php } else { ?>span12<?php } ?>">
+					<div id="main" class="<?php if ($has_sidebar) { ?>span9<?php } else { ?>span12<?php } ?>">
 						<?php print render($page['content']); ?>
 					</div> <!-- /#main -->
 				</div> <!-- / .row -->
