@@ -47,10 +47,12 @@
 				(function($) {
 					$(window).load(function() {
 						$('#landingCarousel .item').each(function() {
+							$(this).css({'visibility': 'hidden', 'display': 'block'});
 							var imgwidth = $(this).find('img').outerWidth();
 							var caption = $(this).find('.carousel-caption');
 							var less_padding = parseInt(caption.css('padding-left')) + parseInt(caption.css('padding-right'));
 							$(this).find('.carousel-caption').css('width', (imgwidth - less_padding));
+							$(this).removeProp('style');
 						});
 					});
 				})(jQuery);			
