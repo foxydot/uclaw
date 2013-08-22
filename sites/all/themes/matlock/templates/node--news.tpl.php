@@ -19,10 +19,16 @@
 
 		<a href="<?php echo $link; ?>"><?php echo $page_content['title']; ?></a>		
 	
-<?php } else { ?>
+<?php } else {
+		if ($has_sidebar) {
+			$span = 9;
+		} else {
+			$span = 12;
+		}
+?>
 
 		<div class="row">
-			<div class="span12">
+			<div class="span<?php echo $span; ?>">
 				<h1><?php echo $page_content['title']; ?></h1>
 			</div>
 		</div>
@@ -37,7 +43,7 @@
 		
 		
 		<div class="row">
-			<div class="span12">
+			<div class="span<?php echo $span; ?>">
 				<hr>
 				<?php echo $page_content['body']; ?>
 			</div>

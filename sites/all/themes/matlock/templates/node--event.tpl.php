@@ -1,5 +1,4 @@
 <?php
-
 	if ($teaser)
 	{
 		$link = url('node/' . $node->nid);
@@ -24,6 +23,7 @@
 		}
 		else
 		{
+		
 		?>
 		
 		<h3><?php echo $page_content['title']; ?></h3>
@@ -41,7 +41,11 @@
 <?php
 		} // not home_events_block
 	
-	} else { ?>
+	} else {
+		
+
+
+	?>
 
 		<div class="row">
 			<div class="span12">

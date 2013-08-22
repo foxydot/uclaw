@@ -11,6 +11,8 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 
+	if (!empty($vars['page']['sidebar'])) { $vars['has_sidebar'] = TRUE; $vars['node']->has_sidebar = TRUE; } // one for page, one for nodes
+	
 	return;
 	  
     /*if (isset($vars['node'])) {
@@ -223,11 +225,10 @@ function preprocess_newshomepage($ret = object) {
 function preprocess_news_item($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
-	
 	$ret->content['date'] = $node->created;
 	$ret->content['title'] = $node->title;
 	$ret->content['body'] = get_text_value($node->body,	$lang);
-	
+
 	return $ret->content;
 } // preprocess_event()
 

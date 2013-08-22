@@ -1,4 +1,3 @@
-
 <?php
 	if ($node->type == 'homepage') {
 		print render($page['content']);
@@ -65,7 +64,7 @@
 
 				<div class="row">
 
-				    <?php if (!empty($page['sidebar'])) { $has_sidebar = TRUE; ?>
+				    <?php if ($has_sidebar) { ?>
 				    <div id="sidebar" class="span3">
 				    	<a href="#" class="visible-phone" id="mobile-submenus">
 				    		<span class="text">Additional Information</span><i class="icon-plus"></i>
