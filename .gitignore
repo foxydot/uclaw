@@ -19,4 +19,18 @@ robots.txt
 /README.txt
 sites/all/README.txt
 sites/all/modules/README.txt
-sites/all/themes/README.txt
+sites/all/themes/README.txtsites/default/files
+sites/default/default.settings.php
+sites/default/settings.php
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
