@@ -274,6 +274,7 @@ function all_empty() {
 } // all_not_empty()
 
 function get_text_value($item = array(), $lang = 'und') {
+	if (!$item) { return FALSE; }
 	if (!array_key_exists($lang, $item)) { return FALSE; }
 	return $item[$lang][0]['value'];
 } // get_link()
