@@ -11,8 +11,6 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 
-	echo 'Preprocess page<br>';
-	var_dump($vars['page']['sidebar']);
 	if (!empty($vars['page']['sidebar'])) { echo 'sidebar<br>'; $vars['has_sidebar'] = TRUE; $vars['node']->has_sidebar = TRUE; } // one for page, one for nodes
 	
 	return;
@@ -46,7 +44,7 @@ function matlock_preprocess_page(&$vars, $hook) {
 } // matlock_preprocess()
 
 function matlock_preprocess_node(&$vars, $hook) {
-	echo 'preprocess node';
+
     if (isset($vars['node'])) {
         $node = $vars['node'];
     } elseif (arg(0) == 'node' && is_numeric(arg(1)) && arg(2) !== 'edit') {
