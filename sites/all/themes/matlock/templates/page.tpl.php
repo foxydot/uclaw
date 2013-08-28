@@ -64,7 +64,7 @@
 
 				<div class="row">
 
-				    <?php var_dump($page['sidebar']); if ($has_sidebar) {  echo 'sidebar<br>'; ?>
+				    <?php if ($has_sidebar) {  echo 'sidebar<br>'; ?>
 				    <div id="sidebar" class="span3">
 				    	<a href="#" class="visible-phone" id="mobile-submenus">
 				    		<span class="text">Additional Information</span><i class="icon-plus"></i>
