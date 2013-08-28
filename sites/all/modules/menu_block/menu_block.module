@@ -301,9 +301,6 @@ function menu_tree_build($config) {
 
   // Get the default block name.
   $menu_names = menu_block_get_all_menus();
-  echo 'menu name: ', $config['menu_name'];
-  echo '<br>', t($menu_names[$config['menu_name']]);
-  echo '<br>';
   
   menu_block_set_title(t($menu_names[$config['menu_name']]));
 
