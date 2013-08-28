@@ -168,7 +168,7 @@ function preprocess_landingpage($ret = object) {
 	}
 	
 	//print_r($node);
-	$ret->content['body'] = get_text_value($node->body);
+	//$ret->content['body'] = get_text_value($node->body);
 	
 	return $ret->content;
 } // preprocess_landing_page()
