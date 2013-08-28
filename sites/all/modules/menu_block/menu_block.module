@@ -301,6 +301,10 @@ function menu_tree_build($config) {
 
   // Get the default block name.
   $menu_names = menu_block_get_all_menus();
+  echo 'menu name: ', $config['menu_name'];
+  echo '<br>', t($menu_names[$config['menu_name']]);
+  echo '<br>';
+  
   menu_block_set_title(t($menu_names[$config['menu_name']]));
 
   if ($config['expanded'] || $config['parent_mlid']) {
@@ -446,9 +450,7 @@ function menu_block_set_title($item = NULL) {
  *   void
  */
 function menu_tree_add_active_path(&$tree) {
-	var_dump($tree);
-	echo '<br>key: ' . $key, '<br>';
-	
+
   // Grab any menu item to find the menu_name for this tree.
   $menu_item = current($tree);
   $tree_with_trail = menu_tree_page_data($menu_item['link']['menu_name']);
