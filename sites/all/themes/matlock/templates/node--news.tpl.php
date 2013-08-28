@@ -20,6 +20,7 @@
 		<a href="<?php echo $link; ?>"><?php echo $page_content['title']; ?></a>		
 	
 <?php } else {
+
 		if ($has_sidebar) {
 			$span = 9;
 		} else {

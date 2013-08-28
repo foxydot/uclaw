@@ -11,7 +11,7 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 
-	if (!empty($vars['page']['sidebar'])) { $vars['has_sidebar'] = TRUE; $vars['node']->has_sidebar = TRUE; } // one for page, one for nodes
+	if (!empty($vars['page']['sidebar'])) { echo 'sidebar<br>'; $vars['has_sidebar'] = TRUE; $vars['node']->has_sidebar = TRUE; } // one for page, one for nodes
 	
 	return;
 	  
@@ -325,6 +325,7 @@ function matlock_menu_link(array $variables) {
 	$output = l(((($element['#original_link']['depth'] == 1) && ($element['#href'] != '<nolink>')) ? '<i class="icon-double-angle-right"></i> ' : NULL) . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 } // matlock_menu_link()
+
 
 // Override 'menu nav' classes from bootstrap
 function matlock_menu_tree(&$variables) {
