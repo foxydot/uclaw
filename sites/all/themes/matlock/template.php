@@ -11,7 +11,6 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	
-	var_dump(get_defined_vars());
 	
 	echo 'preprocess page : ';
 	if (!empty($vars['page']['sidebar'])) {
