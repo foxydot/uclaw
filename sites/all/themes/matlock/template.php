@@ -10,7 +10,8 @@ function matlock_preprocess_page(&$vars, $hook) {
 	// Typekit Reference
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
-
+	
+	
 	echo 'preprocess page : ';
 	if (!empty($vars['page']['sidebar'])) {
 		echo 'sidebar<br>';
@@ -54,16 +55,6 @@ function matlock_preprocess_page(&$vars, $hook) {
 
 function matlock_preprocess_node(&$vars, $hook) {
 
-	echo '<br>preprocess node : ';
-	if (!empty($vars['page']['sidebar'])) {
-		echo 'sidebar<br>';
-		$vars['has_sidebar'] = TRUE;
-		$vars['node']->has_sidebar = TRUE;
-	} else {
-		echo 'no sidebar<br>';
-		$vars['has_sidebar'] = FALSE;
-		$vars['node']->has_sidebar = FALSE;
-	} // one for page, one for nodes
 
     if (isset($vars['node'])) {
         $node = $vars['node'];
