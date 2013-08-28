@@ -446,6 +446,9 @@ function menu_block_set_title($item = NULL) {
  *   void
  */
 function menu_tree_add_active_path(&$tree) {
+	var_dump($tree);
+	echo '<br>key: ' . $key, '<br>';
+	
   // Grab any menu item to find the menu_name for this tree.
   $menu_item = current($tree);
   $tree_with_trail = menu_tree_page_data($menu_item['link']['menu_name']);
