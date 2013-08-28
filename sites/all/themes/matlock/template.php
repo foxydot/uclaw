@@ -291,16 +291,19 @@ function get_text_value($item = array(), $lang = 'und') {
 } // get_link()
 
 function get_url($item = array(), $lang = 'und') {
+	if (!$item) { return FALSE; }
 	if (!array_key_exists($lang, $item)) { return FALSE; }
 	return $item[$lang][0]['url'];
 } // get_url()
 
 function get_image_url($item = array(), $lang = 'und') {
+	if (!$item) { return FALSE; }
 	if (!array_key_exists($lang, $item)) { return FALSE; }
 	return file_create_url($item[$lang][0]['uri']);
 } // get_link()
 
 function get_array_values($item = array(), $lang = 'und') {
+	if (!$item) { return FALSE; }
 	$ret = array();
 	if (!array_key_exists($lang, $item)) { return FALSE; }
 	foreach($item[$lang] as $it) {
