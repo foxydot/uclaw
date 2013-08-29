@@ -70,10 +70,11 @@
 			<div class="span3">
 				<h3>Education</h3>
 			
-				<?php foreach($page_content['education'] as $edu) { ?>
-				<p><?php echo $edu; ?></p>
-				<?php } ?>
-				
+				<p>
+				<?php foreach($page_content['education'] as $edu) {
+					echo $edu, '<br>';
+				} ?>
+				</p>
 			</div>
 		<?php } // education not empty
 		
