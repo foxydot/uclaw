@@ -36,7 +36,7 @@
 					</div>
 					
 					<div class="row">
-						<div class="span7">
+						<div class="span6">
 							<nav id="secondary-nav">
 								<ul class="clearfix">
 								
