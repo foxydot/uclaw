@@ -143,6 +143,9 @@ function preprocess_landingpage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
+	var_dump($ret);
+	var_dump($node);
+	
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
 		$ret->content['banners'][$i]['image'] = get_image_url($node->{'field_feature_img' . blank_first($i)},			$lang);
