@@ -8414,6 +8414,7 @@ header #secondary-nav ul li ul.search form {
   margin: 0 0 0 5px;
 }
 header #secondary-nav ul li ul.search form input {
+  color: #FAFAFA;
   height: 30px;
   margin: 0 0 0 15px;
   border: 1px solid #444;
