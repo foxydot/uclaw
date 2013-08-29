@@ -171,12 +171,12 @@
 			</section><!--
 			--><section>
 				<ul>
-					<li><a href="/institutes-centers/corporate-law-center">Corporate Law Center</a></li>
-					<li><a href="/institutes-centers/center-practice">Center for Practice</a></li>
 					<li><a href="/o-i-p">Ohio Innocence Project</a></li>
-					<li><a href="/institutes-centers/rgsj">Center for Race, Gender, and Social Justice</a></li>
 					<li><a href="/institutes-centers/urban-morgan-institute">Urban Morgan Institute for Human Rights</a></li>
 					<li><a href="/institutes-centers/weaver-institute">Weaver Institute of Law and Psychiatry</a></li>
+					<li><a href="/institutes-centers/rgsj">Center for Race, Gender, and Social Justice</a></li>
+					<li><a href="/institutes-centers/corporate-law-center">Corporate Law Center</a></li>
+					<li><a href="/institutes-centers/center-practice">Center for Practice</a></li>
 					<li><a href="/institutes-centers/IGPL">Institute for the Global Practice of Law</a></li>
 				</ul>
 			</section><!--
