@@ -69,7 +69,11 @@
 			if (!empty($page_content['education'])) { ?>
 			<div class="span3">
 				<h3>Education</h3>
-				<p><?php echo $page_content['education']; ?></p>
+			
+				<?php foreach($page_content['education'] as $edu) { ?>
+				<p><?php echo $edu; ?></p>
+				<?php } ?>
+				
 			</div>
 		<?php } // education not empty
 		
