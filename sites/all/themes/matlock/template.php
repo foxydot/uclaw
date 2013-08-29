@@ -11,7 +11,6 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	
-	
 	//echo 'preprocess page : ';
 	if (!empty($vars['page']['sidebar'])) {
 		//echo 'sidebar<br>';
@@ -190,7 +189,7 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['subjects'] = get_array_values($node->field_subjects,			$lang);
 	$ret->content['scholarship'] = get_text_value($node->field_scholarship,		$lang);
 	$ret->content['teaching'] = get_text_value($node->field_teaching,			$lang);
-	//$ret->content['overview'] = get_text_value($node->field_overview,			$lang);
+	$ret->content['overview'] = get_text_value($node->field_overview,			$lang);
 	$ret->content['news'] = get_text_value($node->field_news,					$lang);
 	$ret->content['awards'] = array_filter(explode("\n", trim(get_text_value($node->field_awards,	$lang))));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
@@ -337,7 +336,7 @@ function matlock_menu_link(array $variables) {
 		}
 	
 	}
-	
+
 	$output = l(((($element['#original_link']['depth'] == 1) && ($element['#href'] != '<nolink>')) ? '<i class="icon-double-angle-right"></i> ' : NULL) . $element['#title'], $element['#href'], array_merge($element['#localized_options'], array('html' => TRUE)));
 	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 } // matlock_menu_link()
