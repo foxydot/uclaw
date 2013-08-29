@@ -16,14 +16,14 @@
 	
 		<div class="container hidden-tablet hidden-phone">
 			<div class="row">
-				<div class="span5">
+				<div class="span6">
 					<?php if (theme_get_setting('logo')): ?>
 				        <a class="brandmark" href="/" title="<?php print t('Home'); ?>">
 				          <img src="<?php print theme_get_setting('logo'); ?>" alt="<?php print t('Home'); ?>" />
 				        </a>
 				      <?php endif; ?>
 				</div>
-				<div class="span7">
+				<div class="span6">
 				
 					<div class="row">
 						<div class="span7">
