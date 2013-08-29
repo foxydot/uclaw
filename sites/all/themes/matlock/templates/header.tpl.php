@@ -118,13 +118,13 @@
 			--><section>
 				<ul>
 					<li><a href="/jd-admissions">JD Admissions</a></li>
-					<li><a href="/institutes-centers/llm/application">LLM Admissions</a></li>
-					<li><a href="/admissions-certificate-programs">Certificate Admissions</a></li>
+					<li><a href="/value">Financial Aid</a></li>
 					<li><a href="/prospective-students/admissions/transfer-and-visiting-students">Transfer/Visiting Students</a></li>
 					<li><a href="/flex-time-program">Flexible Time Program</a></li>
 					<li><a href="/prospective-students/admitted-students">Admitted Students</a></li>
 					<li><a href="/guest-students">Guest Students</a></li>
-					<li><a href="/value">Financial Aid</a></li>
+					<li><a href="/institutes-centers/llm/application">LLM Admissions</a></li>
+					<li><a href="/admissions-certificate-programs">Certificate Admissions</a></li>
 					<li><a href="/prospective-students/admissions/visit-college-law">Visit Us</a></li>
 					<li><a href="/prospective-students/contact-us">Contact Us</a></li>
 				</ul>
@@ -132,14 +132,15 @@
 			--><section>
 				<ul>
 					<li><a href="/jd-program">JD Program</a></li>
-					<li><a href="/prospective-students/academic-programs/areas-study  ">Professional Pathways</a></li>
-					<li><a href="/experiences">Experiences</a></li>
+					<li><a href="/prospective-students/academic-programs/areas-study">Professional Pathways</a></li>
+					<li><a href="#">Faculty</a></li>
+
 					<li><a href="/academic-calendar">Academic Calendar</a></li>
-					<li><a href="/current-students/academic-success-program">Academic Success Program</a></li>
 					<li><a href="/joint-degree">Joint Degree Programs</a></li>
+					<li><a href="/lectures-visitors">Lectures and Visitors</a></li>
+					<li><a href="/current-students/academic-success-program">Academic Success Program</a></li>
 					<li><a href="/institutes-centers/llm">LLM Program</a></li>
 					<li><a href="/graduate-certificate-program">Certificate Programs</a></li>
-					<li><a href="/lectures-visitors">Lectures and Visitors</a></li>
 					<li><a href="/current-students/department-of-curriculum-and-student-affairs">Contact Us</a></li>
 				</ul>
 			</section><!--
@@ -150,7 +151,7 @@
 					<li><a href="/journals">Journals</a></li>
 					<li><a href="/current-students/student-orgs/moot-court-program#">Moot Court</a></li>
 					<li><a href="/institutes-centers/center-practice/trial-practice#">Trial Practice</a></li>
-					<li><a href="/current-students/practical-experiences/alternative-dispute-resolution">Alternate Dispute Resolution</a></li>
+					<li><a href="/current-students/practical-experiences/alternative-dispute-resolution">Alternative Dispute Resolution</a></li>
 					<li><a href="/fellowships">Fellowships</a></li>
 					<li><a href="/current-students/practical-experiences/american-inn-court">American Inn of Court</a></li>
 					<li><a href="/sites/default/files/writingcompetition_0.xls">Writing Competitions</a></li>
