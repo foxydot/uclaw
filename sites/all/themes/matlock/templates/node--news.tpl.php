@@ -34,6 +34,8 @@
 			</div>
 		</div>
 
+		<?php
+		/*
 		<div class="row">
 			<div class="span6">
 				<p>
@@ -41,7 +43,8 @@
 				</p>
 			</div>
 		</div>
-		
+		*/
+		?>
 		
 		<div class="row">
 			<div class="span<?php echo $span; ?>">
