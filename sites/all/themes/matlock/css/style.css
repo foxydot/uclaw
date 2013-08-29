@@ -8243,7 +8243,7 @@ a {
 }
 /* Header */
 header a.brandmark {
-  margin: 20px 0 0 0;
+  margin: -20px 0 0 0;
   display: inline-block;
   text-align: center;
   width: 100%;
