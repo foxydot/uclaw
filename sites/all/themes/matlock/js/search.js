@@ -14,10 +14,6 @@
 			window.location = '/search/node/' + term;
 		});		
 
-		$('#sidr-id-header-search').submit(function() {
-			
-			alert('submitting 2');
-		});
-
+		$('#sidr').css('border', '3px solid red');
 	});
 })(jQuery);
