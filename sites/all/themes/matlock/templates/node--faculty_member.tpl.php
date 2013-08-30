@@ -168,10 +168,10 @@
 		} // scholarship not empty
 		
 
-		if (!empty($page_content['news'])) { ?>
+		/*if (!empty($page_content['news'])) { ?>
 			<h2>News</h2>
 			<?php echo $page_content['news'];
-		} ?>
+		} */?>
 		
 		
 		
