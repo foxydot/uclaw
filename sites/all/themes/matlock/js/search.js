@@ -7,8 +7,5 @@
 			window.location = '/search/node/' + term;
 		});		
 
-		$('#sidr-id-header-search').on('keypress', function() {
-			console.log('pressed');
-		});
 	});
 })(jQuery);
