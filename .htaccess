@@ -142,3 +142,10 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+
+# Redirects
+
+Redirect 301 /node/9 http://uc.rndpxl.net/financialaid
+Redirect 301 /prospective-students/financial-aid http://uc.rndpxl.net/financialaid
+Redirect 301 /value http://uc.rndpxl.net/financialaid
