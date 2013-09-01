@@ -8,7 +8,7 @@
 		});	
 		
 		
-		$('#sidr').on('submit', '#sidr-id-header-search', function(e) {
+		$('#sidr').on('click', '#sidr-id-header-search', function(e) {
 			alert('submitting');
 		});	
 		
