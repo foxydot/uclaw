@@ -69,7 +69,12 @@
 			if (!empty($page_content['education'])) { ?>
 			<div class="span3">
 				<h3>Education</h3>
-				<p><?php echo $page_content['education']; ?></p>
+			
+				<p>
+				<?php foreach($page_content['education'] as $edu) {
+					echo $edu, '<br>';
+				} ?>
+				</p>
 			</div>
 		<?php } // education not empty
 		
@@ -163,10 +168,10 @@
 		} // scholarship not empty
 		
 
-		if (!empty($page_content['news'])) { ?>
+		/*if (!empty($page_content['news'])) { ?>
 			<h2>News</h2>
 			<?php echo $page_content['news'];
-		} ?>
+		} */?>
 		
 		
 		

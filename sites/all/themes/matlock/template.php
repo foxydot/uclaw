@@ -11,6 +11,7 @@ function matlock_preprocess_page(&$vars, $hook) {
 	drupal_add_js('//use.typekit.net/joq3zvd.js');
 	drupal_add_js('try{Typekit.load();}catch(e){}', 'inline');
 	
+
 	//echo 'preprocess page : ';
 	if (!empty($vars['page']['sidebar'])) {
 		//echo 'sidebar<br>';
@@ -181,7 +182,7 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['firstname'] = get_text_value($node->field_firstname,			$lang);
 	$ret->content['lastname'] = $node->title;
 	$ret->content['title'] = get_text_value($node->field_staff_title,			$lang);
-	$ret->content['education'] = get_text_value($node->field_education,			$lang);
+	$ret->content['education'] = get_array_values($node->field_education,			$lang);
 	$ret->content['contact'] = get_array_values($node->field_phone_fax,			$lang);
 	$ret->content['email'] = get_text_value($node->field_email,					$lang);
 	//$ret->content['facebook'] = get_text_value($node->field_facebook_link,	$lang);
@@ -190,7 +191,7 @@ function preprocess_faculty_member($ret = object) {
 	$ret->content['scholarship'] = get_text_value($node->field_scholarship,		$lang);
 	$ret->content['teaching'] = get_text_value($node->field_teaching,			$lang);
 	$ret->content['overview'] = get_text_value($node->body,						$lang);
-	$ret->content['news'] = get_text_value($node->field_news,					$lang);
+	//$ret->content['news'] = get_text_value($node->field_news,					$lang);
 	$ret->content['awards'] = array_filter(explode("\n", trim(get_text_value($node->field_awards,	$lang))));
 	$ret->content['links'] = get_array_values($node->field_links,				$lang);
 	$ret->content['headshot'] = get_image_url($node->field_headshot,			$lang);
