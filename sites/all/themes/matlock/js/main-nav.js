@@ -1,5 +1,10 @@
 (function($) {
 	$(document).ready(function() {
+	
+		// Sidr
+		$('#main-menu-toggle').sidr({'source': '#newnav, #secondary-nav', 'side': 'right'});
+
+
 		// Get sections all same height
 		var maxheight = 0;
 		$('#main-dropdown').css({'visibility': 'hidden', 'display': 'block', 'height': 0});

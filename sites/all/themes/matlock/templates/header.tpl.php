@@ -79,14 +79,6 @@
 	
 	<a id="main-menu-toggle" class="visible-tablet visible-phone" href="#newnav"><span>Toggle menu</span></a>
 	 
-	<script>
-		(function($) {
-			$(document).ready(function() {
-				$('#main-menu-toggle').sidr({'source': '#newnav, #secondary-nav', 'side': 'right'});
-			});
-		})(jQuery);
-	</script>
-
 	<!-- Main Navigation -->
 	<div class="main-nav new  hidden-tablet hidden-phone">
 		<div class="container">
