@@ -150,11 +150,11 @@ DirectoryIndex index.php index.html index.htm
 #Redirect 301 /prospective-students/financial-aid http://uc.rndpxl.net/financialaid
 #Redirect 301 /value http://uc.rndpxl.net/financialaid
 
-Redirect 301 /about-us http://uc.rndpxl.net/about
 Redirect 301 /about-us/fast-facts http://uc.rndpxl.net/facts
 Redirect 301 /prospective-students/admissions/consumer-information http://uc.rndpxl.net/ABAinfo
 Redirect 301 /mission-vision http://uc.rndpxl.net/mission
 Redirect 301 /about-us/history http://uc.rndpxl.net/history
+Redirect 301 /about-us http://uc.rndpxl.net/about
 Redirect 301 /our-university http://uc.rndpxl.net/uc
 Redirect 301 /advantage http://uc.rndpxl.net/cincinnati
 Redirect 301 /about-us/board-of-visitors http://uc.rndpxl.net/bov
