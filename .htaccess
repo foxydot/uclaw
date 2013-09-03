@@ -146,6 +146,62 @@ DirectoryIndex index.php index.html index.htm
 
 # Redirects
 
-Redirect 301 /node/9 http://uc.rndpxl.net/financialaid
-Redirect 301 /prospective-students/financial-aid http://uc.rndpxl.net/financialaid
+#Redirect 301 /node/9 http://uc.rndpxl.net/financialaid
+#Redirect 301 /prospective-students/financial-aid http://uc.rndpxl.net/financialaid
+#Redirect 301 /value http://uc.rndpxl.net/financialaid
+
+
+Redirect 301 /about-us http://uc.rndpxl.net/about
+Redirect 301 /about-us/fast-facts http://uc.rndpxl.net/facts
+Redirect 301 /prospective-students/admissions/consumer-information http://uc.rndpxl.net/ABAinfo
+Redirect 301 /mission-vision http://uc.rndpxl.net/mission
+Redirect 301 /about-us/history http://uc.rndpxl.net/history
+Redirect 301 /our-university http://uc.rndpxl.net/uc
+Redirect 301 /advantage http://uc.rndpxl.net/cincinnati
+Redirect 301 /about-us/board-of-visitors http://uc.rndpxl.net/bov
+Redirect 301 /alumni/new-building http://uc.rndpxl.net/building
+Redirect 301 /prospective-students/admissions/visit-college-law http://uc.rndpxl.net/visit
+Redirect 301 /about-us/contact-us http://uc.rndpxl.net/contact
+Redirect 301 /prospective-students/admissions http://uc.rndpxl.net/admissions/jd
 Redirect 301 /value http://uc.rndpxl.net/financialaid
+Redirect 301 /prospective-students/admissions/transfer-and-visiting-students http://uc.rndpxl.net/transfer
+Redirect 301 /flex-time-program http://uc.rndpxl.net/flextime
+Redirect 301 /prospective-students/admitted-students http://uc.rndpxl.net/admitted
+Redirect 301 /guest-students http://uc.rndpxl.net/guest
+Redirect 301 /institutes-centers/llm/application http://uc.rndpxl.net/admissions/llm
+Redirect 301 /admissions-certificate-programs http://uc.rndpxl.net/admissions/certificate
+Redirect 301 /prospective-students/contact-us http://uc.rndpxl.net/admissions/contact
+Redirect 301 /jd-program http://uc.rndpxl.net/jd
+Redirect 301 /prospective-students/academic-programs/areas-study http://uc.rndpxl.net/pathways
+Redirect 301 /faculty-staff http://uc.rndpxl.net/faculty
+Redirect 301 /lectures-visitors http://uc.rndpxl.net/lectures
+Redirect 301 /current-students/academic-success-program http://uc.rndpxl.net/academic-success
+Redirect 301 /current-students/department-of-curriculum-and-student-affairs http://uc.rndpxl.net/academics/contact
+Redirect 301 /current-students/student-orgs/moot-court-program http://uc.rndpxl.net/moot-court
+Redirect 301 /institutes-centers/center-practice/trial-practice http://uc.rndpxl.net/trial-practice
+Redirect 301 /current-students/practical-experiences/alternative-dispute-resolution http://uc.rndpxl.net/adr
+Redirect 301 /current-students/practical-experiences/american-inn-court http://uc.rndpxl.net/inn-of-court
+Redirect 301 /current-students/practical-experiences/volunteer-opportunities http://uc.rndpxl.net/volunteer
+Redirect 301 /o-i-p http://uc.rndpxl.net/oip
+Redirect 301 /institutes-centers/weaver-institute http://uc.rndpxl.net/weaver
+Redirect 301 /institutes-centers/rgsj http://uc.rndpxl.net/rgsj
+Redirect 301 /institutes-centers/corporate-law-center http://uc.rndpxl.net/corporate-law-center
+Redirect 301 /institutes-centers/center-practice http://uc.rndpxl.net/center-for-practice
+Redirect 301 /institutes-centers/llm http://uc.rndpxl.net/llm
+Redirect 301 /institutes-centers/IGPL http://uc.rndpxl.net/igpl
+Redirect 301 /institutes-centers/urban-morgan-institute http://uc.rndpxl.net/human-rights
+Redirect 301 /international-jd-students http://uc.rndpxl.net/international/jd-students
+Redirect 301 /visiting-scholars http://uc.rndpxl.net/international/visiting-scholars
+Redirect 301 /directory/staff http://uc.rndpxl.net/staff
+Redirect 301 /current-students http://uc.rndpxl.net/students
+Redirect 301 /institutes http://uc.rndpxl.net/centers
+Redirect 301 /faculty-staff/faculty-news/2009/december http://uc.rndpxl.net/faculty-staff/faculty-news/2009-december
+Redirect 301 /library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di http://uc.rndpxl.net/library/it-computing/computing-orientation/accessing-your-network
+Redirect 301 /library/it-computing/accessing-your-files-file-server-windows-xp-and-vista http://uc.rndpxl.net/library/it-computing/accessing-your-files-file-server-windows-xp-vista-7
+Redirect 301 /current-students/student-orgs/tenant-information-project http://uc.rndpxl.net/tip
+Redirect 301 /institutes-centers/corporate-law-center/activities-partnerships/symposia/2013 http://uc.rndpxl.net/symposium
+Redirect 301 /about-us/why-cincinnati-law http://uc.rndpxl.net/experience
+Redirect 301 /current-students/student-orgs http://uc.rndpxl.net/student-orgs
+Redirect 301 /current-students/student-organizations http://uc.rndpxl.net/student-orgs
+Redirect 301 /about-us/diversity-cincinnati-law http://uc.rndpxl.net/diversity
+Redirect 301 /directory/library http://uc.rndpxl.net/directory/library-directory
