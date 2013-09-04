@@ -172,7 +172,11 @@ Redirect 301 /admissions-certificate-programs http://uc.rndpxl.net/admissions/ce
 Redirect 301 /prospective-students/contact-us http://uc.rndpxl.net/admissions/contact
 Redirect 301 /jd-program http://uc.rndpxl.net/jd
 Redirect 301 /prospective-students/academic-programs/areas-study http://uc.rndpxl.net/pathways
-Redirect 301 /faculty-staff http://uc.rndpxl.net/faculty
+
+#Redirect 301 /faculty-staff http://uc.rndpxl.net/faculty
+RewriteCond %{REQUEST_URI} ^/faculty-staff[/]?$
+RewriteRule (.*) /faculty [R=301,L]
+
 Redirect 301 /lectures-visitors http://uc.rndpxl.net/lectures
 Redirect 301 /current-students/academic-success-program http://uc.rndpxl.net/academic-success
 Redirect 301 /current-students/department-of-curriculum-and-student-affairs http://uc.rndpxl.net/academics/contact
