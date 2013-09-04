@@ -174,7 +174,7 @@ Redirect 301 /jd-program http://uc.rndpxl.net/jd
 Redirect 301 /prospective-students/academic-programs/areas-study http://uc.rndpxl.net/pathways
 
 #Redirect 301 /faculty-staff http://uc.rndpxl.net/faculty
-RewriteCond %{REQUEST_URI} ^/faculty-staff[\/]?$
+RewriteCond %{REQUEST_URI} ^/faculty-staff[/]?$
 RewriteRule (.*) /faculty [R=301,L]
 
 Redirect 301 /lectures-visitors http://uc.rndpxl.net/lectures
@@ -192,7 +192,11 @@ Redirect 301 /institutes-centers/corporate-law-center http://uc.rndpxl.net/corpo
 Redirect 301 /institutes-centers/center-practice http://uc.rndpxl.net/center-for-practice
 Redirect 301 /institutes-centers/llm http://uc.rndpxl.net/llm
 Redirect 301 /institutes-centers/IGPL http://uc.rndpxl.net/igpl
-Redirect 301 /institutes-centers/urban-morgan-institute http://uc.rndpxl.net/human-rights
+
+#Redirect 301 /institutes-centers/urban-morgan-institute http://uc.rndpxl.net/human-rights
+RewriteCond %{REQUEST_URI} ^/institutes-centers/urban-morgan-institute[/]?$
+RewriteRule (.*) /human-rights [R=301,L]
+
 Redirect 301 /international-jd-students http://uc.rndpxl.net/international/jd-students
 Redirect 301 /visiting-scholars http://uc.rndpxl.net/international/visiting-scholars
 Redirect 301 /directory/staff http://uc.rndpxl.net/staff
