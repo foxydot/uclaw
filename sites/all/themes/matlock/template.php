@@ -144,7 +144,7 @@ function preprocess_landingpage($ret = object) {
 	$node = $ret->node;
 	$lang = $node->language;
 	
-	print_r($node);
+	//print_r($node);
 	
 	$ret->content['banners'] = array();
 	for ($i = 1; (!empty($node->{'field_feature_img' . blank_first($i)})); $i++) {
