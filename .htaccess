@@ -146,164 +146,57 @@ DirectoryIndex index.php index.html index.htm
 
 # Redirects
 
-RewriteCond %{REQUEST_URI} ^/about-us[/]?$
-RewriteRule (.*) /about [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/fast-facts[/]?$
-RewriteRule (.*) /facts [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/consumer-information[/]?$
-RewriteRule (.*) /ABAinfo [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/mission-vision[/]?$
-RewriteRule (.*) /mission [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/history[/]?$
-RewriteRule (.*) /history [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/our-university[/]?$
-RewriteRule (.*) /uc [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/advantage[/]?$
-RewriteRule (.*) /cincinnati [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/board-of-visitors[/]?$
-RewriteRule (.*) /bov [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/alumni/new-building[/]?$
-RewriteRule (.*) /building [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/visit-college-law[/]?$
-RewriteRule (.*) /visit [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/contact-us[/]?$
-RewriteRule (.*) /contact [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/admissions[/]?$
-RewriteRule (.*) /admissions/jd [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/value[/]?$
-RewriteRule (.*) /financialaid [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/transfer-and-visiting-students[/]?$
-RewriteRule (.*) /transfer [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/flex-time-program[/]?$
-RewriteRule (.*) /flextime [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/admitted-students[/]?$
-RewriteRule (.*) /admitted [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/guest-students[/]?$
-RewriteRule (.*) /guest [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/llm/application[/]?$
-RewriteRule (.*) /admissions/llm [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/admissions-certificate-programs[/]?$
-RewriteRule (.*) /admissions/certificate [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/contact-us[/]?$
-RewriteRule (.*) /admissions/contact [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/jd-program[/]?$
-RewriteRule (.*) /jd [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/prospective-students/academic-programs/areas-study[/]?$
-RewriteRule (.*) /pathways [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/faculty-staff[/]?$
-RewriteRule (.*) /faculty [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/lectures-visitors[/]?$
-RewriteRule (.*) /lectures [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/academic-success-program[/]?$
-RewriteRule (.*) /academic-success [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/department-of-curriculum-and-student-affairs[/]?$
-RewriteRule (.*) /academics/contact [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/moot-court-program[/]?$
-RewriteRule (.*) /moot-court [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice/trial-practice[/]?$
-RewriteRule (.*) /trial-practice [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/alternative-dispute-resolution[/]?$
-RewriteRule (.*) /adr [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/american-inn-court[/]?$
-RewriteRule (.*) /inn-of-court [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/volunteer-opportunities[/]?$
-RewriteRule (.*) /volunteer [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/o-i-p[/]?$
-RewriteRule (.*) /oip [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/weaver-institute[/]?$
-RewriteRule (.*) /weaver [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/rgsj[/]?$
-RewriteRule (.*) /rgsj [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center[/]?$
-RewriteRule (.*) /corporate-law-center [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice[/]?$
-RewriteRule (.*) /center-for-practice [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/llm[/]?$
-RewriteRule (.*) /llm [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/IGPL[/]?$
-RewriteRule (.*) /igpl [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/urban-morgan-institute[/]?$
-RewriteRule (.*) /human-rights [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/international-jd-students[/]?$
-RewriteRule (.*) /international/jd-students [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/visiting-scholars[/]?$
-RewriteRule (.*) /international/visiting-scholars [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/directory/staff[/]?$
-RewriteRule (.*) /staff [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students[/]?$
-RewriteRule (.*) /students [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes[/]?$
-RewriteRule (.*) /centers [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/faculty-staff/faculty-news/2009/december[/]?$
-RewriteRule (.*) /faculty-staff/faculty-news/2009-december [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$
-RewriteRule (.*) /library/it-computing/computing-orientation/accessing-your-network [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/library/it-computing/accessing-your-files-file-server-windows-xp-and-vista[/]?$
-RewriteRule (.*) /library/it-computing/accessing-your-files-file-server-windows-xp-vista-7 [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/tenant-information-project[/]?$
-RewriteRule (.*) /tip [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center/activities-partnerships/symposia/2013[/]?$
-RewriteRule (.*) /symposium [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/why-cincinnati-law[/]?$
-RewriteRule (.*) /experience [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-orgs[/]?$
-RewriteRule (.*) /student-orgs [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-organizations[/]?$
-RewriteRule (.*) /student-orgs [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/diversity-cincinnati-law[/]?$
-RewriteRule (.*) /diversity [R=302,L]
-
-RewriteCond %{REQUEST_URI} ^/directory/library[/]?$
-RewriteRule (.*) /directory/library-directory [R=302,L]
+RewriteCond ^/about-us[/]?$ /about
+RewriteCond ^/about-us/fast-facts[/]?$ /facts
+RewriteCond ^/prospective-students/admissions/consumer-information[/]?$ /ABAinfo
+RewriteCond ^/mission-vision[/]?$ /mission
+RewriteCond ^/about-us/history[/]?$ /history
+RewriteCond ^/our-university[/]?$ /uc
+RewriteCond ^/advantage[/]?$ /cincinnati
+RewriteCond ^/about-us/board-of-visitors[/]?$ /bov
+RewriteCond ^/alumni/new-building[/]?$ /building
+RewriteCond ^/prospective-students/admissions/visit-college-law[/]?$ /visit
+RewriteCond ^/about-us/contact-us[/]?$ /contact
+RewriteCond ^/prospective-students/admissions[/]?$ /admissions/jd
+RewriteCond ^/value[/]?$ /financialaid
+RewriteCond ^/prospective-students/admissions/transfer-and-visiting-students[/]?$ /transfer
+RewriteCond ^/flex-time-program[/]?$ /flextime
+RewriteCond ^/prospective-students/admitted-students[/]?$ /admitted
+RewriteCond ^/guest-students[/]?$ /guest
+RewriteCond ^/institutes-centers/llm/application[/]?$ /admissions/llm
+RewriteCond ^/admissions-certificate-programs[/]?$ /admissions/certificate
+RewriteCond ^/prospective-students/contact-us[/]?$ /admissions/contact
+RewriteCond ^/jd-program[/]?$ /jd
+RewriteCond ^/prospective-students/academic-programs/areas-study[/]?$ /pathways
+RewriteCond ^/faculty-staff[/]?$ /faculty
+RewriteCond ^/lectures-visitors[/]?$ /lectures
+RewriteCond ^/current-students/academic-success-program[/]?$ /academic-success
+RewriteCond ^/current-students/department-of-curriculum-and-student-affairs[/]?$ /academics/contact
+RewriteCond ^/current-students/student-orgs/moot-court-program[/]?$ /moot-court
+RewriteCond ^/institutes-centers/center-practice/trial-practice[/]?$ /trial-practice
+RewriteCond ^/current-students/practical-experiences/alternative-dispute-resolution[/]?$ /adr
+RewriteCond ^/current-students/practical-experiences/american-inn-court[/]?$ /inn-of-court
+RewriteCond ^/current-students/practical-experiences/volunteer-opportunities[/]?$ /volunteer
+RewriteCond ^/o-i-p[/]?$ /oip
+RewriteCond ^/institutes-centers/weaver-institute[/]?$ /weaver
+RewriteCond ^/institutes-centers/rgsj[/]?$ /rgsj
+RewriteCond ^/institutes-centers/corporate-law-center[/]?$ /corporate-law-center
+RewriteCond ^/institutes-centers/center-practice[/]?$ /center-for-practice
+RewriteCond ^/institutes-centers/llm[/]?$ /llm
+RewriteCond ^/institutes-centers/IGPL[/]?$ /igpl
+RewriteCond ^/institutes-centers/urban-morgan-institute[/]?$ /human-rights
+RewriteCond ^/international-jd-students[/]?$ /international/jd-students
+RewriteCond ^/visiting-scholars[/]?$ /international/visiting-scholars
+RewriteCond ^/directory/staff[/]?$ /staff
+RewriteCond ^/current-students[\/]?$ /students
+RewriteCond ^/institutes[/]?$ /centers
+RewriteCond ^/faculty-staff/faculty-news/2009/december[/]?$ /faculty-staff/faculty-news/2009-december
+RewriteCond ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$ /library/it-computing/computing-orientation/accessing-your-network
+RewriteCond ^/library/it-computing/accessing-your-files-file-server-windows-xp-and-vista[/]?$ /library/it-computing/accessing-your-files-file-server-windows-xp-vista-7
+RewriteCond ^/current-students/student-orgs/tenant-information-project[/]?$ /tip
+RewriteCond ^/institutes-centers/corporate-law-center/activities-partnerships/symposia/2013[/]?$ /symposium
+RewriteCond ^/about-us/why-cincinnati-law[/]?$ /experience
+RewriteCond ^/current-students/student-orgs[/]?$ /student-orgs
+RewriteCond ^/current-students/student-organizations[/]?$ /student-orgs
+RewriteCond ^/about-us/diversity-cincinnati-law[/]?$ /diversity
+RewriteCond ^/directory/library[/]?$ /directory/library-directory
