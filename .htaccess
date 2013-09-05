@@ -147,7 +147,6 @@ DirectoryIndex index.php index.html index.htm
 # Redirects
 RewriteEngine on
 
-RewriteRule (.*) http://uc.rndpxl.net/students [R=302,L]
 RewriteRule ^/about-us[/]?$ http://uc.rndpxl.net/about [R=302,L]
 RewriteRule ^/about-us/fast-facts[/]?$ http://uc.rndpxl.net/facts [R=302,L]
 RewriteRule ^/prospective-students/admissions/consumer-information[/]?$ http://uc.rndpxl.net/ABAinfo [R=302,L]
