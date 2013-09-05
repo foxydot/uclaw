@@ -146,166 +146,164 @@ DirectoryIndex index.php index.html index.htm
 
 # Redirects
 
-
-
 RewriteCond %{REQUEST_URI} ^/about-us[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/about [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/about [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/fast-facts[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/facts [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/facts [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/consumer-information[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/ABAinfo [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/ABAinfo [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/mission-vision[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/mission [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/mission [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/history[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/history [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/history [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/our-university[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/uc [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/uc [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/advantage[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/cincinnati [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/cincinnati [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/board-of-visitors[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/bov [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/bov [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/alumni/new-building[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/building [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/building [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/visit-college-law[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/visit [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/visit [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/contact-us[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/contact [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/contact [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/admissions/jd [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/admissions/jd [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/value[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/financialaid [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/financialaid [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/transfer-and-visiting-students[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/transfer [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/transfer [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/flex-time-program[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/flextime [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/flextime [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admitted-students[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/admitted [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/admitted [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/guest-students[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/guest [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/guest [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/llm/application[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/admissions/llm [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/admissions/llm [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/admissions-certificate-programs[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/admissions/certificate [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/admissions/certificate [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/contact-us[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/admissions/contact [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/admissions/contact [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/jd-program[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/jd [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/jd [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/academic-programs/areas-study[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/pathways [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/pathways [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/faculty-staff[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/faculty [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/faculty [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/lectures-visitors[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/lectures [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/lectures [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/academic-success-program[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/academic-success [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/academic-success [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/department-of-curriculum-and-student-affairs[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/academics/contact [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/academics/contact [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/moot-court-program[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/moot-court [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/moot-court [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice/trial-practice[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/trial-practice [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/trial-practice [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/alternative-dispute-resolution[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/adr [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/adr [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/american-inn-court[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/inn-of-court [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/inn-of-court [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/volunteer-opportunities[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/volunteer [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/volunteer [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/o-i-p[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/oip [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/oip [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/weaver-institute[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/weaver [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/weaver [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/rgsj[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/rgsj [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/rgsj [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/corporate-law-center [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/corporate-law-center [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/center-for-practice [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/center-for-practice [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/llm[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/llm [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/llm [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/IGPL[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/igpl [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/igpl [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/urban-morgan-institute[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/human-rights [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/human-rights [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/international-jd-students[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/international/jd-students [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/international/jd-students [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/visiting-scholars[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/international/visiting-scholars [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/international/visiting-scholars [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/directory/staff[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/staff [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/staff [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/students [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/students [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/centers [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/centers [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/faculty-staff/faculty-news/2009/december[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/faculty-staff/faculty-news/2009-december [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/faculty-staff/faculty-news/2009-december [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/library/it-computing/computing-orientation/accessing-your-network [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/library/it-computing/computing-orientation/accessing-your-network [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/library/it-computing/accessing-your-files-file-server-windows-xp-and-vista[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/library/it-computing/accessing-your-files-file-server-windows-xp-vista-7 [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/library/it-computing/accessing-your-files-file-server-windows-xp-vista-7 [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/tenant-information-project[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/tip [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/tip [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center/activities-partnerships/symposia/2013[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/symposium [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/symposium [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/why-cincinnati-law[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/experience [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/experience [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/student-orgs[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/student-orgs [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/student-orgs [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/student-organizations[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/student-orgs [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/student-orgs [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/diversity-cincinnati-law[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/diversity [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/diversity [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/directory/library[/]?$
-RewriteRule (.*) http://uc.rndpxl.net/directory/library-directory [R=302,L]
+RewriteRule (.*) http://uc.rndpxl.net/directory/library-directory [R=301,L]
