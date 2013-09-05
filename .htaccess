@@ -308,4 +308,3 @@ RewriteRule (.*)$ /students [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes[/]?$
 RewriteRule (.*) /centers [R=301,L]
-
