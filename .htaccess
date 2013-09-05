@@ -304,7 +304,7 @@ RewriteCond %{REQUEST_URI} ^/directory/staff[/]?$
 RewriteRule (.*) /staff [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students[/]?$
-RewriteRule (.*)$ /students [R=301,L]
+RewriteRule (.*) /students [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes[/]?$
 RewriteRule (.*) /centers [R=301,L]
