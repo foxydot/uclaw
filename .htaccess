@@ -145,7 +145,6 @@ DirectoryIndex index.php index.html index.htm
 
 
 # Redirects
-RewriteEngine on
 
 RewriteCond %{REQUEST_URI} ^/about-us[/]?$
 RewriteRule (.*) http://uc.rndpxl.net/about [R=302,L]
