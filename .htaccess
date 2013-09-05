@@ -189,7 +189,7 @@ RewriteRule ^/institutes-centers/urban-morgan-institute[/]?$ http://uc.rndpxl.ne
 RewriteRule ^/international-jd-students[/]?$ http://uc.rndpxl.net/international/jd-students [R=302,L]
 RewriteRule ^/visiting-scholars[/]?$ http://uc.rndpxl.net/international/visiting-scholars [R=302,L]
 RewriteRule ^/directory/staff[/]?$ http://uc.rndpxl.net/staff [R=302,L]
-RewriteRule ^/current-students[/]?$ http://uc.rndpxl.net/students [R=302,L]
+RewriteRule ^current-students[/]?$ http://uc.rndpxl.net/students [R=302,L]
 RewriteRule ^/institutes[/]?$ http://uc.rndpxl.net/centers [R=302,L]
 RewriteRule ^/faculty-staff/faculty-news/2009/december[/]?$ http://uc.rndpxl.net/faculty-staff/faculty-news/2009-december [R=302,L]
 RewriteRule ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$ http://uc.rndpxl.net/library/it-computing/computing-orientation/accessing-your-network [R=302,L]
