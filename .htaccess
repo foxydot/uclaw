@@ -188,7 +188,7 @@ RewriteCond ^/institutes-centers/urban-morgan-institute[/]?$ /human-rights
 RewriteCond ^/international-jd-students[/]?$ /international/jd-students
 RewriteCond ^/visiting-scholars[/]?$ /international/visiting-scholars
 RewriteCond ^/directory/staff[/]?$ /staff
-RewriteCond ^/current-students[\/]?$ /students
+RewriteCond ^/current-students[/]?$ /students
 RewriteCond ^/institutes[/]?$ /centers
 RewriteCond ^/faculty-staff/faculty-news/2009/december[/]?$ /faculty-staff/faculty-news/2009-december
 RewriteCond ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$ /library/it-computing/computing-orientation/accessing-your-network
