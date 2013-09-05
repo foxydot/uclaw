@@ -145,166 +145,165 @@ DirectoryIndex index.php index.html index.htm
 
 
 # Redirects
-RewriteCond %{REQUEST_URI} ^/about-us/fast-facts[/]?$
-RewriteRule (.*) /facts [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us[/]?$
-RewriteRule (.*) /about [R=301,L]
+RewriteRule (.*) /about [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/about-us/fast-facts[/]?$
+RewriteRule (.*) /facts [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/consumer-information[/]?$
-RewriteRule (.*) /ABAinfo [R=301,L]
+RewriteRule (.*) /ABAinfo [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/mission-vision[/]?$
-RewriteRule (.*) /mission [R=301,L]
+RewriteRule (.*) /mission [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/history[/]?$
-RewriteRule (.*) /history [R=301,L]
+RewriteRule (.*) /history [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/our-university[/]?$
-RewriteRule (.*) /uc [R=301,L]
+RewriteRule (.*) /uc [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/advantage[/]?$
-RewriteRule (.*) /cincinnati [R=301,L]
+RewriteRule (.*) /cincinnati [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/board-of-visitors[/]?$
-RewriteRule (.*) /bov [R=301,L]
+RewriteRule (.*) /bov [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/alumni/new-building[/]?$
-RewriteRule (.*) /building [R=301,L]
+RewriteRule (.*) /building [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/visit-college-law[/]?$
-RewriteRule (.*) /visit [R=301,L]
+RewriteRule (.*) /visit [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/about-us/contact-us[/]?$
-RewriteRule (.*) /contact [R=301,L]
+RewriteRule (.*) /contact [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions[/]?$
-RewriteRule (.*) /admissions/jd [R=301,L]
+RewriteRule (.*) /admissions/jd [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/value[/]?$
-RewriteRule (.*) /financialaid [R=301,L]
+RewriteRule (.*) /financialaid [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admissions/transfer-and-visiting-students[/]?$
-RewriteRule (.*) /transfer [R=301,L]
+RewriteRule (.*) /transfer [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/flex-time-program[/]?$
-RewriteRule (.*) /flextime [R=301,L]
+RewriteRule (.*) /flextime [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/admitted-students[/]?$
-RewriteRule (.*) /admitted [R=301,L]
+RewriteRule (.*) /admitted [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/guest-students[/]?$
-RewriteRule (.*) /guest [R=301,L]
+RewriteRule (.*) /guest [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/llm/application[/]?$
-RewriteRule (.*) /admissions/llm [R=301,L]
+RewriteRule (.*) /admissions/llm [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/admissions-certificate-programs[/]?$
-RewriteRule (.*) /admissions/certificate [R=301,L]
+RewriteRule (.*) /admissions/certificate [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/contact-us[/]?$
-RewriteRule (.*) /admissions/contact [R=301,L]
+RewriteRule (.*) /admissions/contact [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/jd-program[/]?$
-RewriteRule (.*) /jd [R=301,L]
+RewriteRule (.*) /jd [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/prospective-students/academic-programs/areas-study[/]?$
-RewriteRule (.*) /pathways [R=301,L]
+RewriteRule (.*) /pathways [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/faculty-staff[/]?$
-RewriteRule (.*) /faculty [R=301,L]
+RewriteRule (.*) /faculty [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/lectures-visitors[/]?$
-RewriteRule (.*) /lectures [R=301,L]
+RewriteRule (.*) /lectures [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/academic-success-program[/]?$
-RewriteRule (.*) /academic-success [R=301,L]
+RewriteRule (.*) /academic-success [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/department-of-curriculum-and-student-affairs[/]?$
-RewriteRule (.*) /academics/contact [R=301,L]
+RewriteRule (.*) /academics/contact [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/moot-court-program[/]?$
-RewriteRule (.*) /moot-court [R=301,L]
+RewriteRule (.*) /moot-court [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice/trial-practice[/]?$
-RewriteRule (.*) /trial-practice [R=301,L]
+RewriteRule (.*) /trial-practice [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/alternative-dispute-resolution[/]?$
-RewriteRule (.*) /adr [R=301,L]
+RewriteRule (.*) /adr [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/american-inn-court[/]?$
-RewriteRule (.*) /inn-of-court [R=301,L]
+RewriteRule (.*) /inn-of-court [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students/practical-experiences/volunteer-opportunities[/]?$
-RewriteRule (.*) /volunteer [R=301,L]
+RewriteRule (.*) /volunteer [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/o-i-p[/]?$
-RewriteRule (.*) /oip [R=301,L]
+RewriteRule (.*) /oip [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/weaver-institute[/]?$
-RewriteRule (.*) /weaver [R=301,L]
+RewriteRule (.*) /weaver [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/rgsj[/]?$
-RewriteRule (.*) /rgsj [R=301,L]
+RewriteRule (.*) /rgsj [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center[/]?$
-RewriteRule (.*) /corporate-law-center [R=301,L]
+RewriteRule (.*) /corporate-law-center [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/center-practice[/]?$
-RewriteRule (.*) /center-for-practice [R=301,L]
+RewriteRule (.*) /center-for-practice [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/llm[/]?$
-RewriteRule (.*) /llm [R=301,L]
+RewriteRule (.*) /llm [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/IGPL[/]?$
-RewriteRule (.*) /igpl [R=301,L]
+RewriteRule (.*) /igpl [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes-centers/urban-morgan-institute[/]?$
-RewriteRule (.*) /human-rights [R=301,L]
+RewriteRule (.*) /human-rights [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/international-jd-students[/]?$
-RewriteRule (.*) /international/jd-students [R=301,L]
+RewriteRule (.*) /international/jd-students [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/visiting-scholars[/]?$
-RewriteRule (.*) /international/visiting-scholars [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/faculty-staff/faculty-news/2009/december[/]?$
-RewriteRule (.*) /faculty-staff/faculty-news/2009-december [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$
-RewriteRule (.*) /library/it-computing/computing-orientation/accessing-your-network [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/library/it-computing/accessing-your-files-file-server-windows-xp-and-vista[/]?$
-RewriteRule (.*) /library/it-computing/accessing-your-files-file-server-windows-xp-vista-7 [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/tenant-information-project[/]?$
-RewriteRule (.*) /tip [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center/activities-partnerships/symposia/2013[/]?$
-RewriteRule (.*) /symposium [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/why-cincinnati-law[/]?$
-RewriteRule (.*) /experience [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-orgs[/]?$
-RewriteRule (.*) /student-orgs [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/current-students/student-organizations[/]?$
-RewriteRule (.*) /student-orgs [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/about-us/diversity-cincinnati-law[/]?$
-RewriteRule (.*) /diversity [R=301,L]
-
-RewriteCond %{REQUEST_URI} ^/directory/library[/]?$
-RewriteRule (.*) /directory/library-directory [R=301,L]
-
-
+RewriteRule (.*) /international/visiting-scholars [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/directory/staff[/]?$
-RewriteRule (.*) /staff [R=301,L]
+RewriteRule (.*) /staff [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/current-students[/]?$
-RewriteRule (.*) /students [R=301,L]
+RewriteRule (.*) /students [R=302,L]
 
 RewriteCond %{REQUEST_URI} ^/institutes[/]?$
-RewriteRule (.*) /centers [R=301,L]
+RewriteRule (.*) /centers [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/faculty-staff/faculty-news/2009/december[/]?$
+RewriteRule (.*) /faculty-staff/faculty-news/2009-december [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/library/it-computing/computing-orientation-fall-2010/computing-orientation-accessing-your-network-di[/]?$
+RewriteRule (.*) /library/it-computing/computing-orientation/accessing-your-network [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/library/it-computing/accessing-your-files-file-server-windows-xp-and-vista[/]?$
+RewriteRule (.*) /library/it-computing/accessing-your-files-file-server-windows-xp-vista-7 [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/current-students/student-orgs/tenant-information-project[/]?$
+RewriteRule (.*) /tip [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/institutes-centers/corporate-law-center/activities-partnerships/symposia/2013[/]?$
+RewriteRule (.*) /symposium [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/about-us/why-cincinnati-law[/]?$
+RewriteRule (.*) /experience [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/current-students/student-orgs[/]?$
+RewriteRule (.*) /student-orgs [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/current-students/student-organizations[/]?$
+RewriteRule (.*) /student-orgs [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/about-us/diversity-cincinnati-law[/]?$
+RewriteRule (.*) /diversity [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/directory/library[/]?$
+RewriteRule (.*) /directory/library-directory [R=302,L]
